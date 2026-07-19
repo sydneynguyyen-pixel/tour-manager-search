@@ -1,7 +1,7 @@
 require('dotenv').config({ quiet: true });
 
 const logger = require('./src/utils/logger');
-const { scrapeSpotifyNewReleases } = require('./src/scrapers/spotify-scraper');
+const { scrapeDeezerNewReleases } = require('./src/scrapers/deezer-scraper');
 const { scrapeSetlistFMTourHistory } = require('./src/scrapers/setlistfm-scraper');
 const { aggregateArtistData } = require('./src/aggregate');
 const { scoreArtists } = require('./src/score');
@@ -28,14 +28,15 @@ async function main() {
   );
 
   // Advance + persist the rotation index now so each run takes the next batch,
-  // even if this run's data collection fails (e.g. Spotify quota).
+  // even if this run's data collection fails.
   config.lastBatchIndex = nextIndex;
   saveConfigAtomic(config);
   logger.info(`Next run will start at seed index ${nextIndex}.`);
 
-  // Stage 1 — Spotify: recent releases for THIS BATCH of seed artists.
-  const releases = await scrapeSpotifyNewReleases(batch, LOOKBACK_DAYS);
-  const uniqueArtists = new Set(releases.map((r) => r.spotifyId)).size;
+  // Stage 1 — Deezer: recent releases for THIS BATCH of seed artists (no auth,
+  // no quota; replaces the former Spotify stage).
+  const releases = await scrapeDeezerNewReleases(batch, LOOKBACK_DAYS);
+  const uniqueArtists = new Set(releases.map((r) => r.deezerId)).size;
   logger.count('Artists with recent releases', uniqueArtists);
   logger.count('Total releases', releases.length);
 
@@ -44,7 +45,8 @@ async function main() {
   // last LOOKBACK_DAYS are dropped before this stage.
   const tourHistory = await scrapeSetlistFMTourHistory(releases, TOUR_MONTHS_BACK);
 
-  // Stage 3 — aggregate (merge + genres/tier), score, and output ranked leads.
+  // Stage 3 — aggregate (merge + genres/tier + AudioDB/Last.fm/Discogs enrich),
+  // score, and output ranked leads.
   const aggregated = await aggregateArtistData(releases, tourHistory, config);
   const scored = scoreArtists(aggregated, config);
   const formatted = formatLeadsOutput(scored, config);

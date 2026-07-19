@@ -17,7 +17,11 @@ const SETLISTFM_API_BASE = 'https://api.setlist.fm/rest/1.0';
 // Env validation
 // ---------------------------------------------------------------------------
 function assertEnv() {
-  const required = ['SPOTIFY_CLIENT_ID', 'SPOTIFY_CLIENT_SECRET', 'SETLISTFM_API_KEY'];
+  // Only Setlist.fm is strictly required. Deezer + TheAudioDB need no key;
+  // Last.fm (LASTFM_API_KEY) and Discogs (DISCOGS_TOKEN) are supplementary and
+  // degrade gracefully when unset. The Spotify client below is retained only for
+  // the archived spotify-scraper.js and is not part of the active pipeline.
+  const required = ['SETLISTFM_API_KEY'];
   const missing = required.filter((k) => !process.env[k]);
   if (missing.length) {
     throw new Error(

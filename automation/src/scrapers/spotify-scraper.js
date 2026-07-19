@@ -1,3 +1,7 @@
+// ARCHIVED — no longer part of the active pipeline. Replaced by deezer-scraper.js
+// for new-release detection (Deezer needs no auth/quota). Kept for reference; not
+// imported by run.js. The `spotify` client in auth.js remains only for this file.
+//
 // Spotify scraper: for each seed artist, find the artist and collect their
 // recent releases (albums + singles) within a lookback window.
 //

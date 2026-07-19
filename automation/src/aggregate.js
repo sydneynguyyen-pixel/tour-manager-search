@@ -85,6 +85,7 @@ async function aggregateArtistData(spotifyReleases, setlistfmTourData, config) {
       minVenueSize: tour?.minVenueSize ?? 0,
       maxVenueSize: tour?.maxVenueSize ?? 0,
       topVenues: tour?.topVenues ?? [], // biggest venues played (top 3), display-only
+      tourHistory: tour?.tourHistory ?? [], // full per-show list (newest first), display-only
 
       countriesToured: tour?.countriesToured ?? 0,
       lastTourDate: tour?.lastTourDate ?? null,

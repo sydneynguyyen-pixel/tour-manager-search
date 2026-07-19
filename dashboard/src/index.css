@@ -1662,6 +1662,63 @@ body {
   color: var(--text-muted);
 }
 
+/* Count chip beside a section heading (e.g. "Tour history  12 shows") */
+.section-count {
+  margin-left: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-muted);
+}
+
+/* Tour history — full per-show list; scrolls when long */
+.tour-history-scroll {
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.tour-history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tour-row {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tour-row:last-child {
+  border-bottom: none;
+}
+.tour-row-date {
+  flex: 0 0 auto;
+  min-width: 96px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+.tour-row-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.tour-row-venue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.tour-row-loc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 /* Collapsible "Explain this score" */
 .explain {
   margin-top: 22px;

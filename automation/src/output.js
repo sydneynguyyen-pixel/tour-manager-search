@@ -108,6 +108,7 @@ function formatLeadsOutput(scoredArtists, config) {
     tourCount: a.tourCount,
     avgVenueSize: a.avgVenueSize,
     topVenues: Array.isArray(a.topVenues) ? a.topVenues.slice(0, 3) : [],
+    tourHistory: Array.isArray(a.tourHistory) ? a.tourHistory : [],
     countriesToured: a.countriesToured,
     lastTourDate: a.lastTourDate,
     managementType: a.managementType ?? 'unknown',

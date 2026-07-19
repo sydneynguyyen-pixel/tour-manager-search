@@ -41,6 +41,7 @@ export default function ArtistDetailModal({ lead, onClose }) {
   const breakdown = getScoreBreakdown(lead);
 
   const releases = Array.isArray(lead.recentReleases) ? lead.recentReleases.slice(0, 5) : [];
+  const shows = Array.isArray(lead.tourHistory) ? lead.tourHistory : [];
   const venues = Array.isArray(lead.topVenues) ? lead.topVenues.slice(0, 3) : [];
   const social = lead.socialLinks || {};
   const links = [
@@ -162,6 +163,31 @@ export default function ArtistDetailModal({ lead, onClose }) {
                 <div className="modal-empty">No recent releases found.</div>
               )}
             </section>
+
+            {shows.length > 0 && (
+              <section className="modal-section">
+                <h4>
+                  Tour history <span className="section-count">{shows.length} shows</span>
+                </h4>
+                <div className="tour-history-scroll">
+                  <ul className="tour-history-list">
+                    {shows.map((sh, i) => (
+                      <li className="tour-row" key={`${sh.date}-${sh.venueName}-${i}`}>
+                        <span className="tour-row-date">{longDate(sh.date)}</span>
+                        <span className="tour-row-info">
+                          <span className="tour-row-venue">{sh.venueName || 'Unknown venue'}</span>
+                          {(sh.city || sh.country) && (
+                            <span className="tour-row-loc">
+                              {[sh.city, sh.country].filter(Boolean).join(', ')}
+                            </span>
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
 
             {venues.length > 0 && (
               <section className="modal-section">

@@ -154,7 +154,79 @@
         "indie pop — a preferred genre",
         "Independent label (Atlantic) — reachable via label"
       ],
-      "firstSeen": "2026-07-15T17:53:00.000Z"
+      "firstSeen": "2026-07-15T17:53:00.000Z",
+      "tourHistory": [
+        {
+          "date": "2026-07-12",
+          "venueName": "The Fillmore",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2026-07-09",
+          "venueName": "The Wiltern",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 1850
+        },
+        {
+          "date": "2026-06-28",
+          "venueName": "Roseland Theater",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": 1400
+        },
+        {
+          "date": "2026-06-21",
+          "venueName": "Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1800
+        },
+        {
+          "date": "2026-05-30",
+          "venueName": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "country": "United States",
+          "venueCapacity": 9525
+        },
+        {
+          "date": "2026-05-18",
+          "venueName": "Aragon Ballroom",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": 5000
+        },
+        {
+          "date": "2026-04-15",
+          "venueName": "Brooklyn Steel",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 1800
+        },
+        {
+          "date": "2026-03-22",
+          "venueName": "O2 Academy Brixton",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 4921
+        },
+        {
+          "date": "2026-02-11",
+          "venueName": "Fonda Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2025-11-04",
+          "venueName": "9:30 Club",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 1200
+        }
+      ]
     },
     {
       "rank": 2,
@@ -243,7 +315,37 @@
         "r&b — a preferred genre",
         "Independent label (Atlantic) — reachable via label"
       ],
-      "firstSeen": "2026-07-18T15:53:00.000Z"
+      "firstSeen": "2026-07-18T15:53:00.000Z",
+      "tourHistory": [
+        {
+          "date": "2026-06-30",
+          "venueName": "Brooklyn Steel",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 1800
+        },
+        {
+          "date": "2026-06-12",
+          "venueName": "The Fillmore",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2026-05-20",
+          "venueName": "Village Underground",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 700
+        },
+        {
+          "date": "2026-03-08",
+          "venueName": "The Fonda Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 1200
+        }
+      ]
     },
     {
       "rank": 3,

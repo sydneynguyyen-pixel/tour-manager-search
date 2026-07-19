@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+// Entry point for the seed-list manager CLI.
+// Usage: node bin/manage-seeds   (or)   npm run manage-seeds
+
+require('../src/cli/manage-seeds')
+  .run()
+  .catch((err) => {
+    console.error('manage-seeds failed:', err.message);
+    process.exit(1);
+  });

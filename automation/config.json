@@ -1,0 +1,84 @@
+{
+  "seedArtists": [
+    "d4vd",
+    "Seven Lions",
+    "Hannah Bahng",
+    "Jason Ross",
+    "Trivecta",
+    "Mitis",
+    "HALIENE",
+    "ARMNHMR",
+    "Wallows",
+    "070 Shake",
+    "Pierre Bourne",
+    "Wooli",
+    "William Black",
+    "Swae Lee",
+    "Rachel Chinouriri",
+    "Zacari",
+    "Blxst",
+    "Kai Wachi",
+    "RINI",
+    "Isabella Lovestory",
+    "Cheyenne Giles",
+    "Julianne By",
+    "Juelz",
+    "Frosttop",
+    "OsamaSon",
+    "Ski Mask the Slump God",
+    "Jordan Ward"
+  ],
+  "seedBatchSize": 8,
+  "lastBatchIndex": 0,
+  "genrePreferenceTiers": {
+    "tier1": {
+      "multiplier": 1.15,
+      "genres": [
+        "pop",
+        "indie pop",
+        "r&b",
+        "neo soul"
+      ]
+    },
+    "tier2": {
+      "multiplier": 1,
+      "genres": [
+        "hip-hop",
+        "bedroom pop",
+        "electronic",
+        "house",
+        "techno"
+      ]
+    },
+    "tier3": {
+      "multiplier": 0.95,
+      "genres": [
+        "rock",
+        "indie rock",
+        "folk",
+        "country",
+        "emo",
+        "soul",
+        "punk"
+      ]
+    },
+    "tier4": {
+      "multiplier": 0.92,
+      "genres": [
+        "k-pop",
+        "j-pop",
+        "bollywood",
+        "metal",
+        "classical",
+        "latin"
+      ]
+    }
+  },
+  "scoringThresholds": {
+    "minScore": 60,
+    "immediateOutreach": 85,
+    "venueMin": 300,
+    "venueMax": 5000
+  },
+  "lastUpdated": null
+}

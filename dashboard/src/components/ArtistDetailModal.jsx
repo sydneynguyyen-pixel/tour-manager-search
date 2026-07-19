@@ -82,8 +82,10 @@ export default function ArtistDetailModal({ lead, onClose }) {
                   <span className="pill genre" style={{ background: genreColor.background, color: genreColor.text }}>
                     {lead.genre || 'Unknown'}
                   </span>
-                  {lead.listeners != null && (
-                    <span className="pill listeners">{compactNumber(lead.listeners)} monthly listeners</span>
+                  {(lead.lastfmListeners ?? lead.listeners) != null && (
+                    <span className="pill listeners">
+                      {compactNumber(lead.lastfmListeners ?? lead.listeners)} monthly listeners
+                    </span>
                   )}
                   <span className={`meta-tier ${tier.tone}`}>{tier.label}</span>
                 </div>

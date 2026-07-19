@@ -24,7 +24,10 @@ function ReleaseThumb({ release }) {
 
 export default function ArtistCard({ lead, onSelect }) {
   const desc = lead.fitReasoning?.[0] || 'No summary available.';
-  const listeners = lead.listeners != null ? `${compactNumber(lead.listeners)} monthly listeners` : '—';
+  // Listener count now comes from Last.fm (lead.listeners is null post-Spotify);
+  // fall back to lead.listeners so the bundled mock still renders.
+  const listenerCount = lead.lastfmListeners ?? lead.listeners;
+  const listeners = listenerCount != null ? `${compactNumber(listenerCount)} monthly listeners` : '—';
   const releases = Array.isArray(lead.recentReleases) ? lead.recentReleases.slice(0, 5) : [];
   const genreColor = getGenreColor(lead.genre);
   const tier = getPriorityTier(lead.finalScore);

@@ -85,12 +85,34 @@ function buildReasoning(a, config) {
   return reasons;
 }
 
+// Map of artist name (lowercased) -> firstSeen ISO timestamp, read from the
+// existing leads.json so an artist's original firstSeen is preserved across runs
+// (it's only stamped the first time an artist appears). Missing file/field ->
+// empty map, so everyone in this run is treated as newly seen.
+function loadPriorFirstSeen(filePath = LEADS_PATH) {
+  try {
+    const prev = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    const map = new Map();
+    for (const l of prev.leads || []) {
+      if (l.artist && l.firstSeen) map.set(l.artist.toLowerCase(), l.firstSeen);
+    }
+    return map;
+  } catch {
+    return new Map();
+  }
+}
+
 // Build the full leads payload (metadata + stats + ranked leads) from scored,
 // filtered, sorted artists.
 function formatLeadsOutput(scoredArtists, config) {
+  const generatedAt = new Date().toISOString();
+  // Preserve each existing artist's original firstSeen; stamp new ones with now.
+  const priorFirstSeen = loadPriorFirstSeen();
+
   const leads = (scoredArtists || []).map((a, i) => ({
     rank: i + 1,
     artist: a.artist,
+    firstSeen: priorFirstSeen.get((a.artist || '').toLowerCase()) ?? generatedAt,
     spotifyId: a.spotifyId,
     deezerId: a.deezerId ?? null,
     mbid: a.mbid,
@@ -137,7 +159,7 @@ function formatLeadsOutput(scoredArtists, config) {
   };
 
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     genreTiers: config?.genrePreferenceTiers ?? null,
     totalLeads: leads.length,
     stats,

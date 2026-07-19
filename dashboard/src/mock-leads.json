@@ -1,0 +1,821 @@
+{
+  "generatedAt": "2026-07-18T17:53:00.000Z",
+  "genreTiers": {
+    "tier1": {
+      "multiplier": 1.15,
+      "genres": [
+        "pop",
+        "indie pop",
+        "r&b",
+        "neo soul"
+      ]
+    },
+    "tier2": {
+      "multiplier": 1,
+      "genres": [
+        "hip-hop",
+        "bedroom pop",
+        "electronic",
+        "house",
+        "techno"
+      ]
+    },
+    "tier3": {
+      "multiplier": 0.95,
+      "genres": [
+        "rock",
+        "indie rock",
+        "folk",
+        "country",
+        "emo",
+        "soul",
+        "punk"
+      ]
+    },
+    "tier4": {
+      "multiplier": 0.92,
+      "genres": [
+        "k-pop",
+        "j-pop",
+        "bollywood",
+        "metal",
+        "classical",
+        "latin"
+      ]
+    }
+  },
+  "totalLeads": 9,
+  "stats": {
+    "avgScore": 73,
+    "medianScore": 79,
+    "priorityBreakdown": {
+      "immediate": 2,
+      "high": 4,
+      "qualified": 3
+    }
+  },
+  "leads": [
+    {
+      "rank": 1,
+      "artist": "Wallows",
+      "spotifyId": "0jng7TAxdIPcUrfxAf1eDX",
+      "mbid": "18b3d4c6-9baa-4b4f-9c3b-3f7a6a1e4c2a",
+      "listeners": 8200000,
+      "releaseDate": "2026-06-19",
+      "releaseName": "Model (Deluxe)",
+      "genre": "indie pop",
+      "genreTier": 1,
+      "imageUrl": "https://picsum.photos/seed/wallows/400/500",
+      "recentReleases": [
+        {
+          "name": "Model (Deluxe)",
+          "imageUrl": "https://picsum.photos/seed/wallows-a1/200/200",
+          "releaseDate": "2026-06-19",
+          "releaseType": "album"
+        },
+        {
+          "name": "Your Apartment",
+          "imageUrl": "https://picsum.photos/seed/wallows-a2/200/200",
+          "releaseDate": "2026-05-30",
+          "releaseType": "single"
+        },
+        {
+          "name": "Anytime Always",
+          "imageUrl": "https://picsum.photos/seed/wallows-a3/200/200",
+          "releaseDate": "2026-05-02",
+          "releaseType": "single"
+        },
+        {
+          "name": "Calling After Me",
+          "imageUrl": "https://picsum.photos/seed/wallows-a4/200/200",
+          "releaseDate": "2026-04-15",
+          "releaseType": "single"
+        },
+        {
+          "name": "Tell Me That It's Over (Live)",
+          "imageUrl": "https://picsum.photos/seed/wallows-a5/200/200",
+          "releaseDate": "2026-03-28",
+          "releaseType": "album"
+        }
+      ],
+      "finalScore": 100,
+      "priority": "immediate",
+      "baseScore": 89,
+      "genreMultiplier": 1.15,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 18,
+        "likelihood": 8,
+        "growth": 13,
+        "baseScore": 89,
+        "genreMultiplier": 1.15,
+        "finalScore": 100
+      },
+      "tourCount": 6,
+      "avgVenueSize": 2400,
+      "topVenues": [
+        {
+          "name": "Alexandra Palace",
+          "capacity": 10400,
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        {
+          "name": "The Anthem",
+          "capacity": 6000,
+          "city": "Washington",
+          "country": "United States"
+        },
+        {
+          "name": "Hollywood Palladium",
+          "capacity": 3700,
+          "city": "Los Angeles",
+          "country": "United States"
+        }
+      ],
+      "countriesToured": 7,
+      "lastTourDate": "2026-05-28",
+      "managementType": "indie-label",
+      "contactName": "Dani Rojas",
+      "contactEmail": "management@wallowsmusic.com",
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://wallowsmusic.com/",
+      "socialLinks": {
+        "instagram": "https://instagram.com/wallowsmusic",
+        "twitter": "https://twitter.com/wallowsmusic",
+        "tiktok": "https://tiktok.com/@wallowsmusic"
+      },
+      "contactConfidence": "medium",
+      "fitReasoning": [
+        "Recent album (2026-06-19), already touring",
+        "6 tours in the past 18 months across 7 countries",
+        "Average venue size 2,400 cap (Matthew's touring scale)",
+        "indie pop — a preferred genre",
+        "Independent label (Atlantic) — reachable via label"
+      ],
+      "firstSeen": "2026-07-15T17:53:00.000Z"
+    },
+    {
+      "rank": 2,
+      "artist": "Ravyn Lenae",
+      "spotifyId": "1AhWDReByhWVR7DKklG5dj",
+      "mbid": "9d2a4e11-7c33-4a51-9b0e-1c2d3e4f5a6b",
+      "listeners": 2400000,
+      "releaseDate": "2026-06-15",
+      "releaseName": "Bird's Eye",
+      "genre": "r&b",
+      "genreTier": 1,
+      "imageUrl": "https://picsum.photos/seed/ravynlenae/400/500",
+      "recentReleases": [
+        {
+          "name": "Bird's Eye",
+          "imageUrl": "https://picsum.photos/seed/ravyn-a1/200/200",
+          "releaseDate": "2026-06-15",
+          "releaseType": "album"
+        },
+        {
+          "name": "Love Me Not",
+          "imageUrl": "https://picsum.photos/seed/ravyn-a2/200/200",
+          "releaseDate": "2026-05-20",
+          "releaseType": "single"
+        },
+        {
+          "name": "Genius",
+          "imageUrl": "https://picsum.photos/seed/ravyn-a3/200/200",
+          "releaseDate": "2026-04-22",
+          "releaseType": "single"
+        }
+      ],
+      "finalScore": 86,
+      "priority": "immediate",
+      "baseScore": 75,
+      "genreMultiplier": 1.15,
+      "scoring": {
+        "touring": 15,
+        "listeners": 25,
+        "accessibility": 18,
+        "likelihood": 8,
+        "growth": 9,
+        "baseScore": 75,
+        "genreMultiplier": 1.15,
+        "finalScore": 86
+      },
+      "tourCount": 2,
+      "avgVenueSize": 1200,
+      "topVenues": [
+        {
+          "name": "Brooklyn Steel",
+          "capacity": 1800,
+          "city": "Brooklyn",
+          "country": "United States"
+        },
+        {
+          "name": "The Fillmore",
+          "capacity": 1150,
+          "city": "San Francisco",
+          "country": "United States"
+        },
+        {
+          "name": "Village Underground",
+          "capacity": 700,
+          "city": "London",
+          "country": "United Kingdom"
+        }
+      ],
+      "countriesToured": 5,
+      "lastTourDate": "2026-06-01",
+      "managementType": "indie-label",
+      "contactName": "Aria Chen",
+      "contactEmail": "bookings@atlanticrecords.com",
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://ravynlenae.com",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null
+      },
+      "contactConfidence": "medium",
+      "fitReasoning": [
+        "Recent album (2026-06-15), already touring",
+        "2 tours in the past 18 months across 5 countries",
+        "Average venue size 1,200 cap (Matthew's touring scale)",
+        "r&b — a preferred genre",
+        "Independent label (Atlantic) — reachable via label"
+      ],
+      "firstSeen": "2026-07-18T15:53:00.000Z"
+    },
+    {
+      "rank": 3,
+      "artist": "Two Door Cinema Club",
+      "spotifyId": "600cMWKNvieHU8Ab0Mm7ci",
+      "mbid": "5d8a5ee5-9baa-4b4f-9c3b-2a1b3c4d5e6f",
+      "listeners": 5600000,
+      "releaseDate": "2026-06-05",
+      "releaseName": "Keep On Smiling",
+      "genre": "indie rock",
+      "genreTier": 3,
+      "imageUrl": "https://picsum.photos/seed/twodoor/400/500",
+      "recentReleases": [
+        {
+          "name": "Keep On Smiling",
+          "imageUrl": "https://picsum.photos/seed/tdcc-a1/200/200",
+          "releaseDate": "2026-06-05",
+          "releaseType": "album"
+        },
+        {
+          "name": "Sure Enough",
+          "imageUrl": "https://picsum.photos/seed/tdcc-a2/200/200",
+          "releaseDate": "2026-05-12",
+          "releaseType": "single"
+        },
+        {
+          "name": "Blue Light",
+          "imageUrl": "https://picsum.photos/seed/tdcc-a3/200/200",
+          "releaseDate": "2026-04-25",
+          "releaseType": "single"
+        },
+        {
+          "name": "Wonderful Life",
+          "imageUrl": "https://picsum.photos/seed/tdcc-a4/200/200",
+          "releaseDate": "2026-04-01",
+          "releaseType": "single"
+        },
+        {
+          "name": "Everybody's Cool",
+          "imageUrl": "https://picsum.photos/seed/tdcc-a5/200/200",
+          "releaseDate": "2026-03-15",
+          "releaseType": "single"
+        }
+      ],
+      "finalScore": 82,
+      "priority": "high",
+      "baseScore": 86,
+      "genreMultiplier": 0.95,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 15,
+        "likelihood": 8,
+        "growth": 13,
+        "baseScore": 86,
+        "genreMultiplier": 0.95,
+        "finalScore": 82
+      },
+      "tourCount": 8,
+      "avgVenueSize": 4200,
+      "topVenues": [
+        {
+          "name": "Alexandra Palace",
+          "capacity": 10400,
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        {
+          "name": "Red Rocks Amphitheatre",
+          "capacity": 9525,
+          "city": "Morrison",
+          "country": "United States"
+        },
+        {
+          "name": "Zénith Paris",
+          "capacity": 6300,
+          "city": "Paris",
+          "country": "France"
+        }
+      ],
+      "countriesToured": 9,
+      "lastTourDate": "2026-06-18",
+      "managementType": "indie-booking",
+      "contactName": "Sam Okafor",
+      "contactEmail": "tours@codaagency.com",
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://twodoorcinemaclub.com",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null
+      },
+      "contactConfidence": "medium",
+      "fitReasoning": [
+        "Recent album (2026-06-05), already touring",
+        "8 tours in the past 18 months across 9 countries",
+        "Average venue size 4,200 cap (Matthew's touring scale)",
+        "indie rock — a lower-preference genre",
+        "Booking-agency contact available"
+      ],
+      "firstSeen": "2026-07-18T12:53:00.000Z"
+    },
+    {
+      "rank": 4,
+      "artist": "Sierra Ferrell",
+      "spotifyId": "1lKZbNQnbUKKmvfB6t3zoy",
+      "mbid": "6a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+      "listeners": 1700000,
+      "releaseDate": "2026-07-01",
+      "releaseName": "Trail of Flowers",
+      "genre": "country",
+      "genreTier": 3,
+      "imageUrl": "https://picsum.photos/seed/sierraferrell/400/500",
+      "recentReleases": [
+        {
+          "name": "Trail of Flowers",
+          "imageUrl": "https://picsum.photos/seed/sierra-a1/200/200",
+          "releaseDate": "2026-07-01",
+          "releaseType": "album"
+        },
+        {
+          "name": "Dollar Bill Bar",
+          "imageUrl": "https://picsum.photos/seed/sierra-a2/200/200",
+          "releaseDate": "2026-06-10",
+          "releaseType": "single"
+        },
+        {
+          "name": "American Dreaming",
+          "imageUrl": "https://picsum.photos/seed/sierra-a3/200/200",
+          "releaseDate": "2026-05-18",
+          "releaseType": "single"
+        }
+      ],
+      "finalScore": 80,
+      "priority": "high",
+      "baseScore": 84,
+      "genreMultiplier": 0.95,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 20,
+        "likelihood": 8,
+        "growth": 6,
+        "baseScore": 84,
+        "genreMultiplier": 0.95,
+        "finalScore": 80
+      },
+      "tourCount": 3,
+      "avgVenueSize": 2500,
+      "topVenues": [
+        {
+          "name": "Ryman Auditorium",
+          "capacity": 2362,
+          "city": "Nashville",
+          "country": "United States"
+        },
+        {
+          "name": "9:30 Club",
+          "capacity": 1200,
+          "city": "Washington",
+          "country": "United States"
+        },
+        {
+          "name": "The Fillmore",
+          "capacity": 1150,
+          "city": "San Francisco",
+          "country": "United States"
+        }
+      ],
+      "countriesToured": 2,
+      "lastTourDate": "2026-06-20",
+      "managementType": "self-managed",
+      "contactName": null,
+      "contactEmail": "booking@sierraferrell.com",
+      "contactSource": "website",
+      "websiteUrl": "https://sierraferrell.com",
+      "socialLinks": {
+        "instagram": "https://instagram.com/sierraferrellmusic",
+        "twitter": null,
+        "tiktok": "https://tiktok.com/@sierraferrell"
+      },
+      "contactConfidence": "high",
+      "fitReasoning": [
+        "Recent album (2026-07-01), already touring",
+        "3 tours in the past 18 months across 2 countries",
+        "Average venue size 2,500 cap (Matthew's touring scale)",
+        "country — a lower-preference genre",
+        "Self-managed — direct outreach possible"
+      ],
+      "firstSeen": "2026-07-13T17:53:00.000Z"
+    },
+    {
+      "rank": 5,
+      "artist": "Jamie xx",
+      "spotifyId": "5nki7yBRhkyRZWQpJ3JR5w",
+      "mbid": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "listeners": 4100000,
+      "releaseDate": "2026-04-10",
+      "releaseName": "In Waves",
+      "genre": "electronic",
+      "genreTier": 2,
+      "imageUrl": "https://picsum.photos/seed/jamiexx/400/500",
+      "recentReleases": [
+        {
+          "name": "In Waves",
+          "imageUrl": "https://picsum.photos/seed/jamie-a1/200/200",
+          "releaseDate": "2026-04-10",
+          "releaseType": "album"
+        },
+        {
+          "name": "Baddy On the Floor",
+          "imageUrl": "https://picsum.photos/seed/jamie-a2/200/200",
+          "releaseDate": "2026-03-20",
+          "releaseType": "single"
+        },
+        {
+          "name": "Treat Each Other Right",
+          "imageUrl": null,
+          "releaseDate": "2026-02-28",
+          "releaseType": "single"
+        },
+        {
+          "name": "Life",
+          "imageUrl": "https://picsum.photos/seed/jamie-a4/200/200",
+          "releaseDate": "2026-02-05",
+          "releaseType": "single"
+        }
+      ],
+      "finalScore": 79,
+      "priority": "high",
+      "baseScore": 79,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 20,
+        "accessibility": 15,
+        "likelihood": 6,
+        "growth": 13,
+        "baseScore": 79,
+        "genreMultiplier": 1,
+        "finalScore": 79
+      },
+      "tourCount": 5,
+      "avgVenueSize": 6800,
+      "topVenues": [
+        {
+          "name": "The O2 Arena",
+          "capacity": 20000,
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        {
+          "name": "Brooklyn Mirage",
+          "capacity": 6000,
+          "city": "Brooklyn",
+          "country": "United States"
+        },
+        {
+          "name": "Printworks",
+          "capacity": 5000,
+          "city": "London",
+          "country": "United Kingdom"
+        }
+      ],
+      "countriesToured": 6,
+      "lastTourDate": "2026-03-15",
+      "managementType": "indie-booking",
+      "contactName": "Leo Marsh",
+      "contactEmail": "info@youngturks.com",
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://jamiexx.com",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": "https://twitter.com/jamie_xx",
+        "tiktok": null
+      },
+      "contactConfidence": "medium",
+      "fitReasoning": [
+        "Recent album (2026-04-10), already touring",
+        "5 tours in the past 18 months across 6 countries",
+        "Average venue size 6,800 cap",
+        "electronic — a neutral-fit genre",
+        "Booking-agency contact available"
+      ],
+      "firstSeen": "2026-07-18T09:53:00.000Z"
+    },
+    {
+      "rank": 6,
+      "artist": "Smino",
+      "spotifyId": "0ptlfJfha0feE2fUf9Gval",
+      "mbid": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "listeners": 3300000,
+      "releaseDate": "2026-06-10",
+      "releaseName": "Maybe in Nirvana",
+      "genre": "hip-hop",
+      "genreTier": 2,
+      "imageUrl": "https://picsum.photos/seed/smino/400/500",
+      "recentReleases": [
+        {
+          "name": "Maybe in Nirvana",
+          "imageUrl": "https://picsum.photos/seed/smino-a1/200/200",
+          "releaseDate": "2026-06-10",
+          "releaseType": "album"
+        },
+        {
+          "name": "Pro Freak",
+          "imageUrl": "https://picsum.photos/seed/smino-a2/200/200",
+          "releaseDate": "2026-05-22",
+          "releaseType": "single"
+        },
+        {
+          "name": "No L's",
+          "imageUrl": "https://picsum.photos/seed/smino-a3/200/200",
+          "releaseDate": "2026-04-30",
+          "releaseType": "single"
+        },
+        {
+          "name": "Ole Ass Kendrick",
+          "imageUrl": "https://picsum.photos/seed/smino-a4/200/200",
+          "releaseDate": "2026-04-05",
+          "releaseType": "single"
+        }
+      ],
+      "finalScore": 75,
+      "priority": "high",
+      "baseScore": 75,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 8,
+        "likelihood": 8,
+        "growth": 9,
+        "baseScore": 75,
+        "genreMultiplier": 1,
+        "finalScore": 75
+      },
+      "tourCount": 4,
+      "avgVenueSize": 3500,
+      "topVenues": [
+        {
+          "name": "Radio City Music Hall",
+          "capacity": 6015,
+          "city": "New York",
+          "country": "United States"
+        },
+        {
+          "name": "The Fillmore",
+          "capacity": 3500,
+          "city": "Philadelphia",
+          "country": "United States"
+        },
+        {
+          "name": "The Novo",
+          "capacity": 2300,
+          "city": "Los Angeles",
+          "country": "United States"
+        }
+      ],
+      "countriesToured": 6,
+      "lastTourDate": "2026-06-12",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://smino.com",
+      "socialLinks": {
+        "instagram": "https://instagram.com/smino",
+        "twitter": "https://twitter.com/smino",
+        "tiktok": null
+      },
+      "contactConfidence": "low",
+      "fitReasoning": [
+        "Recent album (2026-06-10), already touring",
+        "4 tours in the past 18 months across 6 countries",
+        "Average venue size 3,500 cap (Matthew's touring scale)",
+        "hip-hop — a neutral-fit genre",
+        "Major label (Motown) — likely represented, harder to reach"
+      ],
+      "firstSeen": "2026-07-18T16:53:00.000Z"
+    },
+    {
+      "rank": 7,
+      "artist": "Hovvdy",
+      "spotifyId": "6Pz8Hj7Nf7hRZfN9F4Q0Nx",
+      "mbid": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "listeners": 780000,
+      "releaseDate": "2026-03-01",
+      "releaseName": "Hovvdy",
+      "genre": "folk",
+      "genreTier": 3,
+      "imageUrl": "https://picsum.photos/seed/hovvdy/400/500",
+      "recentReleases": [],
+      "finalScore": 68,
+      "priority": "qualified",
+      "baseScore": 72,
+      "genreMultiplier": 0.95,
+      "scoring": {
+        "touring": 15,
+        "listeners": 25,
+        "accessibility": 20,
+        "likelihood": 6,
+        "growth": 6,
+        "baseScore": 72,
+        "genreMultiplier": 0.95,
+        "finalScore": 68
+      },
+      "tourCount": 1,
+      "avgVenueSize": 550,
+      "topVenues": [
+        {
+          "name": "Bowery Ballroom",
+          "capacity": 575,
+          "city": "New York",
+          "country": "United States"
+        },
+        {
+          "name": "The Echo",
+          "capacity": 350,
+          "city": "Los Angeles",
+          "country": "United States"
+        }
+      ],
+      "countriesToured": 1,
+      "lastTourDate": "2026-02-14",
+      "managementType": "self-managed",
+      "contactName": null,
+      "contactEmail": "hovvdyband@gmail.com",
+      "contactSource": "website",
+      "websiteUrl": "https://hovvdy.com",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null
+      },
+      "contactConfidence": "high",
+      "fitReasoning": [
+        "Recent release (2026-03-01)",
+        "1 tour in the past 18 months across 1 country",
+        "Average venue size 550 cap (Matthew's touring scale)",
+        "folk — a lower-preference genre",
+        "Self-managed — direct outreach possible"
+      ],
+      "firstSeen": "2026-07-18T07:53:00.000Z"
+    },
+    {
+      "rank": 8,
+      "artist": "Rina Sawayama",
+      "spotifyId": "2i0AUcEnsDcnfa9Nd6Wen1",
+      "mbid": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "listeners": 1900000,
+      "releaseDate": "2026-03-10",
+      "releaseName": "Hold the Girl (Reissue)",
+      "genre": "k-pop",
+      "genreTier": 4,
+      "imageUrl": "https://picsum.photos/seed/rinasawayama/400/500",
+      "recentReleases": [
+        {
+          "name": "Hold the Girl (Reissue)",
+          "imageUrl": "https://picsum.photos/seed/rina-a1/200/200",
+          "releaseDate": "2026-03-10",
+          "releaseType": "album"
+        }
+      ],
+      "finalScore": 58,
+      "priority": "qualified",
+      "baseScore": 63,
+      "genreMultiplier": 0.92,
+      "scoring": {
+        "touring": 15,
+        "listeners": 25,
+        "accessibility": 8,
+        "likelihood": 6,
+        "growth": 9,
+        "baseScore": 63,
+        "genreMultiplier": 0.92,
+        "finalScore": 58
+      },
+      "tourCount": 2,
+      "avgVenueSize": 3800,
+      "topVenues": [
+        {
+          "name": "Eventim Apollo",
+          "capacity": 5039,
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        {
+          "name": "O2 Academy Brixton",
+          "capacity": 4921,
+          "city": "London",
+          "country": "United Kingdom"
+        },
+        {
+          "name": "Terminal 5",
+          "capacity": 3000,
+          "city": "New York",
+          "country": "United States"
+        }
+      ],
+      "countriesToured": 8,
+      "lastTourDate": "2026-02-05",
+      "managementType": "major-agency",
+      "contactName": "WME (Kirk Sommer)",
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://rinasawayama.com",
+      "socialLinks": {
+        "instagram": "https://instagram.com/rinasonline",
+        "twitter": null,
+        "tiktok": "https://tiktok.com/@rinasawayama"
+      },
+      "contactConfidence": "low",
+      "fitReasoning": [
+        "Recent release (2026-03-10)",
+        "2 tours in the past 18 months across 8 countries",
+        "Average venue size 3,800 cap (Matthew's touring scale)",
+        "k-pop — a lower-preference genre",
+        "Major agency (WME (Kirk Sommer)) — cold email unlikely to land"
+      ],
+      "firstSeen": "2026-07-06T17:53:00.000Z"
+    },
+    {
+      "rank": 9,
+      "artist": "Spiritbox",
+      "spotifyId": "3Kpg6y7mV8xGmH0N8mZ2Qa",
+      "mbid": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+      "listeners": 1100000,
+      "releaseDate": null,
+      "releaseName": null,
+      "genre": "metal",
+      "genreTier": 4,
+      "imageUrl": null,
+      "recentReleases": [],
+      "finalScore": 27,
+      "priority": "qualified",
+      "baseScore": 29,
+      "genreMultiplier": 0.92,
+      "scoring": {
+        "touring": 2,
+        "listeners": 15,
+        "accessibility": 10,
+        "likelihood": 0,
+        "growth": 2,
+        "baseScore": 29,
+        "genreMultiplier": 0.92,
+        "finalScore": 27
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null
+      },
+      "contactConfidence": "low",
+      "fitReasoning": [
+        "No recent release detected",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "metal — a lower-preference genre",
+        "Management contact not found — accessibility unverified"
+      ],
+      "firstSeen": "2026-06-28T17:53:00.000Z"
+    }
+  ]
+}

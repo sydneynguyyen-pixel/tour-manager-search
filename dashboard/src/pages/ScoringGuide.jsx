@@ -1,6 +1,6 @@
 // Static explainer page for how lead scores are calculated. Reached at
-// /scoring-guide via the "Scoring guide" button in the header (see
-// components/ScoreLegend.jsx). Content is fixed copy, not derived from data.
+// /scoring-guide via the header's info menu (see components/InfoMenu.jsx).
+// Content is fixed copy, not derived from data.
 
 import { Link } from 'react-router-dom';
 

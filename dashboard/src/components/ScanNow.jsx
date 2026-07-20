@@ -1,79 +1,120 @@
-// "Next scan" time + manual "Scan now" trigger, shown in the header next to
-// "Last updated". Scan now calls the trigger-scan Netlify function, which
-// dispatches the weekly-scrape GitHub Actions workflow on demand.
+// "Next scan" time + "Scan now" primary CTA, shown in the header. Clicking
+// the CTA opens a prep modal explaining what a scan does rather than firing
+// immediately; confirming calls the trigger-scan Netlify function (which
+// dispatches the weekly-scrape GitHub Actions workflow on demand) and marks
+// a scan pending via lib/scanState.js.
 //
-// Double-trigger protection is client-side only (button disabled for a
-// cooldown after a click) — this is a two-person tool, so no server-side
-// rate limiting. The cooldown deadline is persisted to localStorage so a
-// page refresh during the cooldown doesn't re-enable the button.
+// The button disables itself while a scan is pending (rather than a fixed
+// cooldown) — see ScanPendingBanner.jsx, mounted at the app root, for the
+// persistent "in progress" indicator and completion detection that drives
+// this same shared state.
 
 import { useEffect, useState } from 'react';
 import { getNextScanDate, formatNextScan } from '../lib/nextScan';
-
-const COOLDOWN_MS = 5 * 60 * 1000;
-const COOLDOWN_KEY = 'scanNowCooldownUntil';
-
-function readCooldownUntil() {
-  try {
-    const raw = localStorage.getItem(COOLDOWN_KEY);
-    const ts = raw ? Number(raw) : 0;
-    return ts > Date.now() ? ts : 0;
-  } catch {
-    return 0;
-  }
-}
-
-function writeCooldownUntil(ts) {
-  try {
-    localStorage.setItem(COOLDOWN_KEY, String(ts));
-  } catch {
-    // Storage unavailable — cooldown just won't survive a refresh.
-  }
-}
+import { useScanPending, startScanPending, SCAN_TIMEOUT_MS } from '../lib/scanState';
 
 export default function ScanNow() {
-  const [cooldownUntil, setCooldownUntil] = useState(readCooldownUntil);
-  const [status, setStatus] = useState(null); // null | 'starting' | 'started' | 'error'
-  const disabled = status === 'starting' || cooldownUntil > Date.now();
+  const pending = useScanPending();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [starting, setStarting] = useState(false);
+  const [error, setError] = useState(null);
 
-  // Tick every second while on cooldown so the button re-enables itself
-  // without needing a page refresh.
+  // Ticks while a scan is pending so `inProgress` flips to false once the
+  // timeout elapses on its own, without needing a page refresh.
+  const [, forceTick] = useState(0);
   useEffect(() => {
-    if (!cooldownUntil) return undefined;
-    const id = setInterval(() => {
-      if (cooldownUntil <= Date.now()) setCooldownUntil(0);
-    }, 1000);
+    if (!pending) return undefined;
+    const id = setInterval(() => forceTick((n) => n + 1), 30_000);
     return () => clearInterval(id);
-  }, [cooldownUntil]);
+  }, [pending]);
 
+  useEffect(() => {
+    if (!modalOpen) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape' && !starting) setModalOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [modalOpen, starting]);
+
+  const elapsed = pending ? Date.now() - new Date(pending.startedAt).getTime() : 0;
+  const inProgress = !!pending && elapsed < SCAN_TIMEOUT_MS;
   const nextScan = formatNextScan(getNextScanDate());
 
-  async function handleScanNow() {
-    setStatus('starting');
+  async function handleConfirm() {
+    setStarting(true);
+    setError(null);
     try {
       const res = await fetch('/.netlify/functions/trigger-scan', { method: 'POST' });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.success) throw new Error(json.error || `HTTP ${res.status}`);
-      setStatus('started');
-      const until = Date.now() + COOLDOWN_MS;
-      setCooldownUntil(until);
-      writeCooldownUntil(until);
+      startScanPending();
+      setModalOpen(false);
     } catch (err) {
-      setStatus('error');
-      console.error('Scan now failed:', err.message);
+      setError(err.message);
+    } finally {
+      setStarting(false);
     }
   }
 
+  function closeModal() {
+    if (starting) return;
+    setModalOpen(false);
+    setError(null);
+  }
+
   return (
-    <div className="scan-now">
+    <div className="scan-now-group">
       <span className="next-scan">Next scan: {nextScan}</span>
-      <button type="button" className="legend-btn" onClick={handleScanNow} disabled={disabled}>
-        {status === 'starting' ? 'Starting…' : 'Scan now'}
+      <button
+        type="button"
+        className="scan-cta"
+        onClick={() => setModalOpen(true)}
+        disabled={inProgress}
+      >
+        {inProgress ? 'Scan in progress…' : 'Scan now'}
       </button>
-      {status === 'started' && (
-        <span className="scan-status scan-status-ok">Scan started — new leads will appear in a few minutes.</span>
+
+      {modalOpen && (
+        <div className="modal-overlay" onClick={closeModal} role="presentation">
+          <div
+            className="modal scan-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Start a scan"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="modal-close" onClick={closeModal} aria-label="Close" disabled={starting}>
+              ✕
+            </button>
+
+            <h3 className="scan-modal-title">Start a new scan?</h3>
+            <p className="scan-modal-copy">
+              This checks for new artists based on who you&rsquo;ve worked with, and re-checks
+              recent activity on artists already in your feed.
+            </p>
+            <p className="scan-modal-duration">Usually takes a few minutes.</p>
+
+            {error && (
+              <p className="scan-modal-error">Couldn&rsquo;t start scan — {error}. Try again.</p>
+            )}
+
+            <div className="scan-modal-actions">
+              <button type="button" className="pf-btn-ghost" onClick={closeModal} disabled={starting}>
+                Cancel
+              </button>
+              <button type="button" className="scan-cta" onClick={handleConfirm} disabled={starting}>
+                {starting ? 'Starting…' : 'Start scan'}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
-      {status === 'error' && <span className="scan-status scan-status-error">Couldn't start scan — try again.</span>}
     </div>
   );
 }

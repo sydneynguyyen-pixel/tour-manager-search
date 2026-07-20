@@ -15,6 +15,7 @@ import { getPriorityTier } from '../utils/scoreExplanations';
 import { getArtistSubtitle } from '../utils/artistSubtitle';
 import { leadRoute } from '../lib/savedArtists';
 import BookmarkButton from './BookmarkButton';
+import DismissButton from './DismissButton';
 
 // Small square album-art thumbnail with a hover/focus tooltip (name + date).
 // Falls back to a gray square when a release has no artwork.
@@ -53,6 +54,7 @@ export default function ArtistCard({ lead, hideScore = false, route = null }) {
 
   return (
     <div className="artist-card-wrap">
+      {!hideScore && <DismissButton lead={lead} />}
       {!hideScore && <BookmarkButton lead={lead} />}
       <button className="artist-card" onClick={() => navigate(dest)} type="button">
         <div className="card-body">

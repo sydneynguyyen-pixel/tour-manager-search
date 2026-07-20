@@ -8,14 +8,16 @@ import ArtistDetail from './pages/ArtistDetail';
 import ScoringGuide from './pages/ScoringGuide';
 import FAQ from './pages/FAQ';
 import Settings from './pages/Settings';
-import ScoreLegend from './components/ScoreLegend';
-import FaqLink from './components/FaqLink';
-import SettingsLink from './components/SettingsLink';
+import GenrePreferences from './pages/GenrePreferences';
+import DismissedArtists from './pages/DismissedArtists';
+import InfoMenu from './components/InfoMenu';
 import SavedArtists from './components/SavedArtists';
 import MyArtists from './components/MyArtists';
 import WeeklyHighlight from './components/WeeklyHighlight';
 import ScanNow from './components/ScanNow';
-import { useSavedArtists } from './lib/savedArtists';
+import ScanPendingBanner from './components/ScanPendingBanner';
+import { useSavedArtists, leadId } from './lib/savedArtists';
+import { useDismissedArtists } from './lib/dismissedArtists';
 import {
   LoadingState,
   EmptyState,
@@ -73,36 +75,44 @@ export default function App() {
     return () => clearInterval(id);
   }, [load]);
 
-  const leads = data?.leads ?? [];
+  const allLeads = data?.leads ?? [];
+  const dismissed = useDismissedArtists();
+  const dismissedIds = useMemo(() => new Set(dismissed.map((d) => d.id)), [dismissed]);
+  const leads = dismissedIds.size === 0 ? allLeads : allLeads.filter((lead) => !dismissedIds.has(leadId(lead)));
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Dashboard
-            data={data}
-            status={status}
-            error={error}
-            leads={leads}
-            filters={filters}
-            setFilters={setFilters}
-            tab={tab}
-            setTab={setTab}
-            onRetry={() => {
-              setStatus('loading');
-              load(false);
-            }}
-          />
-        }
-      />
-      <Route path="/artist/:id" element={<ArtistDetail leads={leads} />} />
-      <Route path="/my-artists/:id" element={<ArtistDetail source="myArtists" hideScore />} />
-      <Route path="/scoring-guide" element={<ScoringGuide />} />
-      <Route path="/faq" element={<FAQ />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <>
+      <ScanPendingBanner generatedAt={data?.generatedAt} onRefreshNow={() => load(false)} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Dashboard
+              data={data}
+              status={status}
+              error={error}
+              leads={leads}
+              filters={filters}
+              setFilters={setFilters}
+              tab={tab}
+              setTab={setTab}
+              onRetry={() => {
+                setStatus('loading');
+                load(false);
+              }}
+            />
+          }
+        />
+        <Route path="/artist/:id" element={<ArtistDetail leads={leads} />} />
+        <Route path="/my-artists/:id" element={<ArtistDetail source="myArtists" hideScore />} />
+        <Route path="/scoring-guide" element={<ScoringGuide />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings/genres" element={<GenrePreferences />} />
+        <Route path="/settings/dismissed" element={<DismissedArtists />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   );
 }
 
@@ -115,9 +125,7 @@ function Dashboard({ data, status, error, leads, filters, setFilters, tab, setTa
       <header className="top-bar">
         <img className="brand-mark" src="/tourfinder-icon-horizontal.webp" alt="Tour Finder" />
         <div className="top-bar-right">
-          <ScoreLegend />
-          <FaqLink />
-          <SettingsLink />
+          <InfoMenu />
           <ScanNow />
           {data?.generatedAt && (
             <div className="last-updated">

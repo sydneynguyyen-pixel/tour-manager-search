@@ -41,6 +41,7 @@ import {
   VenueIcon,
 } from '../components/Icons';
 import BookmarkButton from '../components/BookmarkButton';
+import DismissButton from '../components/DismissButton';
 
 const LEAD_TABS = [
   { key: 'overview', label: 'Overview' },
@@ -166,7 +167,12 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
     <div className="detail-page">
       <div className="detail-topbar">
         <BackLink toMyArtists={isMyArtist} />
-        {!hideScore && <BookmarkButton lead={lead} className="on-detail" />}
+        {!hideScore && (
+          <div className="detail-topbar-actions">
+            <DismissButton lead={lead} className="on-detail" />
+            <BookmarkButton lead={lead} className="on-detail" />
+          </div>
+        )}
       </div>
 
       {/* ---- HERO ---- */}

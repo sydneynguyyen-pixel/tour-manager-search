@@ -1,7 +1,7 @@
 // Static explainer page for how the tool works day-to-day — feed timing,
 // where leads come from, Leads vs My Artists, contact info gaps, genre
 // nudges. For how scores are calculated, see ScoringGuide.jsx (/scoring-guide).
-// Reached at /faq via the "FAQ" button in the header (see components/FaqLink.jsx).
+// Reached at /faq via the header's info menu (see components/InfoMenu.jsx).
 
 import { Link } from 'react-router-dom';
 
@@ -44,8 +44,19 @@ export default function FAQ() {
             threshold (see the <Link to="/scoring-guide">Scoring Guide</Link> for how that's
             calculated), they may already be logged in your My Artists (which automatically
             excludes them from Leads — no reason to get a "lead" on someone you already work
-            with), or their touring signal simply changed (e.g., they announced a tour, which
-            changes their timing score).
+            with), their touring signal simply changed (e.g., they announced a tour, which
+            changes their timing score), or you dismissed them (see{' '}
+            <Link to="/settings/dismissed">Settings → Dismissed Artists</Link> to check and undo).
+          </p>
+        </section>
+
+        <section className="guide-section">
+          <h2>What does "Not Interested" do?</h2>
+          <p>
+            Tap the eye icon on any lead to hide it — maybe they're too mainstream, not your
+            genre, or just not a fit right now. Dismissed artists won't show up again, even in
+            future scans. You can see everything you've dismissed (and undo any of them) in{' '}
+            <Link to="/settings/dismissed">Settings → Dismissed Artists</Link>.
           </p>
         </section>
 

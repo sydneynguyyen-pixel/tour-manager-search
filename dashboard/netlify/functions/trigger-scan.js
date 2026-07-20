@@ -8,7 +8,8 @@
 // GitHub before relying on this endpoint.
 //
 // No server-side rate limiting here by design — this is a two-person tool;
-// double-trigger protection is a client-side button disable (see App.jsx).
+// double-trigger protection is client-side, driven by the pending-scan state
+// in src/lib/scanState.js (see components/ScanNow.jsx).
 
 const REPO_OWNER = 'sydneynguyyen-pixel';
 const REPO_NAME = 'tour-manager-search';

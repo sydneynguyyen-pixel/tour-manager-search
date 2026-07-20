@@ -15,11 +15,17 @@ const LOOKBACK_DAYS = 60;
 const TOUR_MONTHS_BACK = 18;
 const DISCOVERY_LIMIT_PER_SEED = 5;
 // New candidates actually processed per run, after dedup against My Artists
-// and leads.json. 40 is sized off the observed ~23% end-to-end conversion rate
-// (discovery candidate -> scored lead) to reliably yield 7-10 new leads/week,
-// with buffer for week-to-week variance. Overridable for one-off larger runs
-// (e.g. the initial backfill) via env var.
-const MAX_NEW_CANDIDATES_PER_RUN = Number(process.env.MAX_NEW_CANDIDATES_PER_RUN) || 40;
+// and leads.json. Real measured conversion (discovery candidate -> scored
+// lead) is ~10-16% release-hit-rate at the Deezer gate, times a further
+// ~50-65% score-pass-rate on the survivors — roughly 10% end-to-end, not the
+// originally-assumed 23%. 80 is sized off that real rate to reliably yield
+// 7-10 new leads/week. Deezer has no auth/quota, so this costs only ~1-2 extra
+// minutes of runtime; Setlist.fm (the rate-limited stage) only ever sees the
+// small subset that clears the Deezer gate, so raising this doesn't increase
+// 429 risk there. A run naturally processes fewer than this if the deduped
+// pool itself is smaller (see "capped at N (M available)" in the logs).
+// Overridable for one-off larger runs (e.g. the initial backfill) via env var.
+const MAX_NEW_CANDIDATES_PER_RUN = Number(process.env.MAX_NEW_CANDIDATES_PER_RUN) || 80;
 
 async function main() {
   logger.info('Starting tour manager search automation...');
@@ -78,7 +84,30 @@ async function main() {
 
   // Stage 1 — Deezer: recent releases for this run's candidates (no auth,
   // no quota; replaces the former Spotify stage).
-  const releases = await scrapeDeezerNewReleases(seedArtists, LOOKBACK_DAYS);
+  const releasesRaw = await scrapeDeezerNewReleases(seedArtists, LOOKBACK_DAYS);
+
+  // Re-check against leads.json using Deezer's own resolved artist name, not
+  // just the pre-Deezer discovery name deduped above. Deezer's search can
+  // canonicalize a candidate to a spelling/punctuation that differs from the
+  // discovery-stage name (e.g. Last.fm's "Griff" resolving to Deezer's
+  // "GRiFF!") — when that resolved name matches an existing lead, the earlier
+  // dedup silently misses it, and the same already-known artist gets
+  // reprocessed (and pointlessly re-queried against Setlist.fm/enrichment)
+  // every run. Catching it here also saves those wasted downstream calls.
+  const alreadyLeadResolved = new Set(loadLeadArtistNames().map(normalizeName));
+  const releases = [];
+  const resolvedDupeNames = [];
+  for (const r of releasesRaw) {
+    if (alreadyLeadResolved.has(normalizeName(r.artist))) resolvedDupeNames.push(r.artist);
+    else releases.push(r);
+  }
+  if (resolvedDupeNames.length > 0) {
+    logger.info(
+      `Deezer: dropped ${resolvedDupeNames.length} candidate(s) already a known lead under ` +
+        `Deezer's resolved name — ${resolvedDupeNames.join(', ')}`
+    );
+  }
+
   const uniqueArtists = new Set(releases.map((r) => r.deezerId)).size;
   logger.count('Artists with recent releases', uniqueArtists);
   logger.count('Total releases', releases.length);

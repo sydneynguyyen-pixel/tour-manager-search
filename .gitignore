@@ -19,3 +19,9 @@ automation/data/history/
 
 # Scraped business contacts (may contain emails) — not committed
 automation/data/contact-cache.json
+
+# macOS
+.DS_Store
+
+# Throwaway test harness output (see automation/src/test-non-spotify-pipeline.js)
+automation/data/test-non-spotify-results.json

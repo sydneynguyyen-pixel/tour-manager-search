@@ -14,6 +14,7 @@ import DismissedArtists from './pages/DismissedArtists';
 import InfoMenu from './components/InfoMenu';
 import SavedArtists from './components/SavedArtists';
 import MyArtists from './components/MyArtists';
+import TourAnnouncements from './components/TourAnnouncements';
 import WeeklyHighlight from './components/WeeklyHighlight';
 import ScanNow from './components/ScanNow';
 import ScanPendingBanner from './components/ScanPendingBanner';
@@ -48,7 +49,7 @@ export default function App() {
   // Filters + active tab live here (above the router) so they survive a trip
   // into an artist detail page and back.
   const [filters, setFilters] = useState({ ...DEFAULT_FILTERS });
-  const [tab, setTab] = useState('leads'); // 'leads' | 'saved' | 'myArtists'
+  const [tab, setTab] = useState('leads'); // 'leads' | 'saved' | 'myArtists' | 'announcements'
   // Per-run scan summary (automation/src/scan-result.js) — polled alongside
   // leads.json so ScanPendingBanner can detect completion even on a
   // 0-new-lead run, when leads.json itself never changes.
@@ -140,6 +141,7 @@ export default function App() {
         />
         <Route path="/artist/:id" element={<ArtistDetail leads={leads} />} />
         <Route path="/my-artists/:id" element={<ArtistDetail source="myArtists" hideScore />} />
+        <Route path="/tour-announcements/:id" element={<ArtistDetail source="announcements" hideScore />} />
         <Route path="/scoring-guide" element={<ScoringGuide />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/data-sources" element={<DataSources />} />
@@ -203,10 +205,20 @@ function Dashboard({ data, status, error, leads, filters, setFilters, tab, setTa
         >
           My Artists
         </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'announcements'}
+          className={tab === 'announcements' ? 'active' : ''}
+          onClick={() => setTab('announcements')}
+        >
+          Tour Announcements
+        </button>
       </nav>
 
       {tab === 'saved' && <SavedArtists />}
       {tab === 'myArtists' && <MyArtists />}
+      {tab === 'announcements' && <TourAnnouncements />}
 
       {tab === 'leads' && (
         <>

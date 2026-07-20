@@ -33,6 +33,13 @@ export const GITHUB_RAW_SCAN_HISTORY_URL =
   'https://raw.githubusercontent.com/sydneynguyyen-pixel/tour-manager-search/main/automation/data/scan-history.json';
 export const LOCAL_SCAN_HISTORY_URL = '/scan-history.json';
 
+// Same pattern, for the neutral cross-artist Tour Announcements feed
+// (automation/build-tour-announcements.js). Served in dev by the
+// serve-tour-announcements plugin in vite.config.js.
+export const GITHUB_RAW_TOUR_ANNOUNCEMENTS_URL =
+  'https://raw.githubusercontent.com/sydneynguyyen-pixel/tour-manager-search/main/automation/data/tour-announcements.json';
+export const LOCAL_TOUR_ANNOUNCEMENTS_URL = '/tour-announcements.json';
+
 const isDev = import.meta.env.DEV;
 
 // Dev points at real pipeline data by default; opt back into the bundled mock
@@ -48,6 +55,10 @@ export const config = {
   // When null, scan-result consumers treat it as "no scan has run yet".
   scanResultUrl: isDev ? (useMock ? null : LOCAL_SCAN_RESULT_URL) : GITHUB_RAW_SCAN_RESULT_URL,
   scanHistoryUrl: isDev ? (useMock ? null : LOCAL_SCAN_HISTORY_URL) : GITHUB_RAW_SCAN_HISTORY_URL,
+  // When null, the Tour Announcements tab shows its empty state.
+  tourAnnouncementsUrl: isDev
+    ? (useMock ? null : LOCAL_TOUR_ANNOUNCEMENTS_URL)
+    : GITHUB_RAW_TOUR_ANNOUNCEMENTS_URL,
   // Auto-refetch interval (ms). Per earlier decision: no manual refresh button.
   refreshIntervalMs: 30_000,
 };

@@ -98,9 +98,40 @@ function serveScanHistory() {
   }
 }
 
+// Dev-only: same pattern, for the neutral cross-artist Tour Announcements feed
+// (automation/build-tour-announcements.js) — a chronological feed of confirmed
+// tour announcements pooled from both leads.json and my-artists.json, separate
+// from the scored Leads experience. See src/lib/tourAnnouncements.js.
+function serveTourAnnouncements() {
+  const tourAnnouncementsPath = path.resolve(__dirname, '../automation/data/tour-announcements.json')
+  return {
+    name: 'serve-tour-announcements',
+    configureServer(server) {
+      server.middlewares.use('/tour-announcements.json', (_req, res) => {
+        try {
+          const body = fs.readFileSync(tourAnnouncementsPath, 'utf8')
+          res.setHeader('Content-Type', 'application/json')
+          res.setHeader('Cache-Control', 'no-store')
+          res.end(body)
+        } catch (err) {
+          res.statusCode = 404
+          res.end(JSON.stringify({ error: `tour-announcements.json not found at ${tourAnnouncementsPath}: ${err.message}` }))
+        }
+      })
+    },
+  }
+}
+
 // See netlify.toml at the repo root for the Netlify build-ignore rule that
 // skips rebuilds when a push only touches automation/data/*.json.
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), serveRealLeads(), serveMyArtists(), serveScanResult(), serveScanHistory()],
+  plugins: [
+    react(),
+    serveRealLeads(),
+    serveMyArtists(),
+    serveScanResult(),
+    serveScanHistory(),
+    serveTourAnnouncements(),
+  ],
 })

@@ -29,6 +29,7 @@ import { getScoreBreakdown, getPriorityTier, getContributingSources } from '../u
 import { getArtistBio } from '../utils/artistSubtitle';
 import { leadId, useSavedArtists } from '../lib/savedArtists';
 import { loadEntries, toLeadShape } from '../lib/myArtists';
+import { fetchTourAnnouncements, toLeadShape as toAnnouncementLeadShape } from '../lib/tourAnnouncements';
 import { roleLabel, genreDisplay, dateRange, venueRange } from '../utils/myArtistFields';
 import { genreLabel } from '../lib/scoringSettings';
 import {
@@ -59,6 +60,11 @@ const MY_ARTIST_TABS = [
   { key: 'notes', label: 'My Notes' },
 ];
 
+// Tour Announcements mode: no Overview (nothing to score), no Releases/Notes
+// (the feed carries no release or personal-note data) — just the confirmed
+// upcoming dates.
+const ANNOUNCEMENT_TABS = [{ key: 'tours', label: 'Tour History' }];
+
 // Combines the two independent confirmed-tour sources (Ticketmaster,
 // JamBase) into one "On sale now" list. When both list the same show (same
 // date + venue), merge into a single row crediting both — that's two vendors
@@ -85,17 +91,17 @@ function mergeConfirmedEvents(ticketmasterEvents, jambaseEvents) {
   return [...rows.values()].sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 }
 
-const BackLink = ({ toMyArtists = false }) => (
+const BackLink = ({ backLabel = 'leads' }) => (
   <Link className="detail-back" to="/">
-    <span aria-hidden="true">←</span> Back to {toMyArtists ? 'My Artists' : 'leads'}
+    <span aria-hidden="true">←</span> Back to {backLabel}
   </Link>
 );
 
-function Shell({ children, toMyArtists = false }) {
+function Shell({ children, backLabel = 'leads' }) {
   return (
     <div className="detail-page">
       <div className="detail-topbar">
-        <BackLink toMyArtists={toMyArtists} />
+        <BackLink backLabel={backLabel} />
       </div>
       {children}
     </div>
@@ -107,8 +113,10 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
   const navigate = useNavigate();
   const saved = useSavedArtists();
   const isMyArtist = source === 'myArtists';
-  const TABS = isMyArtist ? MY_ARTIST_TABS : LEAD_TABS;
-  const [tab, setTab] = useState(isMyArtist ? 'tours' : 'overview');
+  const isAnnouncement = source === 'announcements';
+  const backLabel = isMyArtist ? 'My Artists' : isAnnouncement ? 'Tour Announcements' : 'leads';
+  const TABS = isMyArtist ? MY_ARTIST_TABS : isAnnouncement ? ANNOUNCEMENT_TABS : LEAD_TABS;
+  const [tab, setTab] = useState(isMyArtist || isAnnouncement ? 'tours' : 'overview');
   const [explainOpen, setExplainOpen] = useState(false);
   const [showFullHistory, setShowFullHistory] = useState(false);
   // A manually-pasted or stale enrichment URL can 404 — fall back to the gray
@@ -126,29 +134,58 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
     return loadEntries().find((e) => e.id === wanted) || null;
   }, [id, isMyArtist]);
 
+  // Tour Announcements entries come from a fetch, not localStorage — there's
+  // no synchronous read available, so this loads once per mount, same as the
+  // tab's own fetch in components/TourAnnouncements.jsx.
+  const [announcementEntries, setAnnouncementEntries] = useState(null);
+  useEffect(() => {
+    if (!isAnnouncement) return undefined;
+    let cancelled = false;
+    (async () => {
+      const data = await fetchTourAnnouncements();
+      if (!cancelled) setAnnouncementEntries(data);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [isAnnouncement]);
+
   // Look the lead up by id from the loaded leads first, then fall back to the
   // saved store (so a bookmarked artist opens even if it dropped off the list).
   const lead = useMemo(() => {
     if (isMyArtist) return rawEntry ? toLeadShape(rawEntry) : null;
+    if (isAnnouncement) {
+      if (!announcementEntries) return null;
+      const wanted = decodeURIComponent(id);
+      const found = announcementEntries.find((a) => a.artist === wanted);
+      return found ? toAnnouncementLeadShape(found) : null;
+    }
     const wanted = decodeURIComponent(id);
     return (
       (leads || []).find((l) => leadId(l) === wanted) ||
       saved.find((s) => s.id === wanted)?.lead ||
       null
     );
-  }, [id, leads, saved, isMyArtist, rawEntry]);
+  }, [id, leads, saved, isMyArtist, rawEntry, isAnnouncement, announcementEntries]);
 
   // New page each time: back to the top, first tab, collapsed explainer.
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTab(isMyArtist ? 'tours' : 'overview');
+    setTab(isMyArtist || isAnnouncement ? 'tours' : 'overview');
     setExplainOpen(false);
     setShowFullHistory(false);
     setHeroImgError(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  if (!lead && !isMyArtist && (!leads || leads.length === 0)) {
+  if (!lead && isAnnouncement && announcementEntries === null) {
+    return (
+      <Shell backLabel={backLabel}>
+        <div className="detail-empty">Loading…</div>
+      </Shell>
+    );
+  }
+  if (!lead && !isMyArtist && !isAnnouncement && (!leads || leads.length === 0)) {
     return (
       <Shell>
         <div className="detail-empty">Loading…</div>
@@ -157,11 +194,13 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
   }
   if (!lead) {
     return (
-      <Shell toMyArtists={isMyArtist}>
+      <Shell backLabel={backLabel}>
         <div className="detail-empty">
           {isMyArtist
             ? 'This artist is no longer in your My Artists list.'
-            : 'That artist is no longer in the current leads.'}
+            : isAnnouncement
+              ? 'This tour announcement is no longer available.'
+              : 'That artist is no longer in the current leads.'}
         </div>
       </Shell>
     );
@@ -199,7 +238,7 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
   return (
     <div className="detail-page">
       <div className="detail-topbar">
-        <BackLink toMyArtists={isMyArtist} />
+        <BackLink backLabel={backLabel} />
         {!hideScore && (
           <div className="detail-topbar-actions">
             <DismissButton lead={lead} className="on-detail" />
@@ -237,6 +276,9 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
               </span>
               {listenerCount != null && (
                 <span className="pill listeners">{compactNumber(listenerCount)} monthly listeners</span>
+              )}
+              {isAnnouncement && lead.announcedDate && (
+                <span className="pill listeners">First spotted {shortDate(lead.announcedDate)}</span>
               )}
             </div>
 
@@ -439,49 +481,51 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
             </section>
           )}
 
-          <section className="detail-block">
-            <BlockHead
-              Icon={CalendarIcon}
-              title={showFullHistory ? 'Tour history (all-time)' : 'Tour history (last 18 months)'}
-              count={shows.length > 0 ? `${shows.length} show${shows.length === 1 ? '' : 's'}` : null}
-            />
-            {fullShows.length > windowShows.length && (
-              <button
-                type="button"
-                className="explain-toggle"
-                onClick={() => setShowFullHistory((v) => !v)}
-              >
-                <span className={`explain-chevron ${showFullHistory ? 'open' : ''}`} aria-hidden="true">
-                  ▸
-                </span>
-                {showFullHistory
-                  ? 'Show last 18 months only (used for scoring)'
-                  : `Show full history (all-time — ${fullShows.length} shows)`}
-              </button>
-            )}
-            {shows.length > 0 ? (
-              <div className="detail-table">
-                <div className="detail-table-head" aria-hidden="true">
-                  <span>Date</span>
-                  <span>Venue</span>
-                  <span>Location</span>
+          {!isAnnouncement && (
+            <section className="detail-block">
+              <BlockHead
+                Icon={CalendarIcon}
+                title={showFullHistory ? 'Tour history (all-time)' : 'Tour history (last 18 months)'}
+                count={shows.length > 0 ? `${shows.length} show${shows.length === 1 ? '' : 's'}` : null}
+              />
+              {fullShows.length > windowShows.length && (
+                <button
+                  type="button"
+                  className="explain-toggle"
+                  onClick={() => setShowFullHistory((v) => !v)}
+                >
+                  <span className={`explain-chevron ${showFullHistory ? 'open' : ''}`} aria-hidden="true">
+                    ▸
+                  </span>
+                  {showFullHistory
+                    ? 'Show last 18 months only (used for scoring)'
+                    : `Show full history (all-time — ${fullShows.length} shows)`}
+                </button>
+              )}
+              {shows.length > 0 ? (
+                <div className="detail-table">
+                  <div className="detail-table-head" aria-hidden="true">
+                    <span>Date</span>
+                    <span>Venue</span>
+                    <span>Location</span>
+                  </div>
+                  <ul className="detail-table-body">
+                    {shows.map((sh, i) => (
+                      <li className="detail-table-row" key={`${sh.date}-${sh.venueName}-${i}`}>
+                        <span className="dt-date">{longDate(sh.date)}</span>
+                        <span className="dt-venue">{sh.venueName || 'Unknown venue'}</span>
+                        <span className="dt-loc">{[sh.city, sh.country].filter(Boolean).join(', ') || '—'}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="detail-table-body">
-                  {shows.map((sh, i) => (
-                    <li className="detail-table-row" key={`${sh.date}-${sh.venueName}-${i}`}>
-                      <span className="dt-date">{longDate(sh.date)}</span>
-                      <span className="dt-venue">{sh.venueName || 'Unknown venue'}</span>
-                      <span className="dt-loc">{[sh.city, sh.country].filter(Boolean).join(', ') || '—'}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <div className="detail-empty-inline">
-                {showFullHistory ? 'No tour history on record.' : 'No tour history in the last 18 months.'}
-              </div>
-            )}
-          </section>
+              ) : (
+                <div className="detail-empty-inline">
+                  {showFullHistory ? 'No tour history on record.' : 'No tour history in the last 18 months.'}
+                </div>
+              )}
+            </section>
+          )}
         </div>
       )}
 

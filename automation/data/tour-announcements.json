@@ -1,0 +1,3178 @@
+{
+  "generatedAt": "2026-07-20T22:42:03.008Z",
+  "totalArtists": 36,
+  "artists": [
+    {
+      "artist": "Che",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-20T17:43:56.706Z",
+      "events": [
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Arin Ray",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/09b1d5f568b8c30d5dafda59fd9ceca3/1000x1000-000000-80-0-0.jpg",
+      "genre": "alternative r&b",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-09-25",
+          "venue": "Crown Hill Theatre",
+          "city": "Brooklyn",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk2MzQ0OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Union Stage",
+          "city": "Washington",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Union Stage",
+          "city": "Washington",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-29",
+          "venue": "The Masquerade - Purgatory",
+          "city": "Atlanta",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-29",
+          "venue": "The Masquerade (Purgatory)",
+          "city": "Atlanta",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Farin-ray-the-limbo-tour-atlanta-georgia-09-29-2026%2Fevent%2F0E0064D6C751AB75&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "Warehouse Live Midtown",
+          "city": "Houston",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk2NzE3OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-03",
+          "venue": "The Cambridge Room at House Of Blues",
+          "city": "Dallas",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-03",
+          "venue": "The Cambridge Room at House Of Blues",
+          "city": "Dallas",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Farin-ray-the-limbo-tour-dallas-texas-10-03-2026%2Fevent%2F0C0064D7F76412F3&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-07",
+          "venue": "The Rosetta Room",
+          "city": "Mesa",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-07",
+          "venue": "The Rosetta Room",
+          "city": "Mesa",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Farin-ray-the-limbo-tour-mesa-arizona-10-07-2026%2Fevent%2F190064D581DF2DA4&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-09",
+          "venue": "Echoplex",
+          "city": "Los Angeles",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-09",
+          "venue": "Echoplex",
+          "city": "Los Angeles",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Farin-ray-the-limbo-tour-los-angeles-california-10-09-2026%2Fevent%2F090064D2472D844E&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-11",
+          "venue": "The Rink Studios",
+          "city": "Sacramento",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk2NTU4OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Smino",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/e10d8fd2f603c84b2107a381ca706f58/1000x1000-000000-80-0-0.jpg",
+      "genre": "hip hop",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-08-02",
+          "venue": null,
+          "city": null,
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "Burgess Park",
+          "city": "London",
+          "ticketUrl": "https://ra.co/events/2235139",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Cal Coast Credit Union Open Air Theatre at SDSU",
+          "city": "San Diego",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Cal Coast Credit Union Open Air Theatre at SDSU",
+          "city": "San Diego",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Ferykah-badu-san-diego-california-09-26-2026%2Fevent%2F0A0064D3F961BC8E&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-27",
+          "venue": "Greek Theatre-U.C. Berkeley",
+          "city": "Berkeley",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-27",
+          "venue": "Greek Theatre",
+          "city": "Berkeley",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Ferykah-badu-berkeley-california-09-27-2026%2Fevent%2F1C0064D2E8A479A5&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Destin Conrad",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d28179329351372467746a9fae577b31/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-21",
+          "venue": "Hal & Mal’s",
+          "city": "Jackson",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjg5ODU1OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-23",
+          "venue": "Handlebar",
+          "city": "Pensacola",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjg5ODYwOjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-26",
+          "venue": "Rialto Theater",
+          "city": "Raleigh",
+          "ticketUrl": "https://etix.prf.hn/click/camref:1101lGKCg/destination:https://www.etix.com/ticket/p/70526799/destin-conrad-raleigh-the-rialto?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-28",
+          "venue": "Reveler",
+          "city": "Richmond",
+          "ticketUrl": "https://stubhub.prf.hn/click/camref:1011l9QnS/destination:https://www.stubhub.com/destin-conrad-richmond-tickets-7-28-2026/event/161332764/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-30",
+          "venue": "Rumba Cafe",
+          "city": "Columbus",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-07-30",
+          "venue": "Rumba Cafe",
+          "city": "Columbus",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-07-30",
+          "venue": "Grant Park",
+          "city": "Chicago",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https%3A%2F%2Flollapalooza.frontgatetickets.com%2F",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-30",
+          "venue": "Rumba Cafe",
+          "city": "Columbus",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketweb.com%2Fevent%2Fdestin-conrad-rumba-cafe-tickets%2F14887983&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Reggies Rock Club",
+          "city": "Chicago",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Reggie's Rock Club",
+          "city": "Chicago",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Reggie’s Rock Club",
+          "city": "Chicago",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketweb.com%2Fevent%2Fofficial-lollapalooza-aftershow-destin-conrad-reggies-rock-club-tickets%2F14858533%3FREFERRAL_ID%3Dtmfeed&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "Grant Park",
+          "city": "Chicago",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Golden Gate Park",
+          "city": "San Francisco",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://outsidelands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-09",
+          "venue": "Golden Gate Park",
+          "city": "San Francisco",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Zozo Marine Stadium",
+          "city": "Chiba",
+          "ticketUrl": "https://www.summersonic.com/tickets/tokyo/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Expo ’70 Commemorative Park – Momijigawa Lawn Plaza",
+          "city": "Suita",
+          "ticketUrl": "https://www.summersonic.com/tickets/osaka/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Jiffy Lube Live",
+          "city": "Bristow",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-15",
+          "venue": "SunBet Arena Time Square",
+          "city": "Pretoria",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-17",
+          "venue": "Grand Arena at GrandWest",
+          "city": "Cape Town",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Yellow Claw",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/daf1dafef6edc4a630259cecfbe9089b/1000x1000-000000-80-0-0.jpg",
+      "genre": "moombahton",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-31",
+          "venue": "Solar Weekend",
+          "city": "Roermond",
+          "ticketUrl": "https://shop.weeztix.com/ea74f878-ce12-4ab8-b1a2-8711a5fd83d2/tickets",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "NOTO",
+          "city": "Houston",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "NOTO Houston",
+          "city": "Houston",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk1MDY1OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Superior Ingredients",
+          "city": "Brooklyn",
+          "ticketUrl": "https://link.dice.fm/f7cdf1422bed?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "The Roof at Superior Ingredients",
+          "city": "Brooklyn",
+          "ticketUrl": "https://dice.fm/event/2wy5qm-yellow-claw-presents-euro-trash-on-the-roof-12th-sep-the-roof-at-superior-ingredients-new-york-tickets?lng=en-US",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Pure Night Club",
+          "city": "Sunnyvale",
+          "ticketUrl": "https://www.tixr.com/groups/purenightclub/events/yellow-claw-193426?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Kalan.Frfr",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/cfa1a63183037a972c468619e7d80136/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-09-12",
+          "venue": "Orleans Arena",
+          "city": "Las Vegas",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Orleans Arena",
+          "city": "Las Vegas",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fwho-want-the-smoke-ft-ohgeesy-las-vegas-nevada-09-12-2026%2Fevent%2F170064ADCE11A568%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "ATLiens",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/bcd67cfa4a09aa091bde3dc079d0fd4e/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-08-07",
+          "venue": "Pocono Raceway",
+          "city": "Long Pond",
+          "ticketUrl": "https://www.elementsfest.us/tickets2026/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean-Drapeau",
+          "city": "Montréal",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.ticketmaster.ca/ilesoniq-tickets/artist/2532155",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "The Gorge",
+          "city": "George",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://basscanyonfestival.frontgatetickets.com",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "SILO",
+          "city": "Dallas",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "SILO",
+          "city": "Dallas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkzODcyOjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Blackbox Theater - Charlotte",
+          "city": "Charlotte",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Black Box Theater",
+          "city": "Charlotte",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkwNTUyOjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Blackbox Theater - Charlotte",
+          "city": "Charlotte",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Black Box Theater",
+          "city": "Charlotte",
+          "ticketUrl": "https://blackboxclt.business.site/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-30",
+          "venue": "Rawhide Western Town and Event Center",
+          "city": "Chandler",
+          "ticketUrl": "https://www.tixr.com/groups/rbfestivals/events/hex-2026-185888",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-06",
+          "venue": "Tinker Field",
+          "city": "Orlando",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://edcorlando.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-07",
+          "venue": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-07",
+          "venue": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "ticketUrl": "https://www.axs.com/events/1467439/atliens-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Ray Volpe",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/17bd7449fd75a6f897b4bd1fcf1c0aea/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-31",
+          "venue": "Downsview Park",
+          "city": "Toronto",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://veld.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Downsview Park Toronto",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Pocono Raceway",
+          "city": "Long Pond",
+          "ticketUrl": "https://www.elementsfest.us/tickets2026/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "The Gorge",
+          "city": "George",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://basscanyonfestival.frontgatetickets.com",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "San Jose Convention Center",
+          "city": "San Jose",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://bassrush.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Zouk Nightclub Las Vegas",
+          "city": "Las Vegas",
+          "ticketUrl": "https://zoukgrouplv.com/zouk/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-07",
+          "venue": "Wildwood Outdoor Education Center",
+          "city": "La Cygne",
+          "ticketUrl": "https://www.tixr.com/groups/dancefestopia/events/dancefestopia-music-camping-festival-2026-152197",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Rawhide Western Town and Event Center",
+          "city": "Chandler",
+          "ticketUrl": "https://www.tixr.com/groups/rbfestivals/events/goldrush-midnight-riders-159993",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Skydeck on Broadway",
+          "city": "Nashville",
+          "ticketUrl": "https://www.tixr.com/groups/blnkcnvs/events/ray-volpe-volpetron-eternal-tour-197480?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "America First Field",
+          "city": "Sandy",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "America First Field",
+          "city": "Sandy",
+          "ticketUrl": "https://www.jambase.com/festival/breakaway-utah-2026",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-09",
+          "venue": "Midway Music Hall",
+          "city": "Edmonton",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-15",
+          "venue": "Knitting Factory Spokane - WA",
+          "city": "Spokane",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-23",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-06",
+          "venue": "Tinker Field",
+          "city": "Orlando",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Six Sex",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/4c418f10982b4822feecdc09fee25f5c/1000x1000-000000-80-0-0.jpg",
+      "genre": "electronic",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-31",
+          "venue": "Outset",
+          "city": "Chicago",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Outset",
+          "city": "Chicago",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fofficial-lollapalooza-aftershow-six-sex-chicago-illinois-07-31-2026%2Fevent%2F040064B4E1C5F42D&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Hollywood Park Grounds",
+          "city": "Inglewood",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Hollywood Park Grounds at SoFi Stadium",
+          "city": "Inglewood",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https%3A%2F%2Fhardsummer.frontgatetickets.com%2F",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Virage Paris",
+          "city": "Paris",
+          "ticketUrl": "https://link.dice.fm/Tb4543a27128?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Flucc",
+          "city": "Vienna",
+          "ticketUrl": "https://www.wien.info/en/dine-drink/bars-clubs/clubs-discos/fluc-346116?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "Riverland Fest",
+          "city": "Arriondas",
+          "ticketUrl": "https://www.riverlandfest.com/abonos",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-27",
+          "venue": "Exil",
+          "city": "Zürich",
+          "ticketUrl": "https://www.exil.club/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Sala Apolo",
+          "city": "Barcelona",
+          "ticketUrl": "https://link.dice.fm/o8bbabb1c1de?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/2038751/23888?u=https%3A%2F%2Fwww.ticketmaster.nl%2Fevent%2Fsix-sex-presents-tickets%2F1398481655&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-22",
+          "venue": "The Fonda Theatre",
+          "city": "Hollywood",
+          "ticketUrl": "https://www.axs.com/events/1511188/six-sex-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Pier 80 Warehouse",
+          "city": "San Francisco",
+          "ticketUrl": "https://www.axs.com/artists/1116480/portola-tickets",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Audien",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/2816bff3723bd3e6024c0df6dd14f194/1000x1000-000000-80-0-0.jpg",
+      "genre": "progressive house",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-08-01",
+          "venue": "The Rooftop at Pier 17",
+          "city": "New York",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "The Rooftop at Pier 17",
+          "city": "New York",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "The Rooftop at Pier 17",
+          "city": "New York",
+          "ticketUrl": "https://www.axs.com/events/1389599/audien-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "The Concourse Project",
+          "city": "Austin",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjg5Nzg5OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "SILO",
+          "city": "Dallas",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "SILO",
+          "city": "Dallas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkwMjI2OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Time Nightclub",
+          "city": "Costa Mesa",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Time Nightclub",
+          "city": "Costa Mesa",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketweb.com%2Fevent%2Faudien-time-nightclub-tickets%2F14259864&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "The Palace Theatre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "The Palace Theatre",
+          "city": "Calgary",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketweb.ca%2Fevent%2Faudien-the-palace-theatre-tickets%2F14197934%3FREFERRAL_ID%3Dtmfeed&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-05",
+          "venue": "Victory Hall at The Boxyard",
+          "city": "Seattle",
+          "ticketUrl": "https://www.victoryhallsea.com/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Waterside District",
+          "city": "Norfolk",
+          "ticketUrl": "https://stubhub.prf.hn/click/camref:1011l9QnS/destination:https://www.stubhub.com/sunset-sessions-norfolk-tickets-9-18-2026/event/161360961/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "America First Field",
+          "city": "Sandy",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "America First Field",
+          "city": "Sandy",
+          "ticketUrl": "https://www.jambase.com/festival/breakaway-utah-2026",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-24",
+          "venue": "45 East",
+          "city": "Portland",
+          "ticketUrl": "https://www.tixr.com/groups/45east/events/audien-197379?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Kompany",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/a118056c6301b2197d328dd19f07c976/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-24",
+          "venue": "Watkins Glen International",
+          "city": "Watkins Glen",
+          "ticketUrl": "https://www.tixr.com/groups/gridlife/events/gridlife-gridlife-summer-apex-at-the-glen-165978",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean-Drapeau",
+          "city": "Montréal",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.ticketmaster.ca/ilesoniq-tickets/artist/2532155",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-09",
+          "venue": "DAER Dayclub",
+          "city": "Hollywood",
+          "ticketUrl": "https://www.tixr.com/groups/daerdayclubsouthflorida/events/kompany-daer-dayclub-187473?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Aura Lounge & Nightclub",
+          "city": "Raleigh",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkyODYyOjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "HI-FI",
+          "city": "Indianapolis",
+          "ticketUrl": "https://www.tixr.com/groups/hifi/events/kompany-191218?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-07",
+          "venue": "Wildwood Outdoor Education Center",
+          "city": "La Cygne",
+          "ticketUrl": "https://www.tixr.com/groups/dancefestopia/events/dancefestopia-music-camping-festival-2026-152197",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Stockyards Event Center",
+          "city": "Denver",
+          "ticketUrl": "https://www.axs.com/series/32775/global-dance-festival-2026-tickets",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://nocturnal.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-22",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-06",
+          "venue": "Tinker Field",
+          "city": "Orlando",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://edcorlando.frontgatetickets.com/",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Nettspend",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/402fdad7fe48b37eaef512681f4d5cb7/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-30",
+          "venue": "Grant Park",
+          "city": "Chicago",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https%3A%2F%2Flollapalooza.frontgatetickets.com%2F",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Grant Park",
+          "city": "Chicago",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Illenium",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/0e4f30513c3c06fbeed3f2e403aad80f/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-17",
+          "venue": "Tomorrowland",
+          "city": "Boom",
+          "ticketUrl": "https://belgium.tomorrowland.com/en/passes-packages/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Downsview Park",
+          "city": "Toronto",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://veld.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Downsview Park Toronto",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "The Gorge",
+          "city": "George",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://basscanyonfestival.frontgatetickets.com",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "Tao Beach",
+          "city": "Las Vegas",
+          "ticketUrl": "https://tickets.taogroup.com/e/tao-beach-las-vegas-8-15-2026?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-19",
+          "venue": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "ticketUrl": "https://www.axs.com/events/1511360/illenium-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Orlando Amphitheater at the Central Florida Fairgrounds",
+          "city": "Orlando",
+          "ticketUrl": "https://www.eventliveus.com/event/10315/metamorphosis-arts-and-music-project",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "SeatGeek Stadium",
+          "city": "Bridgeview",
+          "ticketUrl": "https://wl.eventim.us/event/North-Coast-Music-Festival-2026/674105?afflky=NorthCoastMusicFestival",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "Marquee Nightclub",
+          "city": "Las Vegas",
+          "ticketUrl": "https://tickets.taogroup.com/e/marquee-nightclub-las-vegas-9-4-2026?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://nocturnal.frontgatetickets.com/",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Bino Rideaux",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/814c2db9ac10d9e994b3146c00e80b99/1000x1000-000000-80-0-0.jpg",
+      "genre": "hip hop",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-08-14",
+          "venue": "The Catwalk Club",
+          "city": "Los Angeles",
+          "ticketUrl": "http://www.thecatwalk.club/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "YouTube Theater",
+          "city": "Inglewood",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "YouTube Theater",
+          "city": "Inglewood",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Freal-923-presents-the-real-show-inglewood-california-08-21-2026%2Fevent%2F0A0064E2E1B1AD87%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Said The Sky",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/682fe2ddf79a78b20fa2b6a56142cfb3/1000x1000-000000-80-0-0.jpg",
+      "genre": "melodic dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Ffinal-drop-2-ft-said-the-calgary-alberta-08-29-2026%2Fevent%2F1100648FC9FFBC8F%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Marquis Park City",
+          "city": "Park City",
+          "ticketUrl": "https://www.tixr.com/groups/v2presents/events/said-the-sky-at-the-marquis-park-city-182546?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Craig Ranch Amphitheater",
+          "city": "North Las Vegas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkzMDE5OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://nocturnal.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-16",
+          "venue": "Republic NOLA",
+          "city": "New Orleans",
+          "ticketUrl": "https://www.tixr.com/groups/republic/events/said-the-sky-199246?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-16",
+          "venue": "Republic NOLA",
+          "city": "New Orleans",
+          "ticketUrl": "https://www.tixr.com/groups/republic/events/said-the-sky-199246?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Nghtmre",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/21e69a3e92f166992d4edba43e087490/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-24",
+          "venue": "KINTEX (Korea International Exhibition Center)",
+          "city": "Goyang",
+          "ticketUrl": "https://www.waterbombfestival.com/ticket-seoul",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-30",
+          "venue": "Lake Most",
+          "city": "Most 1",
+          "ticketUrl": "https://tickets.letitroll.cz/en/festival/2026-czk",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Recinto Ferial",
+          "city": "Vélez-Málaga",
+          "ticketUrl": "https://www.dreambeach.es/tickets/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "Smukfest",
+          "city": "Skanderborg",
+          "ticketUrl": "https://smukshop.dk/armbaand2026",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "The Armory",
+          "city": "Minneapolis",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fslander-presents-voyager-saturday-pass-minneapolis-minnesota-08-08-2026%2Fevent%2F060062D2BB036710&utm_medium=affiliate",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "The Gorge",
+          "city": "George",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://basscanyonfestival.frontgatetickets.com",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Gorge Amphitheatre",
+          "city": "George",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "SILO",
+          "city": "Dallas",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "San Jose Convention Center",
+          "city": "San Jose",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://bassrush.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "SILO",
+          "city": "Dallas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjg5NzAzOjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-22",
+          "venue": "San Jose Convention Center",
+          "city": "San Jose",
+          "ticketUrl": "https://www.jambase.com/show/nghtmre-san-jose-convention-center-20260822",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "The Elmont Social",
+          "city": "El Paso",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk0MDg3OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-16",
+          "venue": "DPRTMNT",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-22",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Subtronics",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/23d07534f604c5ee93a78fd19e7d89ad/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-07-25",
+          "venue": "Smoothie King Center",
+          "city": "New Orleans",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-07-25",
+          "venue": "Smoothie King Center",
+          "city": "New Orleans",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fx-games-present-subtronics-with-bunt-new-orleans-louisiana-07-25-2026%2Fevent%2F1B0064B6E50F35BF%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Downsview Park Toronto",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Parc Jean-Drapeau",
+          "city": "Montréal",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.ticketmaster.ca/osheaga-tickets/artist/2530755",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-07-31",
+          "venue": "Downsview Park",
+          "city": "Toronto",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://veld.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Max Bell Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Max Bell Centre",
+          "city": "Calgary",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://chasingsummer.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "Max Bell Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Golden Gate Park",
+          "city": "San Francisco",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://outsidelands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Pocono Raceway",
+          "city": "Long Pond",
+          "ticketUrl": "https://www.elementsfest.us/tickets2026/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Belknap Park",
+          "city": "Grand Rapids",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Belknap Park",
+          "city": "Grand Rapids",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.universe.com/events/breakaway-michigan-2026-tickets-RJHMDP",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Encore Beach Club",
+          "city": "Las Vegas",
+          "ticketUrl": "https://www.wynnsocial.com/events/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-22",
+          "venue": "DAER Dayclub",
+          "city": "Hollywood",
+          "ticketUrl": "https://www.tixr.com/groups/daerdayclubsouthflorida/events/subtronics-daer-dayclub-196592?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "The Elmont Social",
+          "city": "El Paso",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk0Mjk0OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-09",
+          "venue": "Encore Beach Club",
+          "city": "Las Vegas",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-15",
+          "venue": "Radius - Chicago",
+          "city": "Chicago",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Odeal",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/a746ce57e3a211f6f575a07a68ae8fce/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-20T03:22:54.195Z",
+      "events": [
+        {
+          "date": "2026-08-01",
+          "venue": "The O2",
+          "city": "London",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "O2 Arena",
+          "city": "London",
+          "ticketUrl": "https://www.axs.com/events/1308025/summer-walker-extra-date-added-tickets?cid=usaffjambase&utm_source=jambase&utm_campaign=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "The O2",
+          "city": "London",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-02",
+          "venue": "O2 Arena",
+          "city": "London",
+          "ticketUrl": "https://www.axs.com/events/1303434/summer-walker-tickets?cid=usaffjambase&utm_source=jambase&utm_campaign=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "Victoria Park",
+          "city": "London",
+          "ticketUrl": "https://www.allpointseastfestival.com/tyler-the-creator-london-2026/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "Northwest Stadium",
+          "city": "Summerfield",
+          "ticketUrl": "https://posh.vip/e/the-afro-plus-festival",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-29",
+          "venue": null,
+          "city": "Berlin",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-29",
+          "venue": null,
+          "city": "Berlin",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-29",
+          "venue": "Velodrom",
+          "city": "Berlin",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21727026/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-01",
+          "venue": "Vorst Nationaal/Forest National",
+          "city": "Forest (Brussels)",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-01",
+          "venue": "Vorst Nationaal/Forest National",
+          "city": "Forest (Brussels)",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-01",
+          "venue": "Forest National",
+          "city": "Forest",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/2038757/23894?u=https%3A%2F%2Fwww.ticketmaster.be%2Fevent%2Fthe-kehlani-world-tour-eu--uk-tickets%2F211899656&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-05",
+          "venue": null,
+          "city": "Düsseldorf",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-05",
+          "venue": null,
+          "city": "Düsseldorf",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-05",
+          "venue": "PSD Bank Dome",
+          "city": "Düsseldorf",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21745947/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-06",
+          "venue": "Ziggo Dome",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-06",
+          "venue": "Ziggo Dome",
+          "city": "Amsterdam",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/2038751/23888?u=https%3A%2F%2Fwww.ticketmaster.nl%2Fevent%2Fthe-kehlani-world-tour-eu--uk-tickets%2F1284848084&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-08",
+          "venue": "The O2",
+          "city": "London",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-08",
+          "venue": "O2 Arena",
+          "city": "London",
+          "ticketUrl": "https://www.axs.com/events/1468950/kehlani-tickets?cid=usaffjambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-10",
+          "venue": "Co-op Live",
+          "city": "Manchester",
+          "ticketUrl": "https://www.awin1.com/pclick.php?p=44926198271&a=139685&m=7816&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Nurko",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/1f8bb56b5d91a09f8b6df02911a1e2c1/1000x1000-000000-80-0-0.jpg",
+      "genre": "melodic dubstep",
+      "announcedDate": "2026-07-20T00:30:12.297Z",
+      "events": [
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Pure Night Club",
+          "city": "Sunnyvale",
+          "ticketUrl": "https://www.tixr.com/groups/purenightclub/events/nurko-194316?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Ffinal-drop-2-ft-said-the-calgary-alberta-08-29-2026%2Fevent%2F1100648FC9FFBC8F%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-20",
+          "venue": "Barceló Maya Grand Resort",
+          "city": "Playa del Carmen",
+          "ticketUrl": "https://embershores.com/packages",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Seven Lions",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/25a6fe38d5227055f0cc9db2380b0d37/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-07-24",
+          "venue": "Salmo River Ranch",
+          "city": "Salmo",
+          "ticketUrl": "https://tickets.shambhalamusicfestival.com/products/tickets",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "The Great Saltair",
+          "city": "Magna",
+          "ticketUrl": "https://www.tixr.com/groups/v2presents/events/das-energi-2026-181898",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Echostage",
+          "city": "Washington",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean-Drapeau",
+          "city": "Montréal",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.ticketmaster.ca/ilesoniq-tickets/artist/2532155",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Echostage",
+          "city": "Washington",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fseven-lions-washington-district-of-columbia-08-08-2026%2Fevent%2F150064C8792C3AE0%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-09",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "The Ave Live",
+          "city": "Philadelphia",
+          "ticketUrl": "https://link.dice.fm/u119f037eb22?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-15",
+          "venue": "DAER Nightclub",
+          "city": "Hollywood",
+          "ticketUrl": "https://www.hardrocknightlife.com/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-22",
+          "venue": "Waterfront Park - San Diego",
+          "city": "San Diego",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-22",
+          "venue": "Waterfront Park",
+          "city": "San Diego",
+          "ticketUrl": "https://www.sdparks.org/content/sdparks/en/park-pages/Waterfront.html?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-19",
+          "venue": "Glen Helen Regional Park",
+          "city": "San Bernardino",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://nocturnal.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-22",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-27",
+          "venue": "San Jose Convention Center",
+          "city": "San Jose",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://givethanks.frontgatetickets.com/",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Jason Ross",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/1000x1000-000000-80-0-0.jpg",
+      "genre": "electronic",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-01",
+          "venue": "Echostage",
+          "city": "Washington",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Gentle Ben’s",
+          "city": "Tucson",
+          "ticketUrl": "https://www.tixr.com/groups/relentlessbeats/events/jason-ross-187555?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Ogden Theatre",
+          "city": "Denver",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Ogden Theatre",
+          "city": "Denver",
+          "ticketUrl": "https://www.axs.com/events/1425283/jason-ross-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "1015 Folsom",
+          "city": "San Francisco",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "1015 Folsom",
+          "city": "San Francisco",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkwNDc3OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-05",
+          "venue": "Sunbar Tempe",
+          "city": "Tempe",
+          "ticketUrl": "https://www.tixr.com/groups/relentlessbeats/events/jason-ross-187546?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Webster Hall",
+          "city": "New York",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-25",
+          "venue": "The Observatory",
+          "city": "Santa Ana",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-25",
+          "venue": "The Observatory",
+          "city": "Santa Ana",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fjason-ross-18-santa-ana-california-09-25-2026%2Fevent%2F0900649C02F152AC&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "45 East",
+          "city": "Portland",
+          "ticketUrl": "https://www.tixr.com/groups/45east/events/jason-ross-presents-the-true-north-tour-187974?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-03",
+          "venue": "NOTO",
+          "city": "Houston",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-03",
+          "venue": "NOTO Houston",
+          "city": "Houston",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkwNDc5OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-16",
+          "venue": "Vanquish Nightclub",
+          "city": "Minneapolis",
+          "ticketUrl": "https://seatgeek.pxf.io/c/252938/1756891/20501?url=https%3A%2F%2Fseatgeek.com%2Fjason-ross-tickets%2Fminneapolis-minnesota-vanquish-nightclub-2026-10-16-10-pm%2Fconcert%2F18259661&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-17",
+          "venue": "Concord Music Hall",
+          "city": "Chicago",
+          "ticketUrl": "https://www.axs.com/events/1432444/jason-ross-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-11",
+          "venue": "The Showbox",
+          "city": "Seattle",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-11",
+          "venue": "Showbox at the Market",
+          "city": "Seattle",
+          "ticketUrl": "https://www.axs.com/events/1433027/jason-ross-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-19",
+          "venue": "History",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Trivecta",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/a1c52225c758dcf3868d3aa6ed6a08d7/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Ffinal-drop-2-ft-said-the-calgary-alberta-08-29-2026%2Fevent%2F1100648FC9FFBC8F%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Craig Ranch Amphitheater",
+          "city": "North Las Vegas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkzMDE5OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "America First Field",
+          "city": "Sandy",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-02",
+          "venue": "America First Field",
+          "city": "Sandy",
+          "ticketUrl": "https://www.jambase.com/festival/breakaway-utah-2026",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-22",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Mitis",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/049dd0a40eff0888c7a6eaaba098a933/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-21",
+          "venue": "Elektricity",
+          "city": "Pontiac",
+          "ticketUrl": "https://www.facebook.com/ElektricityMusic/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-22",
+          "venue": "Electric City",
+          "city": "Buffalo",
+          "ticketUrl": "https://www.prekindle.com/promo/id/-2852527949131705477?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Grey Eagle Event Centre",
+          "city": "Calgary",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Ffinal-drop-2-ft-said-the-calgary-alberta-08-29-2026%2Fevent%2F1100648FC9FFBC8F%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-05",
+          "venue": "Pure Night Club",
+          "city": "Sunnyvale",
+          "ticketUrl": "https://www.tixr.com/groups/purenightclub/events/mitis-191631?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Rawhide Western Town and Event Center",
+          "city": "Chandler",
+          "ticketUrl": "https://www.tixr.com/groups/rbfestivals/events/goldrush-midnight-riders-159993",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Pure Night Club",
+          "city": "Sunnyvale",
+          "ticketUrl": "https://www.tixr.com/groups/purenightclub/events/mitis-187569?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Craig Ranch Amphitheater",
+          "city": "North Las Vegas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkzMDE5OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "HALIENE",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/f37cd0c7f488b707afaf58cc474fba0f/1000x1000-000000-80-0-0.jpg",
+      "genre": "electropop",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-09-12",
+          "venue": "San Jose Civic",
+          "city": "San Jose",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "San Jose Civic",
+          "city": "San Jose",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fsabai-presents-ikigai-bay-area-san-jose-california-09-12-2026%2Fevent%2F1C00647FE6758CE2&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "ARMNHMR",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/586227a4db5a948530f65ba02e86b4d1/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-28",
+          "venue": "The Grand (Boston)",
+          "city": "Boston",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "SeatGeek Stadium",
+          "city": "Bridgeview",
+          "ticketUrl": "https://wl.eventim.us/event/North-Coast-Music-Festival-2026/674105?afflky=NorthCoastMusicFestival",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Subaru Park Festival Grounds",
+          "city": "Chester",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Subaru Park",
+          "city": "Chester",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.universe.com/events/breakaway-philadelphia-2026-tickets-WT3N6X",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-12",
+          "venue": "Craig Ranch Amphitheater",
+          "city": "North Las Vegas",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjkzMDE5OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-17",
+          "venue": "Observatory Festival Grounds",
+          "city": "Santa Ana",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-17",
+          "venue": "Observatory Festival Grounds",
+          "city": "Santa Ana",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Flost-in-dreams-the-observatory-present-santa-ana-california-10-17-2026%2Fevent%2F0900649CF4A8321F&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-30",
+          "venue": "Fair Park",
+          "city": "Dallas",
+          "ticketUrl": "https://wl.eventim.us/event/Lights-All-Night-2026/696830?afflky=LightsAllNight",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "070 Shake",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/33ff8562e9399d499176ea7a4bc1bdae/1000x1000-000000-80-0-0.jpg",
+      "genre": "alternative hip hop",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-05",
+          "venue": "Canadian Tire Centre",
+          "city": "Kanata",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-05",
+          "venue": "Canadian Tire Centre",
+          "city": "Ottawa",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-ottawa-ontario-08-05-2026%2Fevent%2F3100647BBD798AB8%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-06",
+          "venue": "Centre Bell",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-06",
+          "venue": "Centre Bell",
+          "city": "Montréal",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-montreal-quebec-08-06-2026%2Fevent%2F3100647BA98676AC%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-10",
+          "venue": "Canada Life Centre",
+          "city": "Winnipeg",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-10",
+          "venue": "Canada Life Centre",
+          "city": "Winnipeg",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-winnipeg-manitoba-08-10-2026%2Fevent%2F1100647E6F992027%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-13",
+          "venue": "Rogers Place",
+          "city": "Edmonton",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-13",
+          "venue": "Rogers Place",
+          "city": "Edmonton",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-edmonton-alberta-08-13-2026%2Fevent%2F1100647B707C2633%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Scotiabank Saddledome",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-14",
+          "venue": "Scotiabank Saddledome",
+          "city": "Calgary",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-calgary-alberta-08-14-2026%2Fevent%2F1100647BCEC0B46E%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Rogers Arena",
+          "city": "Vancouver",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Rogers Arena",
+          "city": "Vancouver",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-vancouver-british-columbia-08-16-2026%2Fevent%2F11006479AD877F95%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-17",
+          "venue": "Rogers Arena",
+          "city": "Vancouver",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-17",
+          "venue": "Rogers Arena",
+          "city": "Vancouver",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fdaniel-caesar-son-of-spergy-tour-vancouver-british-columbia-08-17-2026%2Fevent%2F11006482EB36D5FC%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-18",
+          "venue": "Moda Center",
+          "city": "Portland",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-18",
+          "venue": "Moda Center",
+          "city": "Portland",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fdaniel-caesar-son-of-spergy-tour-portland-oregon-08-18-2026%2Fevent%2F0F00647BD180F235%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-20",
+          "venue": "Chase Center",
+          "city": "San Francisco",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-20",
+          "venue": "Chase Center",
+          "city": "San Francisco",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fdaniel-caesar-son-of-spergy-tour-san-francisco-california-08-20-2026%2Fevent%2F1C006384A9E7AAFD%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-23",
+          "venue": "Honda Center",
+          "city": "Anaheim",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-23",
+          "venue": "Honda Center",
+          "city": "Anaheim",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fdaniel-caesar-son-of-spergy-tour-anaheim-california-08-23-2026%2Fevent%2F0900647BCBC1F780%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Pierre Bourne",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/2a1d3d8429789098abbe1a6adee0c3ec/1000x1000-000000-80-0-0.jpg",
+      "genre": "hip hop",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-19",
+          "venue": "The Fillmore",
+          "city": "San Francisco",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "El Rey Theatre - Los Angeles",
+          "city": "Los Angeles",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-23",
+          "venue": "The Masquerade - Hell",
+          "city": "Atlanta",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Brighton Music Hall presented by Citizens",
+          "city": "Boston",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-30",
+          "venue": "Irving Plaza Powered By Verizon 5G",
+          "city": "New York",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-02",
+          "venue": "Le Studio TD",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-22",
+          "venue": "Melkweg",
+          "city": "Amsterdam",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-24",
+          "venue": null,
+          "city": "Berlin",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Wooli",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/b0c8a7a53f989e4c4cf1473edd1c9ac9/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-07",
+          "venue": "The Great Saltair",
+          "city": "Magna",
+          "ticketUrl": "https://www.tixr.com/groups/v2presents/events/das-energi-2026-181898",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-08",
+          "venue": "Parc Jean-Drapeau",
+          "city": "Montréal",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.ticketmaster.ca/ilesoniq-tickets/artist/2532155",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-09",
+          "venue": "Parc Jean Drapeau",
+          "city": "Montreal",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "SeatGeek Stadium",
+          "city": "Bridgeview",
+          "ticketUrl": "https://wl.eventim.us/event/North-Coast-Music-Festival-2026/674105?afflky=NorthCoastMusicFestival",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-03",
+          "venue": "INSPIRE Entertainment Resort",
+          "city": "Incheon",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://edckorea.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-30",
+          "venue": "Edmonton Expo Centre",
+          "city": "Edmonton",
+          "ticketUrl": "https://www.showpass.com/scream2026/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-06",
+          "venue": "Tinker Field",
+          "city": "Orlando",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-11-06",
+          "venue": "Tinker Field",
+          "city": "Orlando",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://edcorlando.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-25",
+          "venue": "Steelhouse Omaha",
+          "city": "Omaha",
+          "ticketUrl": "https://o-pa.org/our-venues/steelhouse-omaha?utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "William Black",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/e8c39ecad37b5babcaf7fab862868e41/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-07",
+          "venue": "The Armory",
+          "city": "Minneapolis",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fslander-presents-voyager-friday-pass-minneapolis-minnesota-08-07-2026%2Fevent%2F060062D2BAB46662&utm_medium=affiliate",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-22",
+          "venue": "The Ritz Ybor",
+          "city": "Tampa",
+          "ticketUrl": "https://prod-nts-api.seeticketsusa.us/v1.0.0/promote/YWZmOlNUVVMtNjk2NjU4OjE4/clickthru?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Echostage",
+          "city": "Washington",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Echostage",
+          "city": "Washington",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fwilliam-black-the-shadow-realm-tour-washington-district-of-columbia-08-29-2026%2Fevent%2F150064DCED1AA001&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "SOMA - Mainstage",
+          "city": "San Diego",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "SeatGeek Stadium",
+          "city": "Bridgeview",
+          "ticketUrl": "https://wl.eventim.us/event/North-Coast-Music-Festival-2026/674105?afflky=NorthCoastMusicFestival",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "Soma",
+          "city": "San Diego",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketweb.com%2Fevent%2Fwilliam-black-soma-mainstage-tickets%2F14221354&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-05",
+          "venue": "Hollywood Palladium",
+          "city": "Hollywood",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-05",
+          "venue": "Hollywood Palladium",
+          "city": "Los Angeles",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fwilliam-black-hollywood-california-09-05-2026%2Fevent%2F090064DA849B4543%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-03",
+          "venue": "INSPIRE Entertainment Resort",
+          "city": "Incheon",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://edckorea.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-24",
+          "venue": "Fox Theater - Oakland",
+          "city": "Oakland",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-24",
+          "venue": "Fox Theater",
+          "city": "Oakland",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fwilliam-black-18-only-oakland-california-10-24-2026%2Fevent%2F1C0064D9CC165D1D&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-11-20",
+          "venue": "Barceló Maya Grand Resort",
+          "city": "Playa del Carmen",
+          "ticketUrl": "https://embershores.com/packages",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Swae Lee",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/7d66cba93af97719dc9f10e31c328023/1000x1000-000000-80-0-0.jpg",
+      "genre": "pop rap",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-01",
+          "venue": "Airfield",
+          "city": "Heidelberg",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-06",
+          "venue": "Cluj Arena",
+          "city": "Cluj-Napoca",
+          "ticketUrl": "https://tickets.untold.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "LMK Vajnory",
+          "city": "Bratislava",
+          "ticketUrl": "https://www.ticketportal.sk/NEvent/LOVESTREAM-Festival-2026",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-12",
+          "venue": "SaSaZu",
+          "city": "Praha 7",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-12",
+          "venue": "SaSaZu",
+          "city": "Prague",
+          "ticketUrl": "https://www.ticketmaster.cz/event/swae-lee-vstupenky/1979645741?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-13",
+          "venue": null,
+          "city": "Cologne",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-13",
+          "venue": "Live Music Hall",
+          "city": "Cologne",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21777413/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": null,
+          "city": "Hamburg",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-16",
+          "venue": "Große Freiheit 36",
+          "city": "Hamburg",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21776700/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-20",
+          "venue": "Skråen i Nordkraft – Royal Stage",
+          "city": "Aalborg",
+          "ticketUrl": "https://skraaen.dk/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-26",
+          "venue": null,
+          "city": "Munich",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-26",
+          "venue": "SZIN: Szegedi Ifjúsági Napok",
+          "city": "Szeged",
+          "ticketUrl": "https://szin.org/jegyek",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-26",
+          "venue": "Muffathalle",
+          "city": "Munich",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21777511/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Raiffeisen Halle im Gasometer",
+          "city": "Vienna",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Raiffeisen Halle im Gasometer",
+          "city": "Wien",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21781123/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Rachel Chinouriri",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/c9966f9729acfa6fdd3f14c00b3d96ff/1000x1000-000000-80-0-0.jpg",
+      "genre": "alternative pop",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-29",
+          "venue": "Great Park",
+          "city": "Irvine",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-29",
+          "venue": "Great Park Live",
+          "city": "Irvine",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://daisychainfields.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-02",
+          "venue": "Ball Arena",
+          "city": "Denver",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-02",
+          "venue": "Ball Arena",
+          "city": "Denver",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-denver-colorado-12-02-2026%2Fevent%2F1E0064B2E736C3FD&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-03",
+          "venue": "Ball Arena",
+          "city": "Denver",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-03",
+          "venue": "Ball Arena",
+          "city": "Denver",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-denver-colorado-12-03-2026%2Fevent%2F1E0064BAFCFA70CC&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-06",
+          "venue": "Oakland Arena",
+          "city": "Oakland",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-06",
+          "venue": "Oakland Arena",
+          "city": "Oakland",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-oakland-california-12-06-2026%2Fevent%2F1C0064ADBB8886FE&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-07",
+          "venue": "Oakland Arena",
+          "city": "Oakland",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-07",
+          "venue": "Oakland Arena",
+          "city": "Oakland",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-oakland-california-12-07-2026%2Fevent%2F1C0064BB9D932123&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-09",
+          "venue": "Desert Diamond Arena",
+          "city": "Glendale",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-09",
+          "venue": "Desert Diamond Arena",
+          "city": "Glendale",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-glendale-arizona-12-09-2026%2Fevent%2F190064B3F3DEA73D&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-10",
+          "venue": "Desert Diamond Arena",
+          "city": "Glendale",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-10",
+          "venue": "Desert Diamond Arena",
+          "city": "Glendale",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-glendale-arizona-12-10-2026%2Fevent%2F190064B4125FDEF3&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-14",
+          "venue": "Kia Forum",
+          "city": "Inglewood",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-12-14",
+          "venue": "Kia Forum",
+          "city": "Inglewood",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fgracie-abrams-the-look-at-my-inglewood-california-12-14-2026%2Fevent%2F090064B49319A5BE&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Kai Wachi",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/88c129a193afd15d7ae4635f37a158df/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-07-24",
+          "venue": "Salmo River Ranch",
+          "city": "Salmo",
+          "ticketUrl": "https://tickets.shambhalamusicfestival.com/products/tickets",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Max Bell Centre",
+          "city": "Calgary",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-01",
+          "venue": "Max Bell Centre",
+          "city": "Calgary",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://chasingsummer.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-04",
+          "venue": "The Midway",
+          "city": "San Francisco",
+          "ticketUrl": "https://www.tixr.com/groups/midwaysf/events/black-tiger-sex-machine-kai-wachi-block-party-193518?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-11",
+          "venue": "Stockyards Event Center",
+          "city": "Denver",
+          "ticketUrl": "https://www.axs.com/series/32775/global-dance-festival-2026-tickets",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Legend Valley",
+          "city": "Thornville",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://lostlands.frontgatetickets.com/",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-25",
+          "venue": "zMAX Dragway",
+          "city": "Concord",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-25",
+          "venue": "Charlotte Motor Speedway",
+          "city": "Concord",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://www.universe.com/events/breakaway-carolina-2026-tickets-5N4SWK",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-10",
+          "venue": "WAMU Theater",
+          "city": "Seattle",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-10-10",
+          "venue": "WAMU Theater",
+          "city": "Seattle",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fkai-wachi-seattle-washington-10-10-2026%2Fevent%2F0F00649BC3CCE82E&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-23",
+          "venue": "The Ave Live",
+          "city": "Philadelphia",
+          "ticketUrl": "https://link.dice.fm/b8e040252035?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-24",
+          "venue": "The NorVa",
+          "city": "Norfolk",
+          "ticketUrl": "https://www.axs.com/events/1513427/kai-wachi-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-31",
+          "venue": "Treefort Music Hall",
+          "city": "Boise",
+          "ticketUrl": "https://www.tixr.com/groups/roseentertainment/events/kai-wachi-halloween-night-196483?utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Juelz",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/a2b5a40b835519fb6b3d760a0125f516/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-07-25",
+          "venue": "The Studio at The Factory",
+          "city": "Dallas",
+          "ticketUrl": "https://www.axs.com/events/1452491/juelz-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "Frosttop",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/27315ed6a41880191338c647259e7777/1000x1000-000000-80-0-0.jpg",
+      "genre": "dubstep",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "Armory",
+          "city": "Minneapolis",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-07",
+          "venue": "The Armory",
+          "city": "Minneapolis",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Fslander-presents-voyager-friday-pass-minneapolis-minnesota-08-07-2026%2Fevent%2F060062D2BAB46662&utm_medium=affiliate",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-12-30",
+          "venue": "Orlando Amphitheater at the Central Florida Fairgrounds",
+          "city": "Orlando",
+          "ticketUrl": "http://ticketmaster.evyy.net/c/252938/264167/4272?u=https://eternalnye.frontgatetickets.com/",
+          "source": "jambase"
+        }
+      ]
+    },
+    {
+      "artist": "OsamaSon",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/7cc62ff8aa97ea0ac01868742073b6e2/1000x1000-000000-80-0-0.jpg",
+      "genre": "dark plugg",
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": "https://www.liveatthebowl.com/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-08-28",
+          "venue": "Sobeys Stadium",
+          "city": "Toronto",
+          "ticketUrl": "https://www.liveatthebowl.com/?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-18",
+          "venue": "Le Bataclan",
+          "city": "Paris",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/2038754/23891?u=https%3A%2F%2Fwww.ticketmaster.fr%2Ffr%2Fmanifestation%2Fosamason-billet%2Fidmanif%2F659334%2Fidtier%2F18864121&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-20",
+          "venue": "O2 Forum Kentish Town",
+          "city": "London",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-20",
+          "venue": "O2 Forum Kentish Town",
+          "city": "London",
+          "ticketUrl": "https://www.axs.com/events/1442832/osamason-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-21",
+          "venue": "O2 Forum Kentish Town",
+          "city": "London",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-21",
+          "venue": "O2 Forum Kentish Town",
+          "city": "London",
+          "ticketUrl": "https://www.axs.com/events/1442835/osamason-extra-date-added-tickets?cid=usaffjambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-23",
+          "venue": null,
+          "city": "Cologne",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-23",
+          "venue": "E-Werk",
+          "city": "Cologne",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21658842/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-24",
+          "venue": null,
+          "city": "Berlin",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-24",
+          "venue": "Columbiahalle",
+          "city": "Berlin",
+          "ticketUrl": "https://www.eventim.de/noapp/event/21661918/?affiliate=JAB&utm_medium=dp&utm_campaign=jambase&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Klub Stodoła",
+          "city": "Warsaw",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-26",
+          "venue": "Klub Stodoła",
+          "city": "Warsaw",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/2038764/23896?u=https%3A%2F%2Fwww.ticketmaster.pl%2Fevent%2Fosamason-psykturnal-tour-bilety%2F779260743&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-27",
+          "venue": "Klub Stodoła",
+          "city": "Warsaw",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-27",
+          "venue": "Klub Stodoła",
+          "city": "Warsaw",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/2038764/23896?u=https%3A%2F%2Fwww.ticketmaster.pl%2Fevent%2Fosamason-psykturnal-tour-bilety%2F1624887452&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-09-29",
+          "venue": "SaSaZu",
+          "city": "Praha 7",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-09-29",
+          "venue": "SaSaZu",
+          "city": "Prague",
+          "ticketUrl": "https://www.ticketmaster.cz/event/osamason-psykturnal-tour-vstupenky/450833584?utm_source=jambase",
+          "source": "jambase"
+        },
+        {
+          "date": "2026-10-01",
+          "venue": null,
+          "city": "Munich",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        }
+      ]
+    },
+    {
+      "artist": "Jordan Ward",
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d220bce34e249daadd930d39698c7aa6/1000x1000-000000-80-0-0.jpg",
+      "genre": null,
+      "announcedDate": "2026-07-19T23:44:35.482Z",
+      "events": [
+        {
+          "date": "2026-08-21",
+          "venue": "YouTube Theater",
+          "city": "Inglewood",
+          "ticketUrl": null,
+          "source": "ticketmaster"
+        },
+        {
+          "date": "2026-08-21",
+          "venue": "YouTube Theater",
+          "city": "Inglewood",
+          "ticketUrl": "https://ticketmaster.evyy.net/c/252938/271177/4272?u=https%3A%2F%2Fwww.ticketmaster.com%2Freal-923-presents-the-real-show-inglewood-california-08-21-2026%2Fevent%2F0A0064E2E1B1AD87%3Futm_content%3Dhotevent&utm_medium=affiliate&utm_source=jambase",
+          "source": "jambase"
+        }
+      ]
+    }
+  ]
+}

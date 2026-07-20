@@ -36,16 +36,16 @@
       "genres": [
         "neo soul",
         "bedroom pop",
+        "hip-hop",
         "indie pop",
         "pop",
-        "r&b",
-        "electronic"
+        "r&b"
       ]
     },
     "tier2": {
       "multiplier": 1,
       "genres": [
-        "hip-hop",
+        "electronic",
         "house",
         "techno",
         "country",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T04:52:42.558Z",
+  "generatedAt": "2026-07-20T13:29:20.627Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,12 +44,12 @@
       ]
     }
   },
-  "totalLeads": 32,
+  "totalLeads": 33,
   "stats": {
     "avgScore": 72,
     "medianScore": 69,
     "priorityBreakdown": {
-      "immediate": 4,
+      "immediate": 5,
       "high": 9,
       "qualified": 19
     }
@@ -1756,6 +1756,632 @@
     },
     {
       "rank": 3,
+      "artist": "Cafuné",
+      "firstSeen": "2026-07-20T13:29:20.627Z",
+      "spotifyId": null,
+      "deezerId": 135506262,
+      "mbid": "ad10c69c-0cae-4c27-934d-a02e4ecc9985",
+      "listeners": null,
+      "lastfmListeners": 1576843,
+      "lastfmTags": [
+        "indie pop",
+        "indie rock",
+        "dream pop",
+        "pop",
+        "alternative"
+      ],
+      "lastfmBio": "“Cafuné” is a Brazilian-Portuguese word that translates to “the act of running your fingers through a loved one’s hair.” When Sedona and Noah Yoo came upon the word while looking for a name for their college project in Brooklyn, they never anticipated that their 2015 EP \"Love Songs for Other People\" would connect with a Brazilian fanbase a continent away. Those listeners’ continued passion was the spark to continue on. Throughout their debut album \"Running\" Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-06-21",
+      "releaseName": "Hero",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Hero",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/a6ab4fb2f4c9022046f65038790d2120/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-21",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 100,
+      "priority": "immediate",
+      "baseScore": 103,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 18,
+        "likelihood": 25,
+        "growth": 10,
+        "baseScore": 103,
+        "genreMultiplier": 1,
+        "finalScore": 100,
+        "comebackGapMonths": 15.505913272010513
+      },
+      "tourCount": 11,
+      "avgVenueSize": 983,
+      "topVenues": [
+        {
+          "name": "The Foundry at The Fillmore",
+          "capacity": 1315,
+          "city": "Philadelphia",
+          "country": "United States"
+        },
+        {
+          "name": "Music Hall of Williamsburg",
+          "capacity": 650,
+          "city": "Brooklyn",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-03-22",
+          "venueName": "Hall 10",
+          "city": "Goyang-si",
+          "country": "South Korea",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-22",
+          "venueName": "Music Hall of Williamsburg",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 650
+        },
+        {
+          "date": "2025-10-18",
+          "venueName": "Back Room",
+          "city": "Carrboro",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-15",
+          "venueName": "Brushy Street Commons",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-12",
+          "venueName": "The Rebel Lounge",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-08",
+          "venueName": "Bimbo's 365 Club",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-02",
+          "venueName": "Urban Lounge",
+          "city": "Salt Lake City",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-26",
+          "venueName": "Lincoln Hall",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-22",
+          "venueName": "Brighton Music Hall",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-20",
+          "venueName": "The Foundry at The Fillmore",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2025-09-19",
+          "venueName": "The Atlantis",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-03-22",
+          "venueName": "Hall 10",
+          "city": "Goyang-si",
+          "country": "South Korea",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-22",
+          "venueName": "Music Hall of Williamsburg",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 650
+        },
+        {
+          "date": "2025-10-18",
+          "venueName": "Back Room",
+          "city": "Carrboro",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-15",
+          "venueName": "Brushy Street Commons",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-12",
+          "venueName": "The Rebel Lounge",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-08",
+          "venueName": "Bimbo's 365 Club",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-02",
+          "venueName": "Urban Lounge",
+          "city": "Salt Lake City",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-26",
+          "venueName": "Lincoln Hall",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-22",
+          "venueName": "Brighton Music Hall",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-20",
+          "venueName": "The Foundry at The Fillmore",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2025-09-19",
+          "venueName": "The Atlantis",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-04",
+          "venueName": "Fox Theater",
+          "city": "Oakland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-31",
+          "venueName": "Royal Oak Music Theatre",
+          "city": "Royal Oak",
+          "country": "United States",
+          "venueCapacity": 1700
+        },
+        {
+          "date": "2024-05-30",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-28",
+          "venueName": "Brooklyn Paramount",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 2700
+        },
+        {
+          "date": "2024-05-27",
+          "venueName": "9:30 Club",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2024-05-26",
+          "venueName": "9:30 Club",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2024-05-21",
+          "venueName": "Riviera Theatre",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": 2500
+        },
+        {
+          "date": "2023-09-27",
+          "venueName": "The Poetry Club",
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-26",
+          "venueName": "The Deaf Institute",
+          "city": "Manchester",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-24",
+          "venueName": "Alexandra Palace",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 800
+        },
+        {
+          "date": "2023-09-22",
+          "venueName": "Ronda",
+          "city": "Utrecht",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-21",
+          "venueName": "E-Werk",
+          "city": "Cologne",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-20",
+          "venueName": "Ronda",
+          "city": "Utrecht",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-19",
+          "venueName": "L'Olympia Bruno Coquatrix",
+          "city": "Paris",
+          "country": "France",
+          "venueCapacity": 1985
+        },
+        {
+          "date": "2023-09-17",
+          "venueName": "Kleine Zaal",
+          "city": "Amsterdam",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-16",
+          "venueName": "Club",
+          "city": "Brussels",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-04",
+          "venueName": "Bacardí Stage",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-03",
+          "venueName": "House of Blues",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-29",
+          "venueName": "The Foundry at The Fillmore",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2023-07-07",
+          "venueName": "American Family Insurance  House",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": 23000
+        },
+        {
+          "date": "2023-07-07",
+          "venueName": "Generac Power Stage",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-05-06",
+          "venueName": "Central Park",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-28",
+          "venueName": "Bowery Ballroom",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 575
+        },
+        {
+          "date": "2023-03-26",
+          "venueName": "Brighton Music Hall",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-25",
+          "venueName": "The Foundry at The Fillmore",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2023-03-20",
+          "venueName": "Purgatory",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-14",
+          "venueName": "Mala Vida",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-13",
+          "venueName": "Club Dada",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-06",
+          "venueName": "Rickshaw Stop",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-04",
+          "venueName": "Barboza",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-03",
+          "venueName": "Polaris Hall",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-01",
+          "venueName": "Kilby Court",
+          "city": "Salt Lake City",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-02-23",
+          "venueName": "Schubas Tavern",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-01-11",
+          "venueName": "Racket",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-12-15",
+          "venueName": "Crystal Ballroom",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-12-05",
+          "venueName": "Cain's Ballroom",
+          "city": "Tulsa",
+          "country": "United States",
+          "venueCapacity": 1800
+        },
+        {
+          "date": "2022-12-04",
+          "venueName": "MidFlorida Credit Union Amphitheatre",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2022-10-01",
+          "venueName": "Roseland Theater",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": 1400
+        },
+        {
+          "date": "2022-10-01",
+          "venueName": "PNC Live Studio",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-30",
+          "venueName": "Paramount Theatre",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 2807
+        },
+        {
+          "date": "2022-09-28",
+          "venueName": "Queen Elizabeth Theatre",
+          "city": "Vancouver",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-26",
+          "venueName": "Ace of Spades",
+          "city": "Sacramento",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-24",
+          "venueName": "Marquee Theatre",
+          "city": "Tempe",
+          "country": "United States",
+          "venueCapacity": 1500
+        },
+        {
+          "date": "2022-09-22",
+          "venueName": "Ogden Amphitheater",
+          "city": "Ogden",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-20",
+          "venueName": "Mission Ballroom",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": 3950
+        },
+        {
+          "date": "2022-08-05",
+          "venueName": "MASS MoCA",
+          "city": "North Adams",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-08-04",
+          "venueName": "Roadrunner",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-08-03",
+          "venueName": "The Brooklyn Mirage",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-31",
+          "venueName": "The National",
+          "city": "Richmond",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-30",
+          "venueName": "The Orange Peel",
+          "city": "Asheville",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-29",
+          "venueName": "Coca-Cola Roxy",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": 3600
+        },
+        {
+          "date": "2022-07-27",
+          "venueName": "Iron City",
+          "city": "Birmingham",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-26",
+          "venueName": "Orpheum Theater",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-19",
+          "venueName": "Zone One",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 2,
+      "lastTourDate": "2026-03-22",
+      "managementType": "indie-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "fitReasoning": [
+        "Recent single (2026-06-21), already touring",
+        "11 shows in past 18 months across 2 countries",
+        "Returning after a 16-month gap with strong new original material — comeback signal is solid",
+        "Average venue size 983 cap (Matthew's touring scale)",
+        "Independent label (Aurelians Club) — reachable via label"
+      ]
+    },
+    {
+      "rank": 4,
       "artist": "Smino",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -3212,7 +3838,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 5,
       "artist": "Destin Conrad",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -4348,7 +4974,7 @@
       ]
     },
     {
-      "rank": 5,
+      "rank": 6,
       "artist": "Yellow Claw",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -6619,7 +7245,7 @@
       ]
     },
     {
-      "rank": 6,
+      "rank": 7,
       "artist": "Nurko",
       "firstSeen": "2026-07-20T00:30:12.297Z",
       "spotifyId": null,
@@ -6875,7 +7501,7 @@
       "releaseQualityScore": 0.3625
     },
     {
-      "rank": 7,
+      "rank": 8,
       "artist": "Trippie Redd",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -8362,7 +8988,7 @@
       ]
     },
     {
-      "rank": 8,
+      "rank": 9,
       "artist": "Jeremy Passion",
       "firstSeen": "2026-07-20T04:40:27.910Z",
       "spotifyId": null,
@@ -8499,7 +9125,7 @@
       ]
     },
     {
-      "rank": 9,
+      "rank": 10,
       "artist": "Kalan.Frfr",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -8685,7 +9311,7 @@
       ]
     },
     {
-      "rank": 10,
+      "rank": 11,
       "artist": "ATLiens",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -9590,7 +10216,7 @@
       ]
     },
     {
-      "rank": 11,
+      "rank": 12,
       "artist": "Ray Volpe",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -10354,7 +10980,7 @@
       ]
     },
     {
-      "rank": 12,
+      "rank": 13,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -10719,7 +11345,7 @@
       ]
     },
     {
-      "rank": 13,
+      "rank": 14,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -10797,7 +11423,7 @@
       ]
     },
     {
-      "rank": 14,
+      "rank": 15,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -10881,7 +11507,7 @@
       ]
     },
     {
-      "rank": 15,
+      "rank": 16,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -10965,7 +11591,7 @@
       ]
     },
     {
-      "rank": 16,
+      "rank": 17,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -12535,7 +13161,7 @@
       ]
     },
     {
-      "rank": 17,
+      "rank": 18,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -12612,7 +13238,7 @@
       ]
     },
     {
-      "rank": 18,
+      "rank": 19,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -12698,7 +13324,7 @@
       ]
     },
     {
-      "rank": 19,
+      "rank": 20,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -12782,7 +13408,7 @@
       ]
     },
     {
-      "rank": 20,
+      "rank": 21,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -14125,7 +14751,7 @@
       ]
     },
     {
-      "rank": 21,
+      "rank": 22,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -14603,7 +15229,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 23,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -15933,7 +16559,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -16010,7 +16636,7 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 25,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -16088,7 +16714,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 26,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -16172,7 +16798,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 27,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -19095,7 +19721,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 28,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -19228,7 +19854,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 29,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -19529,7 +20155,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 30,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -20684,7 +21310,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 31,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -22596,7 +23222,7 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 32,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -25352,7 +25978,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 33,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,

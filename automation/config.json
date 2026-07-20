@@ -39,13 +39,13 @@
         "hip-hop",
         "neo soul",
         "indie pop",
-        "r&b"
+        "electronic"
       ]
     },
     "tier2": {
       "multiplier": 1,
       "genres": [
-        "electronic",
+        "r&b",
         "house",
         "techno",
         "country",

@@ -19,6 +19,7 @@ import {
   announcementRoute,
   TOUR_STAGE_META,
   TOUR_STAGE_FILTERS,
+  TOUR_STAGE_HELP,
   DEFAULT_TOUR_STAGE_FILTER,
 } from '../lib/tourAnnouncements';
 import { shortDate, longDate } from '../lib/format';
@@ -39,6 +40,7 @@ export default function TourAnnouncements() {
   const [entries, setEntries] = useState(null); // null = loading
   const [error, setError] = useState(null);
   const [stageFilter, setStageFilter] = useState(DEFAULT_TOUR_STAGE_FILTER);
+  const [helpOpen, setHelpOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -85,6 +87,15 @@ export default function TourAnnouncements() {
               </option>
             ))}
           </select>
+          <button
+            type="button"
+            className="stage-help-btn"
+            onClick={() => setHelpOpen(true)}
+            aria-label="What do these stages mean?"
+            title="What do these stages mean?"
+          >
+            ?
+          </button>
           <p className="pf-hint tour-stage-hint">
             Shows tours with confirmed dates that are on sale or coming soon — this may lag a few days behind
             an artist&rsquo;s first public announcement, since it relies on ticketing platforms rather than
@@ -92,6 +103,8 @@ export default function TourAnnouncements() {
           </p>
         </div>
       )}
+
+      {helpOpen && <TourStageHelpModal onClose={() => setHelpOpen(false)} />}
 
       {entries === null && !error && (
         <div className="cards-grid" aria-busy="true" aria-label="Loading tour announcements">
@@ -137,6 +150,52 @@ export default function TourAnnouncements() {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+// Explains each tour-stage filter (and the "Not in your roster" badge) to a
+// new user — same modal shell as ScanResultModal.jsx (overlay + click-outside
+// + ✕ close). Content comes from TOUR_STAGE_HELP in lib/tourAnnouncements.js,
+// kept in the same order as the filter dropdown above.
+function TourStageHelpModal({ onClose }) {
+  return (
+    <div className="modal-overlay" onClick={onClose} role="presentation">
+      <div
+        className="modal stage-help-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Tour stage filters explained"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className="modal-close" onClick={onClose} aria-label="Close">
+          ✕
+        </button>
+        <h3 className="scan-modal-title">Tour stage filters explained</h3>
+        <p className="scan-modal-copy">
+          Every artist here is classified automatically from their confirmed Ticketmaster/JamBase dates and
+          recent activity — no manual tagging.
+        </p>
+        <dl className="stage-help-list">
+          {TOUR_STAGE_HELP.map((s) => (
+            <div className="stage-help-row" key={s.value}>
+              <dt>
+                {s.value === 'all' ? (
+                  <span className="stage-help-all-label">{s.label}</span>
+                ) : (
+                  <span className={`pill stage-badge ${TOUR_STAGE_META[s.value].className}`}>{s.label}</span>
+                )}
+              </dt>
+              <dd>{s.description}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="scan-modal-notice">
+          Artists tagged <span className="pill roster-badge inline-legend">Not in your roster</span> were
+          surfaced through a nationwide Ticketmaster search rather than pulled from your tracked leads or My
+          Artists list.
+        </p>
+      </div>
     </div>
   );
 }

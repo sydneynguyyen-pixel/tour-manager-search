@@ -1719,6 +1719,55 @@ body {
   margin: 0;
 }
 
+/* "?" button that opens TourStageHelpModal — sits right next to the stage
+   filter dropdown in .controls-row. */
+.stage-help-btn {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--card);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.stage-help-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--text-faint);
+}
+
+/* ---------- Tour stage help modal (TourStageHelpModal in TourAnnouncements.jsx) ---------- */
+.stage-help-modal {
+  max-width: 560px;
+}
+.stage-help-list {
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stage-help-row dt {
+  margin-bottom: 5px;
+}
+.stage-help-row dd {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.stage-help-all-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
 /* "Not in your roster" badge — marks a browse-discovered artist (surfaced by
    nationwide Ticketmaster discovery, outside Matthew's tracked roster) apart
    from a tracked one. Deliberately quiet: an outline/dashed pill, not another

@@ -35,6 +35,45 @@ export const TOUR_STAGE_FILTERS = [
 
 export const DEFAULT_TOUR_STAGE_FILTER = 'NEW_TOUR';
 
+// Plain-language explanations for the "?" help modal — same order as
+// TOUR_STAGE_FILTERS so the modal reads top-to-bottom exactly like the
+// dropdown. Criteria wording mirrors classifyTourStage in
+// automation/build-tour-announcements.js; keep the two in sync if that
+// function's thresholds ever change.
+export const TOUR_STAGE_HELP = [
+  {
+    value: 'NEW_TOUR',
+    label: TOUR_STAGE_META.NEW_TOUR.label,
+    description:
+      "Confirmed, on-sale dates exist, but the artist hasn't started playing them yet — the strongest signal a new travel-booking opportunity just opened up. This is the default view. Criteria: 3+ confirmed dates with none played in the last 60 days, or (for artists outside your roster) 6+ dates found via a nationwide Ticketmaster search.",
+  },
+  {
+    value: 'all',
+    label: 'All stages',
+    description: 'Shows every artist in the feed regardless of stage, for the full picture at once.',
+  },
+  {
+    value: 'ONGOING',
+    label: TOUR_STAGE_META.ONGOING.label,
+    description: 'The artist is actively on tour right now. Criteria: 3+ confirmed dates, with at least one played in the last 60 days.',
+  },
+  {
+    value: 'NEW_SHOWS',
+    label: TOUR_STAGE_META.NEW_SHOWS.label,
+    description: "A single show or a short run has been confirmed — not yet a full tour. Criteria: 1–2 confirmed dates.",
+  },
+  {
+    value: 'POSSIBLE',
+    label: TOUR_STAGE_META.POSSIBLE.label,
+    description: 'No confirmed dates yet, but a recent release hints a tour announcement could be coming. Criteria: 0 confirmed dates, with a release in the last 60 days.',
+  },
+  {
+    value: 'NO_TOUR',
+    label: TOUR_STAGE_META.NO_TOUR.label,
+    description: 'Nothing to report right now — no confirmed dates, no recent release, and no recent past show.',
+  },
+];
+
 export async function fetchTourAnnouncements() {
   if (!config.tourAnnouncementsUrl) return [];
   try {

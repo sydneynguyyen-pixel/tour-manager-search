@@ -1,16 +1,17 @@
 // Aggregation layer: merge Deezer releases + Setlist.fm tour history by artist,
 // enrich each with MusicBrainz genres/tier plus supplementary metadata from
 // TheAudioDB (image + social gaps), Last.fm (listener/tag signal), Discogs
-// (discography cross-check), music-news RSS coverage, and Ticketmaster
-// (confirmed on-sale tour dates), and emit one unified record per unique
-// artist for the scoring stage.
+// (discography cross-check), music-news RSS coverage, and two independent
+// confirmed-tour sources (Ticketmaster, JamBase), and emit one unified record
+// per unique artist for the scoring stage.
 //
 // Per-artist enrichment order (mirrors the source priority): release data is
 // already resolved (Deezer, upstream) -> MusicBrainz genres -> TheAudioDB image
 // + social gap-fill -> Last.fm listener/tags (+ genre cross-check vs MB) ->
 // Discogs cross-check -> RSS news mentions -> Ticketmaster confirmed events ->
-// contact research. All enrichment sources fail soft (null-filled) so one
-// flaky source never drops an artist.
+// JamBase confirmed events (funnel-gated — see call site) -> contact
+// research. All enrichment sources fail soft (null-filled) so one flaky
+// source never drops an artist.
 
 const logger = require('./utils/logger');
 const { getArtistGenres } = require('./musicbrainz');
@@ -22,6 +23,7 @@ const { getDiscogsReleases } = require('./scrapers/discogs-scraper');
 const { getWikidataSocialLinks } = require('./scrapers/wikidata-scraper');
 const { checkArtistInRecentNews } = require('./scrapers/rss-scraper');
 const { getTicketmasterEvents } = require('./scrapers/ticketmaster-scraper');
+const { getJamBaseEvents } = require('./scrapers/jambase-scraper');
 const { summarizeReleases } = require('./release-classifier');
 
 // Case-insensitive, whitespace-normalized key for joining across sources.
@@ -108,6 +110,25 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
     } catch (err) {
       logger.warn(`Aggregate: Ticketmaster lookup failed for "${displayName}" (${err.message}).`);
       ticketmaster = { hasUpcomingEvents: false, events: [], eventCount: 0, earliestOnSaleDate: null };
+    }
+
+    // JamBase — a second, independent confirmed-tour source alongside
+    // Ticketmaster (same treatment in score.js: an additive bonus, not a
+    // replacement). Unlike Ticketmaster this tier is metered and billed past
+    // 1,000 calls/month, so it's ONLY queried for candidates that already
+    // cleared the release + Setlist.fm funnel (both `rel` and `tour` present)
+    // — not every raw discovered candidate. See jambase-usage.js for the
+    // budget tracker jambase-scraper.js itself checks before calling.
+    let jambase;
+    if (rel && tour) {
+      try {
+        jambase = await getJamBaseEvents(displayName);
+      } catch (err) {
+        logger.warn(`Aggregate: JamBase lookup failed for "${displayName}" (${err.message}).`);
+        jambase = { hasUpcomingEvents: false, events: [], eventCount: 0, earliestListedDate: null };
+      }
+    } else {
+      jambase = { hasUpcomingEvents: false, events: [], eventCount: 0, earliestListedDate: null };
     }
 
     // Management/booking accessibility (web + Wikipedia; no music-API calls).
@@ -200,6 +221,10 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
       ticketmasterEvents: ticketmaster.events ?? [], // {date, venue, city, venueCapacity}, newest-first
       ticketmasterEventCount: ticketmaster.eventCount ?? 0,
       ticketmasterEarliestOnSaleDate: ticketmaster.earliestOnSaleDate ?? null,
+      hasJamBaseEvents: jambase.hasUpcomingEvents ?? false,
+      jambaseEvents: jambase.events ?? [], // {date, venue, city, ticketUrl}
+      jambaseEventCount: jambase.eventCount ?? 0,
+      jambaseEarliestListedDate: jambase.earliestListedDate ?? null,
     });
   }
 

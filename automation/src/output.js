@@ -104,6 +104,26 @@ function buildReasoning(a, config) {
     );
   }
 
+  // JamBase confirmation — a second, independent verified-tour source, same
+  // recency framing as Ticketmaster above (scoreJamBaseBonus uses the same
+  // tiers). When both sources confirm the same artist, that's two
+  // independent listings agreeing, not just one — called out explicitly
+  // since it's stronger corroboration than either alone.
+  if (a.hasJamBaseEvents) {
+    const count = a.jambaseEventCount || (a.jambaseEvents || []).length;
+    const bonus = a.scoring?.jambaseBonus;
+    const recencyNote =
+      bonus === 15
+        ? ' — just listed, still a prime outreach window'
+        : bonus === 6
+          ? ' — listed a while ago, likely already staffed for this run'
+          : '';
+    const corroboration = a.hasUpcomingEvents ? ' — corroborates the Ticketmaster listing above' : '';
+    reasons.push(
+      `Also confirmed via JamBase — ${count} date${count === 1 ? '' : 's'} announced${recencyNote}${corroboration}`
+    );
+  }
+
   if ((a.avgVenueSize || 0) > 0) {
     const min = config?.scoringThresholds?.venueMin ?? 300;
     const max = config?.scoringThresholds?.venueMax ?? 5000;
@@ -232,6 +252,9 @@ function formatLeadsOutput(scoredArtists, config) {
     hasUpcomingEvents: a.hasUpcomingEvents ?? false,
     ticketmasterEvents: Array.isArray(a.ticketmasterEvents) ? a.ticketmasterEvents : [], // {date, venue, city, venueCapacity}
     ticketmasterEventCount: a.ticketmasterEventCount ?? 0,
+    hasJamBaseEvents: a.hasJamBaseEvents ?? false,
+    jambaseEvents: Array.isArray(a.jambaseEvents) ? a.jambaseEvents : [], // {date, venue, city, ticketUrl}
+    jambaseEventCount: a.jambaseEventCount ?? 0,
     fitReasoning: buildReasoning(a, config),
   }));
 

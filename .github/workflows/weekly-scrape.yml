@@ -34,6 +34,8 @@ jobs:
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           DISCOGS_TOKEN: ${{ secrets.DISCOGS_TOKEN }}
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          JAMBASE_API_KEY: ${{ secrets.JAMBASE_API_KEY }}
         run: node run.js
 
       - name: Commit and push updated data
@@ -41,7 +43,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add automation/data/leads.json automation/data/venue-cache.json automation/config.json \
-            automation/data/last-scan-result.json automation/data/scan-history.json
+            automation/data/last-scan-result.json automation/data/scan-history.json \
+            automation/data/jambase-usage.json
           if git diff --cached --quiet; then
             echo "No new leads this run — nothing to commit."
           else

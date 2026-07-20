@@ -134,28 +134,12 @@ export default function ScoringGuide() {
 
         <section className="guide-section">
           <h2>What we can't see</h2>
-          <p>Worth knowing upfront, so nothing feels like a bug:</p>
-
-          <div className="guide-callout">
-            <strong>Small/local artists often won't show up at all.</strong> This tool only sees
-            what's publicly trackable — official releases, logged concerts, artist databases. A
-            lot of great smaller artists just don't have that digital footprint yet. If you
-            already know someone like that, log them in My Artists instead — no algorithm needed
-            for people you already know.
-          </div>
-
-          <div className="guide-callout">
-            <strong>Not every artist has genre data.</strong> About 4 in 10 artists don't have a
-            clear genre tag in our sources. When that happens, we treat it as neutral — it doesn't
-            help or hurt their score.
-          </div>
-
-          <div className="guide-callout">
-            <strong>Contact info is often missing.</strong> Most artist websites don't publish a
-            booking email where we can find it. When we can't find one, we still estimate
-            reachability based on their label/management situation — just know "email not found"
-            is common, not a dead end.
-          </div>
+          <p>
+            Missing data never counts against an artist — no genre tag scores as neutral, and no
+            findable contact email just falls back to a label/management-based estimate instead.
+            See <Link to="/data-sources">Data Sources</Link> for the full rundown of what this
+            tool can and can't see.
+          </p>
         </section>
 
         <p className="guide-crosslink">

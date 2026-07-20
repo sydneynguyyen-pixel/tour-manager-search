@@ -155,5 +155,66 @@ assert(confirmedUnknownRecency.scoring.ticketmasterBonus === 10, 'confirmed but 
 
 assert(weak.scoring.ticketmasterBonus === 0, 'no Ticketmaster data -> ticketmasterBonus 0 (existing cases unaffected)');
 
+// --- Case 7: JamBase gets the same treatment as Ticketmaster, independently -
+const jambaseRecent = scoreArtist(
+  artist({
+    artist: 'JamBaseRecent',
+    tourCount: 0,
+    releaseDate: RECENT,
+    avgVenueSize: 800,
+    genreMultiplier: 1.0,
+    hasJamBaseEvents: true,
+    jambaseEarliestListedDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
+  }),
+  config
+);
+assert(jambaseRecent.scoring.jambaseBonus === 15, 'JamBase listed within 30 days -> jambaseBonus 15 (prime window)');
+assert(jambaseRecent.scoring.ticketmasterBonus === 0, 'JamBase-only confirmation does not also credit a Ticketmaster bonus');
+assert(jambaseRecent.finalScore > opening.finalScore, 'a JamBase-confirmed listing scores higher than the inferred-only case');
+
+const jambaseLong = scoreArtist(
+  artist({
+    artist: 'JamBaseLong',
+    tourCount: 0,
+    releaseDate: RECENT,
+    avgVenueSize: 800,
+    genreMultiplier: 1.0,
+    hasJamBaseEvents: true,
+    jambaseEarliestListedDate: new Date(Date.now() - 200 * 24 * 60 * 60 * 1000).toISOString(),
+  }),
+  config
+);
+assert(jambaseLong.scoring.jambaseBonus === 6, 'JamBase listed 90+ days ago -> jambaseBonus 6 (long-listed)');
+
+assert(weak.scoring.jambaseBonus === 0, 'no JamBase data -> jambaseBonus 0 (existing cases unaffected)');
+
+// --- Case 8: both sources confirming stacks higher than either alone --------
+// Two independent vendors agreeing is stronger evidence than one, so the
+// bonuses should simply add rather than one crowding out the other.
+const bothConfirmed = scoreArtist(
+  artist({
+    artist: 'BothConfirmed',
+    tourCount: 0,
+    releaseDate: RECENT,
+    avgVenueSize: 800,
+    genreMultiplier: 1.0,
+    hasUpcomingEvents: true,
+    ticketmasterEarliestOnSaleDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+    hasJamBaseEvents: true,
+    jambaseEarliestListedDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+  }),
+  config
+);
+assert(bothConfirmed.scoring.ticketmasterBonus === 15, 'both-confirmed case still scores its own Ticketmaster bonus');
+assert(bothConfirmed.scoring.jambaseBonus === 15, 'both-confirmed case still scores its own JamBase bonus');
+assert(
+  bothConfirmed.finalScore > confirmedRecent.finalScore,
+  'confirmation from both sources scores higher than Ticketmaster alone'
+);
+assert(
+  bothConfirmed.finalScore > jambaseRecent.finalScore,
+  'confirmation from both sources scores higher than JamBase alone'
+);
+
 if (failures > 0) { logger.error(`${failures} check(s) failed.`); process.exit(1); }
 logger.success('Scoring checks passed.');

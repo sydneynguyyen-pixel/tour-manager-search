@@ -59,6 +59,32 @@ const MY_ARTIST_TABS = [
   { key: 'notes', label: 'My Notes' },
 ];
 
+// Combines the two independent confirmed-tour sources (Ticketmaster,
+// JamBase) into one "On sale now" list. When both list the same show (same
+// date + venue), merge into a single row crediting both — that's two vendors
+// agreeing, not a duplicate to hide. Sorted by date ascending.
+function mergeConfirmedEvents(ticketmasterEvents, jambaseEvents) {
+  const rows = new Map();
+  const keyFor = (e) => `${e.date}|${(e.venue || '').trim().toLowerCase()}`;
+
+  for (const e of ticketmasterEvents || []) {
+    rows.set(keyFor(e), { date: e.date, venue: e.venue, city: e.city, ticketUrl: null, sources: ['Ticketmaster'] });
+  }
+  for (const e of jambaseEvents || []) {
+    const key = keyFor(e);
+    const existing = rows.get(key);
+    if (existing) {
+      existing.sources.push('JamBase');
+      existing.ticketUrl = existing.ticketUrl ?? e.ticketUrl ?? null;
+      existing.city = existing.city ?? e.city ?? null;
+    } else {
+      rows.set(key, { date: e.date, venue: e.venue, city: e.city, ticketUrl: e.ticketUrl ?? null, sources: ['JamBase'] });
+    }
+  }
+
+  return [...rows.values()].sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+}
+
 const BackLink = ({ toMyArtists = false }) => (
   <Link className="detail-back" to="/">
     <span aria-hidden="true">←</span> Back to {toMyArtists ? 'My Artists' : 'leads'}
@@ -154,7 +180,10 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
 
   const releases = Array.isArray(lead.recentReleases) ? lead.recentReleases : [];
   const newsArticles = Array.isArray(lead.newsArticles) ? lead.newsArticles : [];
-  const upcomingShows = lead.hasUpcomingEvents && Array.isArray(lead.ticketmasterEvents) ? lead.ticketmasterEvents : [];
+  const upcomingShows = mergeConfirmedEvents(
+    lead.hasUpcomingEvents ? lead.ticketmasterEvents : [],
+    lead.hasJamBaseEvents ? lead.jambaseEvents : []
+  );
   const windowShows = Array.isArray(lead.tourHistory) ? lead.tourHistory : [];
   const fullShows = Array.isArray(lead.fullTourHistory) ? lead.fullTourHistory : [];
   const shows = showFullHistory ? fullShows : windowShows;
@@ -363,14 +392,27 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
                   {upcomingShows.map((sh, i) => (
                     <li className="detail-table-row" key={`${sh.date}-${sh.venue}-${i}`}>
                       <span className="dt-date">{longDate(sh.date)}</span>
-                      <span className="dt-venue">{sh.venue || 'Unknown venue'}</span>
+                      <span className="dt-venue">
+                        {sh.venue || 'Unknown venue'}
+                        <span className="dt-venue-source">
+                          via {sh.sources.join(' + ')}
+                          {sh.ticketUrl && (
+                            <>
+                              {' · '}
+                              <a href={sh.ticketUrl} target="_blank" rel="noopener noreferrer">
+                                Tickets ↗
+                              </a>
+                            </>
+                          )}
+                        </span>
+                      </span>
                       <span className="dt-loc">{sh.city || '—'}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="detail-empty-inline detail-ticketmaster-note">
-                Confirmed via Ticketmaster — verified, on-sale dates, not an inference.
+                Confirmed via Ticketmaster and/or JamBase — verified, on-sale dates, not an inference.
               </div>
             </section>
           )}

@@ -177,6 +177,7 @@ const SOURCE_CHECKS = [
   // official site ('artist-website').
   { label: 'Wikipedia', test: (l) => l.contactSource === 'wikipedia' || l.contactSource === 'artist-website' },
   { label: 'Ticketmaster', test: (l) => l.hasUpcomingEvents === true },
+  { label: 'JamBase', test: (l) => l.hasJamBaseEvents === true },
 ];
 
 export function getContributingSources(lead) {

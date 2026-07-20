@@ -23,12 +23,14 @@ const COMEBACK_GAP_MONTHS = 12;
 // with the actual scoring cutoffs instead of drifting out of step.
 const RELEASE_QUALITY_STRONG = 0.6;
 const RELEASE_QUALITY_PARTIAL = 0.3;
-// Ticketmaster on-sale-recency thresholds (scoreTicketmasterBonus) — how long
-// ago the earliest confirmed date went on sale. Recently listed reads as
-// "still building out the tour crew/logistics" (real opportunity); long-listed
-// reads as "probably already staffed" (confirmed real, but lower opportunity).
-const TICKETMASTER_RECENT_LISTING_DAYS = 30;
-const TICKETMASTER_LONG_LISTING_DAYS = 90;
+// Confirmed-tour recency thresholds, shared by both confirmation sources
+// (scoreTicketmasterBonus, scoreJamBaseBonus via confirmationRecencyBonus) —
+// how long ago the earliest confirmed date was listed/went on sale. Recently
+// listed reads as "still building out the tour crew/logistics" (real
+// opportunity); long-listed reads as "probably already staffed" (confirmed
+// real, but lower opportunity).
+const CONFIRMATION_RECENT_LISTING_DAYS = 30;
+const CONFIRMATION_LONG_LISTING_DAYS = 90;
 
 // Find the most recent 12+ month gap between consecutive shows in an artist's
 // all-time history (fullTourHistory — unbounded by the 18mo scoring window),
@@ -147,6 +149,21 @@ function scoreGrowth(a) {
   return g;
 }
 
+// Shared recency curve for BOTH confirmation sources (Ticketmaster's on-sale
+// date, JamBase's datePublished) — 15/10/6 by how long ago the earliest
+// confirmed date was listed. A missing/unparseable date still means
+// "confirmed, recency unknown" (10), never "no confirmation" (0) — that
+// distinction belongs to the hasEvents check each caller does first.
+function confirmationRecencyBonus(earliestListedIso) {
+  const listed = earliestListedIso ? new Date(earliestListedIso) : null;
+  if (!listed || Number.isNaN(listed.getTime())) return 10; // confirmed, but recency unknown
+
+  const daysSinceListed = (Date.now() - listed.getTime()) / MS_PER_DAY;
+  if (daysSinceListed <= CONFIRMATION_RECENT_LISTING_DAYS) return 15; // just listed — prime window
+  if (daysSinceListed <= CONFIRMATION_LONG_LISTING_DAYS) return 10; // moderate — likely still workable
+  return 6; // long-listed — probably already staffed, but still a real confirmed tour
+}
+
 // Ticketmaster confirmation bonus (max 15) — layered ON TOP of baseScore,
 // alongside the five dimensions above, not folded into scoreLikelihood.
 //
@@ -166,14 +183,24 @@ function scoreGrowth(a) {
 // has likely already staffed up — confirmed real, but a smaller opening.
 function scoreTicketmasterBonus(a) {
   if (!a.hasUpcomingEvents) return 0;
+  return confirmationRecencyBonus(a.ticketmasterEarliestOnSaleDate);
+}
 
-  const onSale = a.ticketmasterEarliestOnSaleDate ? new Date(a.ticketmasterEarliestOnSaleDate) : null;
-  if (!onSale || Number.isNaN(onSale.getTime())) return 10; // confirmed, but recency unknown
-
-  const daysSinceOnSale = (Date.now() - onSale.getTime()) / MS_PER_DAY;
-  if (daysSinceOnSale <= TICKETMASTER_RECENT_LISTING_DAYS) return 15; // just went on sale — prime window
-  if (daysSinceOnSale <= TICKETMASTER_LONG_LISTING_DAYS) return 10; // moderate — likely still workable
-  return 6; // long-listed — probably already staffed, but still a real confirmed tour
+// JamBase confirmation bonus (max 15) — same treatment as Ticketmaster
+// (additive, not folded into scoreLikelihood): a second, independent
+// vendor's confirmed listing is just as strong a signal as Ticketmaster's,
+// so it gets the identical recency-tiered bonus rather than a discounted
+// one. When an artist is confirmed on BOTH platforms, both bonuses stack —
+// two independent sources agreeing is stronger evidence than either alone,
+// and finalScore's Math.min(100, ...) cap still keeps totals in range.
+//
+// Recency here is JamBase's datePublished (when JamBase's own record for the
+// event first appeared) rather than an on-sale date — JamBase doesn't expose
+// a distinct on-sale timestamp, but datePublished serves the same purpose:
+// how long ago this tour was first announced/listed.
+function scoreJamBaseBonus(a) {
+  if (!a.hasJamBaseEvents) return 0;
+  return confirmationRecencyBonus(a.jambaseEarliestListedDate);
 }
 
 // Compute the full scored record for a single artist (no filtering/priority).
@@ -185,7 +212,8 @@ function scoreArtist(a, config, nowMs = Date.now()) {
   const likelihood = scoreLikelihood(a, nowMs, comebackGapMonths);
   const growth = scoreGrowth(a);
   const ticketmasterBonus = scoreTicketmasterBonus(a);
-  const baseScore = touring + listeners + accessibility + likelihood + growth + ticketmasterBonus;
+  const jambaseBonus = scoreJamBaseBonus(a);
+  const baseScore = touring + listeners + accessibility + likelihood + growth + ticketmasterBonus + jambaseBonus;
 
   const genreMultiplier = a.genreMultiplier ?? 1.0;
   const finalScore = Math.round(Math.min(100, baseScore * genreMultiplier));
@@ -201,6 +229,7 @@ function scoreArtist(a, config, nowMs = Date.now()) {
       likelihood,
       growth,
       ticketmasterBonus,
+      jambaseBonus,
       baseScore,
       genreMultiplier,
       finalScore,

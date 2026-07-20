@@ -2134,6 +2134,17 @@ body {
   font-weight: 600;
   min-width: 0;
 }
+.dt-venue-source {
+  display: block;
+  margin-top: 2px;
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+.dt-venue-source a {
+  color: inherit;
+  text-decoration: underline;
+}
 .dt-loc {
   color: var(--text-muted);
   min-width: 0;
@@ -3224,6 +3235,55 @@ body {
 }
 .guide-crosslink a:hover {
   text-decoration: underline;
+}
+
+/* ---------- Data Sources page (pages/DataSources.jsx) ---------- */
+.source-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.source-row {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-inner);
+}
+.source-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.source-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.source-desc {
+  margin: 0 0 6px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.source-contributes {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.source-contributes strong {
+  color: var(--text);
 }
 
 /* ---------- Settings / Genre Preferences ---------- */

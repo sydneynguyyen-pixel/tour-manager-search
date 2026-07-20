@@ -7,6 +7,7 @@ import Filters, { DEFAULT_FILTERS, applyFilters } from './components/Filters';
 import ArtistDetail from './pages/ArtistDetail';
 import ScoringGuide from './pages/ScoringGuide';
 import FAQ from './pages/FAQ';
+import DataSources from './pages/DataSources';
 import Settings from './pages/Settings';
 import GenrePreferences from './pages/GenrePreferences';
 import DismissedArtists from './pages/DismissedArtists';
@@ -141,6 +142,7 @@ export default function App() {
         <Route path="/my-artists/:id" element={<ArtistDetail source="myArtists" hideScore />} />
         <Route path="/scoring-guide" element={<ScoringGuide />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/data-sources" element={<DataSources />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/settings/genres" element={<GenrePreferences />} />
         <Route path="/settings/dismissed" element={<DismissedArtists />} />

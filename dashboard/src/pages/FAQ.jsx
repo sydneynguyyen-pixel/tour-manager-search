@@ -42,9 +42,11 @@ export default function FAQ() {
           <p>
             Most of the time it's an educated guess — a fresh release with no tour on the books
             yet, or an artist breaking a long touring gap. But when an artist has a real,
-            on-sale tour listed on Ticketmaster, that's a confirmed signal, not a guess, and it
-            counts for more. You'll see the actual dates on an artist's profile under "On sale
-            now" whenever that's the case.
+            on-sale tour listed on Ticketmaster or JamBase, that's a confirmed signal, not a
+            guess, and it counts for more. The two work together — if both list the same tour,
+            that's two independent sources agreeing, which counts for even more. You'll see the
+            actual dates on an artist's profile under "On sale now" whenever that's the case. See{' '}
+            <Link to="/data-sources">Data Sources</Link> for what each one contributes.
           </p>
         </section>
 
@@ -87,7 +89,8 @@ export default function FAQ() {
           <p>
             Most artist websites don't publish a direct booking email anywhere we can find. When
             that happens, we still estimate how reachable they are based on their label/management
-            situation — "Not found" just means dig a little, not "dead end."
+            situation — "Not found" just means dig a little, not "dead end." See{' '}
+            <Link to="/data-sources">Data Sources</Link> for this and other known gaps.
           </p>
         </section>
 
@@ -111,6 +114,11 @@ export default function FAQ() {
             that effort.
           </p>
         </section>
+
+        <p className="guide-crosslink">
+          Curious where the data comes from? See the full{' '}
+          <Link to="/data-sources">list of data sources</Link>.
+        </p>
       </article>
     </div>
   );

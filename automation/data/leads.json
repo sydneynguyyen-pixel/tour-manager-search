@@ -1,57 +1,57 @@
 {
-  "generatedAt": "2026-07-20T17:43:56.706Z",
+  "generatedAt": "2026-07-20T23:01:55.301Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
       "genres": [
         "pop",
+        "bedroom pop",
+        "hip-hop",
         "indie pop",
-        "r&b",
-        "neo soul"
+        "electronic",
+        "r&b"
       ]
     },
     "tier2": {
       "multiplier": 1,
       "genres": [
-        "hip-hop",
-        "bedroom pop",
-        "electronic",
+        "neo soul",
         "house",
-        "techno"
+        "techno",
+        "country",
+        "emo"
       ]
     },
     "tier3": {
       "multiplier": 0.95,
       "genres": [
-        "rock",
-        "indie rock",
         "folk",
-        "country",
-        "emo",
+        "indie rock",
+        "punk",
+        "rock",
         "soul",
-        "punk"
+        "bollywood"
       ]
     },
     "tier4": {
       "multiplier": 0.92,
       "genres": [
-        "k-pop",
-        "j-pop",
-        "bollywood",
-        "metal",
         "classical",
-        "latin"
+        "j-pop",
+        "k-pop",
+        "latin",
+        "metal"
       ]
     }
   },
-  "totalLeads": 34,
+  "totalLeads": 35,
   "stats": {
     "avgScore": 73,
     "medianScore": 69,
     "priorityBreakdown": {
       "immediate": 6,
       "high": 9,
-      "qualified": 19
+      "qualified": 20
     }
   },
   "leads": [
@@ -21397,6 +21397,158 @@
     },
     {
       "rank": 31,
+      "artist": "Jeff Bernat",
+      "firstSeen": "2026-07-20T23:01:55.301Z",
+      "spotifyId": null,
+      "deezerId": 3725601,
+      "mbid": "39b28824-2859-4ba9-80b9-e6004abc3568",
+      "listeners": null,
+      "lastfmListeners": 245000,
+      "lastfmTags": [
+        "soul",
+        "acoustic",
+        "rnb",
+        "r&b",
+        "filipino"
+      ],
+      "lastfmBio": "Jeff Bernat is a Filipino-American singer, songwriter and record producer. He debuted in 2012 with the album, The Gentleman Approach, and developed a significant fan base in South Korea after the album track, \"Call You Mine,\" was featured on the 2014 Korean drama, You Are My Destiny. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-06-26",
+      "releaseName": "Luv Language",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/77ee4b3fcee4cd8ee2ae7df5afd34edf/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Luv Language",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/74bc65ec3dce2005ff61897d06911e42/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "album"
+        },
+        {
+          "name": "Stuck",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/48f3ba6990b1404c5cb05ca6888b7fe4/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-29",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 2,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 62,
+      "priority": "qualified",
+      "baseScore": 62,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 2,
+        "listeners": 15,
+        "accessibility": 18,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 62,
+        "genreMultiplier": 1,
+        "finalScore": 62,
+        "comebackGapMonths": 40.53876478318003
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [
+        {
+          "date": "2024-06-22",
+          "venueName": "The Independent",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-20",
+          "venueName": "The Belasco",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-29",
+          "venueName": "The Atlantis",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-25",
+          "venueName": "Wolf Den",
+          "city": "Uncasville",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-16",
+          "venueName": "The Phoenix Concert Theatre",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 1350
+        },
+        {
+          "date": "2024-03-06",
+          "venueName": "Myunghwa Live Hall",
+          "city": "Seoul",
+          "country": "South Korea",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-06-13",
+          "venueName": "BCC Hall Central Ladprao",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-01-26",
+          "venueName": "MoonStar Studio 8",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "indie-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://jeff-bernat.com/",
+      "socialLinks": {
+        "instagram": "https://instagram.com/jeffbernat",
+        "twitter": "https://twitter.com/jeffbernat",
+        "tiktok": null,
+        "youtube": null,
+        "facebook": "https://facebook.com/jeffbernat"
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent album (2026-06-26) with no announced tour",
+        "No tour history in the last 18 months",
+        "Returning after a 41-month gap with strong new original material — comeback signal is solid",
+        "Venue size unknown (no capacity data)",
+        "Independent label (Coridel Entertainment) — reachable via label"
+      ]
+    },
+    {
+      "rank": 32,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -22551,7 +22703,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 33,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -24463,7 +24615,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 34,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -27219,7 +27371,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 35,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,

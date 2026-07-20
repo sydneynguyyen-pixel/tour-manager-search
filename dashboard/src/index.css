@@ -1683,6 +1683,42 @@ body {
   font-weight: 700;
 }
 
+/* ---------- Tour Announcements: tour-stage badges ---------- */
+/* A deliberately distinct palette — not the green/amber/red score-tier
+   colors, not the purple "On Tour Now" pill — this is a third, unrelated
+   signal (lifecycle stage, not match quality or current-touring status) and
+   shouldn't visually read as either of the other two. */
+.pill.stage-badge {
+  display: inline-block;
+  text-transform: none;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.pill.stage-new-tour {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.pill.stage-ongoing {
+  background: #e2e8f0;
+  color: #475569;
+}
+.pill.stage-new-shows {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+.pill.stage-possible {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+.pill.stage-no-tour {
+  background: var(--bg);
+  color: var(--text-faint);
+}
+.tour-stage-hint {
+  flex: 1 1 320px;
+  margin: 0;
+}
+
 /* Recent-releases thumbnail row on the card */
 .card-releases {
   display: flex;

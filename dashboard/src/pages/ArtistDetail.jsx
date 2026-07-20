@@ -29,7 +29,11 @@ import { getScoreBreakdown, getPriorityTier, getContributingSources } from '../u
 import { getArtistBio } from '../utils/artistSubtitle';
 import { leadId, useSavedArtists } from '../lib/savedArtists';
 import { loadEntries, toLeadShape } from '../lib/myArtists';
-import { fetchTourAnnouncements, toLeadShape as toAnnouncementLeadShape } from '../lib/tourAnnouncements';
+import {
+  fetchTourAnnouncements,
+  toLeadShape as toAnnouncementLeadShape,
+  TOUR_STAGE_META,
+} from '../lib/tourAnnouncements';
 import { roleLabel, genreDisplay, dateRange, venueRange } from '../utils/myArtistFields';
 import { genreLabel } from '../lib/scoringSettings';
 import {
@@ -276,6 +280,11 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
               </span>
               {listenerCount != null && (
                 <span className="pill listeners">{compactNumber(listenerCount)} monthly listeners</span>
+              )}
+              {isAnnouncement && lead.tourStage && TOUR_STAGE_META[lead.tourStage] && (
+                <span className={`pill stage-badge ${TOUR_STAGE_META[lead.tourStage].className}`}>
+                  {TOUR_STAGE_META[lead.tourStage].label}
+                </span>
               )}
               {isAnnouncement && lead.announcedDate && (
                 <span className="pill listeners">First spotted {shortDate(lead.announcedDate)}</span>

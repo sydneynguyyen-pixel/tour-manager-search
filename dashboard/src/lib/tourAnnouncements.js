@@ -7,6 +7,34 @@
 
 import { config } from '../config';
 
+// Tour-lifecycle stage metadata — see automation/build-tour-announcements.js's
+// classifyTourStage for how each artist gets one of these. Labels are plain
+// noun phrases (no scoring/priority language); className hooks into the
+// .pill.stage-* rules in index.css, a palette deliberately distinct from both
+// the score-tier green/amber/red and the existing purple "On Tour Now" pill —
+// this is a third, unrelated kind of signal and shouldn't visually read as
+// either of the other two.
+export const TOUR_STAGE_META = {
+  NEW_TOUR: { label: 'New Tour Confirmed', className: 'stage-new-tour' },
+  ONGOING: { label: 'Already Touring', className: 'stage-ongoing' },
+  NEW_SHOWS: { label: 'New Shows', className: 'stage-new-shows' },
+  POSSIBLE: { label: 'Early Signal', className: 'stage-possible' },
+  NO_TOUR: { label: 'No Tour Detected', className: 'stage-no-tour' },
+};
+
+// Filter dropdown options — NEW_TOUR first since the tab defaults to it (the
+// primary signal this feed exists to surface).
+export const TOUR_STAGE_FILTERS = [
+  { value: 'NEW_TOUR', label: TOUR_STAGE_META.NEW_TOUR.label },
+  { value: 'all', label: 'All stages' },
+  { value: 'ONGOING', label: TOUR_STAGE_META.ONGOING.label },
+  { value: 'NEW_SHOWS', label: TOUR_STAGE_META.NEW_SHOWS.label },
+  { value: 'POSSIBLE', label: TOUR_STAGE_META.POSSIBLE.label },
+  { value: 'NO_TOUR', label: TOUR_STAGE_META.NO_TOUR.label },
+];
+
+export const DEFAULT_TOUR_STAGE_FILTER = 'NEW_TOUR';
+
 export async function fetchTourAnnouncements() {
   if (!config.tourAnnouncementsUrl) return [];
   try {
@@ -48,6 +76,7 @@ export function toLeadShape(entry) {
     imageUrl: entry.imageUrl,
     genre: entry.genre || 'Unknown',
     announcedDate: entry.announcedDate,
+    tourStage: entry.tourStage,
     hasUpcomingEvents: ticketmasterEvents.length > 0,
     ticketmasterEvents,
     hasJamBaseEvents: jambaseEvents.length > 0,

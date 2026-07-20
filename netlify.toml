@@ -1,0 +1,9 @@
+# Skip rebuilds for pushes that don't touch the dashboard itself (e.g. the
+# weekly scrape committing automation/data/*.json). The dashboard fetches
+# leads.json live from GitHub raw at runtime, so a data-only push needs no
+# rebuild. `:/dashboard` is a git pathspec anchored to the repo root, so this
+# works regardless of Netlify's configured base directory.
+#
+# Exit 0 => skip the build, exit 1 (i.e. dashboard/ changed) => build as usual.
+[build]
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- :/dashboard"

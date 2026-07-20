@@ -6,6 +6,7 @@ const { scrapeSetlistFMTourHistory } = require('./src/scrapers/setlistfm-scraper
 const { discoverRelatedArtists } = require('./src/scrapers/discovery-scraper');
 const { aggregateArtistData, normalizeName } = require('./src/aggregate');
 const { filterOutMyArtists, loadMyArtistNames } = require('./src/my-artists');
+const { filterOutDismissed, loadDismissedExcludeSet } = require('./src/dismissed-artists');
 const { scoreArtists } = require('./src/score');
 const { formatLeadsOutput, writeLeadsJSON, loadLeadArtistNames } = require('./src/output');
 const { selectBatch } = require('./src/batch');
@@ -42,15 +43,19 @@ async function main() {
   let seedArtists;
   if (discovered.length) {
     // discoverRelatedArtists() already excludes My Artists. Also drop anyone
-    // already scored/showing in leads.json — don't reprocess a candidate the
-    // feed already has, only genuinely new ones.
+    // already scored/showing in leads.json, or already dismissed ("Not
+    // interested" in the dashboard) — don't reprocess a candidate the feed
+    // already has or Matthew already said no to, only genuinely new ones.
     const alreadyLead = new Set(loadLeadArtistNames().map(normalizeName));
-    const newCandidates = discovered.filter((name) => !alreadyLead.has(normalizeName(name)));
+    const dismissed = loadDismissedExcludeSet();
+    const newCandidates = discovered.filter(
+      (name) => !alreadyLead.has(normalizeName(name)) && !dismissed.has(normalizeName(name))
+    );
     const dedupedOut = discovered.length - newCandidates.length;
     seedArtists = newCandidates.slice(0, MAX_NEW_CANDIDATES_PER_RUN);
 
     logger.count('Discovery: candidates found', discovered.length);
-    logger.count('Discovery: already known (in leads.json, deduped out)', dedupedOut);
+    logger.count('Discovery: already known or dismissed (deduped out)', dedupedOut);
     logger.count('Discovery: new candidates processed this run', seedArtists.length);
     if (newCandidates.length > seedArtists.length) {
       logger.info(
@@ -86,25 +91,28 @@ async function main() {
   // no quota; replaces the former Spotify stage).
   const releasesRaw = await scrapeDeezerNewReleases(seedArtists, LOOKBACK_DAYS);
 
-  // Re-check against leads.json using Deezer's own resolved artist name, not
-  // just the pre-Deezer discovery name deduped above. Deezer's search can
-  // canonicalize a candidate to a spelling/punctuation that differs from the
-  // discovery-stage name (e.g. Last.fm's "Griff" resolving to Deezer's
-  // "GRiFF!") — when that resolved name matches an existing lead, the earlier
-  // dedup silently misses it, and the same already-known artist gets
-  // reprocessed (and pointlessly re-queried against Setlist.fm/enrichment)
-  // every run. Catching it here also saves those wasted downstream calls.
+  // Re-check against leads.json AND dismissed-artists.json using Deezer's own
+  // resolved artist name, not just the pre-Deezer discovery name deduped
+  // above. Deezer's search can canonicalize a candidate to a spelling/
+  // punctuation that differs from the discovery-stage name (e.g. Last.fm's
+  // "Griff" resolving to Deezer's "GRiFF!") — when that resolved name matches
+  // an existing lead or a dismissed artist, the earlier dedup silently misses
+  // it, and the same artist gets reprocessed (and pointlessly re-queried
+  // against Setlist.fm/enrichment) every run. Catching it here also saves
+  // those wasted downstream calls.
   const alreadyLeadResolved = new Set(loadLeadArtistNames().map(normalizeName));
+  const dismissedResolved = loadDismissedExcludeSet();
   const releases = [];
   const resolvedDupeNames = [];
   for (const r of releasesRaw) {
-    if (alreadyLeadResolved.has(normalizeName(r.artist))) resolvedDupeNames.push(r.artist);
+    const key = normalizeName(r.artist);
+    if (alreadyLeadResolved.has(key) || dismissedResolved.has(key)) resolvedDupeNames.push(r.artist);
     else releases.push(r);
   }
   if (resolvedDupeNames.length > 0) {
     logger.info(
-      `Deezer: dropped ${resolvedDupeNames.length} candidate(s) already a known lead under ` +
-        `Deezer's resolved name — ${resolvedDupeNames.join(', ')}`
+      `Deezer: dropped ${resolvedDupeNames.length} candidate(s) already a known lead or ` +
+        `dismissed under Deezer's resolved name — ${resolvedDupeNames.join(', ')}`
     );
   }
 
@@ -121,9 +129,11 @@ async function main() {
   // score, and output ranked leads.
   const aggregated = await aggregateArtistData(releases, tourHistory, config);
 
-  // Drop artists Matthew has already worked (My Artists roster) before scoring —
-  // they should never surface as new leads.
-  const { kept } = filterOutMyArtists(aggregated);
+  // Drop artists Matthew has already worked (My Artists roster), or already
+  // dismissed ("Not interested"), before scoring — neither should ever
+  // surface as a new lead.
+  const { kept: keptAfterMyArtists } = filterOutMyArtists(aggregated);
+  const { kept } = filterOutDismissed(keptAfterMyArtists);
 
   const scored = scoreArtists(kept, config);
   // formatLeadsOutput ranks/stats these against just THIS run's new leads —

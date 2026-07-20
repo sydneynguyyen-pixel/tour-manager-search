@@ -1,7 +1,9 @@
 // Dismissed ("Not interested") store, backed by localStorage under
-// "dismissedArtists". Dismissing a lead hides it from the Leads feed —
-// including future scans, since the filter is keyed by the same stable id
-// leadId() computes from spotifyId/mbid, not by array position.
+// "dismissedArtists". Dismissing a lead hides it from the Leads feed locally,
+// and syncs the artist name to automation/data/dismissed-artists.json via the
+// save-data Netlify function (same fire-and-forget pattern as
+// lib/myArtists.js), so future automated scans exclude it too — see
+// automation/src/dismissed-artists.js on the backend side.
 //
 // Uses useSyncExternalStore so every dismiss control (cards, the detail page,
 // the Settings > Dismissed Artists list) reads and reacts to the same source
@@ -42,6 +44,35 @@ function write(next) {
     // Storage full / unavailable — keep the in-memory state so the UI still works.
   }
   emit();
+  // Best-effort background sync — never awaited, never surfaced to the
+  // caller. The local write above is already durable (localStorage) by the
+  // time this fires, so the dismissal is safe even if the network request
+  // below fails, is offline, or the function/token isn't configured yet.
+  syncDismissed(next);
+}
+
+// POSTs the full current dismissed list to the save-data function, which
+// commits it to automation/data/dismissed-artists.json on GitHub. Sends only
+// the artist name + when it was dismissed — that's all the backend exclusion
+// filter (automation/src/dismissed-artists.js) needs; the full `lead`
+// snapshot stays local-only (it's just for rendering the Dismissed Artists
+// list). Swallows all errors, same as lib/myArtists.js's syncEntries.
+async function syncDismissed(entries) {
+  try {
+    await fetch('/.netlify/functions/save-data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        filePath: 'automation/data/dismissed-artists.json',
+        content: {
+          updatedAt: new Date().toISOString(),
+          artists: entries.map((d) => ({ name: d.lead?.artist, dismissedAt: d.dismissedAt })),
+        },
+      }),
+    });
+  } catch {
+    // Best-effort — see write() comment.
+  }
 }
 
 if (typeof window !== 'undefined') {

@@ -23,7 +23,11 @@ const REPO_OWNER = 'sydneynguyyen-pixel';
 const REPO_NAME = 'tour-manager-search';
 const GITHUB_API_BASE = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents`;
 
-const ALLOWED_PATHS = new Set(['automation/data/my-artists.json', 'automation/config.json']);
+const ALLOWED_PATHS = new Set([
+  'automation/data/my-artists.json',
+  'automation/data/dismissed-artists.json',
+  'automation/config.json',
+]);
 
 function jsonResponse(statusCode, body) {
   return {

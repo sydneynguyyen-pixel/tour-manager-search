@@ -1356,7 +1356,7 @@ body {
 }
 .card-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px 18px;
 }
 .stat .v {
@@ -2280,7 +2280,10 @@ body {
   }
   .cards-grid,
   .saved-grid {
-    grid-template-columns: 1fr;
+    /* Plain 1fr still expands to fit unbreakable content (dates, min-width
+       thumbnails) instead of clamping to the container — minmax(0, 1fr) is
+       what actually prevents the horizontal blowout on narrow viewports. */
+    grid-template-columns: minmax(0, 1fr);
   }
   .hero-row {
     grid-template-columns: 1fr;
@@ -2334,6 +2337,267 @@ body {
   .profile-card {
     flex-direction: column;
     gap: 14px;
+  }
+}
+
+/* ---------- Mobile (phone widths) ----------
+   The breakpoints above handle column-count reflow; this one actually scales
+   down the oversized desktop chrome (spacing, type, media) that reflow alone
+   doesn't fix — a single narrow column of full-size cards still feels like a
+   shrunk desktop layout, not a mobile one. */
+@media (max-width: 600px) {
+  #root {
+    padding: 20px 16px 56px;
+  }
+  .top-bar {
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .top-bar-right {
+    gap: 10px;
+  }
+  .legend-btn {
+    padding: 7px 12px 7px 6px;
+    font-size: 0.78rem;
+  }
+  .tab-nav {
+    margin-bottom: 22px;
+    gap: 2px;
+  }
+  .tab-nav button {
+    padding: 9px 12px;
+    font-size: 0.88rem;
+  }
+
+  /* Hero row: the welcome banner and "This week" panel were sized for a
+     2-column desktop layout even after stacking to 1 column — cut both down
+     to phone-appropriate heights. */
+  .hero-row {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .hero-welcome {
+    min-height: 0;
+    padding: 22px 20px;
+  }
+  .hero-welcome h2 {
+    font-size: 1.7rem;
+  }
+  .weekly-panel {
+    padding: 18px 20px;
+  }
+  .weekly-head {
+    font-size: 0.72rem;
+  }
+  .weekly-stat {
+    margin-top: 8px;
+    font-size: 1rem;
+    gap: 6px;
+  }
+  .weekly-stat-empty {
+    font-size: 0.92rem;
+  }
+  /* "Top lead"/"Top new" mini-cards are reachable via a tap instead of
+     always taking prime real estate above the fold. */
+  .weekly-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .weekly-cards {
+    display: none;
+    margin-top: 12px;
+    padding-top: 0;
+  }
+  .weekly-cards.is-expanded {
+    display: flex;
+  }
+  .weekly-thumb {
+    width: 44px;
+    height: 44px;
+  }
+  .weekly-card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .controls-row {
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .cards-grid,
+  .saved-grid {
+    gap: 16px;
+  }
+
+  /* Artist card: shrink the image to a compact thumbnail instead of a
+     near-square desktop-scale photo, so text has room to breathe and
+     nothing is forced into an unbreakable min-width. */
+  .artist-card {
+    padding: 16px;
+    gap: 14px;
+  }
+  .card-media {
+    flex: 0 0 84px;
+    max-width: 84px;
+    min-width: 84px;
+    align-self: flex-start;
+  }
+  .card-media-img {
+    flex: none;
+    width: 84px;
+    height: 84px;
+    min-height: 0;
+  }
+  .card-image {
+    height: 84px;
+    min-height: 0;
+  }
+  .card-tier {
+    margin-top: 8px;
+    font-size: 0.7rem;
+  }
+  .score-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 0.82rem;
+    border-width: 3px;
+  }
+  .card-name {
+    font-size: 1.05rem;
+  }
+  .card-desc {
+    font-size: 0.82rem;
+    margin-top: 6px;
+    -webkit-line-clamp: 2;
+  }
+  .card-divider {
+    margin: 12px 0;
+  }
+  .card-badges {
+    gap: 6px;
+    margin: 0 0 12px;
+  }
+  .pill {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+  .card-stats {
+    gap: 10px;
+  }
+  .stat .v {
+    font-size: 0.92rem;
+  }
+  .stat .k {
+    font-size: 0.7rem;
+  }
+  .card-releases {
+    flex-wrap: wrap;
+    padding-top: 12px;
+  }
+  .release-thumb,
+  .release-thumb img,
+  .release-thumb-fallback {
+    width: 36px;
+    height: 36px;
+  }
+  .bookmark-btn {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Detail page */
+  .detail-page {
+    padding: 16px 16px 56px;
+  }
+  .detail-hero {
+    padding: 18px;
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+  .detail-hero-top {
+    /* Stays column (inherited from the 820px breakpoint) rather than
+       reverting to a row — a side-by-side avatar leaves the body column
+       only ~180px wide on a 375px phone, squishing name/pills/bio into a
+       narrow strip. Full-width body below a compact avatar reads far less
+       cramped. */
+    gap: 14px;
+  }
+  .detail-hero-img {
+    width: 88px;
+    height: 88px;
+    border-radius: 14px;
+  }
+  .detail-hero-name {
+    font-size: 1.3rem;
+  }
+  .detail-score-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 0.92rem;
+  }
+  .detail-hero-bio {
+    font-size: 0.88rem;
+    -webkit-line-clamp: 3;
+  }
+  .detail-hero-contact {
+    gap: 10px;
+    padding-top: 12px;
+  }
+  .detail-stats {
+    gap: 8px;
+  }
+  .detail-stat {
+    padding: 10px 12px;
+  }
+  .detail-stat .v {
+    font-size: 1rem;
+  }
+  .detail-stat .k {
+    font-size: 0.66rem;
+  }
+  .detail-tabs {
+    margin-bottom: 16px;
+  }
+  .detail-tab {
+    padding: 10px 10px;
+    font-size: 0.88rem;
+  }
+  .detail-panel {
+    gap: 14px;
+  }
+  .detail-block {
+    padding: 16px;
+  }
+
+  .modal {
+    padding: 22px 20px;
+  }
+  .profile-form {
+    padding: 20px 18px;
+  }
+  .request-block {
+    padding: 20px 18px;
+  }
+  .myartist-extra {
+    padding: 16px;
+  }
+  .profile-intro h2 {
+    font-size: 1.8rem;
+  }
+  .profile-card {
+    padding: 16px;
   }
 }
 

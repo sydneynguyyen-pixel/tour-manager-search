@@ -8,7 +8,7 @@
 // "newest as of this scrape" and is deterministic for a given leads.json.
 // Each mini-card opens the artist's detail modal.
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { scoreColor } from '../lib/format';
 import { leadRoute } from '../lib/savedArtists';
@@ -29,6 +29,10 @@ function isNewThisRun(lead, ref) {
 }
 
 export default function WeeklyHighlight({ leads, generatedAt }) {
+  // Mini-cards are collapsed by default on mobile (see .weekly-toggle /
+  // .weekly-cards CSS) — this only controls that collapsed state; desktop
+  // always shows the cards regardless via CSS.
+  const [expanded, setExpanded] = useState(false);
   const { newCount, immediateCount, topLead, topNew } = useMemo(() => {
     const now = Date.now();
     const ref = generatedAt ? new Date(generatedAt).getTime() : NaN;
@@ -63,7 +67,18 @@ export default function WeeklyHighlight({ leads, generatedAt }) {
         </div>
       )}
 
-      <div className="weekly-cards">
+      {(topLead || topNew) && (
+        <button
+          type="button"
+          className="weekly-toggle"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+        >
+          {expanded ? 'Hide top picks ▲' : 'Show top picks ▾'}
+        </button>
+      )}
+
+      <div className={`weekly-cards ${expanded ? 'is-expanded' : ''}`}>
         {topLead && <MiniCard label="Top lead" lead={topLead} />}
         {topNew ? (
           <MiniCard label="Top new" lead={topNew} />

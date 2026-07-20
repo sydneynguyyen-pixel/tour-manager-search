@@ -126,9 +126,9 @@ export default function ScoringGuide() {
           <p>
             You can set which genres you're currently most interested in working with — this
             doesn't lock anything out, it just nudges the score up or down a little for artists in
-            genres you've flagged as priorities right now. You can change this anytime in
-            Settings, and it won't stop artists outside those genres from showing up if everything
-            else about them is strong.
+            genres you've flagged as priorities right now. You can change this anytime in{' '}
+            <Link to="/settings">Settings</Link>, and it won't stop artists outside those genres
+            from showing up if everything else about them is strong.
           </p>
         </section>
 

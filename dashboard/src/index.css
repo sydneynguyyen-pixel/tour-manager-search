@@ -74,6 +74,7 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
 }
 .brand-mark {
   height: 38px;
@@ -2353,6 +2354,13 @@ body {
 .guide-section p:last-child {
   margin-bottom: 0;
 }
+.guide-section a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.guide-section a:hover {
+  text-decoration: underline;
+}
 .guide-tiers {
   list-style: none;
   margin: 0;
@@ -2431,4 +2439,137 @@ body {
   color: var(--text);
   display: block;
   margin-bottom: 4px;
+}
+
+/* ---------- Settings / Genre Preferences ---------- */
+.settings-article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+.settings-article h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.settings-section {
+  margin-top: 28px;
+}
+.settings-section h2 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.settings-instructions {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.genre-rank-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.genre-rank-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border-strong);
+  background: var(--card);
+  cursor: grab;
+  transition: border-color 0.12s, background 0.12s, opacity 0.12s;
+}
+.genre-rank-item:active {
+  cursor: grabbing;
+}
+.genre-rank-item.dragging {
+  opacity: 0.4;
+}
+.genre-rank-item.drag-over {
+  border-color: var(--text);
+  background: var(--bg);
+}
+.genre-rank-handle {
+  flex: none;
+  color: var(--text-faint);
+  font-size: 0.95rem;
+  line-height: 1;
+  user-select: none;
+}
+.genre-rank-pos {
+  flex: none;
+  width: 20px;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-faint);
+}
+.genre-rank-pill {
+  flex: none;
+}
+.genre-tier-badge {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  width: fit-content;
+}
+.genre-tier-badge.tier1 {
+  background: rgba(23, 178, 106, 0.14);
+  color: #0d7a48;
+}
+.genre-tier-badge.tier2 {
+  background: rgba(107, 114, 128, 0.14);
+  color: var(--text-muted);
+}
+.genre-tier-badge.tier3 {
+  background: rgba(229, 165, 10, 0.14);
+  color: #8a6408;
+}
+.genre-tier-badge.tier4 {
+  background: rgba(239, 68, 68, 0.14);
+  color: #b3261e;
+}
+.genre-rank-arrows {
+  flex: none;
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.genre-rank-arrows button {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s;
+}
+.genre-rank-arrows button:hover:not(:disabled) {
+  color: var(--text);
+  border-color: #b8bcc2;
+}
+.genre-rank-arrows button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }

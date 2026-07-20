@@ -120,6 +120,16 @@ export function promoteGenresToTier1(genres) {
   write(next);
 }
 
+// Replace the genre tiers wholesale. Used by lib/genrePreferences.js when
+// Matthew reorders his genre ranking, so this store's tier data — read by
+// CalibrationPanel and genreTierOf/GENRE_OPTIONS above — stays in sync with
+// that ranking without either module owning the other's localStorage key.
+export function setGenreTiers(genreTiers) {
+  const next = clone(cache);
+  next.genreTiers = clone(genreTiers);
+  write(next);
+}
+
 // --- Hook ---
 
 export function useScoringSettings() {

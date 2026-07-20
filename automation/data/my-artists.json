@@ -1,23 +1,6 @@
 {
-  "updatedAt": "2026-07-20T04:17:39.012Z",
+  "updatedAt": "2026-07-20T04:18:39.689Z",
   "artists": [
-    {
-      "name": "Test Delete Me",
-      "role": "Tour Manager",
-      "relationshipType": "Touring",
-      "note": "",
-      "addedAt": "2026-07-20T04:17:39.010Z",
-      "imageUrl": null,
-      "genre": "",
-      "bio": null,
-      "mbid": null,
-      "tourCount": null,
-      "avgVenueSize": null,
-      "countriesToured": null,
-      "lastTourDate": null,
-      "topVenues": null,
-      "tourHistory": null
-    },
     {
       "name": "d4vd",
       "role": "",

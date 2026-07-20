@@ -42,6 +42,39 @@ npm run preview   # serve the production build locally to sanity-check
 - **Netlify (auto-deploy):** connect this GitHub repo, set the base directory to
   `dashboard`, build command `npm run build`, publish directory `dashboard/dist`.
 
+## Sync (My Artists writes back to GitHub)
+
+The dashboard is a static site with no database — Matthew's My Artists edits save
+to localStorage first (instant, always works), then sync in the background to
+`automation/data/my-artists.json` in this repo via a Netlify serverless function
+([`netlify/functions/save-data.js`](netlify/functions/save-data.js)), so the
+pipeline's backend copy doesn't drift from what he actually sees. The genre
+preferences feature will use the same function once it lands.
+
+**One-time setup:** sync requires a `GITHUB_TOKEN` environment variable in Netlify
+(Site settings → Environment variables), scoped to a GitHub personal access token
+with read+write access to `sydneynguyyen-pixel/tour-manager-search`. Without it,
+the function returns a 500 and saves silently stay local-only — nothing breaks,
+Matthew just doesn't see it sync.
+
+The function only writes to an allowlisted set of paths
+(`automation/data/my-artists.json`, `automation/config.json`) — any other
+`filePath` is rejected with 403.
+
+**Testing locally:**
+
+```bash
+npx netlify-cli dev
+```
+
+run from the repo root (`netlify.toml` declares `base = "dashboard"`, so this
+serves the dashboard and exposes the function at
+`/.netlify/functions/save-data`). Since this hits the *real* GitHub API, you'll
+need `GITHUB_TOKEN` available locally too — either `netlify link` this repo to
+the live site (pulls the real env vars) or drop a personal token into
+`dashboard/.env` for the CLI to pick up. A local save will produce a real commit
+on GitHub, same as prod.
+
 ## Data source
 
 Where the dashboard reads leads from is controlled in [`src/config.js`](src/config.js):

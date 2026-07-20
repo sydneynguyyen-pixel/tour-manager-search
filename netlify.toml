@@ -1,9 +1,35 @@
-# Skip rebuilds for pushes that don't touch the dashboard itself (e.g. the
-# weekly scrape committing automation/data/*.json). The dashboard fetches
-# leads.json live from GitHub raw at runtime, so a data-only push needs no
-# rebuild. `:/dashboard` is a git pathspec anchored to the repo root, so this
-# works regardless of Netlify's configured base directory.
+# base = "dashboard" formalizes the "set the base directory to `dashboard`"
+# step from dashboard/README.md's deploy instructions, so a fresh `netlify
+# link` + `netlify dev` behaves the same as the live site without relying on
+# a UI-only setting. If the site's Netlify UI "Base directory" is already set
+# to "dashboard" (it should be, per the README), this is a no-op restatement.
+#
+# ignore: skip rebuilds for pushes that don't touch the dashboard itself
+# (e.g. the weekly scrape committing automation/data/*.json). The dashboard
+# fetches leads.json live from GitHub raw at runtime, so a data-only push
+# needs no rebuild. `:/dashboard` is a git pathspec anchored to the repo
+# root, so this still works with `base` set above.
 #
 # Exit 0 => skip the build, exit 1 (i.e. dashboard/ changed) => build as usual.
 [build]
+  base = "dashboard"
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- :/dashboard"
+
+# Functions directory, relative to `base` above — resolves to
+# dashboard/netlify/functions. Currently just save-data.js, the generic
+# GitHub-write endpoint the dashboard uses to persist My Artists edits (and,
+# soon, genre preferences) back to the repo.
+[functions]
+  directory = "netlify/functions"
+
+# Local-dev-only: without this, `netlify dev` can't find an app server to
+# proxy and falls back to serving static files, so the actual React app
+# (and its calls to the function above) never run. Has no effect on the
+# Netlify-hosted build, which uses [build] above instead.
+[dev]
+  # Explicit --prefix rather than relying on `base` resolution for the dev
+  # command's cwd, which needs a linked site to kick in reliably.
+  command = "npm --prefix dashboard run dev"
+  targetPort = 5173
+  port = 8888
+  publish = "dist"

@@ -4,7 +4,8 @@
 //
 // It no longer feeds any discovery/seed pipeline — it's personal history that
 // also drives the "Suggested adjustments" calibration panel below the list.
-// Entries save to localStorage only (see lib/myArtists).
+// Entries save to localStorage first, then sync to GitHub in the background
+// (see lib/myArtists).
 
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -161,8 +162,10 @@ export default function MyArtists() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modalOpen]);
 
-  // Single source of truth for a mutation: update state and save locally.
-  // localStorage is the only store — GitHub sync is deferred (see lib/myArtists).
+  // Single source of truth for a mutation: update state, save locally, and
+  // kick off a best-effort background sync to GitHub (see saveEntries in
+  // lib/myArtists — localStorage is written first and is what the UI reads
+  // from, so a sync failure never blocks or is visible here).
   const persist = (next) => {
     setEntries(next);
     saveEntries(next);

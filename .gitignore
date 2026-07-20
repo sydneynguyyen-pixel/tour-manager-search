@@ -25,3 +25,6 @@ automation/data/contact-cache.json
 
 # Throwaway test harness output (see automation/src/test-non-spotify-pipeline.js)
 automation/data/test-non-spotify-results.json
+
+# Local Netlify folder
+.netlify

@@ -39,6 +39,7 @@ import {
   DiscIcon,
   CalendarIcon,
   VenueIcon,
+  BuzzIcon,
 } from '../components/Icons';
 import BookmarkButton from '../components/BookmarkButton';
 import DismissButton from '../components/DismissButton';
@@ -151,6 +152,7 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
   const listenerCount = lead.lastfmListeners ?? lead.listeners;
 
   const releases = Array.isArray(lead.recentReleases) ? lead.recentReleases : [];
+  const newsArticles = Array.isArray(lead.newsArticles) ? lead.newsArticles : [];
   const windowShows = Array.isArray(lead.tourHistory) ? lead.tourHistory : [];
   const fullShows = Array.isArray(lead.fullTourHistory) ? lead.fullTourHistory : [];
   const shows = showFullHistory ? fullShows : windowShows;
@@ -437,6 +439,24 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
               <div className="detail-empty-inline">No recent releases found.</div>
             )}
           </section>
+
+          {newsArticles.length > 0 && (
+            <section className="detail-block">
+              <BlockHead Icon={BuzzIcon} title="Recent buzz" count={newsArticles.length} />
+              <ul className="buzz-list">
+                {newsArticles.map((a, i) => (
+                  <li className="buzz-row" key={`${a.url}-${i}`}>
+                    <a href={a.url} target="_blank" rel="noopener noreferrer" className="buzz-row-title">
+                      {a.title}
+                    </a>
+                    {a.publishedDate && (
+                      <span className="buzz-row-date">{longDate(a.publishedDate.slice(0, 10))}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <section className="detail-block">
             <BlockHead Icon={GlobeIcon} title="Links" />

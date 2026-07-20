@@ -208,6 +208,7 @@ function formatLeadsOutput(scoredArtists, config) {
     websiteUrl: a.websiteUrl ?? null,
     socialLinks: a.socialLinks ?? { instagram: null, twitter: null, tiktok: null },
     contactConfidence: a.contactConfidence ?? 'low',
+    newsArticles: Array.isArray(a.newsArticles) ? a.newsArticles : [], // Pitchfork/Stereogum mentions; display-only
     fitReasoning: buildReasoning(a, config),
   }));
 

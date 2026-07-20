@@ -1,14 +1,14 @@
 // Aggregation layer: merge Deezer releases + Setlist.fm tour history by artist,
 // enrich each with MusicBrainz genres/tier plus supplementary metadata from
-// TheAudioDB (image + social gaps), Last.fm (listener/tag signal), and Discogs
-// (discography cross-check), and emit one unified record per unique artist for
-// the scoring stage.
+// TheAudioDB (image + social gaps), Last.fm (listener/tag signal), Discogs
+// (discography cross-check), and music-news RSS coverage, and emit one
+// unified record per unique artist for the scoring stage.
 //
 // Per-artist enrichment order (mirrors the source priority): release data is
 // already resolved (Deezer, upstream) -> MusicBrainz genres -> TheAudioDB image
 // + social gap-fill -> Last.fm listener/tags (+ genre cross-check vs MB) ->
-// Discogs cross-check -> contact research. All enrichment sources fail soft
-// (null-filled) so one flaky source never drops an artist.
+// Discogs cross-check -> RSS news mentions -> contact research. All enrichment
+// sources fail soft (null-filled) so one flaky source never drops an artist.
 
 const logger = require('./utils/logger');
 const { getArtistGenres } = require('./musicbrainz');
@@ -18,6 +18,7 @@ const { getArtistProfile } = require('./scrapers/audiodb-scraper');
 const { getLastFmProfile, logTagCrossCheck } = require('./scrapers/lastfm-scraper');
 const { getDiscogsReleases } = require('./scrapers/discogs-scraper');
 const { getWikidataSocialLinks } = require('./scrapers/wikidata-scraper');
+const { checkArtistInRecentNews } = require('./scrapers/rss-scraper');
 const { summarizeReleases } = require('./release-classifier');
 
 // Case-insensitive, whitespace-normalized key for joining across sources.
@@ -82,6 +83,18 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
 
     // Discogs — non-blocking discography cross-check / confidence booster.
     const discogs = await getDiscogsReleases(displayName);
+
+    // Music-news RSS — supplementary "is anyone writing about this artist
+    // right now" signal, display-only for now (not fed into scoring; see
+    // rss-scraper.js and score.js's comments on why new signals start
+    // observational before being weighted).
+    let news;
+    try {
+      news = await checkArtistInRecentNews(displayName);
+    } catch (err) {
+      logger.warn(`Aggregate: RSS news check failed for "${displayName}" (${err.message}).`);
+      news = { mentioned: false, articles: [] };
+    }
 
     // Management/booking accessibility (web + Wikipedia; no music-API calls).
     let contact;
@@ -168,6 +181,7 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
       socialLinks, // contact-research first, TheAudioDB gap-fill
       label: contact.label ?? null,
       contactConfidence: contact.confidence ?? 'low',
+      newsArticles: news.articles ?? [], // Pitchfork/Stereogum mentions; display-only, not scored
     });
   }
 

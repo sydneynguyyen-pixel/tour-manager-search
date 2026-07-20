@@ -1,16 +1,15 @@
-// Responsive grid of artist cards. Card clicks bubble up via onSelect so the
-// parent can open the detail modal.
+// Responsive grid of artist cards. Each card navigates to the artist detail
+// page on click (handled inside ArtistCard).
 
 import ArtistCard from './ArtistCard';
 
-export default function LeadsList({ leads, onSelect }) {
+export default function LeadsList({ leads }) {
   return (
     <div className="cards-grid">
       {leads.map((lead) => (
         <ArtistCard
           key={lead.spotifyId || lead.mbid || `${lead.artist}-${lead.rank}`}
           lead={lead}
-          onSelect={onSelect}
         />
       ))}
     </div>

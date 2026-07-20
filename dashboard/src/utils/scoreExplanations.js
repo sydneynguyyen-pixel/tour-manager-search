@@ -6,13 +6,19 @@
 // accessibility 20, likelihood 25, growth 13. (The spec headers say 20/10 for the
 // last two, but the rules reach 25/13 — see the note in score.js. Using the real
 // maxes keeps the progress bars honest and never overflowing.)
+//
+// RELEASE_QUALITY_STRONG/PARTIAL mirror automation/src/score.js's constants of
+// the same name — kept in sync manually since this is a separate package.
 
 // ---- Priority tiers (drives badge labels + the legend) ----------------------
 export const SCORE_TIERS = [
-  { key: 'immediate', min: 85, label: 'Immediate outreach', tone: 'green', dot: '🟢', range: '85+', blurb: 'strong fit, act soon' },
-  { key: 'high', min: 70, label: 'High priority', tone: 'amber', dot: '🟡', range: '70–84', blurb: 'good fit, worth researching this week' },
-  { key: 'look', min: 0, label: 'Worth a look', tone: 'red', dot: '🔴', range: 'Below 70', blurb: 'lower confidence, but may still be a real opportunity' },
+  { key: 'immediate', min: 85, label: 'Strong Match', tone: 'green', dot: '🟢', range: '85+', blurb: 'strong fit, act soon' },
+  { key: 'high', min: 70, label: 'Good Match', tone: 'amber', dot: '🟡', range: '70–84', blurb: 'good fit, worth researching this week' },
+  { key: 'look', min: 0, label: 'Possible Match', tone: 'red', dot: '🔴', range: 'Below 70', blurb: 'lower confidence, but may still be a real opportunity' },
 ];
+
+const RELEASE_QUALITY_STRONG = 0.6;
+const RELEASE_QUALITY_PARTIAL = 0.3;
 
 export function getPriorityTier(score) {
   const s = score ?? 0;
@@ -69,15 +75,41 @@ export function generateScoreExplanation(dimension, value, ctx = {}) {
         default: return 'Management info not found — worth a quick search before reaching out';
       }
 
-    case 'timing':
+    case 'timing': {
       // `value` is the likelihood score, which encodes the branch that fired.
+      const q = ctx.releaseQualityScore;
+      const total = ctx.fullOriginalReleaseCount + ctx.selfRemixReleaseCount + ctx.otherRemixReleaseCount;
+      const qualityIsWeak = q != null && q < RELEASE_QUALITY_PARTIAL;
+      const qualityIsPartial = q != null && q >= RELEASE_QUALITY_PARTIAL && q < RELEASE_QUALITY_STRONG;
+
+      if (ctx.comebackGapMonths != null) {
+        const gap = Math.round(ctx.comebackGapMonths);
+        if (qualityIsWeak) {
+          return (
+            `Returning after a ${gap}-month gap, but recent activity is mostly remixes of other artists' work ` +
+            `(${ctx.fullOriginalReleaseCount} of ${total} original) — comeback signal is weak, worth verifying before reaching out`
+          );
+        }
+        if (qualityIsPartial) {
+          return (
+            `Returning after a ${gap}-month gap with a mix of original and remix/alt-version releases ` +
+            `(${ctx.fullOriginalReleaseCount} of ${total} fully original) — comeback signal is genuine but uncertain`
+          );
+        }
+        return `Returning after a ${gap}-month gap with strong new original material — comeback signal is solid`;
+      }
+
       if (value >= 25) {
         const rel = ctx.releaseName ? `"${ctx.releaseName}"` : 'New release';
         return `${rel} out with no tour announced yet — this is the window to reach out`;
       }
       if (value >= 8) return 'Fresh release, but already on the road — still a good moment to connect';
+      if (value === 6 && qualityIsWeak) {
+        return 'Recent activity is mostly remixes/alt versions — real, but not a strong signal of a new touring era';
+      }
       if (value >= 6) return 'Last release was a while ago — no imminent tour push right now';
       return 'No recent release detected — no clear timing signal yet';
+    }
 
     case 'momentum':
       if (tc <= 0) return 'No recent touring — momentum still to build';
@@ -108,6 +140,11 @@ export function getScoreBreakdown(lead) {
     releaseName: lead.releaseName,
     releaseDate: lead.releaseDate,
     countriesToured: lead.countriesToured,
+    comebackGapMonths: lead.scoring?.comebackGapMonths ?? null,
+    releaseQualityScore: lead.releaseQualityScore ?? null,
+    fullOriginalReleaseCount: lead.fullOriginalReleaseCount ?? 0,
+    selfRemixReleaseCount: lead.selfRemixReleaseCount ?? 0,
+    otherRemixReleaseCount: lead.otherRemixReleaseCount ?? 0,
   };
   return DIMENSIONS.map((d) => {
     const points = d.points(s) ?? 0;
@@ -122,4 +159,25 @@ export function getScoreBreakdown(lead) {
       explanation: generateScoreExplanation(d.key, points, ctx),
     };
   });
+}
+
+// ---- Data source attribution ------------------------------------------------
+// Which pipeline sources actually contributed usable data for THIS artist,
+// derived from the same fields automation/src/aggregate.js populates (never
+// hardcoded — a source only counts if its field is actually present).
+const SOURCE_CHECKS = [
+  { label: 'Deezer', test: (l) => l.deezerId != null },
+  { label: 'Setlist.fm', test: (l) => l.mbid != null }, // mbid is Setlist.fm's own artist match
+  { label: 'MusicBrainz', test: (l) => !!l.genre }, // genre is resolved via MusicBrainz using that mbid
+  { label: 'TheAudioDB', test: (l) => !!l.audiodbBio },
+  { label: 'Last.fm', test: (l) => l.lastfmListeners != null || !!l.lastfmBio || (l.lastfmTags || []).length > 0 },
+  { label: 'Discogs', test: (l) => l.discogsVerified === true },
+  // contact-research.js always starts from a Wikipedia lookup, whether it
+  // resolves via the label infobox ('wikipedia') or by following a linked
+  // official site ('artist-website').
+  { label: 'Wikipedia', test: (l) => l.contactSource === 'wikipedia' || l.contactSource === 'artist-website' },
+];
+
+export function getContributingSources(lead) {
+  return SOURCE_CHECKS.filter((s) => s.test(lead)).map((s) => s.label);
 }

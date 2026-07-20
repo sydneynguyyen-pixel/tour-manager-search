@@ -16,6 +16,12 @@ export function leadId(lead) {
   return lead.spotifyId || lead.mbid || `${lead.artist}-${lead.rank ?? ''}`;
 }
 
+// URL for the full-page artist detail view (/artist/:id). Encoded so ids
+// containing spaces/slashes stay URL-safe.
+export function leadRoute(lead) {
+  return `/artist/${encodeURIComponent(leadId(lead))}`;
+}
+
 function read() {
   try {
     const raw = localStorage.getItem(KEY);

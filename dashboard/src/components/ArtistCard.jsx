@@ -1,9 +1,19 @@
 // A single artist lead card, matching the Figma card design (Frame_3).
-// Clicking (or Enter/Space) opens the detail modal via onSelect.
+// Clicking (or Enter/Space) navigates to the full artist detail page.
+//
+// Also reused (unmodified layout) by My Artists — see MyArtists.jsx — for
+// entries that aren't scored leads. Pass `hideScore` to omit the score badge/
+// priority label and the bookmark toggle (saving doesn't apply to an artist
+// Matthew already knows), and `route` to send the click somewhere other than
+// the default /artist/:id (My Artists uses its own /my-artists/:id).
 
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { compactNumber, shortDate, venueCap, scoreColor, longDate } from '../lib/format';
 import { getGenreColor } from '../utils/genreColors';
 import { getPriorityTier } from '../utils/scoreExplanations';
+import { getArtistSubtitle } from '../utils/artistSubtitle';
+import { leadRoute } from '../lib/savedArtists';
 import BookmarkButton from './BookmarkButton';
 
 // Small square album-art thumbnail with a hover/focus tooltip (name + date).
@@ -22,20 +32,29 @@ function ReleaseThumb({ release }) {
   );
 }
 
-export default function ArtistCard({ lead, onSelect }) {
-  const desc = lead.fitReasoning?.[0] || 'No summary available.';
+export default function ArtistCard({ lead, hideScore = false, route = null }) {
+  const navigate = useNavigate();
+  // A manually-pasted or stale enrichment URL can 404 — fall back to the gray
+  // placeholder rather than a broken-image icon. Reset whenever the artist's
+  // imageUrl changes (e.g. Matthew fixes a broken link) so it gets a fresh try.
+  const [imgError, setImgError] = useState(false);
+  useEffect(() => setImgError(false), [lead.imageUrl]);
+  // One-line artist description (bio-first; release/touring facts live in the
+  // score breakdown, not the subtitle).
+  const desc = getArtistSubtitle(lead);
   // Listener count now comes from Last.fm (lead.listeners is null post-Spotify);
   // fall back to lead.listeners so the bundled mock still renders.
   const listenerCount = lead.lastfmListeners ?? lead.listeners;
   const listeners = listenerCount != null ? `${compactNumber(listenerCount)} monthly listeners` : '—';
   const releases = Array.isArray(lead.recentReleases) ? lead.recentReleases.slice(0, 5) : [];
   const genreColor = getGenreColor(lead.genre);
-  const tier = getPriorityTier(lead.finalScore);
+  const tier = hideScore ? null : getPriorityTier(lead.finalScore);
+  const dest = route ?? leadRoute(lead);
 
   return (
     <div className="artist-card-wrap">
-      <BookmarkButton lead={lead} />
-      <button className="artist-card" onClick={() => onSelect(lead)} type="button">
+      {!hideScore && <BookmarkButton lead={lead} />}
+      <button className="artist-card" onClick={() => navigate(dest)} type="button">
         <div className="card-body">
           <h3 className="card-name">{lead.artist}</h3>
           <p className="card-desc">{desc}</p>
@@ -75,14 +94,21 @@ export default function ArtistCard({ lead, onSelect }) {
 
         <div className="card-media">
           <div className="card-media-img">
-            {lead.imageUrl ? (
-              <img className="card-image" src={lead.imageUrl} alt={lead.artist} />
+            {lead.imageUrl && !imgError ? (
+              <img
+                className="card-image"
+                src={lead.imageUrl}
+                alt={lead.artist}
+                onError={() => setImgError(true)}
+              />
             ) : (
               <div className="card-image" aria-hidden="true" />
             )}
-            <span className={`score-badge ${scoreColor(lead.finalScore)}`}>{lead.finalScore}</span>
+            {!hideScore && (
+              <span className={`score-badge ${scoreColor(lead.finalScore)}`}>{lead.finalScore}</span>
+            )}
           </div>
-          <div className={`card-tier ${tier.tone}`}>{tier.label}</div>
+          {!hideScore && <div className={`card-tier ${tier.tone}`}>{tier.label}</div>}
         </div>
       </button>
     </div>

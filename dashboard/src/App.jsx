@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { config } from './config';
 import mockLeads from './mock-leads.json';
 import LeadsList from './components/LeadsList';
 import Filters, { DEFAULT_FILTERS, applyFilters } from './components/Filters';
-import ArtistDetailModal from './components/ArtistDetailModal';
+import ArtistDetail from './pages/ArtistDetail';
+import ScoringGuide from './pages/ScoringGuide';
 import ScoreLegend from './components/ScoreLegend';
 import SavedArtists from './components/SavedArtists';
 import MyArtists from './components/MyArtists';
@@ -32,10 +34,10 @@ export default function App() {
   // Full loading screen only on first load; the 30s auto-refresh updates silently.
   const [status, setStatus] = useState('loading'); // 'loading' | 'ready' | 'error'
   const [error, setError] = useState(null);
+  // Filters + active tab live here (above the router) so they survive a trip
+  // into an artist detail page and back.
   const [filters, setFilters] = useState({ ...DEFAULT_FILTERS });
-  const [selected, setSelected] = useState(null);
   const [tab, setTab] = useState('leads'); // 'leads' | 'saved' | 'myArtists'
-  const savedCount = useSavedArtists().length;
 
   const load = useCallback(async (isBackground = false) => {
     // Dev with no configured URL: use the bundled mock (no fetch).
@@ -67,12 +69,44 @@ export default function App() {
   }, [load]);
 
   const leads = data?.leads ?? [];
+
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Dashboard
+            data={data}
+            status={status}
+            error={error}
+            leads={leads}
+            filters={filters}
+            setFilters={setFilters}
+            tab={tab}
+            setTab={setTab}
+            onRetry={() => {
+              setStatus('loading');
+              load(false);
+            }}
+          />
+        }
+      />
+      <Route path="/artist/:id" element={<ArtistDetail leads={leads} />} />
+      <Route path="/my-artists/:id" element={<ArtistDetail source="myArtists" hideScore />} />
+      <Route path="/scoring-guide" element={<ScoringGuide />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
+
+function Dashboard({ data, status, error, leads, filters, setFilters, tab, setTab, onRetry }) {
+  const savedCount = useSavedArtists().length;
   const filtered = useMemo(() => applyFilters(leads, filters), [leads, filters]);
 
   return (
     <>
       <header className="top-bar">
-        <h1 className="brand">Tour Finder</h1>
+        <img className="brand-mark" src="/tourfinder-icon-horizontal.webp" alt="Tour Finder" />
         <div className="top-bar-right">
           <ScoreLegend />
           {data?.generatedAt && (
@@ -128,11 +162,7 @@ export default function App() {
                 Matthew
               </h2>
             </div>
-            <WeeklyHighlight
-              leads={leads}
-              generatedAt={data?.generatedAt}
-              onSelect={setSelected}
-            />
+            <WeeklyHighlight leads={leads} generatedAt={data?.generatedAt} />
           </section>
 
           {status === 'ready' && leads.length > 0 && (
@@ -145,23 +175,15 @@ export default function App() {
             leads={leads}
             filtered={filtered}
             onResetFilters={() => setFilters({ ...DEFAULT_FILTERS })}
-            onSelect={setSelected}
-            onRetry={() => {
-              setStatus('loading');
-              load(false);
-            }}
+            onRetry={onRetry}
           />
-
-          {selected && (
-            <ArtistDetailModal lead={selected} onClose={() => setSelected(null)} />
-          )}
         </>
       )}
     </>
   );
 }
 
-function MainContent({ status, error, leads, filtered, onResetFilters, onSelect, onRetry }) {
+function MainContent({ status, error, leads, filtered, onResetFilters, onRetry }) {
   if (status === 'loading') return <LoadingState />;
   if (status === 'error') return <ErrorState message={error} onRetry={onRetry} />;
   if (leads.length === 0) return <EmptyState />;
@@ -172,7 +194,7 @@ function MainContent({ status, error, leads, filtered, onResetFilters, onSelect,
       <div className="result-count">
         Showing {filtered.length} of {leads.length} leads
       </div>
-      <LeadsList leads={filtered} onSelect={onSelect} />
+      <LeadsList leads={filtered} />
     </>
   );
 }

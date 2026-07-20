@@ -9,7 +9,9 @@
 // Each mini-card opens the artist's detail modal.
 
 import { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { scoreColor } from '../lib/format';
+import { leadRoute } from '../lib/savedArtists';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const WEEK_MS = 7 * DAY_MS;
@@ -26,7 +28,7 @@ function isNewThisRun(lead, ref) {
   return ts <= ref && ref - ts <= DAY_MS;
 }
 
-export default function WeeklyHighlight({ leads, generatedAt, onSelect }) {
+export default function WeeklyHighlight({ leads, generatedAt }) {
   const { newCount, immediateCount, topLead, topNew } = useMemo(() => {
     const now = Date.now();
     const ref = generatedAt ? new Date(generatedAt).getTime() : NaN;
@@ -53,7 +55,7 @@ export default function WeeklyHighlight({ leads, generatedAt, onSelect }) {
         <div className="weekly-stat">
           <strong>{newCount}</strong> new {newCount === 1 ? 'lead' : 'leads'}
           <span className="weekly-dot" aria-hidden="true" />
-          <strong>{immediateCount}</strong> immediate priority
+          <strong>{immediateCount}</strong> Strong Match
         </div>
       ) : (
         <div className="weekly-stat weekly-stat-empty">
@@ -62,9 +64,9 @@ export default function WeeklyHighlight({ leads, generatedAt, onSelect }) {
       )}
 
       <div className="weekly-cards">
-        {topLead && <MiniCard label="Top lead" lead={topLead} onSelect={onSelect} />}
+        {topLead && <MiniCard label="Top lead" lead={topLead} />}
         {topNew ? (
-          <MiniCard label="Top new" lead={topNew} onSelect={onSelect} />
+          <MiniCard label="Top new" lead={topNew} />
         ) : (
           <div className="weekly-card weekly-card-empty">
             <div className="weekly-card-body">
@@ -78,12 +80,13 @@ export default function WeeklyHighlight({ leads, generatedAt, onSelect }) {
   );
 }
 
-function MiniCard({ label, lead, onSelect }) {
+function MiniCard({ label, lead }) {
+  const navigate = useNavigate();
   return (
     <button
       type="button"
       className="weekly-card"
-      onClick={() => onSelect(lead)}
+      onClick={() => navigate(leadRoute(lead))}
       aria-label={`View ${lead.artist}`}
     >
       <div className="weekly-thumb">

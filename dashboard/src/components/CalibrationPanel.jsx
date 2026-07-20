@@ -16,6 +16,7 @@ import {
   genreTierOf,
   genreLabel,
 } from '../lib/scoringSettings';
+import { TOURING_TYPE, BOOKED_TYPE } from '../lib/myArtists';
 
 const num = (n) => n.toLocaleString();
 
@@ -44,21 +45,33 @@ function computeCalibration(entries, settings) {
     .map(([genre, count]) => ({ genre, count, tier: genreTierOf(settings, genre) }))
     .sort((a, b) => b.count - a.count);
 
-  // Scope distribution.
-  const scopeCounts = new Map();
+  // Scope distribution, split by relationship type — a Touring entry's scope
+  // (Regional/National/International) and a Booked entry's event type
+  // (Festival/Campus event/...) share the same `.scope` field but mean
+  // different things, so blending them into one stat would be meaningless.
+  // 'Other'/unset relationshipType entries don't have enough signal to sort
+  // into either bucket, so they're excluded from both.
+  const tourScopeCounts = new Map();
+  const eventTypeCounts = new Map();
   for (const e of entries) {
-    if (e.scope) scopeCounts.set(e.scope, (scopeCounts.get(e.scope) || 0) + 1);
+    if (!e.scope) continue;
+    if (e.relationshipType === TOURING_TYPE) {
+      tourScopeCounts.set(e.scope, (tourScopeCounts.get(e.scope) || 0) + 1);
+    } else if (e.relationshipType === BOOKED_TYPE) {
+      eventTypeCounts.set(e.scope, (eventTypeCounts.get(e.scope) || 0) + 1);
+    }
   }
-  const scopes = [...scopeCounts.entries()].sort((a, b) => b.count - a.count);
+  const tourScopes = [...tourScopeCounts.entries()].sort((a, b) => b[1] - a[1]);
+  const eventTypes = [...eventTypeCounts.entries()].sort((a, b) => b[1] - a[1]);
 
-  return { venue, genres, scopes };
+  return { venue, genres, tourScopes, eventTypes };
 }
 
 export default function CalibrationPanel({ entries }) {
   const settings = useScoringSettings();
   const [dismissed, setDismissed] = useState(() => new Set());
 
-  const { venue, genres, scopes } = useMemo(
+  const { venue, genres, tourScopes, eventTypes } = useMemo(
     () => computeCalibration(entries, settings),
     [entries, settings],
   );
@@ -137,7 +150,7 @@ export default function CalibrationPanel({ entries }) {
         </ul>
       )}
 
-      {(genres.length > 0 || scopes.length > 0) && (
+      {(genres.length > 0 || tourScopes.length > 0 || eventTypes.length > 0) && (
         <div className="calibration-stats">
           {genres.length > 0 && (
             <div className="calibration-stat">
@@ -147,11 +160,19 @@ export default function CalibrationPanel({ entries }) {
               </span>
             </div>
           )}
-          {scopes.length > 0 && (
+          {tourScopes.length > 0 && (
             <div className="calibration-stat">
               <span className="calibration-stat-k">Tour scope</span>
               <span className="calibration-stat-v">
-                {scopes.map(([scope, count]) => `${scope} ×${count}`).join(' · ')}
+                {tourScopes.map(([scope, count]) => `${scope} ×${count}`).join(' · ')}
+              </span>
+            </div>
+          )}
+          {eventTypes.length > 0 && (
+            <div className="calibration-stat">
+              <span className="calibration-stat-k">Event types booked</span>
+              <span className="calibration-stat-v">
+                {eventTypes.map(([type, count]) => `${type} ×${count}`).join(' · ')}
               </span>
             </div>
           )}

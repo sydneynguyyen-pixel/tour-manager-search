@@ -7,3 +7,12 @@ export const ROLES = [
   'Travel Coordinator',
   'Other',
 ];
+
+// Role options for a "Booked for event/lineup" relationship (festival slot,
+// one-off show, showcase) — a different job than touring with the act.
+export const BOOKING_ROLES = [
+  'Talent Buyer',
+  'Booking Coordinator',
+  'Concert Director',
+  'Other',
+];

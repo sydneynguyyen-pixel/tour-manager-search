@@ -1,11 +1,14 @@
 // Horizontal search + filter + sort bar above the cards grid.
 // Search matches against BOTH artist name and genre (single input).
 
+// Labels mirror the score-tier names in scoreExplanations.js (SCORE_TIERS); the
+// values stay the backend priority keys from output.js so filtering still works:
+// immediate = 85+ (Strong), high = 70–84 (Good), qualified = <70 (Possible).
 const PRIORITIES = [
   { value: 'all', label: 'All priorities' },
-  { value: 'immediate', label: 'Immediate' },
-  { value: 'high', label: 'High' },
-  { value: 'qualified', label: 'Qualified' },
+  { value: 'immediate', label: 'Strong Match' },
+  { value: 'high', label: 'Good Match' },
+  { value: 'qualified', label: 'Possible Match' },
 ];
 
 // Genre-fit groups map to the backend genreTier (1-4) but are labeled by what the

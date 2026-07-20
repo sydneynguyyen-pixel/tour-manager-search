@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T04:41:28.096Z",
+  "updatedAt": "2026-07-20T04:42:52.612Z",
   "artists": [
     {
       "name": "d4vd",
@@ -3647,23 +3647,6 @@
           "venueCapacity": null
         }
       ]
-    },
-    {
-      "name": "Julianne By",
-      "role": "",
-      "relationshipType": "Touring",
-      "note": "Imported from initial seed list",
-      "addedAt": "2026-07-19T23:44:35.482Z",
-      "imageUrl": null,
-      "genre": "",
-      "bio": null,
-      "mbid": null,
-      "tourCount": null,
-      "avgVenueSize": null,
-      "countriesToured": null,
-      "lastTourDate": null,
-      "topVenues": null,
-      "tourHistory": null
     },
     {
       "name": "Juelz",

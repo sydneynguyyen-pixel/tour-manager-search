@@ -53,6 +53,8 @@ function serveMyArtists() {
   }
 }
 
+// See netlify.toml at the repo root for the Netlify build-ignore rule that
+// skips rebuilds when a push only touches automation/data/*.json.
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), serveRealLeads(), serveMyArtists()],

@@ -1,8 +1,13 @@
 // "Next scan" time + "Scan now" primary CTA, shown in the header. Clicking
 // the CTA opens a prep modal explaining what a scan does rather than firing
-// immediately; confirming calls the trigger-scan Netlify function (which
-// dispatches the weekly-scrape GitHub Actions workflow on demand) and marks
-// a scan pending via lib/scanState.js.
+// immediately; confirming would normally call the trigger-scan Netlify
+// function (which dispatches the weekly-scrape GitHub Actions workflow on
+// demand) and mark a scan pending via lib/scanState.js.
+//
+// TEMPORARILY DISABLED — the trigger-scan call in handleConfirm is commented
+// out because the GitHub account hasn't cleared Actions' account-verification
+// review yet, so a dispatched workflow wouldn't actually run. Re-enable once
+// that clears (see the comment in handleConfirm below).
 //
 // The button disables itself while a scan is pending (rather than a fixed
 // cooldown) — see ScanPendingBanner.jsx, mounted at the app root, for the
@@ -18,6 +23,7 @@ export default function ScanNow() {
   const [modalOpen, setModalOpen] = useState(false);
   const [starting, setStarting] = useState(false);
   const [error, setError] = useState(null);
+  const [notReady, setNotReady] = useState(false);
 
   // Ticks while a scan is pending so `inProgress` flips to false once the
   // timeout elapses on its own, without needing a page refresh.
@@ -47,25 +53,28 @@ export default function ScanNow() {
   const nextScan = formatNextScan(getNextScanDate());
 
   async function handleConfirm() {
-    setStarting(true);
-    setError(null);
-    try {
-      const res = await fetch('/.netlify/functions/trigger-scan', { method: 'POST' });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok || !json.success) throw new Error(json.error || `HTTP ${res.status}`);
-      startScanPending();
-      setModalOpen(false);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setStarting(false);
-    }
+    // TEMPORARILY DISABLED — re-enable once GitHub Actions account verification clears.
+    // setStarting(true);
+    // setError(null);
+    // try {
+    //   const res = await fetch('/.netlify/functions/trigger-scan', { method: 'POST' });
+    //   const json = await res.json().catch(() => ({}));
+    //   if (!res.ok || !json.success) throw new Error(json.error || `HTTP ${res.status}`);
+    //   startScanPending();
+    //   setModalOpen(false);
+    // } catch (err) {
+    //   setError(err.message);
+    // } finally {
+    //   setStarting(false);
+    // }
+    setNotReady(true);
   }
 
   function closeModal() {
     if (starting) return;
     setModalOpen(false);
     setError(null);
+    setNotReady(false);
   }
 
   return (
@@ -104,13 +113,22 @@ export default function ScanNow() {
               <p className="scan-modal-error">Couldn&rsquo;t start scan — {error}. Try again.</p>
             )}
 
+            {notReady && (
+              <p className="scan-modal-notice">
+                This feature is still being set up — check back soon! In the meantime, new leads
+                still arrive automatically each week.
+              </p>
+            )}
+
             <div className="scan-modal-actions">
               <button type="button" className="pf-btn-ghost" onClick={closeModal} disabled={starting}>
-                Cancel
+                {notReady ? 'Close' : 'Cancel'}
               </button>
-              <button type="button" className="scan-cta" onClick={handleConfirm} disabled={starting}>
-                {starting ? 'Starting…' : 'Start scan'}
-              </button>
+              {!notReady && (
+                <button type="button" className="scan-cta" onClick={handleConfirm} disabled={starting}>
+                  {starting ? 'Starting…' : 'Start scan'}
+                </button>
+              )}
             </div>
           </div>
         </div>

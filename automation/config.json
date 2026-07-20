@@ -35,42 +35,42 @@
       "multiplier": 1.15,
       "genres": [
         "pop",
+        "bedroom pop",
+        "hip-hop",
         "indie pop",
-        "r&b",
-        "neo soul"
+        "electronic",
+        "r&b"
       ]
     },
     "tier2": {
       "multiplier": 1,
       "genres": [
-        "hip-hop",
-        "bedroom pop",
-        "electronic",
+        "neo soul",
         "house",
-        "techno"
+        "techno",
+        "country",
+        "emo"
       ]
     },
     "tier3": {
       "multiplier": 0.95,
       "genres": [
-        "rock",
-        "indie rock",
         "folk",
-        "country",
-        "emo",
+        "indie rock",
+        "punk",
+        "rock",
         "soul",
-        "punk"
+        "bollywood"
       ]
     },
     "tier4": {
       "multiplier": 0.92,
       "genres": [
-        "k-pop",
-        "j-pop",
-        "bollywood",
-        "metal",
         "classical",
-        "latin"
+        "j-pop",
+        "k-pop",
+        "latin",
+        "metal"
       ]
     }
   },

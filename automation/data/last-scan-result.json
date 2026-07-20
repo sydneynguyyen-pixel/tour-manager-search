@@ -1,8 +1,13 @@
 {
-  "timestamp": "2026-07-20T19:05:03.580Z",
+  "timestamp": "2026-07-20T23:01:55.317Z",
   "candidatesProcessed": 68,
   "candidatesWithRelease": 5,
   "candidatesScored": 4,
-  "newLeadsAdded": [],
-  "totalLeadsNow": 34
+  "newLeadsAdded": [
+    {
+      "artist": "Jeff Bernat",
+      "score": 62
+    }
+  ],
+  "totalLeadsNow": 35
 }

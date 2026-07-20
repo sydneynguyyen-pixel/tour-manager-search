@@ -11,6 +11,7 @@ const { scoreArtists } = require('./src/score');
 const { formatLeadsOutput, writeLeadsJSON, loadLeadArtistNames } = require('./src/output');
 const { selectBatch } = require('./src/batch');
 const { loadConfig, saveConfigAtomic } = require('./src/cli/seed-store');
+const { writeScanResult } = require('./src/scan-result');
 
 const LOOKBACK_DAYS = 60;
 const TOUR_MONTHS_BACK = 18;
@@ -100,6 +101,12 @@ async function main() {
   // it, and the same artist gets reprocessed (and pointlessly re-queried
   // against Setlist.fm/enrichment) every run. Catching it here also saves
   // those wasted downstream calls.
+  // Raw hit count before the known-lead/dismissed drop below — "did this
+  // candidate have a recent release" is a fact about the candidate pool,
+  // independent of whether we'd already seen them. This is what the scan
+  // summary (scan-result.js) reports as candidatesWithRelease.
+  const candidatesWithRelease = new Set(releasesRaw.map((r) => r.deezerId)).size;
+
   const alreadyLeadResolved = new Set(loadLeadArtistNames().map(normalizeName));
   const dismissedResolved = loadDismissedExcludeSet();
   const releases = [];
@@ -151,6 +158,14 @@ async function main() {
   }
   if (written) logger.success(`✓ ${formatted.leads.length} new lead(s) merged into leads.json`);
   else logger.info('leads.json preserved from a prior run (nothing new to add).');
+
+  writeScanResult({
+    candidatesProcessed: seedArtists.length,
+    candidatesWithRelease,
+    candidatesScored: kept.length,
+    newLeadsAdded: formatted.leads.map((l) => ({ artist: l.artist, score: l.finalScore })),
+  });
+
   return formatted;
 }
 

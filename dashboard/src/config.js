@@ -22,6 +22,17 @@ export const GITHUB_RAW_MY_ARTISTS_URL =
   'https://raw.githubusercontent.com/sydneynguyyen-pixel/tour-manager-search/main/automation/data/my-artists.json';
 export const LOCAL_MY_ARTISTS_URL = '/my-artists.json';
 
+// Same pattern, for the per-run scan summary (automation/src/scan-result.js)
+// and its rolling history — written every run, including 0-new-lead ones, so
+// the dashboard can show what a scan found even when the feed itself didn't
+// change. See serve-scan-result / serve-scan-history in vite.config.js.
+export const GITHUB_RAW_SCAN_RESULT_URL =
+  'https://raw.githubusercontent.com/sydneynguyyen-pixel/tour-manager-search/main/automation/data/last-scan-result.json';
+export const LOCAL_SCAN_RESULT_URL = '/last-scan-result.json';
+export const GITHUB_RAW_SCAN_HISTORY_URL =
+  'https://raw.githubusercontent.com/sydneynguyyen-pixel/tour-manager-search/main/automation/data/scan-history.json';
+export const LOCAL_SCAN_HISTORY_URL = '/scan-history.json';
+
 const isDev = import.meta.env.DEV;
 
 // Dev points at real pipeline data by default; opt back into the bundled mock
@@ -34,6 +45,9 @@ export const config = {
   leadsUrl: isDev ? (useMock ? null : LOCAL_LEADS_URL) : GITHUB_RAW_URL,
   // When null, the My Artists seed falls back to bare names (no enrichment).
   myArtistsUrl: isDev ? (useMock ? null : LOCAL_MY_ARTISTS_URL) : GITHUB_RAW_MY_ARTISTS_URL,
+  // When null, scan-result consumers treat it as "no scan has run yet".
+  scanResultUrl: isDev ? (useMock ? null : LOCAL_SCAN_RESULT_URL) : GITHUB_RAW_SCAN_RESULT_URL,
+  scanHistoryUrl: isDev ? (useMock ? null : LOCAL_SCAN_HISTORY_URL) : GITHUB_RAW_SCAN_HISTORY_URL,
   // Auto-refetch interval (ms). Per earlier decision: no manual refresh button.
   refreshIntervalMs: 30_000,
 };

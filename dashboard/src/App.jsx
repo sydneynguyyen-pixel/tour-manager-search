@@ -16,6 +16,9 @@ import MyArtists from './components/MyArtists';
 import WeeklyHighlight from './components/WeeklyHighlight';
 import ScanNow from './components/ScanNow';
 import ScanPendingBanner from './components/ScanPendingBanner';
+import ScanResultModal from './components/ScanResultModal';
+import ScanHistory from './pages/ScanHistory';
+import Updates from './pages/Updates';
 import { useSavedArtists, leadId } from './lib/savedArtists';
 import { useDismissedArtists } from './lib/dismissedArtists';
 import {
@@ -45,6 +48,13 @@ export default function App() {
   // into an artist detail page and back.
   const [filters, setFilters] = useState({ ...DEFAULT_FILTERS });
   const [tab, setTab] = useState('leads'); // 'leads' | 'saved' | 'myArtists'
+  // Per-run scan summary (automation/src/scan-result.js) — polled alongside
+  // leads.json so ScanPendingBanner can detect completion even on a
+  // 0-new-lead run, when leads.json itself never changes.
+  const [scanResult, setScanResult] = useState(null);
+  // The result to show in the "what did the scan find" modal, set once when
+  // ScanPendingBanner detects the pending scan has finished.
+  const [completedScanResult, setCompletedScanResult] = useState(null);
 
   const load = useCallback(async (isBackground = false) => {
     // Dev with no configured URL: use the bundled mock (no fetch).
@@ -69,11 +79,30 @@ export default function App() {
     }
   }, []);
 
+  const loadScanResult = useCallback(async () => {
+    if (!config.scanResultUrl) return;
+    try {
+      const res = await fetch(`${config.scanResultUrl}?t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) return; // No scan has ever run yet — leave scanResult null.
+      setScanResult(await res.json());
+    } catch {
+      // Background poll — keep the last known scan result on a failed fetch.
+    }
+  }, []);
+
+  const loadAll = useCallback(
+    (isBackground = false) => {
+      load(isBackground);
+      loadScanResult();
+    },
+    [load, loadScanResult]
+  );
+
   useEffect(() => {
-    load(false);
-    const id = setInterval(() => load(true), config.refreshIntervalMs);
+    loadAll(false);
+    const id = setInterval(() => loadAll(true), config.refreshIntervalMs);
     return () => clearInterval(id);
-  }, [load]);
+  }, [loadAll]);
 
   const allLeads = data?.leads ?? [];
   const dismissed = useDismissedArtists();
@@ -82,7 +111,12 @@ export default function App() {
 
   return (
     <>
-      <ScanPendingBanner generatedAt={data?.generatedAt} onRefreshNow={() => load(false)} />
+      <ScanPendingBanner
+        scanResult={scanResult}
+        onRefreshNow={() => loadAll(false)}
+        onScanComplete={setCompletedScanResult}
+      />
+      <ScanResultModal result={completedScanResult} onClose={() => setCompletedScanResult(null)} />
       <Routes>
         <Route
           path="/"
@@ -110,6 +144,8 @@ export default function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/settings/genres" element={<GenrePreferences />} />
         <Route path="/settings/dismissed" element={<DismissedArtists />} />
+        <Route path="/scan-history" element={<ScanHistory />} />
+        <Route path="/updates" element={<Updates />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

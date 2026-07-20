@@ -200,6 +200,66 @@ body {
   gap: 10px;
 }
 
+/* ---------- Scan results modal (ScanResultModal.jsx) ---------- */
+.scan-result-modal {
+  max-width: 420px;
+}
+.scan-result-lead-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.scan-result-lead-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-inner);
+}
+.scan-result-lead-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.scan-result-score {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+.scan-result-score.green {
+  background: var(--green);
+}
+.scan-result-score.amber {
+  background: var(--amber);
+}
+.scan-result-score.red {
+  background: var(--red);
+}
+.scan-result-view-link {
+  display: inline-flex;
+  width: 100%;
+  text-decoration: none;
+}
+.scan-result-footer {
+  margin: 16px 0 0;
+  color: var(--text-faint);
+  font-size: 0.82rem;
+}
+
 /* ---------- Persistent scan-pending banner (mounted at app root) ---------- */
 .scan-banner {
   display: flex;
@@ -2561,8 +2621,10 @@ body {
   }
 }
 /* Collapses the info nav cluster into a single dropdown so it doesn't crowd
-   out the Scan now CTA once the header can't fit everything in one row. */
-@media (max-width: 860px) {
+   out the Scan now CTA once the header can't fit everything in one row.
+   Raised from 860px once a 5th item (Updates) made the full row wrap
+   ~1280-1300px wide. */
+@media (max-width: 1320px) {
   .info-cluster {
     display: none;
   }
@@ -2932,6 +2994,140 @@ body {
 .guide-section a:hover {
   text-decoration: underline;
 }
+
+/* ---------- Scan History page (pages/ScanHistory.jsx) ---------- */
+.scan-history-intro {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+.scan-history-summary {
+  margin: 0 0 32px;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-inner);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.scan-history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.scan-history-row {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-inner);
+}
+.scan-history-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.scan-history-date {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.scan-history-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.scan-history-badge-found {
+  background: #e9f9f1;
+  color: #0d7a4c;
+}
+.scan-history-funnel {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.scan-history-names {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scan-history-name-chip {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.scan-history-total {
+  margin-top: 10px;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+}
+
+/* ---------- Updates page (pages/Updates.jsx) ---------- */
+.updates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.updates-row {
+  display: flex;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.updates-row:first-child {
+  padding-top: 0;
+}
+.updates-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.updates-date {
+  flex: 0 0 96px;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding-top: 2px;
+}
+.updates-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.updates-title {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.updates-description {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+@media (max-width: 560px) {
+  .updates-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .updates-date {
+    flex: none;
+  }
+}
+
 .guide-tiers {
   list-style: none;
   margin: 0;

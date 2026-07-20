@@ -53,9 +53,54 @@ function serveMyArtists() {
   }
 }
 
+// Dev-only: same pattern as serveRealLeads, for the per-run scan summary
+// (automation/src/scan-result.js writes this every run, including 0-new-lead
+// ones). Missing file (e.g. before any local `node run.js`) 404s, which the
+// dashboard's scan-result consumers treat as "no scan data yet", not an error.
+function serveScanResult() {
+  const scanResultPath = path.resolve(__dirname, '../automation/data/last-scan-result.json')
+  return {
+    name: 'serve-scan-result',
+    configureServer(server) {
+      server.middlewares.use('/last-scan-result.json', (_req, res) => {
+        try {
+          const body = fs.readFileSync(scanResultPath, 'utf8')
+          res.setHeader('Content-Type', 'application/json')
+          res.setHeader('Cache-Control', 'no-store')
+          res.end(body)
+        } catch (err) {
+          res.statusCode = 404
+          res.end(JSON.stringify({ error: `last-scan-result.json not found at ${scanResultPath}: ${err.message}` }))
+        }
+      })
+    },
+  }
+}
+
+// Dev-only: same pattern, for the rolling scan-history log (Scan History page).
+function serveScanHistory() {
+  const scanHistoryPath = path.resolve(__dirname, '../automation/data/scan-history.json')
+  return {
+    name: 'serve-scan-history',
+    configureServer(server) {
+      server.middlewares.use('/scan-history.json', (_req, res) => {
+        try {
+          const body = fs.readFileSync(scanHistoryPath, 'utf8')
+          res.setHeader('Content-Type', 'application/json')
+          res.setHeader('Cache-Control', 'no-store')
+          res.end(body)
+        } catch (err) {
+          res.statusCode = 404
+          res.end(JSON.stringify({ error: `scan-history.json not found at ${scanHistoryPath}: ${err.message}` }))
+        }
+      })
+    },
+  }
+}
+
 // See netlify.toml at the repo root for the Netlify build-ignore rule that
 // skips rebuilds when a push only touches automation/data/*.json.
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), serveRealLeads(), serveMyArtists()],
+  plugins: [react(), serveRealLeads(), serveMyArtists(), serveScanResult(), serveScanHistory()],
 })

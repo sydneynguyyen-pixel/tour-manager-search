@@ -1,15 +1,17 @@
-// Compact nav cluster for the header's info links (Scoring guide / FAQ /
-// Settings) — replaces three separate header buttons (ScoreLegend, FaqLink,
-// SettingsLink) with one grouped component. Renders as three tightly-spaced
+// Compact nav cluster for the header's info links (Scoring guide / Scan
+// history / Updates / FAQ / Settings) — one grouped component instead of a
+// separate header button per link. Renders as a tightly-spaced row of
 // buttons on wide screens; collapses into a single "Info" dropdown below the
-// 640px breakpoint (see .info-cluster / .info-menu in index.css) so the
-// header doesn't crowd out the Scan now CTA.
+// breakpoint (see .info-cluster / .info-menu in index.css) so five items
+// don't crowd out the Scan now CTA.
 
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const LINKS = [
   { to: '/scoring-guide', label: 'Scoring guide', icon: 'i' },
+  { to: '/scan-history', label: 'Scan history', icon: '↻' },
+  { to: '/updates', label: 'Updates', icon: '★' },
   { to: '/faq', label: 'FAQ', icon: '?' },
   { to: '/settings', label: 'Settings', icon: '⚙' },
 ];

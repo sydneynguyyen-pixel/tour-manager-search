@@ -2023,7 +2023,7 @@ body {
   gap: 14px;
 }
 
-/* Source + confidence, inside the "Explain this score" panel */
+/* Data sources, inside the "Explain this score" panel */
 .why-meta {
   display: flex;
   gap: 32px;

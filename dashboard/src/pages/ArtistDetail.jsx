@@ -217,6 +217,16 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
                   )}
                 </span>
               </span>
+              <span className="detail-hero-mgmt">
+                <span className="k">Confidence</span>
+                <span
+                  className="v"
+                  style={{ textTransform: 'capitalize' }}
+                  title="How reliable this contact info is, based on where it was found."
+                >
+                  {confidence}
+                </span>
+              </span>
               {links.length > 0 && (
                 <div className="detail-hero-links">
                   {links.map(({ key, label, href, Icon }) => (
@@ -318,13 +328,6 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
                       <div className="k">Data sources</div>
                       <div className="v">
                         {dataSources.length > 0 ? dataSources.join(', ') : 'None identified'}
-                      </div>
-                    </div>
-                    <div className="contact-item">
-                      <div className="k">Confidence</div>
-                      <div className="v" style={{ textTransform: 'capitalize' }}>{confidence}</div>
-                      <div className="field-caption">
-                        How reliable this contact info is, based on where it was found.
                       </div>
                     </div>
                   </div>

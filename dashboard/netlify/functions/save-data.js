@@ -6,7 +6,9 @@
 // function is the one place that's allowed to commit on the dashboard's
 // behalf, gated to a small allowlist of data files.
 //
-// POST body: { filePath: string, content: object, merge?: boolean }
+// POST body:
+//   { filePath: string, content: object, merge?: boolean }
+//   { filePath: string, content: object, mergeArrayKey: string, mergeArrayIdField: string }
 //   - filePath must be one of ALLOWED_PATHS below, or the request is
 //     rejected with 403 — this function must never become a generic
 //     "write anywhere in the repo" endpoint.
@@ -15,9 +17,22 @@
 //     merges `content`'s top-level keys into it, leaving every other field
 //     untouched. Used by the genre-preferences feature so a save only
 //     touches config.json's `genrePreferenceTiers` key, not the seed list or
-//     batching state alongside it. Without merge, content replaces the file
-//     outright (used for my-artists.json, where the dashboard always sends
-//     the full current entry list).
+//     batching state alongside it.
+//   - mergeArrayKey/mergeArrayIdField (optional, both required together):
+//     content[mergeArrayKey] must be an array of objects. Each incoming item
+//     is matched against the current file's content[mergeArrayKey] by
+//     item[mergeArrayIdField]; a match is shallow-merged (existing fields
+//     survive, incoming fields overwrite/add), a non-match is inserted
+//     as-is. The result REPLACES content[mergeArrayKey] — an item present in
+//     the current file but absent from the incoming array is dropped (so
+//     deletes still work; this is a per-field merge, not a per-item union).
+//     Every other top-level key in `content` (e.g. updatedAt) still replaces
+//     the current file's value outright, same as the no-merge case. Used by
+//     My Artists' sync so a browser whose localStorage lacks a field the
+//     backend already has (e.g. it seeded before that field existed) can't
+//     silently wipe that field out — see dashboard/src/lib/myArtists.js's
+//     ENRICHMENT_FIELDS comment for the incident this exists to prevent.
+//   - Without merge or mergeArrayKey, content replaces the file outright.
 
 const REPO_OWNER = 'sydneynguyyen-pixel';
 const REPO_NAME = 'tour-manager-search';
@@ -49,6 +64,21 @@ function githubRequest(path, token, init = {}) {
   });
 }
 
+// Per-item shallow merge, keyed by idField, for mergeArrayKey mode. Built
+// FROM the incoming array (not the current one) so an item the caller
+// omitted — a real delete, not a stale-browser gap — is genuinely dropped;
+// only per-FIELD gaps within a still-present item get backfilled from the
+// current file. See the module comment above for the incident this exists
+// to prevent: a caller whose local copy of one field lags the backend's
+// should never be able to blow that field away just by syncing.
+export function mergeArrayByKey(currentArray, incomingArray, idField) {
+  const currentById = new Map((currentArray || []).map((item) => [item?.[idField], item]));
+  return incomingArray.map((incomingItem) => {
+    const existing = currentById.get(incomingItem?.[idField]);
+    return existing ? { ...existing, ...incomingItem } : incomingItem;
+  });
+}
+
 export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { error: 'Method not allowed' });
@@ -66,7 +96,7 @@ export const handler = async (event) => {
     return jsonResponse(400, { error: 'Invalid JSON body' });
   }
 
-  const { filePath, content, merge } = payload;
+  const { filePath, content, merge, mergeArrayKey, mergeArrayIdField } = payload;
 
   if (typeof filePath !== 'string' || !ALLOWED_PATHS.has(filePath)) {
     return jsonResponse(403, { error: `filePath not allowed: ${filePath}` });
@@ -77,6 +107,12 @@ export const handler = async (event) => {
   if (merge && (typeof content !== 'object' || content === null || Array.isArray(content))) {
     return jsonResponse(400, { error: 'merge mode requires an object content payload' });
   }
+  if ((mergeArrayKey == null) !== (mergeArrayIdField == null)) {
+    return jsonResponse(400, { error: 'mergeArrayKey and mergeArrayIdField must be provided together' });
+  }
+  if (mergeArrayKey != null && !Array.isArray(content?.[mergeArrayKey])) {
+    return jsonResponse(400, { error: `content.${mergeArrayKey} must be an array for mergeArrayKey mode` });
+  }
 
   try {
     // GitHub requires the current file's blob SHA to update it (409 without
@@ -85,10 +121,11 @@ export const handler = async (event) => {
     const getRes = await githubRequest(filePath, token);
     let sha;
     let currentJson = null;
+    const needsCurrentContent = merge || mergeArrayKey != null;
     if (getRes.status === 200) {
       const current = await getRes.json();
       sha = current.sha;
-      if (merge) {
+      if (needsCurrentContent) {
         currentJson = JSON.parse(Buffer.from(current.content, 'base64').toString('utf8'));
       }
     } else if (getRes.status !== 404) {
@@ -96,7 +133,15 @@ export const handler = async (event) => {
       return jsonResponse(getRes.status, { error: `GitHub GET failed: ${errBody}` });
     }
 
-    const newContent = merge ? { ...(currentJson || {}), ...content } : content;
+    let newContent;
+    if (mergeArrayKey != null) {
+      newContent = {
+        ...content,
+        [mergeArrayKey]: mergeArrayByKey(currentJson?.[mergeArrayKey], content[mergeArrayKey], mergeArrayIdField),
+      };
+    } else {
+      newContent = merge ? { ...(currentJson || {}), ...content } : content;
+    }
     const encoded = Buffer.from(`${JSON.stringify(newContent, null, 2)}\n`, 'utf8').toString('base64');
 
     const putRes = await githubRequest(filePath, token, {

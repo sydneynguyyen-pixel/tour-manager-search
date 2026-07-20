@@ -13,6 +13,50 @@ import { roleLabel } from '../utils/myArtistFields';
 const STORAGE_KEY = 'myArtists';
 const SEEDED_FLAG_KEY = 'myArtists:seeded';
 
+// Single source of truth for every field automation/enrich-my-artists.js may
+// write onto a backend record, local-entry-name -> backend-record-name
+// (identical for all but `pipelineGenre`, which is renamed locally because
+// the My Artists form already owns a plain `genre` field meaning something
+// else — Matthew's tiered calibration selection, not the enrichment-sourced
+// string; see toLeadShape's comment on why they can't be conflated).
+// `imageUrl` is deliberately NOT here: unlike every other field below, it's
+// also a user-editable input on the manual "+ Add artist" form, so it can't
+// use the same "omit means no data" convention (an empty imageUrl on a
+// manual entry is real data — "no photo" — not "never synced").
+//
+// toLocalEntry, toBackendEntry, and reconcileWithBackend all drive off this
+// one list. Previously each of those hand-wrote its own field-by-field copy,
+// which is exactly how deezerId/enrichedAt went missing on every existing
+// entry: a field got added to the backend script but a hand-maintained list
+// elsewhere in this file didn't get updated in lockstep, and browsers that
+// had already seeded before the fix never got the field. A single shared
+// list makes that class of drift structurally impossible going forward —
+// every field the backend can produce is copied through and preserved
+// automatically, with no field-specific code to remember to add.
+const ENRICHMENT_FIELDS = [
+  { local: 'bio', backend: 'bio', default: null },
+  { local: 'pipelineGenre', backend: 'genre', default: null },
+  { local: 'mbid', backend: 'mbid', default: null },
+  { local: 'deezerId', backend: 'deezerId', default: null },
+  { local: 'tourCount', backend: 'tourCount', default: null },
+  { local: 'avgVenueSize', backend: 'avgVenueSize', default: null },
+  { local: 'countriesToured', backend: 'countriesToured', default: null },
+  { local: 'lastTourDate', backend: 'lastTourDate', default: null },
+  { local: 'topVenues', backend: 'topVenues', default: null },
+  { local: 'tourHistory', backend: 'tourHistory', default: null },
+  { local: 'newsArticles', backend: 'newsArticles', default: [] },
+  { local: 'hasUpcomingEvents', backend: 'hasUpcomingEvents', default: false },
+  { local: 'ticketmasterEvents', backend: 'ticketmasterEvents', default: [] },
+  { local: 'ticketmasterEventCount', backend: 'ticketmasterEventCount', default: 0 },
+  { local: 'ticketmasterEarliestOnSaleDate', backend: 'ticketmasterEarliestOnSaleDate', default: null },
+  { local: 'hasJamBaseEvents', backend: 'hasJamBaseEvents', default: false },
+  { local: 'jambaseEvents', backend: 'jambaseEvents', default: [] },
+  { local: 'jambaseEventCount', backend: 'jambaseEventCount', default: 0 },
+  { local: 'jambaseEarliestListedDate', backend: 'jambaseEarliestListedDate', default: null },
+  { local: 'isCurrentlyTouring', backend: 'isCurrentlyTouring', default: false },
+  { local: 'enrichedAt', backend: 'enrichedAt', default: null },
+];
+
 // relationshipType values — shared so MyArtists.jsx (the form) and
 // CalibrationPanel.jsx (which buckets stats by type) never drift apart.
 export const TOURING_TYPE = 'Touring';
@@ -57,38 +101,51 @@ export function saveEntries(entries) {
 //
 // `role` uses the shared roleLabel() helper so "Other" free-text resolves
 // the same way here as it does everywhere else the role is displayed.
-// `genre` deliberately sends pipelineGenre (the enrichment-sourced string),
-// never entry.genre (Matthew's tiered calibration selection) — same
-// reasoning as toLeadShape: different vocabularies, don't conflate them.
-// deezerId/enrichedAt are carried through unchanged from whatever
-// toLocalEntry attached, so a resync never drops enrichment metadata this
-// app doesn't otherwise use.
+//
+// Every ENRICHMENT_FIELDS field is sent ONLY when present locally (`!= null`
+// — false/0/[]/'' all count as "present," only null/undefined are treated as
+// "this browser doesn't have it"), never coerced to a hard default. This
+// matters even with the backend-side keyed merge in syncEntries below: this
+// function's output becomes the "incoming" side of that per-artist merge,
+// and any key it omits here is a key the merge won't touch — the backend's
+// existing value survives untouched. Sending an explicit default instead
+// (the old behavior, before this fix) would still clobber real backend data
+// with "no data," merge or no merge; omission is what actually protects it.
+// See ENRICHMENT_FIELDS' comment for the incident this replaced.
 function toBackendEntry(entry) {
+  const enrichment = {};
+  for (const { local, backend } of ENRICHMENT_FIELDS) {
+    if (entry[local] != null) enrichment[backend] = entry[local];
+  }
   return {
     name: entry.artistName,
     role: roleLabel(entry),
     relationshipType: entry.relationshipType || '',
     note: entry.notes || '',
     addedAt: entry.addedAt,
-    imageUrl: entry.imageUrl || null,
-    genre: entry.pipelineGenre || '',
-    bio: entry.bio ?? null,
-    mbid: entry.mbid ?? null,
-    ...(entry.deezerId != null ? { deezerId: entry.deezerId } : {}),
-    ...(entry.enrichedAt ? { enrichedAt: entry.enrichedAt } : {}),
-    tourCount: entry.tourCount ?? null,
-    avgVenueSize: entry.avgVenueSize ?? null,
-    countriesToured: entry.countriesToured ?? null,
-    lastTourDate: entry.lastTourDate ?? null,
-    topVenues: entry.topVenues ?? null,
-    tourHistory: entry.tourHistory ?? null,
+    imageUrl: entry.imageUrl || null, // not in ENRICHMENT_FIELDS — see its comment
+    ...enrichment,
   };
 }
 
-// POSTs the full current roster to the save-data function, which commits it
-// to automation/data/my-artists.json on GitHub. Swallows all errors —
-// offline, a missing GITHUB_TOKEN, a GitHub API hiccup, whatever — so a sync
-// failure is invisible to Matthew and never blocks the (already-saved) UI.
+// POSTs the current roster to the save-data function, which commits it to
+// automation/data/my-artists.json on GitHub. Swallows all errors — offline,
+// a missing GITHUB_TOKEN, a GitHub API hiccup, whatever — so a sync failure
+// is invisible to Matthew and never blocks the (already-saved) UI.
+//
+// Uses save-data's mergeArrayKey mode rather than a full-array replace: the
+// backend keys the incoming `artists` array against the existing file by
+// `name` and shallow-merges each matching pair (incoming keys win, but a key
+// this browser's copy never had — see toBackendEntry's omission above —
+// leaves the backend's existing value alone). This is the second, redundant
+// layer of protection against the deezerId/enrichedAt-style data loss: even
+// if a browser's localStorage is stale and reconcileWithBackend hasn't
+// caught up yet (e.g. offline, or an edit fired in the reconciliation fetch's
+// race window), the backend itself won't let an omitted field wipe out real
+// data. Belt-and-suspenders with the local reconciliation in
+// reconcileWithBackend, not a replacement for it — reconciliation is what
+// keeps localStorage (the actual source of truth Matthew sees) fresh; this
+// is what stops a stale copy from doing damage if it syncs anyway.
 async function syncEntries(entries) {
   try {
     await fetch('/.netlify/functions/save-data', {
@@ -100,6 +157,8 @@ async function syncEntries(entries) {
           updatedAt: new Date().toISOString(),
           artists: entries.map(toBackendEntry),
         },
+        mergeArrayKey: 'artists',
+        mergeArrayIdField: 'name',
       }),
     });
   } catch {
@@ -149,6 +208,18 @@ async function fetchBackendMyArtists() {
   }
 }
 
+// Every ENRICHMENT_FIELDS field, read off a backend record with its default.
+// Shared by toLocalEntry (building a brand-new local entry) and
+// reconcileWithBackend (refreshing an existing one), so there's exactly one
+// place that knows how to pull enrichment off a backend record.
+function readEnrichmentFields(backendEntry) {
+  const out = {};
+  for (const { local, backend, default: def } of ENRICHMENT_FIELDS) {
+    out[local] = backendEntry?.[backend] ?? def;
+  }
+  return out;
+}
+
 // Map one backend my-artists.json record (name + optional enrichment) to the
 // localStorage entry shape. `role`/`genre`/etc. stay blank — those are owned
 // by the My Artists form and mean something different (a tiered genre key,
@@ -177,23 +248,8 @@ function toLocalEntry(name, backendEntry) {
     notes: IMPORT_NOTE,
     imported: true,
     addedAt: backendEntry?.addedAt || now,
-    // Enrichment from automation/enrich-my-artists.js — null until that script
-    // has run, or if the backend fetch failed. deezerId/enrichedAt aren't
-    // used for display anywhere in this app; they're carried through purely
-    // so syncEntries (see saveEntries below) can send them back unchanged
-    // instead of silently dropping them on the next sync.
-    imageUrl: backendEntry?.imageUrl ?? null,
-    bio: backendEntry?.bio ?? null,
-    pipelineGenre: backendEntry?.genre ?? null,
-    mbid: backendEntry?.mbid ?? null,
-    deezerId: backendEntry?.deezerId ?? null,
-    enrichedAt: backendEntry?.enrichedAt ?? null,
-    tourCount: backendEntry?.tourCount ?? null,
-    avgVenueSize: backendEntry?.avgVenueSize ?? null,
-    countriesToured: backendEntry?.countriesToured ?? null,
-    lastTourDate: backendEntry?.lastTourDate ?? null,
-    topVenues: backendEntry?.topVenues ?? null,
-    tourHistory: backendEntry?.tourHistory ?? null,
+    imageUrl: backendEntry?.imageUrl ?? null, // not in ENRICHMENT_FIELDS — see its comment
+    ...readEnrichmentFields(backendEntry),
   };
 }
 
@@ -205,6 +261,41 @@ export async function buildSeedEntries() {
     return backendArtists.map((a) => toLocalEntry(a.name, a));
   }
   return FALLBACK_SEED_ARTIST_NAMES.map((name) => toLocalEntry(name, null));
+}
+
+// Refreshes enrichment fields on entries whose local copy has fallen behind
+// the backend — the actual fix for the deezerId/enrichedAt-style data loss.
+// buildSeedEntries only ever runs once per browser (gated by hasSeeded), so
+// a browser that seeded before a field existed — or before a later
+// enrich-my-artists.js run improved a value — would otherwise carry that gap
+// forever, silently re-dropping it on every subsequent sync (see
+// ENRICHMENT_FIELDS' and toBackendEntry's comments). This runs on every
+// mount instead (see the effect in MyArtists.jsx) and compares each matched
+// pair's `enrichedAt`: if the backend's is newer than (or the local entry
+// has none at all), every ENRICHMENT_FIELDS value is refreshed from the
+// backend, overwriting whatever — including a wrong or missing — value is
+// currently local. Fields NOT in ENRICHMENT_FIELDS (role, notes, contact
+// info, imageUrl, ...) are Matthew's own and are never touched here.
+//
+// Only fills gaps/staleness — never used to seed brand-new entries (that's
+// still buildSeedEntries' job) — so entries with no backend match, or whose
+// backend match has never been enriched at all, pass through unchanged.
+export async function reconcileWithBackend(localEntries) {
+  const backendArtists = await fetchBackendMyArtists();
+  if (!backendArtists) return { entries: localEntries, changed: false };
+
+  const backendByName = new Map(backendArtists.map((a) => [a.name, a]));
+  let changed = false;
+  const entries = localEntries.map((entry) => {
+    const backendEntry = backendByName.get(entry.artistName);
+    if (!backendEntry?.enrichedAt) return entry;
+    const localTime = entry.enrichedAt ? new Date(entry.enrichedAt).getTime() : 0;
+    const backendTime = new Date(backendEntry.enrichedAt).getTime();
+    if (!(backendTime > localTime)) return entry;
+    changed = true;
+    return { ...entry, ...readEnrichmentFields(backendEntry) };
+  });
+  return { entries, changed };
 }
 
 export function hasSeeded() {

@@ -15,6 +15,7 @@ import {
   loadEntries,
   saveEntries,
   buildSeedEntries,
+  reconcileWithBackend,
   hasSeeded,
   markSeeded,
   toLeadShape,
@@ -129,6 +130,33 @@ export default function MyArtists() {
       cancelled = true;
     };
     // Runs once on mount only — intentionally not re-checking `entries`.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Refreshes enrichment fields (image/genre/bio/tour data/news/Ticketmaster/
+  // JamBase/on-tour-now) from the backend on every subsequent visit — see
+  // reconcileWithBackend's comment in lib/myArtists for why this exists. The
+  // one-time seed above means a browser that had already seeded before a
+  // field existed (or before a later enrich-my-artists.js run improved a
+  // value) would otherwise carry that gap in localStorage forever, and
+  // silently re-drop it from the backend file on this browser's next save
+  // (any add/edit/delete triggers a full sync — see saveEntries). Skipped on
+  // a first-ever visit: the seed effect above already pulls fully current
+  // data, so there's nothing to reconcile yet.
+  useEffect(() => {
+    if (!hasSeeded()) return;
+    let cancelled = false;
+    (async () => {
+      const { entries: reconciled, changed } = await reconcileWithBackend(entries);
+      if (cancelled || !changed) return;
+      setEntries(reconciled);
+      saveEntries(reconciled);
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // Runs once on mount only, against the localStorage snapshot `entries`
+    // was initialized from — intentionally not re-checking `entries` after.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

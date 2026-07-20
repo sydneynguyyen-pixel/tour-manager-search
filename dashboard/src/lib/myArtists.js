@@ -22,7 +22,11 @@ const SEEDED_FLAG_KEY = 'myArtists:seeded';
 // `imageUrl` is deliberately NOT here: unlike every other field below, it's
 // also a user-editable input on the manual "+ Add artist" form, so it can't
 // use the same "omit means no data" convention (an empty imageUrl on a
-// manual entry is real data — "no photo" — not "never synced").
+// manual entry is real data — "no photo" — not "never synced"). `contactName`/
+// `contactEmail` are deliberately NOT here for the same reason — both are
+// also manual "My Notes" form fields (Matthew's own note on who to contact),
+// a different concept from enrich-my-artists.js's automated management-
+// contact guess; see toLeadShape's comment for the collision this avoids.
 //
 // toLocalEntry, toBackendEntry, and reconcileWithBackend all drive off this
 // one list. Previously each of those hand-wrote its own field-by-field copy,
@@ -38,6 +42,11 @@ const ENRICHMENT_FIELDS = [
   { local: 'pipelineGenre', backend: 'genre', default: null },
   { local: 'mbid', backend: 'mbid', default: null },
   { local: 'deezerId', backend: 'deezerId', default: null },
+  { local: 'recentReleases', backend: 'recentReleases', default: [] },
+  { local: 'socialLinks', backend: 'socialLinks', default: {} },
+  { local: 'websiteUrl', backend: 'websiteUrl', default: null },
+  { local: 'managementType', backend: 'managementType', default: null },
+  { local: 'contactConfidence', backend: 'contactConfidence', default: 'low' },
   { local: 'tourCount', backend: 'tourCount', default: null },
   { local: 'avgVenueSize', backend: 'avgVenueSize', default: null },
   { local: 'countriesToured', backend: 'countriesToured', default: null },
@@ -319,12 +328,28 @@ export function markSeeded() {
 // ArtistCard.jsx and ArtistDetail.jsx were both built for `lead` records (from
 // leads.json) and read fields like `.artist`, `.genre`, `.lastfmBio`/
 // `.audiodbBio`. A My Artists entry uses different names for the same idea
-// (`.artistName`, `.pipelineGenre`, `.bio`) plus some fields leads.json always
-// has that My Artists entries don't (recentReleases, socialLinks, scoring —
-// enrich-my-artists.js deliberately skips Deezer's release list and all
-// contact-research/scoring, see automation/enrich-my-artists.js). This maps
-// one to the other WITHOUT mutating the stored entry, so the card/detail page
-// can render a My Artists entry with zero changes to their own logic.
+// (`.artistName`, `.pipelineGenre`, `.bio`) — those get remapped below. Every
+// field leads.json also has (recentReleases, socialLinks, websiteUrl,
+// managementType, contactConfidence, ...) is real enrichment data on a My
+// Artists entry too as of enrich-my-artists.js's Deezer-release/Wikidata/
+// contact-research additions, so those pass through unchanged via `...entry`
+// — do NOT re-add a hardcoded empty override for any of them here. (An
+// earlier version of this function did exactly that for recentReleases/
+// socialLinks/websiteUrl/managementType/contactEmail, which silently blanked
+// out real backend data regardless of what enrich-my-artists.js produced —
+// same root problem as the toLocalEntry/toBackendEntry allowlist drift
+// documented on ENRICHMENT_FIELDS above, just at the display layer instead
+// of the sync layer.)
+//
+// `contactEmail` is the one field NOT remapped from enrichment data — it's
+// exempt from ENRICHMENT_FIELDS entirely (see that list's comment) because
+// the name collides with Matthew's own manual "My Notes" contactEmail field.
+// Passing it through via `...entry` unmodified is correct: it shows
+// Matthew's own note, never a pipeline guess.
+//
+// `scoring` (fitReasoning) has no backend equivalent for My Artists at all —
+// these entries are never scored — so that one still needs an explicit
+// empty default.
 export function toLeadShape(entry) {
   return {
     ...entry,
@@ -332,11 +357,6 @@ export function toLeadShape(entry) {
     genre: entry.pipelineGenre || '',
     audiodbBio: entry.bio || null,
     lastfmBio: null,
-    recentReleases: [],
-    socialLinks: {},
-    websiteUrl: null,
-    managementType: null,
-    contactEmail: null,
     fitReasoning: [],
   };
 }

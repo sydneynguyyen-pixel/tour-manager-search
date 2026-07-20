@@ -4,6 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const logger = require('./utils/logger');
+const { RELEASE_QUALITY_STRONG, RELEASE_QUALITY_PARTIAL } = require('./score');
 
 const LEADS_PATH = path.join(__dirname, '..', 'data', 'leads.json');
 
@@ -22,11 +23,34 @@ function median(nums) {
 function buildReasoning(a, config) {
   const reasons = [];
 
+  const fullOriginalCount = a.fullOriginalReleaseCount ?? 0;
+  const selfRemixCount = a.selfRemixReleaseCount ?? 0;
+  const otherRemixCount = a.otherRemixReleaseCount ?? 0;
+  const releaseTotal = fullOriginalCount + selfRemixCount + otherRemixCount;
+  const releaseQualityScore = a.releaseQualityScore;
+  const qualityIsWeak = releaseQualityScore != null && releaseQualityScore < RELEASE_QUALITY_PARTIAL;
+  const qualityIsPartial =
+    releaseQualityScore != null &&
+    releaseQualityScore >= RELEASE_QUALITY_PARTIAL &&
+    releaseQualityScore < RELEASE_QUALITY_STRONG;
+
   if (a.releaseDate) {
     const noTour = (a.tourCount || 0) === 0;
-    reasons.push(
-      `Recent ${a.releaseType || 'release'} (${a.releaseDate})${noTour ? ' with no announced tour' : ', already touring'}`
-    );
+    if (qualityIsWeak) {
+      reasons.push(
+        `Recent activity is mostly remixes/alt versions (${fullOriginalCount} of ${releaseTotal} fully original)` +
+          `${noTour ? ' with no announced tour' : ', already touring'} — weak signal, not a genuine new release`
+      );
+    } else if (qualityIsPartial) {
+      reasons.push(
+        `Recent releases are a mix of original and remix/alt-version work (${fullOriginalCount} of ${releaseTotal} fully original)` +
+          `${noTour ? ' with no announced tour' : ', already touring'}`
+      );
+    } else {
+      reasons.push(
+        `Recent ${a.releaseType || 'release'} (${a.releaseDate})${noTour ? ' with no announced tour' : ', already touring'}`
+      );
+    }
   } else {
     reasons.push('No recent release detected');
   }
@@ -38,6 +62,26 @@ function buildReasoning(a, config) {
     );
   } else {
     reasons.push('No tour history in the last 18 months');
+  }
+
+  const comebackGapMonths = a.scoring?.comebackGapMonths;
+  if (comebackGapMonths != null) {
+    const gap = Math.round(comebackGapMonths);
+    if (qualityIsWeak) {
+      reasons.push(
+        `Returning after a ${gap}-month gap, but recent activity is mostly remixes of other artists' work ` +
+          `(${fullOriginalCount} of ${releaseTotal} original) — comeback signal is weak, worth verifying before reaching out`
+      );
+    } else if (qualityIsPartial) {
+      reasons.push(
+        `Returning after a ${gap}-month gap with a mix of original and remix/alt-version releases ` +
+          `(${fullOriginalCount} of ${releaseTotal} fully original) — comeback signal is genuine but uncertain`
+      );
+    } else {
+      reasons.push(
+        `Returning after a ${gap}-month gap with strong new original material — comeback signal is solid`
+      );
+    }
   }
 
   if ((a.avgVenueSize || 0) > 0) {
@@ -102,6 +146,19 @@ function loadPriorFirstSeen(filePath = LEADS_PATH) {
   }
 }
 
+// Artist names already present in leads.json (any priority) — used by run.js
+// to dedup newly discovered candidates so an artist already scored/showing in
+// the feed isn't reprocessed every run. Missing file -> empty array, so a
+// first-ever run treats everyone as new.
+function loadLeadArtistNames(filePath = LEADS_PATH) {
+  try {
+    const prev = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return (prev.leads || []).map((l) => l.artist).filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
 // Build the full leads payload (metadata + stats + ranked leads) from scored,
 // filtered, sorted artists.
 function formatLeadsOutput(scoredArtists, config) {
@@ -119,6 +176,8 @@ function formatLeadsOutput(scoredArtists, config) {
     listeners: a.listeners,
     lastfmListeners: a.lastfmListeners ?? null,
     lastfmTags: Array.isArray(a.lastfmTags) ? a.lastfmTags : [],
+    lastfmBio: a.lastfmBio ?? null, // display-only artist description source
+    audiodbBio: a.audiodbBio ?? null, // display-only artist description source
     discogsVerified: a.discogsVerified ?? false,
     releaseDate: a.releaseDate,
     releaseName: a.releaseName,
@@ -126,6 +185,10 @@ function formatLeadsOutput(scoredArtists, config) {
     genreTier: a.genreTier,
     imageUrl: a.imageUrl ?? null,
     recentReleases: Array.isArray(a.recentReleases) ? a.recentReleases.slice(0, 5) : [],
+    fullOriginalReleaseCount: a.fullOriginalReleaseCount ?? 0,
+    selfRemixReleaseCount: a.selfRemixReleaseCount ?? 0,
+    otherRemixReleaseCount: a.otherRemixReleaseCount ?? 0,
+    releaseQualityScore: a.releaseQualityScore ?? null,
     finalScore: a.finalScore,
     priority: a.priority,
     baseScore: a.baseScore,
@@ -135,6 +198,7 @@ function formatLeadsOutput(scoredArtists, config) {
     avgVenueSize: a.avgVenueSize,
     topVenues: Array.isArray(a.topVenues) ? a.topVenues.slice(0, 3) : [],
     tourHistory: Array.isArray(a.tourHistory) ? a.tourHistory : [],
+    fullTourHistory: Array.isArray(a.fullTourHistory) ? a.fullTourHistory : [],
     countriesToured: a.countriesToured,
     lastTourDate: a.lastTourDate,
     managementType: a.managementType ?? 'unknown',
@@ -167,14 +231,42 @@ function formatLeadsOutput(scoredArtists, config) {
   };
 }
 
-// Persist a formatted payload to data/leads.json. If the run produced 0 leads,
-// the existing leads.json is preserved (not clobbered) and the empty run's
-// metadata is saved to data/history/ for debugging instead.
+// Merge this run's newly-scored leads into whatever's already persisted, so
+// the feed ACCUMULATES across runs instead of each run replacing it outright
+// (run.js only scores this run's genuinely-new candidates — see its dedup
+// against loadLeadArtistNames() — so the prior leads must be carried forward
+// here or they'd vanish from leads.json on the next run). New leads win on a
+// name collision (shouldn't happen — run.js dedupes before scoring — but this
+// keeps the fresher record if it ever does). Stats/rank are recomputed across
+// the full merged set.
+function mergeWithExisting(newLeads, filePath) {
+  let prior = [];
+  try {
+    const existing = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    prior = Array.isArray(existing.leads) ? existing.leads : [];
+  } catch {
+    // No prior file (or unreadable) — this run's leads are the whole feed.
+  }
+
+  const byName = new Map();
+  for (const l of prior) byName.set((l.artist || '').toLowerCase(), l);
+  for (const l of newLeads) byName.set((l.artist || '').toLowerCase(), l);
+
+  return [...byName.values()]
+    .sort((a, b) => b.finalScore - a.finalScore)
+    .map((l, i) => ({ ...l, rank: i + 1 }));
+}
+
+// Persist a formatted payload to data/leads.json, merged with the existing
+// file so the feed accumulates over successive runs. If the run produced 0
+// new leads, the existing leads.json is preserved untouched (not clobbered)
+// and the empty run's metadata is saved to data/history/ for debugging
+// instead.
 function writeLeadsJSON(formatted, filePath = LEADS_PATH) {
   const count = formatted?.leads?.length ?? 0;
 
   if (count === 0) {
-    logger.warn('0 leads generated this run — preserving previous leads.json');
+    logger.warn('0 new leads generated this run — preserving previous leads.json');
     try {
       const histDir = path.join(path.dirname(filePath), 'history');
       fs.mkdirSync(histDir, { recursive: true });
@@ -188,9 +280,29 @@ function writeLeadsJSON(formatted, filePath = LEADS_PATH) {
     return null; // leads.json left untouched
   }
 
-  fs.writeFileSync(filePath, `${JSON.stringify(formatted, null, 2)}\n`);
-  logger.info(`Leads written to ${path.relative(process.cwd(), filePath)}`);
+  const merged = mergeWithExisting(formatted.leads, filePath);
+  const scores = merged.map((l) => l.finalScore);
+  const payload = {
+    ...formatted,
+    totalLeads: merged.length,
+    stats: {
+      avgScore: scores.length ? Math.round(scores.reduce((x, y) => x + y, 0) / scores.length) : 0,
+      medianScore: median(scores),
+      priorityBreakdown: {
+        immediate: merged.filter((l) => l.priority === 'immediate').length,
+        high: merged.filter((l) => l.priority === 'high').length,
+        qualified: merged.filter((l) => l.priority === 'qualified').length,
+      },
+    },
+    leads: merged,
+  };
+
+  fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`);
+  logger.info(
+    `Leads written to ${path.relative(process.cwd(), filePath)} ` +
+      `(${count} new this run, ${merged.length} total in feed)`
+  );
   return filePath;
 }
 
-module.exports = { formatLeadsOutput, writeLeadsJSON, buildReasoning, LEADS_PATH };
+module.exports = { formatLeadsOutput, writeLeadsJSON, buildReasoning, loadLeadArtistNames, LEADS_PATH };

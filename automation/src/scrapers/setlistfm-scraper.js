@@ -1,5 +1,8 @@
 // Setlist.fm scraper: for each artist, resolve their MusicBrainz id and
-// aggregate recent tour history (show count, geographic spread, dates).
+// aggregate tour history (show count, geographic spread, dates). Fetches every
+// setlist on record (no date cutoff), then splits it into the scoring window
+// (tourHistory, monthsBack — feeds tourCount/avgVenueSize/etc.) and the
+// all-time list (fullTourHistory, display-only, never read by score.js).
 //
 // IMPORTANT — venue capacity is NOT available from Setlist.fm. The venue object
 // is only { id, name, city, url }; there is no capacity field. So avg/min/max
@@ -11,14 +14,15 @@
 //   - eventDate is formatted dd-MM-yyyy (not ISO).
 //   - The API rate-limits hard (~1 req/sec) and 429s readily -> serial throttle.
 //   - An artist with no setlists returns HTTP 404 (not an empty 200).
-//   - Results are paginated (20/page) newest-first -> early-stop past the cutoff.
+//   - Results are paginated (20/page) newest-first; MAX_PAGES caps how far back
+//     we'll fetch for the all-time history.
 
 const { setlistfm } = require('../auth');
 const logger = require('../utils/logger');
 const { getVenueCapacity, saveCache, getCacheStats } = require('./venue-scraper');
 
 const SETLISTFM_MIN_INTERVAL_MS = 1200; // stay under ~1 req/sec
-const MAX_PAGES = 15; // safety cap; early-stop usually ends much sooner
+const MAX_PAGES = 15; // safety cap on all-time history depth (300 shows)
 const MAX_429_RETRIES = 3;
 
 // --- serial throttle: one request at a time, spaced by MIN_INTERVAL_MS --------
@@ -150,9 +154,9 @@ async function findArtist(name) {
   return null;
 }
 
-// Fetch setlists for an mbid whose eventDate is on/after cutoffMs. Paginated,
-// newest-first, early-stops once a page reaches shows older than the cutoff.
-async function fetchSetlistsInWindow(mbid, cutoffMs, name) {
+// Fetch ALL setlists on record for an mbid (no date cutoff). Paginated,
+// newest-first; stops at MAX_PAGES, an empty page, or the last page.
+async function fetchAllSetlists(mbid, name) {
   const shows = [];
   for (let p = 1; p <= MAX_PAGES; p += 1) {
     let data;
@@ -163,68 +167,17 @@ async function fetchSetlistsInWindow(mbid, cutoffMs, name) {
       throw err;
     }
     const items = data.setlist || [];
-    let reachedOld = false;
-    for (const sl of items) {
-      const d = parseEventDate(sl.eventDate);
-      if (!d) continue;
-      if (d.getTime() >= cutoffMs) shows.push(sl);
-      else reachedOld = true; // newest-first: the rest are older too
-    }
+    shows.push(...items);
     const totalPages = Math.ceil((data.total || 0) / (data.itemsPerPage || 20));
-    if (reachedOld || items.length === 0 || p >= totalPages) break;
+    if (items.length === 0 || p >= totalPages) break;
   }
   return shows;
 }
 
-// Aggregate a set of setlists into the normalized tour-history record. Async
-// because venue capacities are looked up from Wikipedia (via venue-scraper).
-async function aggregate(name, mbid, shows) {
-  const countries = new Set();
-  const tourNames = new Set();
-  let lastTs = null;
-
-  for (const sl of shows) {
-    const country = sl.venue?.city?.country?.name;
-    if (country) countries.add(country);
-    if (sl.tour?.name) tourNames.add(sl.tour.name);
-    const d = parseEventDate(sl.eventDate);
-    if (d && (lastTs === null || d.getTime() > lastTs)) lastTs = d.getTime();
-  }
-
-  // Capture each distinct venue's city/country (first occurrence) so the top
-  // venues can be labeled in the dashboard.
-  const venueMeta = new Map();
-  for (const sl of shows) {
-    const vn = sl.venue?.name;
-    if (vn && !venueMeta.has(vn)) {
-      venueMeta.set(vn, {
-        city: sl.venue?.city?.name ?? null,
-        country: sl.venue?.city?.country?.name ?? null,
-      });
-    }
-  }
-
-  // Look up capacity once per unique venue (Setlist.fm has none). avg/min/max
-  // are computed across distinct venues that resolved a capacity. capByVenue
-  // (name -> capacity|null) also lets us stamp each individual show below.
-  const venueNames = [...venueMeta.keys()];
-  const sizedVenues = []; // { name, capacity, city, country }
-  const capByVenue = new Map();
-  for (const vn of venueNames) {
-    const cap = await getVenueCapacity(vn);
-    if (Number.isFinite(cap) && cap > 0) {
-      sizedVenues.push({ name: vn, capacity: cap, ...venueMeta.get(vn) });
-      capByVenue.set(vn, cap);
-    } else {
-      capByVenue.set(vn, null);
-      logger.warn(`No Wikipedia capacity for venue "${vn}" — excluded from venue-size stats.`);
-    }
-  }
-
-  // Per-show tour history: every show in the window, newest first. Reuses data
-  // already fetched (no extra API calls); venueCapacity comes from the same
-  // Wikipedia lookups feeding the aggregate stats (null when unavailable).
-  const tourHistory = shows
+// Turn raw Setlist.fm setlist objects into the normalized per-show shape,
+// newest first, using a precomputed venue-name -> capacity map.
+function toTourHistory(shows, capByVenue) {
+  return shows
     .map((sl) => {
       const d = parseEventDate(sl.eventDate);
       const venueName = sl.venue?.name ?? null;
@@ -238,6 +191,67 @@ async function aggregate(name, mbid, shows) {
     })
     .filter((s) => s.date) // drop shows with an unparseable date
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)); // newest first
+}
+
+// Aggregate the scoring-window shows into the normalized tour-history record,
+// plus an all-time fullTourHistory for display only (does not feed any of the
+// stats below — tourCount/avgVenueSize/countriesToured/etc. are windowShows-only).
+// Async because venue capacities are looked up from Wikipedia (via venue-scraper).
+async function aggregate(name, mbid, windowShows, allShows) {
+  const countries = new Set();
+  const tourNames = new Set();
+  let lastTs = null;
+
+  for (const sl of windowShows) {
+    const country = sl.venue?.city?.country?.name;
+    if (country) countries.add(country);
+    if (sl.tour?.name) tourNames.add(sl.tour.name);
+    const d = parseEventDate(sl.eventDate);
+    if (d && (lastTs === null || d.getTime() > lastTs)) lastTs = d.getTime();
+  }
+
+  // Capture each distinct venue's city/country (first occurrence) so the top
+  // venues can be labeled in the dashboard. Sourced from windowShows + allShows
+  // combined so fullTourHistory (display-only) also gets venue capacities.
+  const venueMeta = new Map();
+  for (const sl of allShows) {
+    const vn = sl.venue?.name;
+    if (vn && !venueMeta.has(vn)) {
+      venueMeta.set(vn, {
+        city: sl.venue?.city?.name ?? null,
+        country: sl.venue?.city?.country?.name ?? null,
+      });
+    }
+  }
+
+  // Look up capacity once per unique venue (Setlist.fm has none). avg/min/max
+  // are computed across distinct venues *played within the window* that
+  // resolved a capacity (scoring stays window-only). capByVenue (name ->
+  // capacity|null) also lets us stamp each individual show below, in-window
+  // or not.
+  const venueNames = [...venueMeta.keys()];
+  const capByVenue = new Map();
+  for (const vn of venueNames) {
+    const cap = await getVenueCapacity(vn);
+    if (Number.isFinite(cap) && cap > 0) {
+      capByVenue.set(vn, cap);
+    } else {
+      capByVenue.set(vn, null);
+      logger.warn(`No Wikipedia capacity for venue "${vn}" — excluded from venue-size stats.`);
+    }
+  }
+
+  const windowVenueNames = new Set(
+    windowShows.map((sl) => sl.venue?.name).filter(Boolean)
+  );
+  const sizedVenues = [...windowVenueNames]
+    .map((vn) => ({ name: vn, capacity: capByVenue.get(vn), ...venueMeta.get(vn) }))
+    .filter((v) => Number.isFinite(v.capacity) && v.capacity > 0);
+
+  // Per-show tour history: the scoring window (unchanged) and all-time
+  // (display-only), both reusing the same capacity lookups (no extra API calls).
+  const tourHistory = toTourHistory(windowShows, capByVenue);
+  const fullTourHistory = toTourHistory(allShows, capByVenue);
 
   const capacities = sizedVenues.map((v) => v.capacity);
   const avg = capacities.length
@@ -251,18 +265,19 @@ async function aggregate(name, mbid, shows) {
     mbid,
     // Distinct named tours if Setlist.fm has tour tags; otherwise falls back to
     // the show count (tour tagging is sparse, so setlistCount is more reliable).
-    tourCount: tourNames.size > 0 ? tourNames.size : shows.length,
+    tourCount: tourNames.size > 0 ? tourNames.size : windowShows.length,
     avgVenueSize: avg,
     minVenueSize: capacities.length ? Math.min(...capacities) : 0,
     maxVenueSize: capacities.length ? Math.max(...capacities) : 0,
     topVenues,
-    venuesTotal: venueNames.length,
+    venuesTotal: windowVenueNames.size,
     venuesWithCapacity: capacities.length,
     countriesToured: countries.size,
     lastTourDate: lastTs ? new Date(lastTs).toISOString().slice(0, 10) : null,
     countryList: [...countries].sort(),
-    setlistCount: shows.length,
+    setlistCount: windowShows.length,
     tourHistory,
+    fullTourHistory,
   };
 }
 
@@ -303,20 +318,25 @@ async function scrapeSetlistFMTourHistory(artists, monthsBack = 18) {
       continue;
     }
 
-    let shows;
+    let allShows;
     try {
-      shows = await fetchSetlistsInWindow(match.mbid, cutoffMs, match.name);
+      allShows = await fetchAllSetlists(match.mbid, match.name);
     } catch (err) {
       logger.error(`Setlist.fm setlists failed for "${match.name}"; skipping. (${err.response?.status ?? err.message})`);
       continue;
     }
+    const windowShows = allShows.filter((sl) => {
+      const d = parseEventDate(sl.eventDate);
+      return d && d.getTime() >= cutoffMs;
+    });
 
-    const record = await aggregate(match.name, match.mbid, shows);
+    const record = await aggregate(match.name, match.mbid, windowShows, allShows);
     logger.info(
       `Setlist.fm: "${record.artist}" — ${record.setlistCount} show(s), ` +
         `${record.countriesToured} countr${record.countriesToured === 1 ? 'y' : 'ies'} in last ${monthsBack}mo` +
         (record.lastTourDate ? `, last ${record.lastTourDate}` : '') +
-        `, avgVenue ${record.avgVenueSize} (${record.venuesWithCapacity}/${record.venuesTotal} venues sized)`
+        `, avgVenue ${record.avgVenueSize} (${record.venuesWithCapacity}/${record.venuesTotal} venues sized), ` +
+        `${record.fullTourHistory.length} show(s) all-time`
     );
     results.push(record);
   }

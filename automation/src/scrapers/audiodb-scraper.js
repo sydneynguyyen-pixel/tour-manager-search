@@ -74,7 +74,12 @@ async function getArtistProfile(artistName) {
     const chartedNum = Number.parseInt(a.intCharted, 10);
     const profile = {
       found: true,
-      bio: a.strBiographyEN || null,
+      // strBiographyEN was the documented per-language field; the API now
+      // appears to only populate the generic strBiography for the free v1 key
+      // (strBiographyEN was silently null for every artist, incl. Coldplay —
+      // verified directly against the API response). Prefer EN if it's ever
+      // present, fall back to the generic field rather than losing the bio.
+      bio: a.strBiographyEN || a.strBiography || null,
       genre: a.strGenre || null,
       style: a.strStyle || null,
       popularity: Number.isFinite(chartedNum) ? chartedNum : null, // best-effort; AudioDB has no true popularity metric

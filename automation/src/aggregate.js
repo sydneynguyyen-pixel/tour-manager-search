@@ -17,6 +17,8 @@ const { researchArtistContact, saveCache: saveContactCache } = require('./scrape
 const { getArtistProfile } = require('./scrapers/audiodb-scraper');
 const { getLastFmProfile, logTagCrossCheck } = require('./scrapers/lastfm-scraper');
 const { getDiscogsReleases } = require('./scrapers/discogs-scraper');
+const { getWikidataSocialLinks } = require('./scrapers/wikidata-scraper');
+const { summarizeReleases } = require('./release-classifier');
 
 // Case-insensitive, whitespace-normalized key for joining across sources.
 function normalizeName(name) {
@@ -87,19 +89,38 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
       contact = await researchArtistContact(displayName, rel?.deezerId ?? null);
     } catch (err) {
       logger.warn(`Aggregate: contact research failed for "${displayName}" (${err.message}).`);
-      contact = { managementType: 'unknown', contactName: null, contactEmail: null, contactSource: 'none', websiteUrl: null, socialLinks: { instagram: null, twitter: null, tiktok: null }, confidence: 'low', label: null };
+      contact = { managementType: 'unknown', contactName: null, contactEmail: null, contactSource: 'none', websiteUrl: null, socialLinks: { instagram: null, twitter: null, tiktok: null, youtube: null, facebook: null }, confidence: 'low', label: null };
     }
 
-    // Gap-fill website + socials from TheAudioDB WITHOUT overwriting the
-    // contact-research findings (contact-research wins; AudioDB only fills nulls).
+    // Wikidata — PRIMARY social/YouTube link source: structured per-platform
+    // identifiers, more reliable than scraping prose/infoboxes.
+    let wikidata;
+    try {
+      wikidata = await getWikidataSocialLinks(displayName);
+    } catch (err) {
+      logger.warn(`Aggregate: Wikidata lookup failed for "${displayName}" (${err.message}).`);
+      wikidata = { instagram: null, twitter: null, youtube: null, facebook: null, tiktok: null };
+    }
+
+    // Merge socials with fallback priority: Wikidata -> Wikipedia (infobox +
+    // External Links, already merged in contact-research) -> TheAudioDB.
+    // First non-null wins per platform; nothing overwrites a better result.
     const cSocials = contact.socialLinks || {};
     const aSocials = audiodb.socialLinks || {};
     const socialLinks = {
-      instagram: cSocials.instagram ?? aSocials.instagram ?? null,
-      twitter: cSocials.twitter ?? aSocials.twitter ?? null,
-      tiktok: cSocials.tiktok ?? null,
+      instagram: wikidata.instagram ?? cSocials.instagram ?? aSocials.instagram ?? null,
+      twitter: wikidata.twitter ?? cSocials.twitter ?? aSocials.twitter ?? null,
+      tiktok: wikidata.tiktok ?? cSocials.tiktok ?? null,
+      youtube: wikidata.youtube ?? cSocials.youtube ?? null,
+      facebook: wikidata.facebook ?? cSocials.facebook ?? aSocials.facebook ?? null,
     };
     const websiteUrl = contact.websiteUrl ?? audiodb.websiteUrl ?? null;
+
+    // Release-quality classification of this window's releases (full
+    // original / self-remix-alt-version / other-remix) — feeds the
+    // tour-timing dimension's release-quality-weighted comeback scoring in
+    // score.js.
+    const releaseSummary = summarizeReleases(rel?.recentReleases);
 
     results.push({
       artist: displayName,
@@ -111,6 +132,8 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
       lastfmListeners: lastfm.lastfmListeners ?? null,
       lastfmPlaycount: lastfm.lastfmPlaycount ?? null,
       lastfmTags: lastfm.lastfmTags ?? [],
+      lastfmBio: lastfm.bio ?? null, // HTML already stripped in the scraper; display-only
+      audiodbBio: audiodb.bio ?? null, // raw strBiographyEN; display-only
       discogsVerified: discogs.discogsVerified ?? false,
       discogsReleaseCount: discogs.releaseCount ?? 0,
       releaseDate: rel?.releaseDate ?? null,
@@ -118,13 +141,18 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
       releaseType: rel?.releaseType ?? null,
       imageUrl: rel?.imageUrl ?? audiodb.imageUrl ?? null, // Deezer artist photo; AudioDB fallback
       recentReleases: rel?.recentReleases ?? [], // additive display data; no effect on scoring
+      fullOriginalReleaseCount: releaseSummary.fullOriginalCount,
+      selfRemixReleaseCount: releaseSummary.selfRemixCount,
+      otherRemixReleaseCount: releaseSummary.otherRemixCount,
+      releaseQualityScore: releaseSummary.releaseQualityScore, // 0-1 weighted ratio, null if no releases
       tourCount: tour?.tourCount ?? 0,
       setlistCount: tour?.setlistCount ?? 0,
       avgVenueSize: tour?.avgVenueSize ?? 0,
       minVenueSize: tour?.minVenueSize ?? 0,
       maxVenueSize: tour?.maxVenueSize ?? 0,
       topVenues: tour?.topVenues ?? [], // biggest venues played (top 3), display-only
-      tourHistory: tour?.tourHistory ?? [], // full per-show list (newest first), display-only
+      tourHistory: tour?.tourHistory ?? [], // per-show list within scoring window (newest first), display-only
+      fullTourHistory: tour?.fullTourHistory ?? [], // all-time per-show list (newest first), display-only, never scored
 
       countriesToured: tour?.countriesToured ?? 0,
       lastTourDate: tour?.lastTourDate ?? null,

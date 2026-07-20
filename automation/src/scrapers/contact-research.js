@@ -97,14 +97,14 @@ function wikiGet(params) {
   });
 }
 
-const EMPTY_SOCIALS = { instagram: null, twitter: null, tiktok: null };
+const EMPTY_SOCIALS = { instagram: null, twitter: null, tiktok: null, youtube: null, facebook: null };
 
-// Scan a set of <a> hrefs for the first Instagram / Twitter(X) / TikTok profile
-// link. Only recognizes the canonical hosts to avoid false positives. Missing
-// platforms stay null (expected — most infoboxes list few or none).
-function extractSocialLinks($, scope) {
+// Scan a collection of <a> elements for the first Instagram / Twitter(X) /
+// TikTok / YouTube / Facebook profile link. Only recognizes the canonical
+// hosts to avoid false positives. Missing platforms stay null.
+function extractSocialLinksFromAnchors($, anchors) {
   const socials = { ...EMPTY_SOCIALS };
-  scope.find('a').each((_, a) => {
+  anchors.each((_, a) => {
     const href = $(a).attr('href');
     if (!href || !/^https?:/i.test(href)) return;
     let host;
@@ -116,8 +116,41 @@ function extractSocialLinks($, scope) {
     if (!socials.instagram && host === 'instagram.com') socials.instagram = href;
     else if (!socials.twitter && (host === 'twitter.com' || host === 'x.com')) socials.twitter = href;
     else if (!socials.tiktok && host === 'tiktok.com') socials.tiktok = href;
+    else if (!socials.youtube && (host === 'youtube.com' || host === 'youtu.be')) socials.youtube = href;
+    else if (!socials.facebook && (host === 'facebook.com' || host === 'fb.com')) socials.facebook = href;
   });
   return socials;
+}
+
+// Merge two social-link objects, `a` wins per platform, `b` only fills nulls.
+// Used to prefer the infobox over the External Links section.
+function mergeSocials(a, b) {
+  const out = { ...EMPTY_SOCIALS };
+  for (const key of Object.keys(EMPTY_SOCIALS)) out[key] = a?.[key] ?? b?.[key] ?? null;
+  return out;
+}
+
+// Find the "External links" heading in a fully-parsed Wikipedia article and
+// return the <a> elements inside the <li> list that follows it. MediaWiki
+// always renders External Links as a single <ul> immediately after the
+// heading; sisterlinks boxes, navboxes, and reflist cruft come after that and
+// must NOT be scanned — a navbox nested a few siblings down can otherwise pull
+// in dozens of unrelated links (e.g. an "Awards" template happens to sit right
+// after the sisterbox on some pages). No heading / no list -> empty collection.
+function findExternalLinksAnchors($) {
+  const heading = $('h2, h3')
+    .filter((_, el) => /^external links$/i.test($(el).text().trim()))
+    .first();
+  if (!heading.length) return $();
+
+  // Newer MediaWiki output wraps the heading in a div.mw-heading whose
+  // *siblings* are the section content; older output has the content as the
+  // heading's own siblings. `.closest()` would match the <h2> itself before
+  // climbing to that wrapper (self-match wins), so check the parent explicitly.
+  const wrapper = heading.parent('div.mw-heading');
+  const container = wrapper.length ? wrapper : heading;
+  const ul = container.nextUntil('div.mw-heading, h2, h3').filter('ul').first();
+  return ul.find('a');
 }
 
 // Pull the official website URL, label list, and social links from an artist's
@@ -153,7 +186,25 @@ async function fetchWikipediaInfo(artistName) {
   // Social links can appear anywhere in the infobox (Website row or an
   // "External links"-style row of icons), so scan the whole infobox.
   const infobox = $('.infobox').first();
-  const socialLinks = infobox.length ? extractSocialLinks($, infobox) : { ...EMPTY_SOCIALS };
+  const infoboxSocials = infobox.length ? extractSocialLinksFromAnchors($, infobox.find('a')) : { ...EMPTY_SOCIALS };
+
+  // The infobox structurally doesn't carry most social links — those live in
+  // the article's "External links" section instead. Fetch the full article
+  // (a second call; section:0 above only gets the lead/infobox) and use it as
+  // a secondary source, filling only what the infobox didn't have.
+  let extLinksSocials = { ...EMPTY_SOCIALS };
+  try {
+    const full = await wikiGet({ action: 'parse', page: hit.title, format: 'json', prop: 'text', redirects: 1 });
+    const fullHtml = full.parse?.text?.['*'];
+    if (fullHtml) {
+      const $$ = cheerio.load(fullHtml);
+      extLinksSocials = extractSocialLinksFromAnchors($$, findExternalLinksAnchors($$));
+    }
+  } catch (err) {
+    logger.warn(`Wikipedia: External Links fetch failed for "${artistName}" (${err.response?.status ?? err.message}); skipping.`);
+  }
+
+  const socialLinks = mergeSocials(infoboxSocials, extLinksSocials);
 
   return { websiteUrl, labels, socialLinks };
 }

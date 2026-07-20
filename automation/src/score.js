@@ -9,7 +9,36 @@
 const logger = require('./utils/logger');
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
+const MS_PER_MONTH = MS_PER_DAY * 30.44; // avg month length, close enough for gap detection
 const RECENT_RELEASE_DAYS = 60;
+const COMEBACK_GAP_MONTHS = 12;
+// releaseQualityScore thresholds (release-classifier.js) — how much of a
+// window's releases are genuinely new original material vs. alt versions /
+// remix-collab work. Exported so output.js's reasoning text stays in sync
+// with the actual scoring cutoffs instead of drifting out of step.
+const RELEASE_QUALITY_STRONG = 0.6;
+const RELEASE_QUALITY_PARTIAL = 0.3;
+
+// Find the most recent 12+ month gap between consecutive shows in an artist's
+// all-time history (fullTourHistory — unbounded by the 18mo scoring window),
+// i.e. the gap right before their current touring resumption, if any. Returns
+// the gap size in months, or null if no such gap exists (steady touring, or
+// too little history to have one).
+function detectComebackGap(fullTourHistory) {
+  if (!Array.isArray(fullTourHistory) || fullTourHistory.length < 2) return null;
+  const dates = fullTourHistory
+    .map((s) => (s.date ? new Date(`${s.date}T00:00:00Z`) : null))
+    .filter((d) => d && !Number.isNaN(d.getTime()))
+    .sort((a, b) => a - b); // oldest first
+
+  // Walk backward from the most recent show so we find the gap closest to
+  // "now" (the one that precedes the resumption), not just any old gap.
+  for (let i = dates.length - 1; i > 0; i -= 1) {
+    const gapMonths = (dates[i].getTime() - dates[i - 1].getTime()) / MS_PER_MONTH;
+    if (gapMonths >= COMEBACK_GAP_MONTHS) return gapMonths;
+  }
+  return null;
+}
 
 // a. Touring track record (max 25).
 function scoreTouring(a) {
@@ -54,14 +83,38 @@ function parseReleaseDateLoose(s) {
 }
 
 // d. Tour likelihood — keyed on release recency vs tour activity (max 25).
-function scoreLikelihood(a, nowMs) {
+//
+// comebackGapMonths is set when fullTourHistory shows a 12+ month dead
+// stretch right before the artist's most recent show — paired with a fresh
+// release, that's a comeback: high opportunity (renewed momentum) and low
+// competition (unlikely a tour manager is locked in yet). How confidently we
+// call it a comeback depends on releaseQualityScore (release-classifier.js —
+// the weighted ratio of full-original vs. alt-version vs. remix/collab
+// releases in the window): strong original material scores the full top
+// tier; a low ratio (mostly remix/collab work) is real activity but not
+// evidence of a genuine new era, so it's held well below the top tier even
+// though a real touring gap exists.
+function scoreLikelihood(a, nowMs, comebackGapMonths) {
   const d = parseReleaseDateLoose(a.releaseDate);
   if (!d) return 0; // no release data
   const ageDays = (nowMs - d.getTime()) / MS_PER_DAY;
-  if (ageDays <= RECENT_RELEASE_DAYS) {
-    return (a.tourCount || 0) === 0 ? 25 : 8; // fresh release, TM window opening vs already touring
+  if (ageDays > RECENT_RELEASE_DAYS) return 6; // older release
+
+  // No release-quality data (older cached records, or an empty release list)
+  // — default to full weight rather than penalizing on a guess.
+  const q = a.releaseQualityScore ?? 1;
+
+  if (comebackGapMonths != null) {
+    if (q >= RELEASE_QUALITY_STRONG) return 25; // strong original material — comeback confirmed
+    if (q >= RELEASE_QUALITY_PARTIAL) return 15; // genuine gap, but release mix is uncertain
+    return 8; // mostly remix/collab work — real gap, but not a comeback claim
   }
-  return 6; // older release
+
+  // No comeback gap — same release-quality gate applies to the "fresh
+  // release" claim so the two branches don't diverge on what "recent
+  // release" means.
+  if (q < RELEASE_QUALITY_PARTIAL) return 6; // mostly remix/collab work, no gap either
+  return (a.tourCount || 0) === 0 ? 25 : 8; // fresh (enough) original material
 }
 
 // e. Growth trajectory — tour frequency proxy + international bonus (max 13).
@@ -77,7 +130,8 @@ function scoreArtist(a, config, nowMs = Date.now()) {
   const touring = scoreTouring(a);
   const listeners = scoreListeners(a);
   const accessibility = scoreAccessibility(a);
-  const likelihood = scoreLikelihood(a, nowMs);
+  const comebackGapMonths = detectComebackGap(a.fullTourHistory);
+  const likelihood = scoreLikelihood(a, nowMs, comebackGapMonths);
   const growth = scoreGrowth(a);
   const baseScore = touring + listeners + accessibility + likelihood + growth;
 
@@ -88,7 +142,17 @@ function scoreArtist(a, config, nowMs = Date.now()) {
     ...a,
     baseScore,
     finalScore,
-    scoring: { touring, listeners, accessibility, likelihood, growth, baseScore, genreMultiplier, finalScore },
+    scoring: {
+      touring,
+      listeners,
+      accessibility,
+      likelihood,
+      growth,
+      baseScore,
+      genreMultiplier,
+      finalScore,
+      comebackGapMonths,
+    },
   };
 }
 
@@ -115,4 +179,11 @@ function scoreArtists(aggregatedData, config) {
   return qualified;
 }
 
-module.exports = { scoreArtists, scoreArtist, priorityFor };
+module.exports = {
+  scoreArtists,
+  scoreArtist,
+  priorityFor,
+  detectComebackGap,
+  RELEASE_QUALITY_STRONG,
+  RELEASE_QUALITY_PARTIAL,
+};

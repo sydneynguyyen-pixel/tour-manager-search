@@ -180,4 +180,7 @@ async function scrapeDeezerNewReleases(seedArtists, days = 60) {
   return results;
 }
 
-module.exports = { scrapeDeezerNewReleases };
+// findArtist is also exported for callers that just need an artist's Deezer
+// id/image without the recent-release filter (e.g. enrich-my-artists.js —
+// Matthew's own roster isn't funneled on release recency).
+module.exports = { scrapeDeezerNewReleases, findArtist };

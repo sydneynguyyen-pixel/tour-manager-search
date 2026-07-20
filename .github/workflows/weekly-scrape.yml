@@ -1,0 +1,49 @@
+name: Weekly lead discovery
+
+# Sunday night (Pacific) so Matthew has a fresh feed Monday morning. GitHub
+# Actions cron is UTC and doesn't shift with DST — 06:00 UTC Monday lands
+# around 10-11pm Sunday Pacific either way.
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Install dependencies
+        working-directory: automation
+        run: npm ci
+
+      - name: Run pipeline (discovery → dedup → Deezer → enrichment → scoring → output)
+        working-directory: automation
+        env:
+          SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          DISCOGS_TOKEN: ${{ secrets.DISCOGS_TOKEN }}
+        run: node run.js
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add automation/data/leads.json automation/data/venue-cache.json automation/config.json
+          if git diff --cached --quiet; then
+            echo "No new leads this run — nothing to commit."
+          else
+            git commit -m "Weekly lead discovery: $(date -u +%Y-%m-%d)"
+            git push
+          fi

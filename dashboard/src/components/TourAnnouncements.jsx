@@ -65,7 +65,10 @@ export default function TourAnnouncements() {
     <div className="tour-announcements">
       <div className="profile-intro">
         <h2>Tour Announcements</h2>
-        <p>Confirmed tour dates as they&rsquo;re announced, across every artist tracked so far — newest first.</p>
+        <p>
+          Confirmed tour dates as they&rsquo;re announced &mdash; both artists you track and newly announced
+          tours from artists beyond your roster (tagged <span className="pill roster-badge inline-legend">Not in your roster</span>). Newest first.
+        </p>
       </div>
 
       {entries && entries.length > 0 && (
@@ -152,7 +155,10 @@ function AnnouncementCard({ entry }) {
     <div className="myartist-item">
       <ArtistCard lead={toLeadShape(entry)} hideScore route={announcementRoute(entry)} />
       <div className="myartist-extra">
-        <span className={`pill stage-badge ${stage.className}`}>{stage.label}</span>
+        <span className="stage-badge-row">
+          <span className={`pill stage-badge ${stage.className}`}>{stage.label}</span>
+          {entry.discovered && <span className="pill roster-badge">Not in your roster</span>}
+        </span>
         {next && (
           <div className="pc-meta">
             <span>{longDate(next.date)}</span>

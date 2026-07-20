@@ -23,6 +23,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { config } from '../config';
 import { scoreColor, mgmtLabel, longDate, shortDate, venueCap, compactNumber } from '../lib/format';
 import { getGenreColor } from '../utils/genreColors';
 import { getScoreBreakdown, getPriorityTier, getContributingSources } from '../utils/scoreExplanations';
@@ -78,7 +79,10 @@ function mergeConfirmedEvents(ticketmasterEvents, jambaseEvents) {
   const keyFor = (e) => `${e.date}|${(e.venue || '').trim().toLowerCase()}`;
 
   for (const e of ticketmasterEvents || []) {
-    rows.set(keyFor(e), { date: e.date, venue: e.venue, city: e.city, ticketUrl: null, sources: ['Ticketmaster'] });
+    // Roster/lead Ticketmaster events carry no ticketUrl (stays null); browse-
+    // discovered ones do — honor it so the detail page can link straight to the
+    // tour. See automation/build-tour-announcements.js's discovery merge.
+    rows.set(keyFor(e), { date: e.date, venue: e.venue, city: e.city, ticketUrl: e.ticketUrl ?? null, sources: ['Ticketmaster'] });
   }
   for (const e of jambaseEvents || []) {
     const key = keyFor(e);
@@ -285,6 +289,9 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
                 <span className={`pill stage-badge ${TOUR_STAGE_META[lead.tourStage].className}`}>
                   {TOUR_STAGE_META[lead.tourStage].label}
                 </span>
+              )}
+              {isAnnouncement && lead.discovered && (
+                <span className="pill roster-badge">Not in your roster</span>
               )}
               {isAnnouncement && lead.announcedDate && (
                 <span className="pill listeners">First spotted {shortDate(lead.announcedDate)}</span>
@@ -672,13 +679,15 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
 
             {rawEntry.notes && <p className="pc-notes">{rawEntry.notes}</p>}
 
-            <button
-              type="button"
-              className="pf-btn-ghost detail-edit-my-artist"
-              onClick={() => navigate('/', { state: { editArtistId: rawEntry.id } })}
-            >
-              Edit in My Artists
-            </button>
+            {!config.viewerMode && (
+              <button
+                type="button"
+                className="pf-btn-ghost detail-edit-my-artist"
+                onClick={() => navigate('/', { state: { editArtistId: rawEntry.id } })}
+              >
+                Edit in My Artists
+              </button>
+            )}
           </section>
         </div>
       )}

@@ -1719,6 +1719,35 @@ body {
   margin: 0;
 }
 
+/* "Not in your roster" badge — marks a browse-discovered artist (surfaced by
+   nationwide Ticketmaster discovery, outside Matthew's tracked roster) apart
+   from a tracked one. Deliberately quiet: an outline/dashed pill, not another
+   filled color that would compete with the stage badges above. */
+.stage-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.stage-badge-row .pill.stage-badge {
+  margin-bottom: 0; /* the row owns the spacing now */
+}
+.pill.roster-badge {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-faint);
+  text-transform: none;
+  font-weight: 600;
+}
+/* Compact inline variant used in the tab's intro legend. */
+.pill.roster-badge.inline-legend {
+  padding: 1px 8px;
+  font-size: 0.72rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 /* Recent-releases thumbnail row on the card */
 .card-releases {
   display: flex;

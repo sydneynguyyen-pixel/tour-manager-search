@@ -77,6 +77,10 @@ export function toLeadShape(entry) {
     genre: entry.genre || 'Unknown',
     announcedDate: entry.announcedDate,
     tourStage: entry.tourStage,
+    // Whether this artist was surfaced by nationwide Ticketmaster discovery
+    // (outside Matthew's tracked roster) vs. pooled from leads/My Artists — the
+    // dashboard badges the two apart. See automation/build-tour-announcements.js.
+    discovered: entry.discovered === true,
     hasUpcomingEvents: ticketmasterEvents.length > 0,
     ticketmasterEvents,
     hasJamBaseEvents: jambaseEvents.length > 0,

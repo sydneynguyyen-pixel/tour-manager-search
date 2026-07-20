@@ -16,6 +16,17 @@
 // Every pooled artist becomes an output entry (not just ones with confirmed
 // events) — tourStage classifies where each one sits in the lifecycle, and
 // the dashboard filters/prioritizes from there. See classifyTourStage below.
+//
+// BEYOND THE ROSTER: the roster pool is bounded by whoever the scoring funnel
+// discovered, and that funnel is deliberately tuned to Matthew's lead criteria
+// (smaller/mid-tier acts with recent releases). A big touring act who'd never
+// pass those criteria — but who Matthew could still do travel booking for —
+// never enters the pool, so never surfaces here. To close that gap, main() also
+// BROWSES Ticketmaster nationwide (see src/scrapers/ticketmaster-discovery.js)
+// for any act with a genuine multi-date tour (more than 5 confirmed dates),
+// drops the ones already in the roster pool, and merges the rest in tagged
+// `discovered: true` and classified NEW_TOUR. Roster entries carry
+// `discovered: false`, so the dashboard can badge the two apart.
 
 require('dotenv').config({ quiet: true });
 const fs = require('fs');
@@ -23,12 +34,19 @@ const path = require('path');
 const logger = require('./src/utils/logger');
 const { getTicketmasterEvents } = require('./src/scrapers/ticketmaster-scraper');
 const { getJamBaseEvents } = require('./src/scrapers/jambase-scraper');
+const { getNewlyAnnouncedTours } = require('./src/scrapers/ticketmaster-discovery');
 
 const LEADS_PATH = path.join(__dirname, 'data', 'leads.json');
 const MY_ARTISTS_PATH = path.join(__dirname, 'data', 'my-artists.json');
 const OUT_PATH = path.join(__dirname, 'data', 'tour-announcements.json');
 
 const SIXTY_DAYS_MS = 60 * 24 * 60 * 60 * 1000;
+
+// Discovered (outside-the-roster) artists surfaced by Ticketmaster browse — a
+// generous cap so the feed can go genuinely broad without an unbounded payload.
+// Overridable for one-off larger runs via env var. See the discovery merge in
+// main() below.
+const MAX_DISCOVERED = Number(process.env.MAX_DISCOVERED_TOURS) || 300;
 
 function normName(name) {
   return (name || '').trim().toLowerCase();
@@ -193,15 +211,59 @@ async function main() {
       genre: entry.genre,
       announcedDate: entry.announcedDate || new Date().toISOString(),
       tourStage,
+      discovered: false, // a tracked roster artist, not a browse-discovered one
       events,
     });
   }
 
+  // ---- Discovery: outside-the-roster tours from a nationwide Ticketmaster
+  // browse. Runs AFTER the roster pass so the two Ticketmaster throttles never
+  // overlap. Never fatal — a discovery failure leaves the roster feed intact.
+  const rosterNames = new Set(pool.map((e) => normName(e.artist)));
+  let discoveredEntries = [];
+  try {
+    const tours = await getNewlyAnnouncedTours();
+    const fresh = tours.filter((t) => !rosterNames.has(normName(t.artist)));
+    const dropped = tours.length - fresh.length;
+    discoveredEntries = fresh.slice(0, MAX_DISCOVERED).map((t) => ({
+      artist: t.artist,
+      imageUrl: t.imageUrl,
+      genre: t.genre,
+      // Earliest on-sale date is the best "announced" proxy Ticketmaster gives;
+      // fall back to now (just spotted) when it isn't tracked, same convention
+      // the roster branch uses above.
+      announcedDate: t.earliestOnSaleDate || new Date().toISOString(),
+      // Discovered acts are, by construction, multi-date tours with tickets
+      // already listed but no roster/setlist history to place them in the
+      // lifecycle — the feed surfaces them as New Tour Confirmed.
+      tourStage: 'NEW_TOUR',
+      discovered: true,
+      events: t.events.map((e) => ({
+        date: e.date,
+        venue: e.venue,
+        city: e.city,
+        ticketUrl: e.url ?? null,
+        source: 'ticketmaster',
+      })),
+    }));
+    tierCounts.NEW_TOUR += discoveredEntries.length;
+    logger.info(
+      `Tour Announcements: discovery surfaced ${tours.length} outside-roster tour(s); ` +
+        `dropped ${dropped} already in the roster, kept ${discoveredEntries.length}` +
+        `${fresh.length > MAX_DISCOVERED ? ` (capped at ${MAX_DISCOVERED} of ${fresh.length})` : ''}.`
+    );
+  } catch (err) {
+    logger.warn(`Tour Announcements: discovery step failed (${err.message}); continuing with roster artists only.`);
+  }
+
+  results.push(...discoveredEntries);
   results.sort((a, b) => (b.announcedDate || '').localeCompare(a.announcedDate || ''));
 
   const output = {
     generatedAt: new Date().toISOString(),
     totalArtists: results.length,
+    rosterArtists: results.length - discoveredEntries.length,
+    discoveredArtists: discoveredEntries.length,
     tierCounts,
     artists: results,
   };
@@ -209,7 +271,8 @@ async function main() {
 
   logger.success(
     `✓ Tour Announcements written to ${path.relative(__dirname, OUT_PATH)} — ${results.length} artist(s) ` +
-      `(${fetchedCount} freshly looked up, ${pool.length - fetchedCount} reused from cache).`
+      `(${results.length - discoveredEntries.length} roster, ${discoveredEntries.length} discovered; ` +
+      `${fetchedCount} roster lookups fresh, ${pool.length - fetchedCount} reused from cache).`
   );
   logger.info(
     `Tour stages — NEW_TOUR: ${tierCounts.NEW_TOUR}, ONGOING: ${tierCounts.ONGOING}, ` +

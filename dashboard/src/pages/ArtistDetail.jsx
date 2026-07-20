@@ -224,6 +224,7 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
               <h1 className="detail-hero-name">{lead.artist}</h1>
               {!hideScore && (
                 <div className="detail-hero-score">
+                  {lead.isCurrentlyTouring && <span className="pill touring">🎤 On Tour Now</span>}
                   <div className={`detail-score-badge ${scoreColor(final)}`}>{final}</div>
                   <span className={`meta-tier ${tier.tone}`}>{tier.label}</span>
                 </div>

@@ -31,6 +31,40 @@ function normalizeName(name) {
   return String(name || '').toLowerCase().trim().replace(/\s+/g, ' ');
 }
 
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+// isCurrentlyTouring thresholds — display-only (see score.js's comment on why
+// this deliberately does NOT feed scoring yet).
+const TOURING_UPCOMING_WINDOW_DAYS = 60; // an upcoming confirmed date this close counts as "on tour now"
+const TOURING_RECENT_PAST_DAYS = 30; // a show this recent, PLUS any future date at all, also counts (catches a mid-tour gap)
+
+function daysFromNow(dateStr) {
+  if (!dateStr) return null;
+  const t = new Date(`${dateStr}T00:00:00Z`).getTime();
+  if (Number.isNaN(t)) return null;
+  return (t - Date.now()) / MS_PER_DAY;
+}
+
+// "Currently on tour" — display-only context for Matthew, not a scoring
+// input (see score.js). Two ways in:
+//  1. A confirmed Ticketmaster/JamBase date within the next ~60 days — an
+//     imminent or in-progress tour.
+//  2. A Setlist.fm show within the last ~30 days AND at least one more
+//     confirmed date on the books, regardless of how far out — catches an
+//     artist mid-tour with a gap between legs, where the next single date
+//     alone might be further out than the 60-day window above would catch.
+function computeIsCurrentlyTouring(lastTourDate, confirmedEvents) {
+  const upcomingDaysOut = (confirmedEvents || [])
+    .map((e) => daysFromNow(e.date))
+    .filter((d) => d != null && d >= 0);
+
+  const hasUpcomingWithinWindow = upcomingDaysOut.some((d) => d <= TOURING_UPCOMING_WINDOW_DAYS);
+  if (hasUpcomingWithinWindow) return true;
+
+  const daysSinceLastShow = lastTourDate ? -daysFromNow(lastTourDate) : null;
+  const hadRecentShow = daysSinceLastShow != null && daysSinceLastShow >= 0 && daysSinceLastShow <= TOURING_RECENT_PAST_DAYS;
+  return hadRecentShow && upcomingDaysOut.length > 0;
+}
+
 async function aggregateArtistData(releases, setlistfmTourData, config) {
   // Index Setlist.fm tour history by normalized artist name.
   const tourByName = new Map();
@@ -170,6 +204,13 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
     // score.js.
     const releaseSummary = summarizeReleases(rel?.recentReleases);
 
+    // "Currently on tour" — combines both confirmed-event sources; see
+    // computeIsCurrentlyTouring's own comment above for the two ways in.
+    const isCurrentlyTouring = computeIsCurrentlyTouring(tour?.lastTourDate ?? null, [
+      ...(ticketmaster.events || []),
+      ...(jambase.events || []),
+    ]);
+
     results.push({
       artist: displayName,
       spotifyId: null, // Spotify removed; retained as null for downstream shape compatibility
@@ -225,6 +266,7 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
       jambaseEvents: jambase.events ?? [], // {date, venue, city, ticketUrl}
       jambaseEventCount: jambase.eventCount ?? 0,
       jambaseEarliestListedDate: jambase.earliestListedDate ?? null,
+      isCurrentlyTouring, // display-only context, not a scoring input — see score.js
     });
   }
 
@@ -233,4 +275,4 @@ async function aggregateArtistData(releases, setlistfmTourData, config) {
   return results;
 }
 
-module.exports = { aggregateArtistData, normalizeName };
+module.exports = { aggregateArtistData, normalizeName, computeIsCurrentlyTouring };

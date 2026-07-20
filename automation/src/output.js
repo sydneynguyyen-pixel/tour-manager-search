@@ -255,6 +255,7 @@ function formatLeadsOutput(scoredArtists, config) {
     hasJamBaseEvents: a.hasJamBaseEvents ?? false,
     jambaseEvents: Array.isArray(a.jambaseEvents) ? a.jambaseEvents : [], // {date, venue, city, ticketUrl}
     jambaseEventCount: a.jambaseEventCount ?? 0,
+    isCurrentlyTouring: a.isCurrentlyTouring ?? false, // display-only "on tour now" badge; not a scoring input
     fitReasoning: buildReasoning(a, config),
   }));
 

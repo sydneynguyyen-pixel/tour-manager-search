@@ -203,6 +203,17 @@ function scoreJamBaseBonus(a) {
   return confirmationRecencyBonus(a.jambaseEarliestListedDate);
 }
 
+// NOTE on a.isCurrentlyTouring (aggregate.js): deliberately NOT read anywhere
+// in this file. It's ambiguous which direction it should push a score —
+// "on tour right now" could mean lower opportunity (a TM/crew is already
+// handling logistics) or higher (the current run is short and they'll need
+// someone for the next leg soon), and reasonable people would weight that
+// differently. Rather than guess, it's surfaced to Matthew as visible
+// context only (ArtistCard/ArtistDetail's "On Tour Now" badge), the same
+// pattern as Recent Buzz and tour history — his own judgment call, not
+// baked into the number. Revisit only if a clear direction emerges from
+// real usage.
+
 // Compute the full scored record for a single artist (no filtering/priority).
 function scoreArtist(a, config, nowMs = Date.now()) {
   const touring = scoreTouring(a);

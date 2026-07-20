@@ -17,6 +17,10 @@
   --red: #ef4444;
   --genre-pill: #f4d06a;
   --black-pill: #14161a;
+  /* Distinct from the green/amber/red priority-tier palette on purpose — this
+     is a different kind of info (touring status, not match quality). */
+  --touring: #7c3aed;
+  --touring-bg: #f1e9fe;
 
   --radius-card: 24px;
   --radius-inner: 16px;
@@ -1671,6 +1675,12 @@ body {
   background: var(--black-pill);
   color: #fff;
   text-transform: none;
+}
+.pill.touring {
+  background: var(--touring-bg);
+  color: var(--touring);
+  text-transform: none;
+  font-weight: 700;
 }
 
 /* Recent-releases thumbnail row on the card */

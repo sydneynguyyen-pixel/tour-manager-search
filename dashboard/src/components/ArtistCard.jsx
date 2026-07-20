@@ -64,6 +64,7 @@ export default function ArtistCard({ lead, hideScore = false, route = null }) {
           <hr className="card-divider" />
 
           <div className="card-badges">
+            {lead.isCurrentlyTouring && <span className="pill touring">🎤 On Tour Now</span>}
             <span className="pill genre" style={{ background: genreColor.background, color: genreColor.text }}>
               {lead.genre || 'Unknown'}
             </span>

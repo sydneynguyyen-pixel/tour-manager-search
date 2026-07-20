@@ -10,9 +10,35 @@
 //     tour history (18mo, same window the leads pipeline uses)
 //   - MusicBrainz -> primary genre, keyed by the Setlist.fm mbid
 //   - TheAudioDB -> bio, plus an image/genre fallback when the above miss
+//   - Music-news RSS (Pitchfork/Stereogum) -> recent coverage mentions
+//   - Ticketmaster Discovery API -> confirmed on-sale tour dates
+//   - JamBase Data API -> a second, independent confirmed-tour source
+//
+// The last three mirror aggregate.js's Leads enrichment exactly (same
+// scrapers, same field names) so a My Artists entry and a Lead render
+// identically in the dashboard's shared ArtistCard/ArtistDetail components.
+// Unlike aggregate.js, JamBase is queried unconditionally here rather than
+// funnel-gated on `rel && tour` — that gate exists to avoid metering cost on
+// every raw discovered candidate, but My Artists is already a small (~26),
+// hand-curated roster of real artists Matthew cares about, so there's no
+// funnel to gate against.
 //
 // Idempotent: entries that already carry `enrichedAt` are skipped on a re-run.
 // Pass --force to re-enrich everyone (e.g. after a scraper improves).
+//
+// NOTE on a past `enrichedAt`-goes-missing incident: this script has always
+// set `enrichedAt` unconditionally (see enrichOne below) — there's no bug
+// here. What actually happened: dashboard/src/lib/myArtists.js's one-time
+// browser seed (toLocalEntry) predates `deezerId`/`enrichedAt` existing on
+// the backend record for any browser that had already seeded before those
+// fields were added, so those two fields were never copied into that
+// browser's localStorage. Every subsequent dashboard edit re-syncs ALL
+// entries from localStorage back to this file (toBackendEntry), silently
+// omitting whatever that browser's copy never had — which re-clobbers a
+// freshly-run enrichment's `enrichedAt`/`deezerId` back to missing. Re-running
+// this script does NOT self-correct that: it fixes the file, but the next
+// dashboard-triggered sync from an affected browser will drop it again. See
+// toLocalEntry/toBackendEntry in dashboard/src/lib/myArtists.js.
 
 require('dotenv').config({ quiet: true });
 const fs = require('fs');
@@ -22,6 +48,10 @@ const { findArtist: findDeezerArtist } = require('./src/scrapers/deezer-scraper'
 const { scrapeSetlistFMTourHistory } = require('./src/scrapers/setlistfm-scraper');
 const { getArtistProfile } = require('./src/scrapers/audiodb-scraper');
 const { getPrimaryGenre } = require('./src/musicbrainz');
+const { checkArtistInRecentNews } = require('./src/scrapers/rss-scraper');
+const { getTicketmasterEvents } = require('./src/scrapers/ticketmaster-scraper');
+const { getJamBaseEvents } = require('./src/scrapers/jambase-scraper');
+const { computeIsCurrentlyTouring } = require('./src/aggregate');
 
 const MY_ARTISTS_PATH = path.join(__dirname, 'data', 'my-artists.json');
 const TOUR_MONTHS_BACK = 18;
@@ -83,6 +113,35 @@ async function enrichOne(entry) {
     audiodb = { bio: null, genre: null, imageUrl: null };
   }
 
+  let news;
+  try {
+    news = await checkArtistInRecentNews(name);
+  } catch (err) {
+    logger.warn(`Enrich: RSS news check failed for "${name}" (${err.message}).`);
+    news = { mentioned: false, articles: [] };
+  }
+
+  let ticketmaster;
+  try {
+    ticketmaster = await getTicketmasterEvents(name);
+  } catch (err) {
+    logger.warn(`Enrich: Ticketmaster lookup failed for "${name}" (${err.message}).`);
+    ticketmaster = { hasUpcomingEvents: false, events: [], eventCount: 0, earliestOnSaleDate: null };
+  }
+
+  let jambase;
+  try {
+    jambase = await getJamBaseEvents(name);
+  } catch (err) {
+    logger.warn(`Enrich: JamBase lookup failed for "${name}" (${err.message}).`);
+    jambase = { hasUpcomingEvents: false, events: [], eventCount: 0, earliestListedDate: null };
+  }
+
+  const isCurrentlyTouring = computeIsCurrentlyTouring(tourRecord?.lastTourDate ?? null, [
+    ...(ticketmaster.events || []),
+    ...(jambase.events || []),
+  ]);
+
   const enriched = {
     ...entry,
     imageUrl: deezerImage ?? audiodb.imageUrl ?? null,
@@ -90,6 +149,16 @@ async function enrichOne(entry) {
     bio: audiodb.bio ?? null,
     mbid: tourRecord?.mbid ?? null,
     deezerId,
+    newsArticles: news.articles ?? [], // Pitchfork/Stereogum mentions; display-only, not scored
+    hasUpcomingEvents: ticketmaster.hasUpcomingEvents ?? false,
+    ticketmasterEvents: ticketmaster.events ?? [], // {date, venue, city, venueCapacity}, newest-first
+    ticketmasterEventCount: ticketmaster.eventCount ?? 0,
+    ticketmasterEarliestOnSaleDate: ticketmaster.earliestOnSaleDate ?? null,
+    hasJamBaseEvents: jambase.hasUpcomingEvents ?? false,
+    jambaseEvents: jambase.events ?? [], // {date, venue, city, ticketUrl}
+    jambaseEventCount: jambase.eventCount ?? 0,
+    jambaseEarliestListedDate: jambase.earliestListedDate ?? null,
+    isCurrentlyTouring, // display-only "on tour now" badge; not a scoring input
     enrichedAt: new Date().toISOString(),
   };
 
@@ -107,7 +176,9 @@ async function enrichOne(entry) {
 
   logger.info(
     `Enrich: "${name}" — image=${enriched.imageUrl ? 'Y' : 'N'}, genre=${enriched.genre ?? '—'}, ` +
-      `bio=${enriched.bio ? 'Y' : 'N'}, tourHistory=${tourRecord ? `${tourRecord.setlistCount} show(s)` : 'N'}.`
+      `bio=${enriched.bio ? 'Y' : 'N'}, tourHistory=${tourRecord ? `${tourRecord.setlistCount} show(s)` : 'N'}, ` +
+      `news=${news.articles.length}, ticketmaster=${ticketmaster.eventCount}, jambase=${jambase.eventCount}, ` +
+      `touring=${isCurrentlyTouring ? 'Y' : 'N'}.`
   );
 
   return enriched;
@@ -131,6 +202,10 @@ async function main() {
   let genreHits = 0;
   let bioHits = 0;
   let tourHits = 0;
+  let newsHits = 0;
+  let ticketmasterHits = 0;
+  let jambaseHits = 0;
+  let touringHits = 0;
 
   for (const entry of targets) {
     const enriched = await enrichOne(entry);
@@ -139,6 +214,10 @@ async function main() {
     if (enriched.genre) genreHits += 1;
     if (enriched.bio) bioHits += 1;
     if (enriched.tourHistory) tourHits += 1;
+    if (enriched.newsArticles.length > 0) newsHits += 1;
+    if (enriched.hasUpcomingEvents) ticketmasterHits += 1;
+    if (enriched.hasJamBaseEvents) jambaseHits += 1;
+    if (enriched.isCurrentlyTouring) touringHits += 1;
   }
 
   const nextArtists = data.artists.map((a) => byName.get(a.name) || a);
@@ -148,6 +227,10 @@ async function main() {
   logger.count('Enriched with genre', genreHits);
   logger.count('Enriched with bio', bioHits);
   logger.count('Enriched with tour history', tourHits);
+  logger.count('Enriched with news mentions', newsHits);
+  logger.count('Enriched with Ticketmaster events', ticketmasterHits);
+  logger.count('Enriched with JamBase events', jambaseHits);
+  logger.count('Currently touring', touringHits);
   logger.success(`✓ Enrichment written to ${path.relative(__dirname, MY_ARTISTS_PATH)}`);
 }
 

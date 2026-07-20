@@ -34,11 +34,11 @@
     "tier1": {
       "multiplier": 1.15,
       "genres": [
+        "pop",
         "neo soul",
         "bedroom pop",
         "hip-hop",
         "indie pop",
-        "pop",
         "r&b"
       ]
     },

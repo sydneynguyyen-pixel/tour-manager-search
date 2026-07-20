@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T20:44:14.028Z",
+  "updatedAt": "2026-07-20T21:25:11.416Z",
   "artists": [
     {
       "name": "d4vd",
@@ -321,7 +321,18 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:39:37.846Z"
+      "enrichedAt": "2026-07-20T21:19:30.875Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UC98WsFnuhfS3uT8PwdYCjbw",
+        "facebook": null
+      },
+      "websiteUrl": "http://d4vd.io",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Seven Lions",
@@ -629,7 +640,37 @@
       "jambaseEventCount": 11,
       "jambaseEarliestListedDate": "2025-09-16T16:04:59Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:39:57.771Z"
+      "enrichedAt": "2026-07-20T21:20:00.209Z",
+      "recentReleases": [
+        {
+          "name": "Asleep in the Garden of Infernal Stars & The Dreams Strange and Eternal - Remixes",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/29521c0fb583d07c3dc163e2a71e9d24/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-12",
+          "releaseType": "album"
+        },
+        {
+          "name": "The Dreams Strange and Eternal",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/d43ca8007b2ff4d2abf4b98a31a74394/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-01",
+          "releaseType": "ep"
+        },
+        {
+          "name": "Free",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/e3381fdf10366b18267580261be6e777/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-03",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": "https://instagram.com/sevenlionsmusic",
+        "twitter": "https://twitter.com/SevenLionsMusic",
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UChVfER-3s533FTh8Uae0Rhg",
+        "facebook": "https://facebook.com/SevenLions"
+      },
+      "websiteUrl": "http://www.sevenlions.com",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Hannah Bahng",
@@ -916,7 +957,18 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:40:05.495Z"
+      "enrichedAt": "2026-07-20T21:20:09.635Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": "https://instagram.com/hannahhbahng",
+        "twitter": "https://twitter.com/hannahhbbahng",
+        "tiktok": "https://tiktok.com/@hannahbahng",
+        "youtube": "https://youtube.com/channel/UCsRQ3wRb1rMwRoq9H8OicKw",
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "indie-label",
+      "contactConfidence": "low"
     },
     {
       "name": "Jason Ross",
@@ -1105,7 +1157,49 @@
       "jambaseEventCount": 11,
       "jambaseEarliestListedDate": "2026-05-01T19:10:01Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:40:14.634Z"
+      "enrichedAt": "2026-07-20T21:20:20.206Z",
+      "recentReleases": [
+        {
+          "name": "Lead The Way",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/c5c5503ac997ad2556d963968dc41eb9/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-17",
+          "releaseType": "single"
+        },
+        {
+          "name": "Ultra Love (RYOS Remix)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/0b4db7e6a96d32bd92c0a307c8d6cadb/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-19",
+          "releaseType": "single"
+        },
+        {
+          "name": "True North",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/3f72bba794e0afd7d56d3b852b43b488/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-29",
+          "releaseType": "album"
+        },
+        {
+          "name": "Mirage",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/0e916d5223921ddbc9b08e58989e585d/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-01",
+          "releaseType": "single"
+        },
+        {
+          "name": "Let Go",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/8e7190129cd6dd20e24728b4af0d4f50/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-03",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "unknown",
+      "contactConfidence": "low"
     },
     {
       "name": "Trivecta",
@@ -1261,7 +1355,43 @@
       "jambaseEventCount": 4,
       "jambaseEarliestListedDate": "2026-01-07T22:03:41Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:40:22.532Z"
+      "enrichedAt": "2026-07-20T21:20:30.005Z",
+      "recentReleases": [
+        {
+          "name": "Sam Adams",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/44215135e1754445b4e99c5ec5e54037/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-17",
+          "releaseType": "album"
+        },
+        {
+          "name": "Play It",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/44215135e1754445b4e99c5ec5e54037/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-16",
+          "releaseType": "single"
+        },
+        {
+          "name": "Way Back",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/44215135e1754445b4e99c5ec5e54037/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-16",
+          "releaseType": "single"
+        },
+        {
+          "name": "Weightless (feat. Dia Frampton)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/3d305f95401b71973c97769aa7cc7d1f/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-22",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Mitis",
@@ -1390,7 +1520,31 @@
       "jambaseEventCount": 7,
       "jambaseEarliestListedDate": "2026-04-28T18:27:56Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:40:28.946Z"
+      "enrichedAt": "2026-07-20T21:20:37.695Z",
+      "recentReleases": [
+        {
+          "name": "Weightless (feat. Dia Frampton)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/3d305f95401b71973c97769aa7cc7d1f/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-22",
+          "releaseType": "single"
+        },
+        {
+          "name": "Through The Dark (Remixes)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/229b91a8619128c8fbf1a06c570caf1b/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-08",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "unknown",
+      "contactConfidence": "low"
     },
     {
       "name": "HALIENE",
@@ -1454,7 +1608,43 @@
       "jambaseEventCount": 2,
       "jambaseEarliestListedDate": "2026-01-07T22:03:41Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:40:32.879Z"
+      "enrichedAt": "2026-07-20T21:20:44.312Z",
+      "recentReleases": [
+        {
+          "name": "Don’t Give Up On Me",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/0e28c4af7aed9b6a5057070e596da4d6/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-03",
+          "releaseType": "single"
+        },
+        {
+          "name": "Right Love",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/85d34758f9834a9efc8b7ef976312550/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-05",
+          "releaseType": "single"
+        },
+        {
+          "name": "Solar Waves",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/e090b15740901c0abab26c1980640832/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-01",
+          "releaseType": "single"
+        },
+        {
+          "name": "Eclipsed By You",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/1a8b526f0c6218323be741a38493f3ca/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-03",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": "https://instagram.com/haliene",
+        "twitter": "https://twitter.com/kellysweet",
+        "tiktok": null,
+        "youtube": null,
+        "facebook": "https://facebook.com/kellysweet"
+      },
+      "websiteUrl": "http://haliene.com",
+      "managementType": "self-managed",
+      "contactConfidence": "low"
     },
     {
       "name": "ARMNHMR",
@@ -1685,7 +1875,31 @@
       "jambaseEventCount": 6,
       "jambaseEarliestListedDate": "2026-01-07T22:03:41Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:40:42.377Z"
+      "enrichedAt": "2026-07-20T21:20:54.638Z",
+      "recentReleases": [
+        {
+          "name": "Find A Way",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/99d06b54949f7c2b3e8bfc5f94c4df9a/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-19",
+          "releaseType": "single"
+        },
+        {
+          "name": "Stay",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/79b684363ec6cb9cf750e89d4633f66e/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-22",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": "https://instagram.com/armnhmr",
+        "twitter": "https://twitter.com/ARMNHMR",
+        "tiktok": null,
+        "youtube": null,
+        "facebook": "https://facebook.com/ARMNHMR"
+      },
+      "websiteUrl": "http://www.armnhmr.com",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Wallows",
@@ -2119,7 +2333,18 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:41:07.919Z"
+      "enrichedAt": "2026-07-20T21:21:26.172Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": "https://instagram.com/wallowsmusic",
+        "twitter": "https://twitter.com/wallowsmusic",
+        "tiktok": "https://tiktok.com/@wallows",
+        "youtube": "https://youtube.com/channel/UCjNGsoJEu1AnHiP7kOYiXCw",
+        "facebook": "https://facebook.com/wallowsmusic"
+      },
+      "websiteUrl": "http://wallowsmusic.com/",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "070 Shake",
@@ -2577,7 +2802,31 @@
       "jambaseEventCount": 11,
       "jambaseEarliestListedDate": "2026-04-01T13:34:39Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:41:27.635Z"
+      "enrichedAt": "2026-07-20T21:21:54.006Z",
+      "recentReleases": [
+        {
+          "name": "God Hates Space",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/64db00f74b77db8feec64fb3f5e3892d/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-12",
+          "releaseType": "single"
+        },
+        {
+          "name": "Baby Driver",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/f1820e4ac556bcd66c14a786458ea9f7/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-29",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": "https://instagram.com/070shake",
+        "twitter": "https://twitter.com/070shake",
+        "tiktok": "https://tiktok.com/@070shakehq",
+        "youtube": "https://youtube.com/channel/UC_S_Dho26-L_V5B-gKirM-g",
+        "facebook": "https://facebook.com/070shake"
+      },
+      "websiteUrl": "http://070shake.com",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Pierre Bourne",
@@ -2655,7 +2904,18 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:41:39.495Z"
+      "enrichedAt": "2026-07-20T21:22:07.493Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": "https://instagram.com/pierrebourne",
+        "twitter": "https://twitter.com/pierrebourne",
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UCN27za3wzItmyRV2O3N91vw",
+        "facebook": "https://facebook.com/pierrebourne"
+      },
+      "websiteUrl": "http://yopierre.com",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Wooli",
@@ -2982,7 +3242,43 @@
       "jambaseEventCount": 8,
       "jambaseEarliestListedDate": "2025-11-18T18:01:27Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:41:53.409Z"
+      "enrichedAt": "2026-07-20T21:22:20.942Z",
+      "recentReleases": [
+        {
+          "name": "Sam Adams",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/44215135e1754445b4e99c5ec5e54037/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-17",
+          "releaseType": "album"
+        },
+        {
+          "name": "Play It",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/44215135e1754445b4e99c5ec5e54037/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-16",
+          "releaseType": "single"
+        },
+        {
+          "name": "Way Back",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/44215135e1754445b4e99c5ec5e54037/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-16",
+          "releaseType": "single"
+        },
+        {
+          "name": "Movement (Wooli & Kompany Remix)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/8079e05027d7f89d2e7ba8424be07c0f/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-03-26",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": "http://woolimusic.com/",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "William Black",
@@ -3097,7 +3393,31 @@
       "jambaseEventCount": 11,
       "jambaseEarliestListedDate": "2025-06-24T17:38:18Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:41:55.960Z"
+      "enrichedAt": "2026-07-20T21:22:24.474Z",
+      "recentReleases": [
+        {
+          "name": "The Shadow Realm (Remixes)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/9ce74d353126b82268a2a5fc1096f76a/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "album"
+        },
+        {
+          "name": "Mirage",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/0e916d5223921ddbc9b08e58989e585d/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-01",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "unknown",
+      "contactConfidence": "low"
     },
     {
       "name": "Swae Lee",
@@ -3478,7 +3798,25 @@
       "jambaseEventCount": 9,
       "jambaseEarliestListedDate": "2026-02-06T14:44:32Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:42:13.909Z"
+      "enrichedAt": "2026-07-20T21:22:43.869Z",
+      "recentReleases": [
+        {
+          "name": "SAME DIFFERENCE",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/f1eddca760ac1581cdb51faa99946c76/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-03",
+          "releaseType": "album"
+        }
+      ],
+      "socialLinks": {
+        "instagram": "https://instagram.com/swaelee",
+        "twitter": "https://twitter.com/SwaeLee",
+        "tiktok": "https://tiktok.com/@swaelee",
+        "youtube": "https://youtube.com/channel/UCUJTvb20oc_15y3DRNvZlEA",
+        "facebook": "https://facebook.com/SwaeLee"
+      },
+      "websiteUrl": "http://swaeleeofficial.com",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Rachel Chinouriri",
@@ -4066,7 +4404,18 @@
       "jambaseEventCount": 8,
       "jambaseEarliestListedDate": "2026-05-28T15:27:02Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:42:28.914Z"
+      "enrichedAt": "2026-07-20T21:23:00.530Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UCmluVMOmrTozqKtRXDz7RXg",
+        "facebook": null
+      },
+      "websiteUrl": "https://www.rachelchinouriri.com/",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Zacari",
@@ -4103,7 +4452,25 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:42:35.561Z"
+      "enrichedAt": "2026-07-20T21:23:11.347Z",
+      "recentReleases": [
+        {
+          "name": "Real Life",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/eabd4b7802ec865c225348c85e050521/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-12",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "indie-label",
+      "contactConfidence": "low"
     },
     {
       "name": "Blxst",
@@ -4175,7 +4542,18 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:42:45.844Z"
+      "enrichedAt": "2026-07-20T21:23:23.290Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": "https://twitter.com/BLXST",
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": "https://blxst.com/",
+      "managementType": "indie-label",
+      "contactConfidence": "low"
     },
     {
       "name": "Kai Wachi",
@@ -4401,7 +4779,37 @@
       "jambaseEventCount": 10,
       "jambaseEarliestListedDate": "2025-09-16T16:04:59Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:42:57.120Z"
+      "enrichedAt": "2026-07-20T21:23:33.509Z",
+      "recentReleases": [
+        {
+          "name": "PAIN",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/c5439e9e2aea1c83bbeccc3253a465af/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "single"
+        },
+        {
+          "name": "LOADED",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/976616156268f44e1631e1cb411c098d/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-27",
+          "releaseType": "single"
+        },
+        {
+          "name": "BUNGULATOR BASS",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/48f88934e39c01ddfb0cd7f680f54afc/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-10",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "unknown",
+      "contactConfidence": "low"
     },
     {
       "name": "RINI",
@@ -4486,7 +4894,37 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:43:04.996Z"
+      "enrichedAt": "2026-07-20T21:23:41.957Z",
+      "recentReleases": [
+        {
+          "name": "KIJÁRAT",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/ce7696bfbd7890d28b97ecbcbb82f5cf/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-17",
+          "releaseType": "single"
+        },
+        {
+          "name": "HOUDINI",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/b4561067705fc160cc1f2756dbd6f4fc/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-11",
+          "releaseType": "single"
+        },
+        {
+          "name": "SZEMEMESÉL",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/52346a2d1354531c850fad55e40e3ee0/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-04",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "unknown",
+      "contactConfidence": "low"
     },
     {
       "name": "Isabella Lovestory",
@@ -4838,7 +5276,31 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:43:16.392Z"
+      "enrichedAt": "2026-07-20T21:24:02.562Z",
+      "recentReleases": [
+        {
+          "name": "Telenovela (Yung Beef x Brat Star x Woesum Remix)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/e8b61a4aa1882b24152a53a7f9a5ae1c/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-03",
+          "releaseType": "single"
+        },
+        {
+          "name": "Gorgeous (Remix)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/c8424692c7f59a348fae6764a29658ee/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-22",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": "http://isabellalovestory.com",
+      "managementType": "indie-label",
+      "contactConfidence": "low"
     },
     {
       "name": "Cheyenne Giles",
@@ -4889,7 +5351,18 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:43:22.029Z"
+      "enrichedAt": "2026-07-20T21:24:10.508Z",
+      "recentReleases": [],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "unknown",
+      "contactConfidence": "low"
     },
     {
       "name": "Juelz",
@@ -5008,7 +5481,43 @@
       "jambaseEventCount": 3,
       "jambaseEarliestListedDate": "2026-06-01T21:18:38Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:43:26.030Z"
+      "enrichedAt": "2026-07-20T21:24:17.014Z",
+      "recentReleases": [
+        {
+          "name": "SOMEONE LIKE U",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/1c4f0a99e4c2349e31962eb70e8385df/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "single"
+        },
+        {
+          "name": "Motion Detected",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/b5a529aa6ba0aac513ff137ab8321a23/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-29",
+          "releaseType": "single"
+        },
+        {
+          "name": "Sardaukar (Juelz Remix)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/81a1341b1c286ce7877d8b12968d55e3/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-05",
+          "releaseType": "single"
+        },
+        {
+          "name": "wakeup(crazy) [feat. Angst]",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/d5d9eac8fa6a2ddbfe1623bbbd754169/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-24",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": null,
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Frosttop",
@@ -5071,7 +5580,25 @@
       "jambaseEventCount": 2,
       "jambaseEarliestListedDate": "2025-06-24T17:38:18Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:43:29.845Z"
+      "enrichedAt": "2026-07-20T21:24:22.757Z",
+      "recentReleases": [
+        {
+          "name": "powerANTHEM / need (u)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/41a34bf0b10ab7b21dbe9e4cb20c05bf/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-11",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": "https://dabinmusic.com",
+      "managementType": "indie-label",
+      "contactConfidence": "low"
     },
     {
       "name": "OsamaSon",
@@ -5844,7 +6371,31 @@
       "jambaseEventCount": 15,
       "jambaseEarliestListedDate": "2026-03-16T18:59:02Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:43:43.049Z"
+      "enrichedAt": "2026-07-20T21:24:37.453Z",
+      "recentReleases": [
+        {
+          "name": "FLEXIN YEAH",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/106865257d98ecc2b76ffc3d1a3ef213/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "single"
+        },
+        {
+          "name": "off that!",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/03a66e709c3f59d6c115f283671104ea/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-05-20",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": "http://osamason.com/",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Ski Mask the Slump God",
@@ -6019,7 +6570,25 @@
       "jambaseEventCount": 0,
       "jambaseEarliestListedDate": null,
       "isCurrentlyTouring": false,
-      "enrichedAt": "2026-07-20T20:44:05.165Z"
+      "enrichedAt": "2026-07-20T21:25:01.035Z",
+      "recentReleases": [
+        {
+          "name": "BreakTheRules!",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/c1d10cb9bf0e45b9a23776616edc42df/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-04-03",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": "https://instagram.com/theslumpgod",
+        "twitter": "https://twitter.com/THESLUMPGOD",
+        "tiktok": "https://tiktok.com/@_skimask",
+        "youtube": "https://youtube.com/channel/UCdARoxad2UaIQPDy6fbz4Nw",
+        "facebook": "https://facebook.com/OfficialSlumpGod"
+      },
+      "websiteUrl": "http://skimasktheslumpgod.net",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     },
     {
       "name": "Jordan Ward",
@@ -6236,7 +6805,25 @@
       "jambaseEventCount": 1,
       "jambaseEarliestListedDate": "2026-07-08T21:16:48Z",
       "isCurrentlyTouring": true,
-      "enrichedAt": "2026-07-20T20:44:14.027Z"
+      "enrichedAt": "2026-07-20T21:25:11.416Z",
+      "recentReleases": [
+        {
+          "name": "Waiting Room",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/6fe94a70a8592a065858637663276802/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-03-25",
+          "releaseType": "single"
+        }
+      ],
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "websiteUrl": "http://jordanward.world",
+      "managementType": "major-label",
+      "contactConfidence": "medium"
     }
   ]
 }

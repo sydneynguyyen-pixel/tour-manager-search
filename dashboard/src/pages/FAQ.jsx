@@ -53,10 +53,10 @@ export default function FAQ() {
         <section className="guide-section">
           <h2>What does "Not Interested" do?</h2>
           <p>
-            Tap the eye icon to hide a lead from your feed. Note: this currently only applies to
-            the browser you're using — it doesn't yet prevent that artist from potentially
-            reappearing in a future scan. You can see everything you've dismissed (and undo any
-            of them) in <Link to="/settings/dismissed">Settings → Dismissed Artists</Link>.
+            Tap the eye icon on any lead to hide it — maybe they're too mainstream, not your
+            genre, or just not a fit right now. Dismissed artists won't show up again, even in
+            future scans. You can see everything you've dismissed (and undo any of them) in{' '}
+            <Link to="/settings/dismissed">Settings → Dismissed Artists</Link>.
           </p>
         </section>
 

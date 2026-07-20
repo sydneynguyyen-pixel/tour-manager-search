@@ -76,6 +76,11 @@ export default function Settings() {
             genres near the bottom get a slight reduction. Doesn&rsquo;t exclude anything, just
             nudges priority.
           </p>
+          <p className="settings-note">
+            Changes here affect new leads going forward — they won&rsquo;t re-score artists
+            already in your feed. If you want fresher scores reflecting your updated preferences,
+            click &ldquo;Scan now&rdquo; from the main feed to pull in new leads.
+          </p>
 
           <ul className="genre-rank-list" role="list">
             {order.map((genre, index) => {

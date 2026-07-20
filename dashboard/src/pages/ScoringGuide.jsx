@@ -157,6 +157,10 @@ export default function ScoringGuide() {
             is common, not a dead end.
           </div>
         </section>
+
+        <p className="guide-crosslink">
+          Have other questions about how this works? Check the <Link to="/faq">FAQ</Link>.
+        </p>
       </article>
     </div>
   );

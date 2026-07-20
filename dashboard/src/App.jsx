@@ -6,12 +6,15 @@ import LeadsList from './components/LeadsList';
 import Filters, { DEFAULT_FILTERS, applyFilters } from './components/Filters';
 import ArtistDetail from './pages/ArtistDetail';
 import ScoringGuide from './pages/ScoringGuide';
+import FAQ from './pages/FAQ';
 import Settings from './pages/Settings';
 import ScoreLegend from './components/ScoreLegend';
+import FaqLink from './components/FaqLink';
 import SettingsLink from './components/SettingsLink';
 import SavedArtists from './components/SavedArtists';
 import MyArtists from './components/MyArtists';
 import WeeklyHighlight from './components/WeeklyHighlight';
+import ScanNow from './components/ScanNow';
 import { useSavedArtists } from './lib/savedArtists';
 import {
   LoadingState,
@@ -96,6 +99,7 @@ export default function App() {
       <Route path="/artist/:id" element={<ArtistDetail leads={leads} />} />
       <Route path="/my-artists/:id" element={<ArtistDetail source="myArtists" hideScore />} />
       <Route path="/scoring-guide" element={<ScoringGuide />} />
+      <Route path="/faq" element={<FAQ />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
@@ -112,7 +116,9 @@ function Dashboard({ data, status, error, leads, filters, setFilters, tab, setTa
         <img className="brand-mark" src="/tourfinder-icon-horizontal.webp" alt="Tour Finder" />
         <div className="top-bar-right">
           <ScoreLegend />
+          <FaqLink />
           <SettingsLink />
+          <ScanNow />
           {data?.generatedAt && (
             <div className="last-updated">
               <span className="dot" />

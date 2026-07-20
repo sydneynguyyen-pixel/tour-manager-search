@@ -44,14 +44,33 @@ assert(strong.baseScore === 86, 'strong base score = 86');
 assert(strong.finalScore >= 85, 'strong artist scores >= 85');
 
 // --- Case 2: weak artist -> low score (< 65) ---------------------------------
+// Toured before (fullTourHistory has old shows) but none recently — a
+// confirmed pause/decline, distinct from a brand-new artist with no track
+// record at all (see Case 2b).
 const weak = scoreArtist(
-  artist({ artist: 'Weak', tourCount: 0, avgVenueSize: 0, countriesToured: 0, releaseDate: OLD, genreMultiplier: 1.0 }),
+  artist({
+    artist: 'Weak',
+    tourCount: 0,
+    avgVenueSize: 0,
+    countriesToured: 0,
+    releaseDate: OLD,
+    genreMultiplier: 1.0,
+    fullTourHistory: [{ date: '2019-03-01' }, { date: '2019-09-01' }],
+  }),
   config
 );
 logger.info(`Weak: base=${weak.baseScore}, final=${weak.finalScore}, breakdown=${JSON.stringify(weak.scoring)}`);
-// touring2 + listeners15 + access15 + likelihood6 (old) + growth2 = 40
+// touring2 (toured before, stopped) + listeners15 + access15 + likelihood6 (old) + growth2 = 40
 assert(weak.baseScore === 40, 'weak base score = 40');
 assert(weak.finalScore < 65, 'weak artist scores < 65');
+
+// --- Case 2b: brand-new artist, no track record at all -> touring neutral ----
+const brandNew = scoreArtist(
+  artist({ artist: 'BrandNew', tourCount: 0, releaseDate: OLD, genreMultiplier: 1.0, fullTourHistory: [] }),
+  config
+);
+assert(brandNew.scoring.touring === 13, 'no shows ever -> touring 13 (neutral, not a bad signal)');
+assert(brandNew.scoring.touring > weak.scoring.touring, 'brand-new scores higher than confirmed-paused on touring');
 
 // --- Case 3: genre multiplier direction --------------------------------------
 const common = { artist: 'Genre', tourCount: 15, avgVenueSize: 1200, countriesToured: 8, releaseDate: RECENT };
@@ -69,7 +88,7 @@ const majorAg = scoreArtist(artist({ ...accBase, managementType: 'major-agency' 
 const unknownMgmt = scoreArtist(artist({ ...accBase, managementType: 'unknown' }), config);
 assert(selfMgd.scoring.accessibility === 20, 'self-managed -> accessibility 20');
 assert(majorAg.scoring.accessibility === 8, 'major-agency -> accessibility 8');
-assert(unknownMgmt.scoring.accessibility === 10, 'unknown -> accessibility 10 (neutral-low, not zero)');
+assert(unknownMgmt.scoring.accessibility === 14, 'unknown -> accessibility 14 (neutral: no evidence, not confirmed-inaccessible)');
 assert(selfMgd.finalScore > unknownMgmt.finalScore && unknownMgmt.finalScore > majorAg.finalScore, 'accessibility ordering: self-managed > unknown > major-agency');
 
 // --- Case 4: fresh release with NO tour -> likelihood 25 ----------------------

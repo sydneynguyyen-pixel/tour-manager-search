@@ -15,11 +15,11 @@ const LOOKBACK_DAYS = 60;
 const TOUR_MONTHS_BACK = 18;
 const DISCOVERY_LIMIT_PER_SEED = 5;
 // New candidates actually processed per run, after dedup against My Artists
-// and leads.json. ~15-20 is sized off the observed ~50% Deezer release-window
-// hit rate (see aggregate/funnel notes) — enough to reliably surface a handful
-// of new leads weekly without overwhelming the free API sources. Overridable
-// for one-off larger runs (e.g. the initial backfill) via env var.
-const MAX_NEW_CANDIDATES_PER_RUN = Number(process.env.MAX_NEW_CANDIDATES_PER_RUN) || 18;
+// and leads.json. 40 is sized off the observed ~23% end-to-end conversion rate
+// (discovery candidate -> scored lead) to reliably yield 7-10 new leads/week,
+// with buffer for week-to-week variance. Overridable for one-off larger runs
+// (e.g. the initial backfill) via env var.
+const MAX_NEW_CANDIDATES_PER_RUN = Number(process.env.MAX_NEW_CANDIDATES_PER_RUN) || 40;
 
 async function main() {
   logger.info('Starting tour manager search automation...');

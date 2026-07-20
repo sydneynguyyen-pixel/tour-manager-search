@@ -41,11 +41,18 @@ function detectComebackGap(fullTourHistory) {
 }
 
 // a. Touring track record (max 25).
+// Zero shows in the scoring window reads two different ways depending on
+// full (unbounded) history: an artist with NO shows ever is simply too new
+// to have a track record yet (neutral, not a bad signal); an artist with
+// past shows but none recently has actually stopped touring (real negative
+// signal — the comeback case is handled separately via likelihood's
+// comebackGapMonths, which rewards a fresh release breaking that gap).
 function scoreTouring(a) {
   const t = a.tourCount || 0;
   if (t >= 3) return 25;
   if (t >= 1) return 15; // 1-2
-  return 2; // 0
+  if (!(a.fullTourHistory || []).length) return 13; // no track record yet — neutral
+  return 2; // toured before, none recently — a real pause/decline
 }
 
 // b. Listener scale fit — avgVenueSize as a proxy for artist scale (max 25).
@@ -61,6 +68,10 @@ function scoreListeners(a) {
 
 // c. Management accessibility — from the researched managementType (contact-research.js).
 // More accessible management scores higher (easier for Matthew to reach directly).
+// 'unknown' means contact-research.js found nothing at all (no Wikipedia
+// infobox, no site) — that's an absence of evidence, not evidence of a big
+// inaccessible machine, so it's scored neutral rather than penalized toward
+// the confirmed-major-label/agency low end.
 function scoreAccessibility(a) {
   switch (a?.managementType) {
     case 'self-managed': return 20;
@@ -69,8 +80,8 @@ function scoreAccessibility(a) {
     case 'booking-agency': return 15;
     case 'major-agency':
     case 'major-label': return 8; // big machine — cold outreach unlikely to land
-    case 'unknown': return 10; // couldn't verify accessibility
-    default: return 10;
+    case 'unknown': return 14; // couldn't find anything — neutral, not confirmed-inaccessible
+    default: return 14;
   }
 }
 

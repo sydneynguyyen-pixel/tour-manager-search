@@ -1081,6 +1081,14 @@ body {
   flex-direction: column;
   gap: 12px;
 }
+/* Mobile-only "Show top picks" toggle (see .weekly-toggle in the mobile
+   media query below) — hidden by default so desktop always shows the
+   mini-cards. Without this base rule the <button> falls back to browser
+   default chrome AND stretches full-width as a flex child of the column
+   .weekly-panel, rendering as a big gray bar on desktop. */
+.weekly-toggle {
+  display: none;
+}
 .weekly-card {
   appearance: none;
   text-align: left;

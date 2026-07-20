@@ -111,5 +111,49 @@ assert(!ranked.some((r) => r.artist === 'C-dropped'), 'below-minScore artist fil
 assert(ranked[0].priority === 'immediate' || ranked[0].priority === 'high', 'top artist has an elevated priority');
 assert(ranked.every((r) => r.finalScore >= (config.scoringThresholds.minScore ?? 60)), 'all leads meet minScore');
 
+// --- Case 6: Ticketmaster confirmation is additive, not a likelihood override -
+// Same "fresh release, no tour yet" artist as Case 4 (likelihood already 25)
+// plus a just-listed Ticketmaster date should score HIGHER than Case 4 alone
+// — confirming the bonus stacks on top instead of being absorbed by
+// likelihood's existing ceiling.
+const confirmedRecent = scoreArtist(
+  artist({
+    artist: 'ConfirmedRecent',
+    tourCount: 0,
+    releaseDate: RECENT,
+    avgVenueSize: 800,
+    genreMultiplier: 1.0,
+    hasUpcomingEvents: true,
+    ticketmasterEarliestOnSaleDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
+  }),
+  config
+);
+assert(confirmedRecent.scoring.likelihood === 25, 'confirmed-tour case keeps likelihood at its own inferred value (25)');
+assert(confirmedRecent.scoring.ticketmasterBonus === 15, 'on-sale within 30 days -> ticketmasterBonus 15 (prime window)');
+assert(confirmedRecent.finalScore > opening.finalScore, 'a confirmed recent listing scores higher than the inferred-only case');
+
+const confirmedLong = scoreArtist(
+  artist({
+    artist: 'ConfirmedLong',
+    tourCount: 0,
+    releaseDate: RECENT,
+    avgVenueSize: 800,
+    genreMultiplier: 1.0,
+    hasUpcomingEvents: true,
+    ticketmasterEarliestOnSaleDate: new Date(Date.now() - 200 * 24 * 60 * 60 * 1000).toISOString(), // ~6.5mo ago
+  }),
+  config
+);
+assert(confirmedLong.scoring.ticketmasterBonus === 6, 'on-sale 90+ days ago -> ticketmasterBonus 6 (long-listed, lower opportunity)');
+assert(confirmedRecent.finalScore > confirmedLong.finalScore, 'recently-listed scores higher than long-listed');
+
+const confirmedUnknownRecency = scoreArtist(
+  artist({ artist: 'ConfirmedUnknown', releaseDate: OLD, genreMultiplier: 1.0, hasUpcomingEvents: true }),
+  config
+);
+assert(confirmedUnknownRecency.scoring.ticketmasterBonus === 10, 'confirmed but no on-sale date -> ticketmasterBonus 10 (unknown recency, still real)');
+
+assert(weak.scoring.ticketmasterBonus === 0, 'no Ticketmaster data -> ticketmasterBonus 0 (existing cases unaffected)');
+
 if (failures > 0) { logger.error(`${failures} check(s) failed.`); process.exit(1); }
 logger.success('Scoring checks passed.');

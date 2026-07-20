@@ -40,6 +40,7 @@ import {
   CalendarIcon,
   VenueIcon,
   BuzzIcon,
+  TicketIcon,
 } from '../components/Icons';
 import BookmarkButton from '../components/BookmarkButton';
 import DismissButton from '../components/DismissButton';
@@ -153,6 +154,7 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
 
   const releases = Array.isArray(lead.recentReleases) ? lead.recentReleases : [];
   const newsArticles = Array.isArray(lead.newsArticles) ? lead.newsArticles : [];
+  const upcomingShows = lead.hasUpcomingEvents && Array.isArray(lead.ticketmasterEvents) ? lead.ticketmasterEvents : [];
   const windowShows = Array.isArray(lead.tourHistory) ? lead.tourHistory : [];
   const fullShows = Array.isArray(lead.fullTourHistory) ? lead.fullTourHistory : [];
   const shows = showFullHistory ? fullShows : windowShows;
@@ -348,6 +350,31 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
 
       {tab === 'tours' && (
         <div className="detail-panel">
+          {upcomingShows.length > 0 && (
+            <section className="detail-block">
+              <BlockHead Icon={TicketIcon} title="On sale now" count={upcomingShows.length} />
+              <div className="detail-table">
+                <div className="detail-table-head" aria-hidden="true">
+                  <span>Date</span>
+                  <span>Venue</span>
+                  <span>Location</span>
+                </div>
+                <ul className="detail-table-body">
+                  {upcomingShows.map((sh, i) => (
+                    <li className="detail-table-row" key={`${sh.date}-${sh.venue}-${i}`}>
+                      <span className="dt-date">{longDate(sh.date)}</span>
+                      <span className="dt-venue">{sh.venue || 'Unknown venue'}</span>
+                      <span className="dt-loc">{sh.city || '—'}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="detail-empty-inline detail-ticketmaster-note">
+                Confirmed via Ticketmaster — verified, on-sale dates, not an inference.
+              </div>
+            </section>
+          )}
+
           {venues.length > 0 && (
             <section className="detail-block">
               <BlockHead Icon={VenueIcon} title="Biggest venues played" />

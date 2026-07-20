@@ -38,6 +38,17 @@ export default function FAQ() {
         </section>
 
         <section className="guide-section">
+          <h2>How does the system know a tour is actually happening?</h2>
+          <p>
+            Most of the time it's an educated guess — a fresh release with no tour on the books
+            yet, or an artist breaking a long touring gap. But when an artist has a real,
+            on-sale tour listed on Ticketmaster, that's a confirmed signal, not a guess, and it
+            counts for more. You'll see the actual dates on an artist's profile under "On sale
+            now" whenever that's the case.
+          </p>
+        </section>
+
+        <section className="guide-section">
           <h2>Why did an artist disappear from my Leads feed?</h2>
           <p>
             A few reasons: they might have been re-scored and dropped below the visibility

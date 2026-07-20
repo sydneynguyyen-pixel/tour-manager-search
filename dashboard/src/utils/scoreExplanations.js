@@ -176,6 +176,7 @@ const SOURCE_CHECKS = [
   // resolves via the label infobox ('wikipedia') or by following a linked
   // official site ('artist-website').
   { label: 'Wikipedia', test: (l) => l.contactSource === 'wikipedia' || l.contactSource === 'artist-website' },
+  { label: 'Ticketmaster', test: (l) => l.hasUpcomingEvents === true },
 ];
 
 export function getContributingSources(lead) {

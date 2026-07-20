@@ -2188,6 +2188,9 @@ body {
   color: var(--text-faint);
   font-style: italic;
 }
+.detail-ticketmaster-note {
+  margin-top: 10px;
+}
 .meta-chip {
   font-size: 0.74rem;
   font-weight: 700;

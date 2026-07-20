@@ -5,6 +5,11 @@
 // in the spec ("20 pts" for likelihood, "10 pts" for growth) disagree with the
 // per-case rules (which reach 25 and 13); the RULES are implemented here, matching
 // the spec's own example breakdown (likelihood 25, growth 10).
+//
+// On top of those five, a Ticketmaster confirmation bonus (scoreTicketmasterBonus)
+// adds points on top of baseScore rather than replacing/capping any existing
+// dimension — see that function's comment for why a verified on-sale tour is
+// treated as strictly additive rather than folded into scoreLikelihood's ceiling.
 
 const logger = require('./utils/logger');
 
@@ -18,6 +23,12 @@ const COMEBACK_GAP_MONTHS = 12;
 // with the actual scoring cutoffs instead of drifting out of step.
 const RELEASE_QUALITY_STRONG = 0.6;
 const RELEASE_QUALITY_PARTIAL = 0.3;
+// Ticketmaster on-sale-recency thresholds (scoreTicketmasterBonus) — how long
+// ago the earliest confirmed date went on sale. Recently listed reads as
+// "still building out the tour crew/logistics" (real opportunity); long-listed
+// reads as "probably already staffed" (confirmed real, but lower opportunity).
+const TICKETMASTER_RECENT_LISTING_DAYS = 30;
+const TICKETMASTER_LONG_LISTING_DAYS = 90;
 
 // Find the most recent 12+ month gap between consecutive shows in an artist's
 // all-time history (fullTourHistory — unbounded by the 18mo scoring window),
@@ -136,6 +147,35 @@ function scoreGrowth(a) {
   return g;
 }
 
+// Ticketmaster confirmation bonus (max 15) — layered ON TOP of baseScore,
+// alongside the five dimensions above, not folded into scoreLikelihood.
+//
+// scoreLikelihood already tops out at 25 for its two INFERRED cases (a
+// confirmed comeback gap, or a fresh release with no tour yet) — those are
+// educated guesses about whether a tour is coming. A Ticketmaster listing is
+// not a guess: it's a verified, on-sale, real-world tour. Capping it at the
+// same 25-point ceiling as an inference would treat "we think so" and "we
+// know so" identically, which loses exactly the distinction this signal
+// exists to make. So it adds on top instead — finalScore's own
+// Math.min(100, ...) cap is what keeps totals in range, the same way
+// scoreGrowth's international bonus stacks past its own dimension.
+//
+// Recency of the EARLIEST on-sale date (not the show date) distinguishes
+// opportunity: a tour that just went on sale is still assembling its crew and
+// logistics — a good window to reach out. One that's been on sale for months
+// has likely already staffed up — confirmed real, but a smaller opening.
+function scoreTicketmasterBonus(a) {
+  if (!a.hasUpcomingEvents) return 0;
+
+  const onSale = a.ticketmasterEarliestOnSaleDate ? new Date(a.ticketmasterEarliestOnSaleDate) : null;
+  if (!onSale || Number.isNaN(onSale.getTime())) return 10; // confirmed, but recency unknown
+
+  const daysSinceOnSale = (Date.now() - onSale.getTime()) / MS_PER_DAY;
+  if (daysSinceOnSale <= TICKETMASTER_RECENT_LISTING_DAYS) return 15; // just went on sale — prime window
+  if (daysSinceOnSale <= TICKETMASTER_LONG_LISTING_DAYS) return 10; // moderate — likely still workable
+  return 6; // long-listed — probably already staffed, but still a real confirmed tour
+}
+
 // Compute the full scored record for a single artist (no filtering/priority).
 function scoreArtist(a, config, nowMs = Date.now()) {
   const touring = scoreTouring(a);
@@ -144,7 +184,8 @@ function scoreArtist(a, config, nowMs = Date.now()) {
   const comebackGapMonths = detectComebackGap(a.fullTourHistory);
   const likelihood = scoreLikelihood(a, nowMs, comebackGapMonths);
   const growth = scoreGrowth(a);
-  const baseScore = touring + listeners + accessibility + likelihood + growth;
+  const ticketmasterBonus = scoreTicketmasterBonus(a);
+  const baseScore = touring + listeners + accessibility + likelihood + growth + ticketmasterBonus;
 
   const genreMultiplier = a.genreMultiplier ?? 1.0;
   const finalScore = Math.round(Math.min(100, baseScore * genreMultiplier));
@@ -159,6 +200,7 @@ function scoreArtist(a, config, nowMs = Date.now()) {
       accessibility,
       likelihood,
       growth,
+      ticketmasterBonus,
       baseScore,
       genreMultiplier,
       finalScore,

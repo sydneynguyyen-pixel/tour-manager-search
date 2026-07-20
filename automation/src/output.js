@@ -84,6 +84,26 @@ function buildReasoning(a, config) {
     }
   }
 
+  // Ticketmaster confirmation — a verified on-sale tour, distinct from (and
+  // stronger than) the release/comeback reasoning above, which are both
+  // inferences. Recency framing mirrors score.js's scoreTicketmasterBonus
+  // tiers: a listing that just went on sale reads as a live opportunity
+  // (still assembling crew/logistics); one that's been up for months reads
+  // as probably already staffed, though still a real confirmed tour.
+  if (a.hasUpcomingEvents) {
+    const count = a.ticketmasterEventCount || (a.ticketmasterEvents || []).length;
+    const bonus = a.scoring?.ticketmasterBonus;
+    const recencyNote =
+      bonus === 15
+        ? ' — just went on sale, still a prime outreach window'
+        : bonus === 6
+          ? ' — been on sale a while, likely already staffed for this run'
+          : '';
+    reasons.push(
+      `Confirmed tour on sale via Ticketmaster — ${count} date${count === 1 ? '' : 's'} announced${recencyNote}`
+    );
+  }
+
   if ((a.avgVenueSize || 0) > 0) {
     const min = config?.scoringThresholds?.venueMin ?? 300;
     const max = config?.scoringThresholds?.venueMax ?? 5000;
@@ -209,6 +229,9 @@ function formatLeadsOutput(scoredArtists, config) {
     socialLinks: a.socialLinks ?? { instagram: null, twitter: null, tiktok: null },
     contactConfidence: a.contactConfidence ?? 'low',
     newsArticles: Array.isArray(a.newsArticles) ? a.newsArticles : [], // Pitchfork/Stereogum mentions; display-only
+    hasUpcomingEvents: a.hasUpcomingEvents ?? false,
+    ticketmasterEvents: Array.isArray(a.ticketmasterEvents) ? a.ticketmasterEvents : [], // {date, venue, city, venueCapacity}
+    ticketmasterEventCount: a.ticketmasterEventCount ?? 0,
     fitReasoning: buildReasoning(a, config),
   }));
 

@@ -342,6 +342,7 @@ function AnnouncementCard({ entry }) {
       <ArtistCard
         lead={toLeadShape(entry)}
         hideScore
+        hideStats
         route={announcementRoute(entry)}
         saveButton={<SavedAnnouncementToggle entry={entry} />}
       />

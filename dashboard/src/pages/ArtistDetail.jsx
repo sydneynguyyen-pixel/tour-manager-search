@@ -227,6 +227,19 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
     lead.hasUpcomingEvents ? lead.ticketmasterEvents : [],
     lead.hasJamBaseEvents ? lead.jambaseEvents : []
   );
+  // Stands in for the Last Tour/Tours/Avg. Venue Cap/Countries strip on
+  // announcement entries — New Tour Detected carries no tour-history
+  // enrichment (Ticketmaster-only), so those fields would just be empty
+  // placeholders. upcomingShows is already sorted ascending by date, so the
+  // first/last elements are the tour's earliest/latest confirmed dates.
+  const announcementSummary = isAnnouncement
+    ? {
+        dateCount: upcomingShows.length,
+        cityCount: new Set(upcomingShows.map((sh) => (sh.city || '').trim().toLowerCase()).filter(Boolean)).size,
+        firstDate: upcomingShows[0]?.date ?? null,
+        lastDate: upcomingShows[upcomingShows.length - 1]?.date ?? null,
+      }
+    : null;
   const windowShows = Array.isArray(lead.tourHistory) ? lead.tourHistory : [];
   const fullShows = Array.isArray(lead.fullTourHistory) ? lead.fullTourHistory : [];
   const shows = showFullHistory ? fullShows : windowShows;
@@ -291,58 +304,71 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
 
             <p className="detail-hero-bio">{getArtistBio(lead)}</p>
 
-            <div className="detail-hero-contact">
-              <span className="detail-hero-mgmt">
-                <span className="k">Management</span>
-                <span className="v">{mgmtLabel(lead.managementType)}</span>
-              </span>
-              <span className="detail-hero-mgmt">
-                <span className="k">Email</span>
-                <span className={`v ${lead.contactEmail ? '' : 'muted'}`}>
-                  {lead.contactEmail ? (
-                    <a href={`mailto:${lead.contactEmail}`}>{lead.contactEmail}</a>
-                  ) : (
-                    'Not found'
-                  )}
+            {!isAnnouncement && (
+              <div className="detail-hero-contact">
+                <span className="detail-hero-mgmt">
+                  <span className="k">Management</span>
+                  <span className="v">{mgmtLabel(lead.managementType)}</span>
                 </span>
-              </span>
-              <span className="detail-hero-mgmt">
-                <span className="k">Confidence</span>
-                <span
-                  className="v"
-                  style={{ textTransform: 'capitalize' }}
-                  title="How reliable this contact info is, based on where it was found."
-                >
-                  {confidence}
+                <span className="detail-hero-mgmt">
+                  <span className="k">Email</span>
+                  <span className={`v ${lead.contactEmail ? '' : 'muted'}`}>
+                    {lead.contactEmail ? (
+                      <a href={`mailto:${lead.contactEmail}`}>{lead.contactEmail}</a>
+                    ) : (
+                      'Not found'
+                    )}
+                  </span>
                 </span>
-              </span>
-              {links.length > 0 && (
-                <div className="detail-hero-links">
-                  {links.map(({ key, label, href, Icon }) => (
-                    <a
-                      key={key}
-                      className="detail-icon-link"
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={label}
-                      title={label}
-                    >
-                      <Icon size={18} />
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+                <span className="detail-hero-mgmt">
+                  <span className="k">Confidence</span>
+                  <span
+                    className="v"
+                    style={{ textTransform: 'capitalize' }}
+                    title="How reliable this contact info is, based on where it was found."
+                  >
+                    {confidence}
+                  </span>
+                </span>
+                {links.length > 0 && (
+                  <div className="detail-hero-links">
+                    {links.map(({ key, label, href, Icon }) => (
+                      <a
+                        key={key}
+                        className="detail-icon-link"
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={label}
+                        title={label}
+                      >
+                        <Icon size={18} />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="detail-stats">
-          <Stat k="Last Tour" v={shortDate(lead.lastTourDate)} />
-          <Stat k="Tours" v={lead.tourCount ?? 0} />
-          <Stat k="Avg. Venue Cap" v={venueCap(lead.avgVenueSize)} />
-          <Stat k="Countries" v={lead.countriesToured ?? 0} />
-        </div>
+        {isAnnouncement ? (
+          announcementSummary.dateCount > 0 && (
+            <div className="detail-stats">
+              <Stat k="Dates" v={announcementSummary.dateCount} />
+              <Stat k="Cities" v={announcementSummary.cityCount} />
+              <Stat k="First Show" v={shortDate(announcementSummary.firstDate)} />
+              <Stat k="Last Show" v={shortDate(announcementSummary.lastDate)} />
+            </div>
+          )
+        ) : (
+          <div className="detail-stats">
+            <Stat k="Last Tour" v={shortDate(lead.lastTourDate)} />
+            <Stat k="Tours" v={lead.tourCount ?? 0} />
+            <Stat k="Avg. Venue Cap" v={venueCap(lead.avgVenueSize)} />
+            <Stat k="Countries" v={lead.countriesToured ?? 0} />
+          </div>
+        )}
       </section>
 
       {/* ---- TABS ---- */}

@@ -12,6 +12,12 @@
 // (lib/savedAnnouncements.js), since its entries carry no score/spotifyId to
 // key the Leads bookmark store on. My Artists passes neither (saving doesn't
 // apply to an artist Matthew already knows).
+//
+// `hideStats` omits the listeners pill and the Last Tour/Tours/Avg. Venue
+// Cap row — separate from `hideScore` since My Artists also sets hideScore
+// but DOES populate these fields; only New Tour Detected's Ticketmaster-only
+// entries (no Last.fm/tour-history enrichment) need them gone rather than
+// rendered as empty "—"/"0" placeholders.
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +45,7 @@ function ReleaseThumb({ release }) {
   );
 }
 
-export default function ArtistCard({ lead, hideScore = false, route = null, saveButton = null }) {
+export default function ArtistCard({ lead, hideScore = false, hideStats = false, route = null, saveButton = null }) {
   const navigate = useNavigate();
   // A manually-pasted or stale enrichment URL can 404 — fall back to the gray
   // placeholder rather than a broken-image icon. Reset whenever the artist's
@@ -75,23 +81,25 @@ export default function ArtistCard({ lead, hideScore = false, route = null, save
             <span className="pill genre" style={{ background: genreColor.background, color: genreColor.text }}>
               {lead.genre || 'Unknown'}
             </span>
-            <span className="pill listeners">{listeners}</span>
+            {!hideStats && <span className="pill listeners">{listeners}</span>}
           </div>
 
-          <div className="card-stats">
-            <div className="stat">
-              <div className="v">{shortDate(lead.lastTourDate)}</div>
-              <div className="k">Last Tour Date</div>
+          {!hideStats && (
+            <div className="card-stats">
+              <div className="stat">
+                <div className="v">{shortDate(lead.lastTourDate)}</div>
+                <div className="k">Last Tour Date</div>
+              </div>
+              <div className="stat">
+                <div className="v">{lead.tourCount ?? 0}</div>
+                <div className="k">Number of tours</div>
+              </div>
+              <div className="stat">
+                <div className="v">{venueCap(lead.avgVenueSize)}</div>
+                <div className="k">Avg. Venue Cap</div>
+              </div>
             </div>
-            <div className="stat">
-              <div className="v">{lead.tourCount ?? 0}</div>
-              <div className="k">Number of tours</div>
-            </div>
-            <div className="stat">
-              <div className="v">{venueCap(lead.avgVenueSize)}</div>
-              <div className="k">Avg. Venue Cap</div>
-            </div>
-          </div>
+          )}
 
           {releases.length > 0 && (
             <div className="card-releases" aria-label="Recent releases">

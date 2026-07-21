@@ -144,7 +144,7 @@ export default function TourAnnouncements() {
 
       {entries && entries.length > 0 && (
         <div className="stage-explainer">
-          <h3>What counts as a new tour</h3>
+          <h3>FAQ</h3>
           <dl className="stage-explainer-faq">
             {NEW_TOUR_FAQ.map((item) => (
               <div className="stage-explainer-qa" key={item.q}>

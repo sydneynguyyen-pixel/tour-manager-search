@@ -56,7 +56,20 @@ const NEW_TOUR_FAQ = [
     q: 'Why is there less detail here than in Leads or My Artists?',
     a: 'This section only pulls from ticketing platforms — there’s no Spotify, Last.fm, or news data behind it, so bios, listener counts, contact info, and full tour history won’t be as fleshed out as elsewhere on the site.',
   },
+  {
+    q: 'What order are artists listed in?',
+    a: 'Order: artists are listed by their earliest upcoming show — soonest tours first, furthest-out last — so the most time-sensitive travel-booking opportunities are at the top.',
+  },
 ];
+
+// Same sort key as automation/build-tour-announcements.js's earliestEventDate
+// — soonest tour first, furthest-out last — applied here too so display
+// order is correct regardless of the fetched JSON's own order. Dates are ISO
+// "YYYY-MM-DD", so string comparison is already chronological.
+function earliestEventDate(entry) {
+  const dates = (entry.events || []).map((e) => e.date).filter(Boolean).sort();
+  return dates[0] || '9999-12-31';
+}
 
 // Same date+venue key ArtistDetail's mergeConfirmedEvents uses — two sources
 // (Ticketmaster, JamBase) listing the same show is one date, not two.
@@ -120,7 +133,9 @@ export default function TourAnnouncements() {
     return [...set].sort((a, b) => a.localeCompare(b));
   }, [baseList]);
 
-  const filtered = applyFilters(baseList, filters);
+  const filtered = applyFilters(baseList, filters).sort(
+    (a, b) => earliestEventDate(a).localeCompare(earliestEventDate(b)) || (a.artist || '').localeCompare(b.artist || '')
+  );
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const pageItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -139,7 +154,7 @@ export default function TourAnnouncements() {
     <div className="tour-announcements">
       <div className="profile-intro">
         <h2>New Tour Detected</h2>
-        <p>Confirmed tours that are on sale but haven&rsquo;t started yet. Newest first.</p>
+        <p>Confirmed tours that are on sale but haven&rsquo;t started yet. Soonest shows first.</p>
       </div>
 
       {entries && entries.length > 0 && (

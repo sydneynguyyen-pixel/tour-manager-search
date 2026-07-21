@@ -59,6 +59,17 @@ function normName(name) {
   return (name || '').trim().toLowerCase();
 }
 
+// The soonest confirmed date across an entry's events — the feed's sort key
+// (soonest tour first), not announcedDate, so the most time-sensitive
+// travel-booking opportunities surface at the top. Dates are ISO
+// "YYYY-MM-DD", so string comparison is already chronological. An entry with
+// no dates (shouldn't happen for a NEW_TOUR entry, but defensively handled)
+// sorts last via a sentinel far in the future.
+function earliestEventDate(entry) {
+  const dates = (entry.events || []).map((e) => e.date).filter(Boolean).sort();
+  return dates[0] || '9999-12-31';
+}
+
 // True when this record already carries a Ticketmaster/JamBase lookup result
 // (even an empty one) from an earlier enrichment pass.
 function alreadyFetched(entry) {
@@ -270,7 +281,10 @@ async function main() {
   }
 
   results.push(...discoveredEntries);
-  results.sort((a, b) => (b.announcedDate || '').localeCompare(a.announcedDate || ''));
+  // Soonest tour first, furthest-out last — see earliestEventDate above.
+  results.sort(
+    (a, b) => earliestEventDate(a).localeCompare(earliestEventDate(b)) || (a.artist || '').localeCompare(b.artist || '')
+  );
 
   // "New Tour Detected" ships ONLY the NEW_TOUR stage — tierCounts above
   // still reflects the full lifecycle distribution across everything this

@@ -18,7 +18,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { fetchTourAnnouncements, toLeadShape, announcementRoute } from '../lib/tourAnnouncements';
 import { toggleSavedAnnouncement, useIsAnnouncementSaved, useSavedAnnouncements } from '../lib/savedAnnouncements';
-import { shortDate, longDate } from '../lib/format';
+import { longDate } from '../lib/format';
 import ArtistCard from './ArtistCard';
 import { BookmarkGlyph } from './BookmarkButton';
 
@@ -332,10 +332,14 @@ function SavedAnnouncementToggle({ entry }) {
 // feed) for visual parity with the rest of the app, then appends the
 // announcement-specific info below it, same continuous-card pattern
 // MyArtists.jsx uses for its own footer (see .myartist-item/.myartist-extra).
+// The roster badge lives in ArtistCard's own card-badges row now (next to
+// genre — see ArtistCard.jsx's `lead.discovered` handling); dates/cities
+// counts replace the old default stats row via the `stats` override prop.
 function AnnouncementCard({ entry }) {
   const events = dedupeEvents(entry.events || []);
   const next = events[0];
-  const remaining = events.length - 1;
+  const dateCount = events.length;
+  const cityCount = new Set(events.map((e) => (e.city || '').trim().toLowerCase()).filter(Boolean)).size;
 
   return (
     <div className="myartist-item">
@@ -343,29 +347,21 @@ function AnnouncementCard({ entry }) {
         lead={toLeadShape(entry)}
         hideScore
         hideStats
+        stats={[
+          { k: 'Dates', v: dateCount },
+          { k: 'Cities', v: cityCount },
+        ]}
         route={announcementRoute(entry)}
         saveButton={<SavedAnnouncementToggle entry={entry} />}
       />
-      <div className="myartist-extra">
-        {entry.discovered && (
-          <span className="roster-badge-row">
-            <span className="pill roster-badge">Not in your roster</span>
-          </span>
-        )}
-        {next && (
-          <div className="pc-meta">
-            <span>{longDate(next.date)}</span>
-            <span>{next.venue || 'Venue TBA'}</span>
-            {next.city && <span>{next.city}</span>}
-          </div>
-        )}
-        {remaining > 0 && (
-          <p className="pc-notes">
-            +{remaining} more announced date{remaining === 1 ? '' : 's'}
+      {next && (
+        <div className="myartist-extra">
+          <p className="pc-first-show">
+            <strong>First Show:</strong> {longDate(next.date)}, {next.venue || 'Venue TBA'}
+            {next.city && ` · ${next.city}`}
           </p>
-        )}
-        <p className="pc-added">First spotted {shortDate(entry.announcedDate)}</p>
-      </div>
+        </div>
+      )}
     </div>
   );
 }

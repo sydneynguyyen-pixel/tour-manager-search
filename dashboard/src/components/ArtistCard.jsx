@@ -13,11 +13,16 @@
 // key the Leads bookmark store on. My Artists passes neither (saving doesn't
 // apply to an artist Matthew already knows).
 //
-// `hideStats` omits the listeners pill and the Last Tour/Tours/Avg. Venue
-// Cap row — separate from `hideScore` since My Artists also sets hideScore
-// but DOES populate these fields; only New Tour Detected's Ticketmaster-only
-// entries (no Last.fm/tour-history enrichment) need them gone rather than
-// rendered as empty "—"/"0" placeholders.
+// `hideStats` omits the listeners pill and the default Last Tour/Tours/Avg.
+// Venue Cap row — separate from `hideScore` since My Artists also sets
+// hideScore but DOES populate these fields; only New Tour Detected's
+// Ticketmaster-only entries (no Last.fm/tour-history enrichment) need them
+// gone rather than rendered as empty "—"/"0" placeholders. `stats` is an
+// optional [{ k, v }] override rendered in that same slot regardless of
+// hideStats — New Tour Detected uses it for its own dates/cities counts.
+// `lead.discovered` (only ever set on New Tour Detected entries — see
+// lib/tourAnnouncements.js's toLeadShape) renders a "Not in your roster"
+// pill next to genre; Leads/My Artists leads never carry this field.
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +50,7 @@ function ReleaseThumb({ release }) {
   );
 }
 
-export default function ArtistCard({ lead, hideScore = false, hideStats = false, route = null, saveButton = null }) {
+export default function ArtistCard({ lead, hideScore = false, hideStats = false, stats = null, route = null, saveButton = null }) {
   const navigate = useNavigate();
   // A manually-pasted or stale enrichment URL can 404 — fall back to the gray
   // placeholder rather than a broken-image icon. Reset whenever the artist's
@@ -81,24 +86,36 @@ export default function ArtistCard({ lead, hideScore = false, hideStats = false,
             <span className="pill genre" style={{ background: genreColor.background, color: genreColor.text }}>
               {lead.genre || 'Unknown'}
             </span>
+            {lead.discovered && <span className="pill roster-badge">Not in your roster</span>}
             {!hideStats && <span className="pill listeners">{listeners}</span>}
           </div>
 
-          {!hideStats && (
+          {stats ? (
             <div className="card-stats">
-              <div className="stat">
-                <div className="v">{shortDate(lead.lastTourDate)}</div>
-                <div className="k">Last Tour Date</div>
-              </div>
-              <div className="stat">
-                <div className="v">{lead.tourCount ?? 0}</div>
-                <div className="k">Number of tours</div>
-              </div>
-              <div className="stat">
-                <div className="v">{venueCap(lead.avgVenueSize)}</div>
-                <div className="k">Avg. Venue Cap</div>
-              </div>
+              {stats.map((s) => (
+                <div className="stat" key={s.k}>
+                  <div className="v">{s.v}</div>
+                  <div className="k">{s.k}</div>
+                </div>
+              ))}
             </div>
+          ) : (
+            !hideStats && (
+              <div className="card-stats">
+                <div className="stat">
+                  <div className="v">{shortDate(lead.lastTourDate)}</div>
+                  <div className="k">Last Tour Date</div>
+                </div>
+                <div className="stat">
+                  <div className="v">{lead.tourCount ?? 0}</div>
+                  <div className="k">Number of tours</div>
+                </div>
+                <div className="stat">
+                  <div className="v">{venueCap(lead.avgVenueSize)}</div>
+                  <div className="k">Avg. Venue Cap</div>
+                </div>
+              </div>
+            )
           )}
 
           {releases.length > 0 && (

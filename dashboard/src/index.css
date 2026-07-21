@@ -1785,11 +1785,8 @@ body {
 
 /* "Not in your roster" badge — marks a browse-discovered artist (surfaced by
    nationwide Ticketmaster discovery, outside Matthew's tracked roster) apart
-   from a tracked one. Deliberately quiet: an outline/dashed pill. */
-.roster-badge-row {
-  display: block;
-  margin-bottom: 12px;
-}
+   from a tracked one. Sits inline in .card-badges, next to genre. Deliberately
+   quiet: an outline/dashed pill, not another filled color competing with genre. */
 .pill.roster-badge {
   background: transparent;
   border: 1px dashed var(--border);
@@ -1803,6 +1800,19 @@ body {
   font-size: 0.72rem;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+/* First confirmed date on a New Tour Detected card footer — deliberately
+   more prominent than the old .pc-meta/.pc-added treatment (0.78–0.85rem,
+   muted) since this is the card's key fact, not secondary metadata. */
+.pc-first-show {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.pc-first-show strong {
+  font-weight: 700;
 }
 
 /* Recent-releases thumbnail row on the card */

@@ -58,7 +58,7 @@ const NEW_TOUR_FAQ = [
   },
   {
     q: 'What order are artists listed in?',
-    a: 'Order: artists are listed by their earliest upcoming show — soonest tours first, furthest-out last — so the most time-sensitive travel-booking opportunities are at the top.',
+    a: 'Order: by default, artists are listed by their earliest upcoming show — soonest tours first, furthest-out last — so the most time-sensitive travel-booking opportunities are at the top. Use the sort button above the list to flip this to furthest-out first.',
   },
 ];
 
@@ -102,6 +102,7 @@ export default function TourAnnouncements() {
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState({ ...DEFAULT_FILTERS });
   const [savedOnly, setSavedOnly] = useState(false);
+  const [sortDir, setSortDir] = useState('asc'); // 'asc' = soonest first, 'desc' = furthest-out first
   const [page, setPage] = useState(1);
   const savedAnnouncements = useSavedAnnouncements();
 
@@ -133,9 +134,10 @@ export default function TourAnnouncements() {
     return [...set].sort((a, b) => a.localeCompare(b));
   }, [baseList]);
 
-  const filtered = applyFilters(baseList, filters).sort(
-    (a, b) => earliestEventDate(a).localeCompare(earliestEventDate(b)) || (a.artist || '').localeCompare(b.artist || '')
-  );
+  const filtered = applyFilters(baseList, filters).sort((a, b) => {
+    const cmp = earliestEventDate(a).localeCompare(earliestEventDate(b)) || (a.artist || '').localeCompare(b.artist || '');
+    return sortDir === 'desc' ? -cmp : cmp;
+  });
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const pageItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -208,6 +210,19 @@ export default function TourAnnouncements() {
             <option value="tracked">Your roster</option>
             <option value="discovered">Not in your roster</option>
           </select>
+
+          <button
+            type="button"
+            className="saved-filter-toggle sort-toggle"
+            onClick={() => {
+              setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'));
+              setPage(1);
+            }}
+            aria-label={sortDir === 'asc' ? 'Sorted soonest first — click to sort furthest-out first' : 'Sorted furthest-out first — click to sort soonest first'}
+            title="Change sort order"
+          >
+            {sortDir === 'asc' ? 'Soonest first ↑' : 'Furthest out first ↓'}
+          </button>
 
           <button
             type="button"

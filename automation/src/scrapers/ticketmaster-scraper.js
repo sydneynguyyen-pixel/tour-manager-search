@@ -60,16 +60,20 @@ function eventMatchesArtist(event, artistName) {
 }
 
 // Ticketmaster uses "1900-01-01" as a sentinel for "on-sale date not tracked"
-// (seen on presale-only or long-running general-admission listings) rather
-// than omitting the field — a literal ticket sale in 1900 isn't possible, so
-// treat anything before Ticketmaster itself existed as "unknown", not as an
-// ancient real date (which would otherwise miscategorize these as
-// long-listed in score.js's recency check).
+// (seen on presale-only or long-running general-admission listings), and
+// "9999-12-31" as the same sentinel in the other direction (seen on TBD
+// on-sale listings) — rather than omitting the field. A literal ticket sale
+// in 1900 (or 9999) isn't possible, so treat anything outside a plausible
+// real-world range as "unknown", not as an ancient/far-future real date
+// (which would otherwise miscategorize these in score.js's recency check).
 const EARLIEST_PLAUSIBLE_ON_SALE_YEAR = 2000;
+const LATEST_PLAUSIBLE_ON_SALE_YEAR = 2100;
 function plausibleOnSaleDate(iso) {
   if (!iso) return null;
   const year = Number(iso.slice(0, 4));
-  return Number.isFinite(year) && year >= EARLIEST_PLAUSIBLE_ON_SALE_YEAR ? iso : null;
+  return Number.isFinite(year) && year >= EARLIEST_PLAUSIBLE_ON_SALE_YEAR && year <= LATEST_PLAUSIBLE_ON_SALE_YEAR
+    ? iso
+    : null;
 }
 
 function extractEvent(event) {

@@ -23,9 +23,13 @@
 // pass those criteria — but who Matthew could still do travel booking for —
 // never enters the pool, so never surfaces here. To close that gap, main() also
 // BROWSES Ticketmaster nationwide (see src/scrapers/ticketmaster-discovery.js)
-// for any act with a genuine multi-date tour (more than 5 confirmed dates),
-// drops the ones already in the roster pool, and merges the rest in tagged
-// `discovered: true` and classified NEW_TOUR. Roster entries carry
+// for any act with a genuine multi-date tour (more than 5 confirmed UPCOMING
+// dates), drops the ones already in the roster pool, and merges the rest in
+// tagged `discovered: true`. tourStage is NEW_TOUR unless the discovery module
+// found the act already played a date in the last 60 days (t.recentlyPlayed),
+// in which case it's ONGOING instead — the same rule classifyTourStage below
+// applies to roster artists, just sourced from Ticketmaster's own recent-past
+// browse rather than Setlist.fm history. Roster entries carry
 // `discovered: false`, so the dashboard can badge the two apart.
 
 require('dotenv').config({ quiet: true });
@@ -233,10 +237,14 @@ async function main() {
       // fall back to now (just spotted) when it isn't tracked, same convention
       // the roster branch uses above.
       announcedDate: t.earliestOnSaleDate || new Date().toISOString(),
-      // Discovered acts are, by construction, multi-date tours with tickets
-      // already listed but no roster/setlist history to place them in the
-      // lifecycle — the feed surfaces them as New Tour Confirmed.
-      tourStage: 'NEW_TOUR',
+      // Discovered acts are multi-date tours with tickets already listed but
+      // no roster/setlist history to place them in the lifecycle — so this
+      // mirrors classifyTourStage's own ONGOING-vs-NEW_TOUR rule (played
+      // within the recent-past window -> already touring), just sourced from
+      // Ticketmaster's own recent-past browse (t.recentlyPlayed) instead of
+      // Setlist.fm. Without this, an act mid-tour (dates already played, only
+      // a later leg still on sale) would misread as a brand-new tour.
+      tourStage: t.recentlyPlayed ? 'ONGOING' : 'NEW_TOUR',
       discovered: true,
       events: t.events.map((e) => ({
         date: e.date,
@@ -246,10 +254,12 @@ async function main() {
         source: 'ticketmaster',
       })),
     }));
-    tierCounts.NEW_TOUR += discoveredEntries.length;
+    for (const e of discoveredEntries) tierCounts[e.tourStage] += 1;
+    const discoveredOngoing = discoveredEntries.filter((e) => e.tourStage === 'ONGOING').length;
     logger.info(
       `Tour Announcements: discovery surfaced ${tours.length} outside-roster tour(s); ` +
-        `dropped ${dropped} already in the roster, kept ${discoveredEntries.length}` +
+        `dropped ${dropped} already in the roster, kept ${discoveredEntries.length} ` +
+        `(${discoveredOngoing} already touring, ${discoveredEntries.length - discoveredOngoing} new)` +
         `${fresh.length > MAX_DISCOVERED ? ` (capped at ${MAX_DISCOVERED} of ${fresh.length})` : ''}.`
     );
   } catch (err) {

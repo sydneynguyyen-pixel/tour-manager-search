@@ -55,10 +55,31 @@ const STATE_CODES = [
 
 const PAGE_SIZE = 100; // Ticketmaster max is 200; 100 keeps each response small.
 const MAX_PAGES_PER_STATE = 5; // up to 500 upcoming events/state — months of reach.
-// Strictly MORE THAN 5 confirmed dates. Per the feature decision: any scale of
-// tour qualifies, but single shows and short runs (<= 5 dates) are excluded —
-// those aren't the multi-market tours a travel booker cares about.
+// A separate, smaller page budget for the recent-past browse (see
+// RECENT_PAST_DAYS below) — 60 days of history is far shorter than the
+// multi-month forward reach MAX_PAGES_PER_STATE targets, so this doesn't need
+// nearly as many pages, and keeping it a separate budget means the past
+// browse can never eat into future-date coverage the way a single widened
+// window would.
+const MAX_PAST_PAGES_PER_STATE = 3;
+// How far back to look for dates an act has already played, to tell an
+// ongoing tour (already playing shows) from a genuinely new one (nothing
+// played yet) — same 60-day window build-tour-announcements.js's
+// classifyTourStage uses for roster artists (hasRecentSetlistShow), so a
+// discovered act and a roster act land in ONGOING under the same rule.
+const RECENT_PAST_DAYS = 60;
+// Strictly MORE THAN 5 confirmed UPCOMING dates. Per the feature decision:
+// any scale of tour qualifies, but single shows and short runs (<= 5 dates)
+// are excluded — those aren't the multi-market tours a travel booker cares
+// about. Recent-past dates (see above) don't count toward this threshold —
+// they only ever demote NEW_TOUR to ONGOING, never independently qualify a
+// tour that has no upcoming dates left.
 const MIN_TOUR_DATES = 6;
+// Travel booking only makes sense for an act moving city to city — a
+// residency (e.g. a Las Vegas/Sphere run) can clear MIN_TOUR_DATES on date
+// count alone while never leaving one location. Require the UPCOMING dates
+// to span at least this many distinct locations (see locationKey below).
+const MIN_DISTINCT_CITIES = 3;
 // Events listing more attractions than this are treated as festivals / package
 // bills and skipped — attributing a 12-act festival's date to its first-listed
 // name would invent tours that don't exist.
@@ -115,9 +136,39 @@ function attractionGenre(attraction) {
   return segment && segment !== 'Undefined' ? segment : null;
 }
 
+// Festival/package-bill detection, confirmed against the live Discovery API
+// for Breakaway Music Festival, Lollapalooza, Riot Fest, Eastern Festival of
+// Music, and Buffalo Traffic Jam (see the commit that added this — payloads
+// captured during investigation). Ticketmaster marks a true festival two
+// different ways depending on the listing:
+//   1. Attraction-level: classifications[0].type.name === 'Event Style' and
+//      subType.name === 'Festival' (Breakaway, Lollapalooza).
+//   2. Event-level: classifications[0].segment.name === 'Miscellaneous' and
+//      genre.name === 'Fairs & Festivals' (Riot Fest — its OWN attraction
+//      record carries no distinguishing classification at all, so only the
+//      event-level field catches it).
+// Neither signal fires for "Eastern Festival of Music" (attraction tagged as
+// an Orchestra) or "Buffalo Traffic Jam" (attraction tagged as a plain
+// Concert) — both are real touring institutions Ticketmaster simply doesn't
+// classify as festivals in either field. A conservative name fallback,
+// checked against the attraction name only (never venue/city, to avoid
+// over-matching), catches what the metadata misses. Metadata is checked
+// first and wins precedence — a real artist should never be dropped just
+// because their name happens to contain one of these words.
+const FESTIVAL_NAME_RE = /\bfest(ival)?\b|\bfair\b|traffic jam|jingle ball|block party/i;
+
+function isFestivalAttraction(attraction, event, name) {
+  const attractionClass = attraction?.classifications?.[0];
+  if (attractionClass?.subType?.name === 'Festival') return true;
+  const eventClass = event?.classifications?.[0];
+  if (eventClass?.genre?.name === 'Fairs & Festivals') return true;
+  return FESTIVAL_NAME_RE.test(name || '');
+}
+
 // Reduce one raw Ticketmaster event to the compact record discovery needs, or
-// null if it isn't attributable to a single headliner (no attractions, or a
-// festival-sized bill) or has no date. PURE — no network, unit-tested.
+// null if it isn't attributable to a single headliner (no attractions, a
+// festival-sized bill, or a festival/non-artist attraction) or has no date.
+// PURE — no network, unit-tested.
 //
 // Attribution is to the FIRST-listed attraction only. Ticketmaster lists the
 // headliner first, so this credits the act whose tour it actually is and avoids
@@ -130,15 +181,30 @@ function extractBrowseEvent(event) {
   const headliner = attractions[0];
   const name = headliner?.name ? String(headliner.name).trim() : '';
   if (!name) return null;
+  if (isFestivalAttraction(headliner, event, name)) return null;
   const date = event?.dates?.start?.localDate;
   if (!date) return null;
   const venue = event?._embedded?.venues?.[0] || null;
+  // Attraction classification fields, carried through raw (not just the
+  // display-genre reduction attractionGenre() does) so a festival false-
+  // negative or false-positive can be diagnosed from stored/logged data
+  // without re-querying Ticketmaster.
+  const attractionClass = headliner?.classifications?.[0] || null;
   return {
     artistKey: String(headliner.id || name).trim().toLowerCase(),
     artist: name,
     ticketmasterId: headliner.id ?? null,
     imageUrl: pickAttractionImage(headliner),
     genre: attractionGenre(headliner),
+    classification: attractionClass
+      ? {
+          segment: attractionClass.segment?.name ?? null,
+          genre: attractionClass.genre?.name ?? null,
+          subGenre: attractionClass.subGenre?.name ?? null,
+          type: attractionClass.type?.name ?? null,
+          subType: attractionClass.subType?.name ?? null,
+        }
+      : null,
     date,
     venue: venue?.name ?? null,
     city: venue?.city?.name ?? null,
@@ -149,11 +215,43 @@ function extractBrowseEvent(event) {
   };
 }
 
-// Group compact browse records into per-artist tours, keeping only acts with
-// MORE THAN 5 distinct confirmed dates. Dedupes by date+venue (the same key
-// ArtistDetail's mergeConfirmedEvents / the roster build use), so a show that
-// somehow appears twice counts once. PURE — no network, unit-tested.
-function groupToursFromBrowseEvents(records, { minDates = MIN_TOUR_DATES } = {}) {
+// Location bucket for the "must travel between markets" gate below — the
+// city Ticketmaster gave, normalized (trimmed, lowercased, so "Austin" and
+// "austin" aren't counted as two locations); falls back to the venue name
+// when city is missing, so a null-city tour that's genuinely playing
+// different venues doesn't wrongly collapse to a single location.
+function locationKey(event) {
+  const city = (event.city || '').trim().toLowerCase();
+  if (city) return city;
+  return (event.venue || '').trim().toLowerCase();
+}
+
+// Group compact browse records (spanning both the upcoming and recent-past
+// browses — see getNewlyAnnouncedTours) into per-artist tours, keeping only
+// acts with MORE THAN 5 distinct confirmed UPCOMING dates that ALSO span at
+// least minDistinctCities locations — travel booking only makes sense for an
+// act moving city to city, so a residency (e.g. a Las Vegas/Sphere run) that
+// clears the date count but never leaves one location is excluded here too.
+// Dedupes by date+venue (the same key ArtistDetail's mergeConfirmedEvents /
+// the roster build use) across the full past+future set, so a show that
+// somehow appears twice (or in both browses) counts once. PURE — no network,
+// unit-tested.
+//
+// todayIso (a "YYYY-MM-DD" string, comparable directly against the
+// Ticketmaster localDate records already carry) is the upcoming/past cutoff:
+// dates >= todayIso are upcoming (counted toward both thresholds, kept in the
+// returned events list); dates < todayIso are recent-past (dropped from the
+// output, but their presence sets recentlyPlayed — the discovered-act
+// equivalent of build-tour-announcements.js's hasRecentSetlistShow, which is
+// what promotes a discovered act from NEW_TOUR to ONGOING).
+//
+// stats, if passed, is mutated in place with drop counts broken out by
+// reason (date threshold vs. single-location) — getNewlyAnnouncedTours uses
+// this to log the location filter's effect separately from the date filter's.
+function groupToursFromBrowseEvents(
+  records,
+  { minDates = MIN_TOUR_DATES, minDistinctCities = MIN_DISTINCT_CITIES, todayIso = new Date().toISOString().slice(0, 10), stats } = {}
+) {
   const byArtist = new Map();
   for (const r of records) {
     if (!r || !r.artistKey) continue;
@@ -167,73 +265,86 @@ function groupToursFromBrowseEvents(records, { minDates = MIN_TOUR_DATES } = {})
     if (!rec.genre && r.genre) rec.genre = r.genre;
     const dvKey = `${r.date}|${(r.venue || '').trim().toLowerCase()}`;
     if (!rec.events.has(dvKey)) rec.events.set(dvKey, { date: r.date, venue: r.venue, city: r.city, url: r.url });
-    if (r.onSaleDate) rec.onsales.push(r.onSaleDate);
+    // On-sale dates only matter for the remaining upcoming leg — a past
+    // show's sale window is over and irrelevant to "when did this get
+    // announced" for what's left to book.
+    if (r.onSaleDate && r.date >= todayIso) rec.onsales.push(r.onSaleDate);
   }
 
   const tours = [];
   for (const rec of byArtist.values()) {
-    if (rec.events.size < minDates) continue; // > 5 dates only
-    const events = [...rec.events.values()].sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+    const allEvents = [...rec.events.values()];
+    const upcoming = allEvents
+      .filter((e) => e.date >= todayIso)
+      .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+    if (upcoming.length < minDates) {
+      // > 5 UPCOMING dates only
+      if (stats) stats.droppedForDateThreshold = (stats.droppedForDateThreshold || 0) + 1;
+      continue;
+    }
+    const distinctCities = new Set(upcoming.map(locationKey)).size;
+    if (distinctCities < minDistinctCities) {
+      if (stats) stats.droppedForSingleLocation = (stats.droppedForSingleLocation || 0) + 1;
+      continue;
+    }
+    const recentlyPlayed = allEvents.some((e) => e.date < todayIso);
     tours.push({
       artist: rec.artist,
       ticketmasterId: rec.ticketmasterId,
       imageUrl: rec.imageUrl,
       genre: rec.genre,
-      dateCount: events.length, // true national count, before the display cap below
+      dateCount: upcoming.length, // true national upcoming count, before the display cap below
+      distinctCities,
+      recentlyPlayed,
       earliestOnSaleDate: rec.onsales.slice().sort()[0] ?? null,
-      events: events.slice(0, MAX_EVENTS_PER_TOUR),
+      events: upcoming.slice(0, MAX_EVENTS_PER_TOUR),
     });
   }
   // Biggest tours first, name as a stable tiebreak.
   return tours.sort((a, b) => b.dateCount - a.dateCount || (a.artist || '').localeCompare(b.artist || ''));
 }
 
-// One throttled page of upcoming music events for a state. Resolves with the
-// raw Ticketmaster payload; the caller handles pagination and errors.
-function fetchStatePage(stateCode, page, startIso) {
+// One throttled page of music events for a state, over [startIso, endIso).
+// endIso is optional — omitted for the upcoming browse (open-ended into the
+// future), supplied for the recent-past browse (bounded to before "now").
+// Resolves with the raw Ticketmaster payload; the caller handles pagination
+// and errors.
+function fetchStatePage(stateCode, page, startIso, endIso) {
   return schedule(async () => {
-    const res = await ticketmaster.get('/events.json', {
-      params: {
-        apikey: API_KEY,
-        classificationName: 'music',
-        countryCode: 'US',
-        stateCode,
-        startDateTime: startIso, // upcoming only
-        sort: 'date,asc',
-        size: PAGE_SIZE,
-        page,
-      },
-    });
+    const params = {
+      apikey: API_KEY,
+      classificationName: 'music',
+      countryCode: 'US',
+      stateCode,
+      startDateTime: startIso,
+      sort: 'date,asc',
+      size: PAGE_SIZE,
+      page,
+    };
+    if (endIso) params.endDateTime = endIso;
+    const res = await ticketmaster.get('/events.json', { params });
     return res.data;
   });
 }
 
-// Browse Ticketmaster nationwide (state by state) and return every act with a
-// > 5-date upcoming tour. Never throws — a failed state is logged and skipped
-// so one bad segment can't abort the whole discovery pass. Roster exclusion and
-// the final cap live in build-tour-announcements.js (which owns the roster).
-async function getNewlyAnnouncedTours() {
-  if (!API_KEY) {
-    logger.warn('Ticketmaster discovery: TICKETMASTER_API_KEY not set — skipping (no discovered tours).');
-    return [];
-  }
-
-  const startIso = `${new Date().toISOString().slice(0, 19)}Z`;
+// Browses every state for one date range, up to maxPages per state. Shared by
+// both the upcoming and recent-past passes in getNewlyAnnouncedTours — same
+// pagination/error handling, different range and page budget. Never throws —
+// a failed state/page is logged and skipped so one bad segment can't abort
+// the whole pass.
+async function scanStatesForRange(startIso, endIso, maxPages, label) {
   const records = [];
-  let statesScanned = 0;
   let pagesFetched = 0;
-
   for (const stateCode of STATE_CODES) {
-    statesScanned += 1;
-    for (let page = 0; page < MAX_PAGES_PER_STATE; page += 1) {
+    for (let page = 0; page < maxPages; page += 1) {
       let data;
       try {
-        data = await fetchStatePage(stateCode, page, startIso);
+        data = await fetchStatePage(stateCode, page, startIso, endIso);
       } catch (err) {
         const status = err.response?.status;
         // 404 is Ticketmaster's "no results" for this endpoint — not an error.
         if (status !== 404) {
-          logger.warn(`Ticketmaster discovery: ${stateCode} page ${page} failed (${status ?? err.message}); skipping rest of state.`);
+          logger.warn(`Ticketmaster discovery (${label}): ${stateCode} page ${page} failed (${status ?? err.message}); skipping rest of state.`);
         }
         break;
       }
@@ -247,11 +358,43 @@ async function getNewlyAnnouncedTours() {
       if (events.length < PAGE_SIZE || page + 1 >= totalPages) break;
     }
   }
+  return { records, pagesFetched };
+}
 
-  const tours = groupToursFromBrowseEvents(records);
+// Browse Ticketmaster nationwide (state by state) and return every act with a
+// > 5-date upcoming tour, each flagged recentlyPlayed if it already played a
+// date in the last RECENT_PAST_DAYS (build-tour-announcements.js uses that to
+// classify the act ONGOING instead of NEW_TOUR — see the discovery merge
+// there). Two separate browses, not one widened window: an upcoming pass
+// (unbounded into the future, the original per-state page budget) and a
+// recent-past pass (bounded to the last RECENT_PAST_DAYS, its own smaller
+// budget) — kept separate so 60 days of history can never crowd out the
+// months-out future coverage the upcoming pass was already tuned for. Roster
+// exclusion and the final cap live in build-tour-announcements.js (which owns
+// the roster).
+async function getNewlyAnnouncedTours() {
+  if (!API_KEY) {
+    logger.warn('Ticketmaster discovery: TICKETMASTER_API_KEY not set — skipping (no discovered tours).');
+    return [];
+  }
+
+  const now = new Date();
+  const nowIso = `${now.toISOString().slice(0, 19)}Z`;
+  const todayIso = now.toISOString().slice(0, 10);
+  const pastStartIso = `${new Date(now.getTime() - RECENT_PAST_DAYS * 24 * 60 * 60 * 1000).toISOString().slice(0, 19)}Z`;
+
+  const upcoming = await scanStatesForRange(nowIso, null, MAX_PAGES_PER_STATE, 'upcoming');
+  const recentPast = await scanStatesForRange(pastStartIso, nowIso, MAX_PAST_PAGES_PER_STATE, 'recent-past');
+
+  const stats = {};
+  const tours = groupToursFromBrowseEvents([...upcoming.records, ...recentPast.records], { todayIso, stats });
+  const alreadyTouringCount = tours.filter((t) => t.recentlyPlayed).length;
   logger.info(
-    `Ticketmaster discovery: scanned ${records.length} attributable event(s) across ${statesScanned} state(s) ` +
-      `(${pagesFetched} page(s)); ${tours.length} act(s) with more than ${MIN_TOUR_DATES - 1} confirmed dates.`
+    `Ticketmaster discovery: scanned ${upcoming.records.length} upcoming + ${recentPast.records.length} recent-past ` +
+      `attributable event(s) across ${STATE_CODES.length} state(s) (${upcoming.pagesFetched + recentPast.pagesFetched} page(s)); ` +
+      `${tours.length} act(s) with more than ${MIN_TOUR_DATES - 1} confirmed upcoming dates spanning ${MIN_DISTINCT_CITIES}+ locations ` +
+      `(${alreadyTouringCount} already touring). Dropped ${stats.droppedForDateThreshold || 0} for too few dates, ` +
+      `${stats.droppedForSingleLocation || 0} for touring a single location (residency-style runs).`
   );
   return tours;
 }
@@ -261,9 +404,13 @@ module.exports = {
   // exported for unit tests (pure, no network)
   extractBrowseEvent,
   groupToursFromBrowseEvents,
+  isFestivalAttraction,
+  locationKey,
   pickAttractionImage,
   attractionGenre,
   plausibleOnSaleDate,
   MIN_TOUR_DATES,
+  MIN_DISTINCT_CITIES,
+  RECENT_PAST_DAYS,
   STATE_CODES,
 };

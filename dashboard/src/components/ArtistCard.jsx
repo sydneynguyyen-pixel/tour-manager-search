@@ -1,11 +1,17 @@
 // A single artist lead card, matching the Figma card design (Frame_3).
 // Clicking (or Enter/Space) navigates to the full artist detail page.
 //
-// Also reused (unmodified layout) by My Artists — see MyArtists.jsx — for
-// entries that aren't scored leads. Pass `hideScore` to omit the score badge/
-// priority label and the bookmark toggle (saving doesn't apply to an artist
-// Matthew already knows), and `route` to send the click somewhere other than
-// the default /artist/:id (My Artists uses its own /my-artists/:id).
+// Also reused (unmodified layout) by My Artists and New Tour Detected — see
+// MyArtists.jsx / TourAnnouncements.jsx — for entries that aren't scored
+// leads. Pass `hideScore` to omit the score badge/priority label and the
+// default (Leads-store) bookmark toggle, and `route` to send the click
+// somewhere other than the default /artist/:id (My Artists uses
+// /my-artists/:id, New Tour Detected /tour-announcements/:id). `saveButton`
+// is an optional node rendered in the same top-right slot when hideScore is
+// set — New Tour Detected uses this for its own save-for-later toggle
+// (lib/savedAnnouncements.js), since its entries carry no score/spotifyId to
+// key the Leads bookmark store on. My Artists passes neither (saving doesn't
+// apply to an artist Matthew already knows).
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +39,7 @@ function ReleaseThumb({ release }) {
   );
 }
 
-export default function ArtistCard({ lead, hideScore = false, route = null }) {
+export default function ArtistCard({ lead, hideScore = false, route = null, saveButton = null }) {
   const navigate = useNavigate();
   // A manually-pasted or stale enrichment URL can 404 — fall back to the gray
   // placeholder rather than a broken-image icon. Reset whenever the artist's
@@ -56,6 +62,7 @@ export default function ArtistCard({ lead, hideScore = false, route = null }) {
     <div className="artist-card-wrap">
       {!hideScore && <DismissButton lead={lead} />}
       {!hideScore && <BookmarkButton lead={lead} />}
+      {hideScore && saveButton}
       <button className="artist-card" onClick={() => navigate(dest)} type="button">
         <div className="card-body">
           <h3 className="card-name">{lead.artist}</h3>

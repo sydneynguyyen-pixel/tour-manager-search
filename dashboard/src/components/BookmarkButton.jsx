@@ -6,7 +6,7 @@
 
 import { toggleSaved, useIsSaved } from '../lib/savedArtists';
 
-function BookmarkGlyph({ filled }) {
+export function BookmarkGlyph({ filled }) {
   return (
     <svg
       width="20"

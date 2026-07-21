@@ -212,7 +212,7 @@ function Dashboard({ data, status, error, leads, filters, setFilters, tab, setTa
           className={tab === 'announcements' ? 'active' : ''}
           onClick={() => setTab('announcements')}
         >
-          Tour Announcements
+          New Tour Detected
         </button>
       </nav>
 

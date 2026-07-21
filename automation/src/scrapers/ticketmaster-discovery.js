@@ -80,6 +80,13 @@ const MIN_TOUR_DATES = 6;
 // count alone while never leaving one location. Require the UPCOMING dates
 // to span at least this many distinct locations (see locationKey below).
 const MIN_DISTINCT_CITIES = 3;
+// A date only counts toward MIN_TOUR_DATES/MIN_DISTINCT_CITIES if it's at
+// least this many days out from asOf — travel booking needs enough lead time
+// to actually arrange, so an entirely-imminent run (every date inside the
+// next 4 weeks) shouldn't qualify even if it clears the raw counts. A tour
+// that merely STARTS soon still qualifies as long as it has enough dates/
+// cities further out — see the "bookable" subset in groupToursFromBrowseEvents.
+const MIN_LEAD_DAYS = 28;
 // Events listing more attractions than this are treated as festivals / package
 // bills and skipped — attributing a 12-act festival's date to its first-listed
 // name would invent tours that don't exist.
@@ -228,29 +235,45 @@ function locationKey(event) {
 
 // Group compact browse records (spanning both the upcoming and recent-past
 // browses — see getNewlyAnnouncedTours) into per-artist tours, keeping only
-// acts with MORE THAN 5 distinct confirmed UPCOMING dates that ALSO span at
-// least minDistinctCities locations — travel booking only makes sense for an
-// act moving city to city, so a residency (e.g. a Las Vegas/Sphere run) that
-// clears the date count but never leaves one location is excluded here too.
-// Dedupes by date+venue (the same key ArtistDetail's mergeConfirmedEvents /
-// the roster build use) across the full past+future set, so a show that
-// somehow appears twice (or in both browses) counts once. PURE — no network,
-// unit-tested.
+// acts with MORE THAN 5 distinct confirmed BOOKABLE dates that ALSO span at
+// least minDistinctCities locations among those bookable dates — travel
+// booking only makes sense for an act moving city to city with enough lead
+// time to actually arrange the trip. "Bookable" is the subset of upcoming
+// dates at least minLeadDays out from asOf (see bookableCutoffIso below); an
+// entirely-imminent run (every date inside the lead window) doesn't qualify
+// even with a high raw date count, but a tour that merely STARTS soon still
+// qualifies as long as its later dates alone clear both thresholds. The
+// single-location gate (residencies like a Las Vegas/Sphere run) applies to
+// this same bookable subset. Dedupes by date+venue (the same key
+// ArtistDetail's mergeConfirmedEvents / the roster build use) across the
+// full past+future set, so a show that somehow appears twice (or in both
+// browses) counts once. PURE — no network, unit-tested.
 //
 // todayIso (a "YYYY-MM-DD" string, comparable directly against the
 // Ticketmaster localDate records already carry) is the upcoming/past cutoff:
-// dates >= todayIso are upcoming (counted toward both thresholds, kept in the
-// returned events list); dates < todayIso are recent-past (dropped from the
-// output, but their presence sets recentlyPlayed — the discovered-act
-// equivalent of build-tour-announcements.js's hasRecentSetlistShow, which is
-// what promotes a discovered act from NEW_TOUR to ONGOING).
+// dates >= todayIso are upcoming (kept in the returned events list — the
+// lead-time gate only affects qualification, never what's displayed); dates
+// < todayIso are recent-past (dropped from the output, but their presence
+// sets recentlyPlayed — the discovered-act equivalent of build-tour-
+// announcements.js's hasRecentSetlistShow, which is what promotes a
+// discovered act from NEW_TOUR to ONGOING). asOf is the Date used for the
+// bookable-cutoff arithmetic; defaults to midnight UTC of todayIso so the
+// two never drift apart when only todayIso is pinned (as tests do) — pass
+// asOf explicitly only when a sub-day distinction actually matters.
 //
 // stats, if passed, is mutated in place with drop counts broken out by
 // reason (date threshold vs. single-location) — getNewlyAnnouncedTours uses
 // this to log the location filter's effect separately from the date filter's.
 function groupToursFromBrowseEvents(
   records,
-  { minDates = MIN_TOUR_DATES, minDistinctCities = MIN_DISTINCT_CITIES, todayIso = new Date().toISOString().slice(0, 10), stats } = {}
+  {
+    minDates = MIN_TOUR_DATES,
+    minDistinctCities = MIN_DISTINCT_CITIES,
+    minLeadDays = MIN_LEAD_DAYS,
+    todayIso = new Date().toISOString().slice(0, 10),
+    asOf = new Date(`${todayIso}T00:00:00Z`),
+    stats,
+  } = {}
 ) {
   const byArtist = new Map();
   for (const r of records) {
@@ -271,18 +294,21 @@ function groupToursFromBrowseEvents(
     if (r.onSaleDate && r.date >= todayIso) rec.onsales.push(r.onSaleDate);
   }
 
+  const bookableCutoffIso = new Date(asOf.getTime() + minLeadDays * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
   const tours = [];
   for (const rec of byArtist.values()) {
     const allEvents = [...rec.events.values()];
     const upcoming = allEvents
       .filter((e) => e.date >= todayIso)
       .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
-    if (upcoming.length < minDates) {
-      // > 5 UPCOMING dates only
+    const bookable = upcoming.filter((e) => e.date >= bookableCutoffIso);
+    if (bookable.length < minDates) {
+      // > 5 BOOKABLE dates only
       if (stats) stats.droppedForDateThreshold = (stats.droppedForDateThreshold || 0) + 1;
       continue;
     }
-    const distinctCities = new Set(upcoming.map(locationKey)).size;
+    const distinctCities = new Set(bookable.map(locationKey)).size;
     if (distinctCities < minDistinctCities) {
       if (stats) stats.droppedForSingleLocation = (stats.droppedForSingleLocation || 0) + 1;
       continue;
@@ -293,11 +319,12 @@ function groupToursFromBrowseEvents(
       ticketmasterId: rec.ticketmasterId,
       imageUrl: rec.imageUrl,
       genre: rec.genre,
-      dateCount: upcoming.length, // true national upcoming count, before the display cap below
+      dateCount: upcoming.length, // full upcoming count, for display — the lead-time gate only affects qualification
+      bookableDateCount: bookable.length,
       distinctCities,
       recentlyPlayed,
       earliestOnSaleDate: rec.onsales.slice().sort()[0] ?? null,
-      events: upcoming.slice(0, MAX_EVENTS_PER_TOUR),
+      events: upcoming.slice(0, MAX_EVENTS_PER_TOUR), // full upcoming run, not bookable-only — see header comment
     });
   }
   // Biggest tours first, name as a stable tiebreak.
@@ -392,8 +419,9 @@ async function getNewlyAnnouncedTours() {
   logger.info(
     `Ticketmaster discovery: scanned ${upcoming.records.length} upcoming + ${recentPast.records.length} recent-past ` +
       `attributable event(s) across ${STATE_CODES.length} state(s) (${upcoming.pagesFetched + recentPast.pagesFetched} page(s)); ` +
-      `${tours.length} act(s) with more than ${MIN_TOUR_DATES - 1} confirmed upcoming dates spanning ${MIN_DISTINCT_CITIES}+ locations ` +
-      `(${alreadyTouringCount} already touring). Dropped ${stats.droppedForDateThreshold || 0} for too few dates, ` +
+      `${tours.length} act(s) with more than ${MIN_TOUR_DATES - 1} confirmed dates at least ${MIN_LEAD_DAYS} days out ` +
+      `spanning ${MIN_DISTINCT_CITIES}+ locations (${alreadyTouringCount} already touring). Dropped ` +
+      `${stats.droppedForDateThreshold || 0} for too few bookable dates, ` +
       `${stats.droppedForSingleLocation || 0} for touring a single location (residency-style runs).`
   );
   return tours;
@@ -411,6 +439,7 @@ module.exports = {
   plausibleOnSaleDate,
   MIN_TOUR_DATES,
   MIN_DISTINCT_CITIES,
+  MIN_LEAD_DAYS,
   RECENT_PAST_DAYS,
   STATE_CODES,
 };

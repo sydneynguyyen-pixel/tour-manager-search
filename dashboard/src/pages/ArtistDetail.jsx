@@ -30,11 +30,7 @@ import { getScoreBreakdown, getPriorityTier, getContributingSources } from '../u
 import { getArtistBio } from '../utils/artistSubtitle';
 import { leadId, useSavedArtists } from '../lib/savedArtists';
 import { loadEntries, toLeadShape } from '../lib/myArtists';
-import {
-  fetchTourAnnouncements,
-  toLeadShape as toAnnouncementLeadShape,
-  TOUR_STAGE_META,
-} from '../lib/tourAnnouncements';
+import { fetchTourAnnouncements, toLeadShape as toAnnouncementLeadShape } from '../lib/tourAnnouncements';
 import { roleLabel, genreDisplay, dateRange, venueRange } from '../utils/myArtistFields';
 import { genreLabel } from '../lib/scoringSettings';
 import {
@@ -65,7 +61,7 @@ const MY_ARTIST_TABS = [
   { key: 'notes', label: 'My Notes' },
 ];
 
-// Tour Announcements mode: no Overview (nothing to score), no Releases/Notes
+// New Tour Detected mode: no Overview (nothing to score), no Releases/Notes
 // (the feed carries no release or personal-note data) — just the confirmed
 // upcoming dates.
 const ANNOUNCEMENT_TABS = [{ key: 'tours', label: 'Tour History' }];
@@ -122,7 +118,7 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
   const saved = useSavedArtists();
   const isMyArtist = source === 'myArtists';
   const isAnnouncement = source === 'announcements';
-  const backLabel = isMyArtist ? 'My Artists' : isAnnouncement ? 'Tour Announcements' : 'leads';
+  const backLabel = isMyArtist ? 'My Artists' : isAnnouncement ? 'New Tour Detected' : 'leads';
   const TABS = isMyArtist ? MY_ARTIST_TABS : isAnnouncement ? ANNOUNCEMENT_TABS : LEAD_TABS;
   const [tab, setTab] = useState(isMyArtist || isAnnouncement ? 'tours' : 'overview');
   const [explainOpen, setExplainOpen] = useState(false);
@@ -142,7 +138,7 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
     return loadEntries().find((e) => e.id === wanted) || null;
   }, [id, isMyArtist]);
 
-  // Tour Announcements entries come from a fetch, not localStorage — there's
+  // New Tour Detected entries come from a fetch, not localStorage — there's
   // no synchronous read available, so this loads once per mount, same as the
   // tab's own fetch in components/TourAnnouncements.jsx.
   const [announcementEntries, setAnnouncementEntries] = useState(null);
@@ -284,11 +280,6 @@ export default function ArtistDetail({ leads, source, hideScore = false }) {
               </span>
               {listenerCount != null && (
                 <span className="pill listeners">{compactNumber(listenerCount)} monthly listeners</span>
-              )}
-              {isAnnouncement && lead.tourStage && TOUR_STAGE_META[lead.tourStage] && (
-                <span className={`pill stage-badge ${TOUR_STAGE_META[lead.tourStage].className}`}>
-                  {TOUR_STAGE_META[lead.tourStage].label}
-                </span>
               )}
               {isAnnouncement && lead.discovered && (
                 <span className="pill roster-badge">Not in your roster</span>

@@ -13,6 +13,7 @@ const {
   pickAttractionImage,
   attractionGenre,
   plausibleOnSaleDate,
+  MIN_LEAD_DAYS,
 } = require('./ticketmaster-discovery');
 
 let failures = 0;
@@ -407,6 +408,103 @@ assert(locationKey({ city: null, venue: null }) === '', 'locationKey: empty stri
   assert(tours.some((t) => t.artist === 'Real Tour'), 'group/stats: a qualifying tour is still kept alongside the drops');
   assert(stats.droppedForSingleLocation === 1, 'group/stats: single-location drop counted separately');
   assert(stats.droppedForDateThreshold === 1, 'group/stats: date-threshold drop counted separately');
+}
+
+// === Lead-time gate (bookableDateCount / MIN_LEAD_DAYS) ======================
+// All lead-time tests pin todayIso to TODAY ('2026-01-01') and rely on asOf
+// defaulting to midnight UTC of todayIso (see groupToursFromBrowseEvents'
+// header comment) — the default lead window is MIN_LEAD_DAYS (28) days, so
+// the cutoff is 2026-01-29: dates >= that are bookable, dates before it
+// aren't, no matter how far in the future they still are relative to today.
+assert(MIN_LEAD_DAYS === 28, 'MIN_LEAD_DAYS defaults to 28');
+
+// A 6-date run entirely inside the lead window (every date < 28 days out)
+// never qualifies, even across several distinct cities — none of its dates
+// are bookable yet.
+{
+  const events = [];
+  for (let i = 0; i < 6; i += 1) {
+    events.push(tmEvent({ artist: 'Imminent Run', date: dateAt(TODAY, 3 + i * 4), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const tours = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY });
+  assert(!tours.some((t) => t.artist === 'Imminent Run'), 'group: an entirely-imminent 6-date run (all < lead time) is dropped');
+}
+
+// A 6-date run entirely beyond the lead window, across 3+ cities, is kept.
+{
+  const events = [];
+  for (let i = 0; i < 6; i += 1) {
+    events.push(tmEvent({ artist: 'Bookable Tour', date: dateAt(TODAY, 30 + i * 5), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const tours = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY });
+  const t = tours.find((x) => x.artist === 'Bookable Tour');
+  assert(t && t.bookableDateCount === 6, 'group: a 6-date tour fully beyond the lead window is kept');
+}
+
+// The long-tour-that-starts-soon guard: a first date inside the lead window
+// doesn't sink an otherwise-qualifying tour, as long as 6+ LATER dates across
+// 3+ cities clear the lead time on their own. The imminent date still shows
+// up in the display fields (dateCount/events), just doesn't count toward
+// qualification.
+{
+  const events = [tmEvent({ artist: 'Starts Soon', date: dateAt(TODAY, 5), venue: 'Early Venue', city: 'Early City' })];
+  for (let i = 0; i < 6; i += 1) {
+    events.push(tmEvent({ artist: 'Starts Soon', date: dateAt(TODAY, 30 + i * 5), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const tours = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY });
+  const t = tours.find((x) => x.artist === 'Starts Soon');
+  assert(t, 'group: a tour that starts soon but has 6+ later bookable dates across 3+ cities is kept');
+  assert(t.dateCount === 7, 'group: dateCount (display) includes the imminent date, not just the bookable ones');
+  assert(t.bookableDateCount === 6, 'group: bookableDateCount only counts the later, actually-bookable dates');
+  assert(t.events.length === 7, 'group: the displayed events array keeps the full upcoming run, including the imminent date');
+  assert(t.events[0].date === dateAt(TODAY, 5), 'group: the imminent date is still shown first in the display list');
+}
+
+// Boundary: a date exactly at asOf + MIN_LEAD_DAYS (28 days out, inclusive)
+// counts as bookable.
+{
+  const events = [tmEvent({ artist: 'Boundary Tour', date: dateAt(TODAY, 28), venue: 'Boundary Venue', city: 'Boundary City' })];
+  for (let i = 0; i < 5; i += 1) {
+    events.push(tmEvent({ artist: 'Boundary Tour', date: dateAt(TODAY, 30 + i * 5), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const tours = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY });
+  const t = tours.find((x) => x.artist === 'Boundary Tour');
+  assert(t && t.bookableDateCount === 6, 'group: a date exactly at asOf + MIN_LEAD_DAYS counts as bookable (inclusive)');
+}
+{
+  // One day short of the boundary is NOT bookable — with only 5 dates left
+  // clearing the window, the tour drops below the 6-date bookable minimum.
+  const events = [tmEvent({ artist: 'Just Under Boundary', date: dateAt(TODAY, 27), venue: 'Boundary Venue', city: 'Boundary City' })];
+  for (let i = 0; i < 5; i += 1) {
+    events.push(tmEvent({ artist: 'Just Under Boundary', date: dateAt(TODAY, 30 + i * 5), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const tours = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY });
+  assert(!tours.some((t) => t.artist === 'Just Under Boundary'), 'group: a date one day short of the lead window does not count as bookable');
+}
+
+// minLeadDays is honored when overridden — the same dates (10-15 days out)
+// fail the default 28-day lead but pass a shorter, explicitly-injected one.
+{
+  const events = [];
+  for (let i = 0; i < 6; i += 1) {
+    events.push(tmEvent({ artist: 'Custom Lead', date: dateAt(TODAY, 10 + i), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const defaultLead = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY });
+  assert(!defaultLead.some((t) => t.artist === 'Custom Lead'), 'group: default 28-day lead drops a run whose dates are only 10-15 days out');
+  const shortLead = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY, minLeadDays: 7 });
+  assert(shortLead.some((t) => t.artist === 'Custom Lead'), 'group: a smaller minLeadDays makes the same dates bookable');
+}
+
+// asOf can be injected explicitly (independent of todayIso) for deterministic
+// testing — an explicit asOf matching todayIso's midnight behaves the same
+// as the implicit default.
+{
+  const events = [];
+  for (let i = 0; i < 6; i += 1) {
+    events.push(tmEvent({ artist: 'Explicit AsOf', date: dateAt(TODAY, 30 + i * 5), venue: `Venue ${i}`, city: `City ${i}` }));
+  }
+  const tours = groupToursFromBrowseEvents(events.map(extractBrowseEvent), { todayIso: TODAY, asOf: new Date(`${TODAY}T00:00:00Z`) });
+  assert(tours.some((t) => t.artist === 'Explicit AsOf'), 'group: an explicitly-injected asOf matching todayIso behaves the same as the default');
 }
 
 if (failures > 0) { logger.error(`${failures} discovery check(s) failed.`); process.exit(1); }

@@ -1,8 +1,14 @@
-// Builds automation/data/tour-announcements.json — a neutral, tour-lifecycle-
-// classified feed across every artist the pipeline has ever encountered (all
-// of leads.json, regardless of score, plus all of my-artists.json), for
-// broader use beyond the scored Leads experience (e.g. travel agency
-// colleagues). Deliberately carries no scoring fields.
+// Builds automation/data/tour-announcements.json — the data source for the
+// dashboard's "New Tour Detected" tab. A single-category feed: every artist
+// the pipeline has ever encountered (all of leads.json, regardless of score,
+// plus all of my-artists.json, plus outside-the-roster Ticketmaster
+// discovery — see below) gets classified through the SAME five-stage
+// tour-lifecycle logic as before (see classifyTourStage), but only the
+// tourStage === 'NEW_TOUR' entries — confirmed dates exist, the tour hasn't
+// started yet — are written to the output file. Already Touring / New Shows
+// / Early Signal / No Tour Detected are computed (tierCounts below still
+// logs the full distribution, for operator visibility) and then dropped.
+// Deliberately carries no scoring fields.
 //
 // Reuses the same Ticketmaster/JamBase scrapers as enrich-my-artists.js and
 // aggregate.js, as-is. My Artists entries that already have enrichment
@@ -13,24 +19,21 @@
 // so every lead gets a fresh lookup here; the `alreadyFetched` check is
 // generic so this self-corrects if that ever changes.
 //
-// Every pooled artist becomes an output entry (not just ones with confirmed
-// events) — tourStage classifies where each one sits in the lifecycle, and
-// the dashboard filters/prioritizes from there. See classifyTourStage below.
-//
 // BEYOND THE ROSTER: the roster pool is bounded by whoever the scoring funnel
 // discovered, and that funnel is deliberately tuned to Matthew's lead criteria
 // (smaller/mid-tier acts with recent releases). A big touring act who'd never
 // pass those criteria — but who Matthew could still do travel booking for —
 // never enters the pool, so never surfaces here. To close that gap, main() also
 // BROWSES Ticketmaster nationwide (see src/scrapers/ticketmaster-discovery.js)
-// for any act with a genuine multi-date tour (more than 5 confirmed UPCOMING
-// dates), drops the ones already in the roster pool, and merges the rest in
-// tagged `discovered: true`. tourStage is NEW_TOUR unless the discovery module
-// found the act already played a date in the last 60 days (t.recentlyPlayed),
-// in which case it's ONGOING instead — the same rule classifyTourStage below
-// applies to roster artists, just sourced from Ticketmaster's own recent-past
-// browse rather than Setlist.fm history. Roster entries carry
-// `discovered: false`, so the dashboard can badge the two apart.
+// for any act with a genuine multi-city tour (more than 5 confirmed UPCOMING
+// dates across 3+ locations, festivals/residencies excluded), drops the ones
+// already in the roster pool, and merges the rest in tagged `discovered:
+// true`. Those hold to the same NEW_TOUR bar as roster artists: tourStage is
+// NEW_TOUR unless the discovery module found the act already played a date in
+// the last 60 days (t.recentlyPlayed), in which case it's ONGOING — and so
+// dropped from the output just like a roster ONGOING artist would be. Roster
+// entries carry `discovered: false`, so the dashboard can badge the two apart
+// with "Not in your roster".
 
 require('dotenv').config({ quiet: true });
 const fs = require('fs');
@@ -269,23 +272,32 @@ async function main() {
   results.push(...discoveredEntries);
   results.sort((a, b) => (b.announcedDate || '').localeCompare(a.announcedDate || ''));
 
+  // "New Tour Detected" ships ONLY the NEW_TOUR stage — tierCounts above
+  // still reflects the full lifecycle distribution across everything this
+  // run classified (roster + discovered), logged below for visibility even
+  // though Already Touring / New Shows / Early Signal / No Tour Detected
+  // never reach the output file.
+  const newTourResults = results.filter((r) => r.tourStage === 'NEW_TOUR');
+  const newTourDiscovered = newTourResults.filter((r) => r.discovered).length;
+
   const output = {
     generatedAt: new Date().toISOString(),
-    totalArtists: results.length,
-    rosterArtists: results.length - discoveredEntries.length,
-    discoveredArtists: discoveredEntries.length,
+    totalArtists: newTourResults.length,
+    rosterArtists: newTourResults.length - newTourDiscovered,
+    discoveredArtists: newTourDiscovered,
+    newTourCount: newTourResults.length,
     tierCounts,
-    artists: results,
+    artists: newTourResults,
   };
   fs.writeFileSync(OUT_PATH, `${JSON.stringify(output, null, 2)}\n`);
 
   logger.success(
-    `✓ Tour Announcements written to ${path.relative(__dirname, OUT_PATH)} — ${results.length} artist(s) ` +
-      `(${results.length - discoveredEntries.length} roster, ${discoveredEntries.length} discovered; ` +
+    `✓ New Tour Detected written to ${path.relative(__dirname, OUT_PATH)} — ${newTourResults.length} artist(s) ` +
+      `(${newTourResults.length - newTourDiscovered} roster, ${newTourDiscovered} discovered; ` +
       `${fetchedCount} roster lookups fresh, ${pool.length - fetchedCount} reused from cache).`
   );
   logger.info(
-    `Tour stages — NEW_TOUR: ${tierCounts.NEW_TOUR}, ONGOING: ${tierCounts.ONGOING}, ` +
+    `Tour stages seen this run (only NEW_TOUR ships) — NEW_TOUR: ${tierCounts.NEW_TOUR}, ONGOING: ${tierCounts.ONGOING}, ` +
       `NEW_SHOWS: ${tierCounts.NEW_SHOWS}, POSSIBLE: ${tierCounts.POSSIBLE}, NO_TOUR: ${tierCounts.NO_TOUR}.`
   );
 }

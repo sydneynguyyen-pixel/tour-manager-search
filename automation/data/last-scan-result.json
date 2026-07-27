@@ -1,13 +1,21 @@
 {
-  "timestamp": "2026-07-20T23:01:55.317Z",
+  "timestamp": "2026-07-27T16:00:04.806Z",
   "candidatesProcessed": 68,
-  "candidatesWithRelease": 5,
-  "candidatesScored": 4,
+  "candidatesWithRelease": 7,
+  "candidatesScored": 7,
   "newLeadsAdded": [
     {
-      "artist": "Jeff Bernat",
-      "score": 62
+      "artist": "Dabin",
+      "score": 84
+    },
+    {
+      "artist": "Au5",
+      "score": 74
+    },
+    {
+      "artist": "Sabai",
+      "score": 67
     }
   ],
-  "totalLeadsNow": 35
+  "totalLeadsNow": 38
 }

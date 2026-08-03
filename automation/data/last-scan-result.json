@@ -1,21 +1,37 @@
 {
-  "timestamp": "2026-07-27T16:00:04.806Z",
-  "candidatesProcessed": 68,
-  "candidatesWithRelease": 7,
-  "candidatesScored": 7,
+  "timestamp": "2026-08-03T16:12:48.328Z",
+  "candidatesProcessed": 67,
+  "candidatesWithRelease": 10,
+  "candidatesScored": 11,
   "newLeadsAdded": [
     {
-      "artist": "Dabin",
-      "score": 84
+      "artist": "Isaia Huron",
+      "score": 85
     },
     {
-      "artist": "Au5",
-      "score": 74
+      "artist": "Drake",
+      "score": 83
     },
     {
-      "artist": "Sabai",
-      "score": 67
+      "artist": "OhSxnta",
+      "score": 82
+    },
+    {
+      "artist": "Last Heroes",
+      "score": 75
+    },
+    {
+      "artist": "Ilan Bluestone",
+      "score": 75
+    },
+    {
+      "artist": "Foushee",
+      "score": 63
+    },
+    {
+      "artist": "Fousheé",
+      "score": 61
     }
   ],
-  "totalLeadsNow": 38
+  "totalLeadsNow": 45
 }

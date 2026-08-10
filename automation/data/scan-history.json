@@ -77,5 +77,26 @@
       }
     ],
     "totalLeadsNow": 45
+  },
+  {
+    "timestamp": "2026-08-10T10:53:35.312Z",
+    "candidatesProcessed": 62,
+    "candidatesWithRelease": 10,
+    "candidatesScored": 9,
+    "newLeadsAdded": [
+      {
+        "artist": "Fresh IE",
+        "score": 73
+      },
+      {
+        "artist": "Lucky Daye",
+        "score": 70
+      },
+      {
+        "artist": "Isoxo",
+        "score": 60
+      }
+    ],
+    "totalLeadsNow": 48
   }
 ]

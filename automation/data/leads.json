@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T16:12:48.297Z",
+  "generatedAt": "2026-08-10T10:53:35.277Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,14 +44,14 @@
       ]
     }
   },
-  "totalLeads": 45,
+  "totalLeads": 48,
   "stats": {
     "avgScore": 73,
-    "medianScore": 69,
+    "medianScore": 70,
     "priorityBreakdown": {
       "immediate": 7,
-      "high": 15,
-      "qualified": 23
+      "high": 17,
+      "qualified": 24
     }
   },
   "leads": [
@@ -16945,6 +16945,88 @@
     },
     {
       "rank": 21,
+      "artist": "Fresh IE",
+      "firstSeen": "2026-08-10T10:53:35.277Z",
+      "spotifyId": null,
+      "deezerId": 1163200,
+      "mbid": null,
+      "listeners": null,
+      "lastfmListeners": 343,
+      "lastfmTags": [],
+      "lastfmBio": "Rob Wilson (Fresh I.E.) (born 1973)[where?] is a Christian rap artist from Winnipeg, Manitoba. His albums Red Letterz and Truth is Fallin' in tha Streetz were both nominated for Grammy Awards. Wilson is the first Canadian Christian artist to have been nominated for a Grammy Award. He has won several GMA Canada Covenant Awards including Rap/Hip Hop Song of the Year for \"World Vision\" (2006). Wilson founded the recording label Kingdom Music Inc. in 2006. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-08-07",
+      "releaseName": "Legacy",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/079281e6e535f78307e8895e23829281/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Legacy",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/6e0f74603843ba40e42330641785d6df/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-07",
+          "releaseType": "album"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 73,
+      "priority": "high",
+      "baseScore": 73,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 13,
+        "listeners": 15,
+        "accessibility": 18,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 73,
+        "genreMultiplier": 1,
+        "finalScore": 73,
+        "comebackGapMonths": null
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "indie-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://www.freshmusic.ca",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent album (2026-08-07) with no announced tour",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "Independent label (.mw-parser-output .hlist dl) — reachable via label"
+      ]
+    },
+    {
+      "rank": 22,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -17309,7 +17391,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 23,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -17387,7 +17469,2188 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
+      "artist": "Lucky Daye",
+      "firstSeen": "2026-08-10T10:53:35.277Z",
+      "spotifyId": null,
+      "deezerId": 10318770,
+      "mbid": "a7472b5e-9b6e-48a6-b910-37c940487086",
+      "listeners": null,
+      "lastfmListeners": 703869,
+      "lastfmTags": [
+        "rnb",
+        "soul",
+        "hip-hop",
+        "louisiana",
+        "american"
+      ],
+      "lastfmBio": "Lucky Daye is the alias of David Brown, a Los Angeles-based singer and songwriter with a solid foundation in classic soul who is stylistically a little left of center, neither retro nor commercial. Like contemporaries BJ the Chicago Kid and Daniel Caesar, he's a synthesist of traditional and progressive R&B modes, showcased on his major-label debut EP, I (2018). Before he signed a solo deal, Brown co-wrote songs for Keith Sweat, Ne-Yo, Ella Mai, and Mary J. Blige. Read more on Last.fm",
+      "audiodbBio": "David Debrandon Brown (born September 25, 1985), professionally known as Lucky Daye, is an American singer-songwriter from New Orleans, Louisiana. He is signed to Keep Cool Records and RCA Records. He released his first EP, I on November 9, 2018, and his second EP, II, on February 6, 2019. The EPs were part of a series leading up to his debut studio album Painted, which was released on May 24, 2019. Daye has earned a collective of six Grammy Award nominations for his musical work.\n\nEarly life\nDavid Debrandon Brown was born on September 25, 1985 in New Orleans, Louisiana. He was raised in a cult that forbade secular music, but he discovered an innate knack for singing and taught himself melodies by turning children books into songs of his own. After his mother left the cult, Brown found himself going back to immerse himself in classic R&B and eventually fell hard for the likes of Prince, Rick James, Lauryn Hill, and Stevie Wonder. He soon relocated to Atlanta, Georgia to pursue music.\n\nMusical career\nDaye previously competed on American Idol (Season 4 in 2005), at age 19. He auditioned with \"A Change Is Gonna Come\" by Sam Cooke, and was given four \"yes\" votes. He was eliminated shortly after reaching the Top 20.\n\nDaye established himself as a songwriter and background vocalist and landed credits in 2008 on songs by Keith Sweat on his album Just Me and Ne-Yo on \"She Got Her Own\" In 2014, he wrote for Boyz II Men on the song \"Believe Us\". During 2016 and 2017, he co-wrote songs released by Keke Palmer (\"Enemiez\"), Ella Mai (\"10,000 Hours,\" \"Down\"), Trey Songz (\"Song Goes Off\"), and two tracks from the album Strength of a Woman by Mary J. Blige, among other contemporary R&B artists.\n\nIn October 2018, Daye announced that he has signed to Keep Cool Records and RCA Records, and released his first single called \"Roll Some Mo\". On November 9, he released his first EP titled I, which is part of a series leading up to his forthcoming debut studio album Painted.\n\nOn January 17, 2019, Daye released the first single from the second EP in the series called \"Karma\". On February 6, 2019, he released the second installment of the EP series, II. He is slated to go on tour with Ella Mai beginning in February 2019. In November 2019, Daye received four nominations at the 62nd Grammy Awards including one for Best R&B Album for his debut Painted. On November 21, 2019, Daye opened for R&B singer Khalid on his Free Spirit tour in New Zealand.\n\nOn September 25, 2020, he co-wrote English singer Zayn's single, \"Better\".\n\nOn February 12, 2021, Daye released his first EP since 2019, titled Table for Two.\n\nOn May 21, 2021, Daye released a cover of Marvin Gaye’s “Mercy Mercy Me (The Ecology)” to celebrate the 50th anniversary of What’s Going On.",
+      "discogsVerified": true,
+      "releaseDate": "2026-07-24",
+      "releaseName": "Nowhere Fast (Hunny Bee Remix)",
+      "genre": "alternative r&b",
+      "genreTier": 1,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/4e4a568cc1c48d828176b868a64b2da0/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Nowhere Fast (Hunny Bee Remix)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/367ed463ef3412aabf1950a7d1653506/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-24",
+          "releaseType": "single"
+        },
+        {
+          "name": "Nowhere Fast",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/63b8018ffe0f38bab4e62a903726f703/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 1,
+      "releaseQualityScore": 0.575,
+      "finalScore": 70,
+      "priority": "high",
+      "baseScore": 61,
+      "genreMultiplier": 1.15,
+      "scoring": {
+        "touring": 25,
+        "listeners": 10,
+        "accessibility": 8,
+        "likelihood": 8,
+        "growth": 10,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 61,
+        "genreMultiplier": 1.15,
+        "finalScore": 70,
+        "comebackGapMonths": null
+      },
+      "tourCount": 15,
+      "avgVenueSize": 23723,
+      "topVenues": [
+        {
+          "name": "Caesars Superdome",
+          "capacity": 73208,
+          "city": "New Orleans",
+          "country": "United States"
+        },
+        {
+          "name": "Paycor Stadium",
+          "capacity": 65515,
+          "city": "Cincinnati",
+          "country": "United States"
+        },
+        {
+          "name": "Kaseya Center",
+          "capacity": 19600,
+          "city": "Miami",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2025-11-04",
+          "venueName": "The Beverly Hilton",
+          "city": "Beverly Hills",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-24",
+          "venueName": "Resorts World Theatre",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": 5000
+        },
+        {
+          "date": "2025-09-13",
+          "venueName": "Field Stage",
+          "city": "St. Louis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-10",
+          "venueName": "Vystar Veterans Memorial Arena",
+          "city": "Jacksonville",
+          "country": "United States",
+          "venueCapacity": 15000
+        },
+        {
+          "date": "2025-08-09",
+          "venueName": "Kia Center",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 18846
+        },
+        {
+          "date": "2025-08-08",
+          "venueName": "Kaseya Center",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": 19600
+        },
+        {
+          "date": "2025-07-26",
+          "venueName": "Paycor Stadium",
+          "city": "Cincinnati",
+          "country": "United States",
+          "venueCapacity": 65515
+        },
+        {
+          "date": "2025-07-04",
+          "venueName": "Caesars Superdome",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 73208
+        },
+        {
+          "date": "2025-06-27",
+          "venueName": "Hampton Coliseum",
+          "city": "Hampton",
+          "country": "United States",
+          "venueCapacity": 13800
+        },
+        {
+          "date": "2025-06-20",
+          "venueName": "Smart Financial Centre at Sugar Land",
+          "city": "Sugar Land",
+          "country": "United States",
+          "venueCapacity": 6400
+        },
+        {
+          "date": "2025-06-09",
+          "venueName": "Peacock Theater",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 7100
+        },
+        {
+          "date": "2025-06-06",
+          "venueName": "SAP Center at San Jose",
+          "city": "San Jose",
+          "country": "United States",
+          "venueCapacity": 19190
+        },
+        {
+          "date": "2025-06-05",
+          "venueName": "The DL",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-03",
+          "venueName": "T-Mobile Center",
+          "city": "Kansas City",
+          "country": "United States",
+          "venueCapacity": 17297
+        },
+        {
+          "date": "2025-04-23",
+          "venueName": "Andys",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2025-11-04",
+          "venueName": "The Beverly Hilton",
+          "city": "Beverly Hills",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-24",
+          "venueName": "Resorts World Theatre",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": 5000
+        },
+        {
+          "date": "2025-09-13",
+          "venueName": "Field Stage",
+          "city": "St. Louis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-10",
+          "venueName": "Vystar Veterans Memorial Arena",
+          "city": "Jacksonville",
+          "country": "United States",
+          "venueCapacity": 15000
+        },
+        {
+          "date": "2025-08-09",
+          "venueName": "Kia Center",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 18846
+        },
+        {
+          "date": "2025-08-08",
+          "venueName": "Kaseya Center",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": 19600
+        },
+        {
+          "date": "2025-07-26",
+          "venueName": "Paycor Stadium",
+          "city": "Cincinnati",
+          "country": "United States",
+          "venueCapacity": 65515
+        },
+        {
+          "date": "2025-07-04",
+          "venueName": "Caesars Superdome",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 73208
+        },
+        {
+          "date": "2025-06-27",
+          "venueName": "Hampton Coliseum",
+          "city": "Hampton",
+          "country": "United States",
+          "venueCapacity": 13800
+        },
+        {
+          "date": "2025-06-20",
+          "venueName": "Smart Financial Centre at Sugar Land",
+          "city": "Sugar Land",
+          "country": "United States",
+          "venueCapacity": 6400
+        },
+        {
+          "date": "2025-06-09",
+          "venueName": "Peacock Theater",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 7100
+        },
+        {
+          "date": "2025-06-06",
+          "venueName": "SAP Center at San Jose",
+          "city": "San Jose",
+          "country": "United States",
+          "venueCapacity": 19190
+        },
+        {
+          "date": "2025-06-05",
+          "venueName": "The DL",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-03",
+          "venueName": "T-Mobile Center",
+          "city": "Kansas City",
+          "country": "United States",
+          "venueCapacity": 17297
+        },
+        {
+          "date": "2025-04-23",
+          "venueName": "Andys",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-02-05",
+          "venueName": "Mahalia Jackson Theater",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 2100
+        },
+        {
+          "date": "2025-01-20",
+          "venueName": "FedExForum",
+          "city": "Memphis",
+          "country": "United States",
+          "venueCapacity": 16667
+        },
+        {
+          "date": "2024-12-18",
+          "venueName": "The Sun Rose",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-12-14",
+          "venueName": "Crypto.com Arena",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2024-12-09",
+          "venueName": "The Jennifer Hudson Show",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-12-07",
+          "venueName": "Dignity Health Sports Park",
+          "city": "Carson",
+          "country": "United States",
+          "venueCapacity": 27000
+        },
+        {
+          "date": "2024-10-12",
+          "venueName": "88 Garden Stage",
+          "city": "Seoul",
+          "country": "South Korea",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-10-06",
+          "venueName": "The Sun Rose",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-28",
+          "venueName": "The Novo",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 2400
+        },
+        {
+          "date": "2024-08-27",
+          "venueName": "House of Blues",
+          "city": "Anaheim",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-25",
+          "venueName": "SOMA",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-24",
+          "venueName": "The Van Buren",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-22",
+          "venueName": "South Side Ballroom",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-21",
+          "venueName": "Bayou Music Center",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": 3464
+        },
+        {
+          "date": "2024-08-20",
+          "venueName": "ACL Live at The Moody Theater",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-19",
+          "venueName": "VEVO Studios",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-17",
+          "venueName": "The Fillmore",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2024-08-16",
+          "venueName": "Tabernacle",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-15",
+          "venueName": "Iron City",
+          "city": "Birmingham",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-13",
+          "venueName": "House of Blues",
+          "city": "Lake Buena Vista",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-11",
+          "venueName": "The Ritz",
+          "city": "Raleigh",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-10",
+          "venueName": "The Fillmore",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2024-08-09",
+          "venueName": "The NorVa",
+          "city": "Norfolk",
+          "country": "United States",
+          "venueCapacity": 1450
+        },
+        {
+          "date": "2024-08-08",
+          "venueName": "Good Morning America",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-07",
+          "venueName": "Radio City Music Hall",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 5960
+        },
+        {
+          "date": "2024-08-06",
+          "venueName": "Citizens House of Blues Boston",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-04",
+          "venueName": "The Fillmore Philadelphia",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2024-08-03",
+          "venueName": "The Theater at MGM National Harbor",
+          "city": "National Harbor",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-02",
+          "venueName": "Roxian Theatre",
+          "city": "McKees Rocks",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-31",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-30",
+          "venueName": "Agora",
+          "city": "Cleveland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-28",
+          "venueName": "Bogart's",
+          "city": "Cincinnati",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-27",
+          "venueName": "The Fillmore Detroit",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": 2900
+        },
+        {
+          "date": "2024-07-26",
+          "venueName": "Byline Bank Aragon Ballroom",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": 5000
+        },
+        {
+          "date": "2024-07-24",
+          "venueName": "Egyptian Room at Old National Centre",
+          "city": "Indianapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-23",
+          "venueName": "Ryman Auditorium",
+          "city": "Nashville",
+          "country": "United States",
+          "venueCapacity": 2362
+        },
+        {
+          "date": "2024-07-21",
+          "venueName": "The Pageant",
+          "city": "St. Louis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-20",
+          "venueName": "The Rave",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-19",
+          "venueName": "Fillmore Minneapolis",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2024-07-17",
+          "venueName": "Ogden Theatre",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": 1600
+        },
+        {
+          "date": "2024-07-14",
+          "venueName": "The Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1150
+        },
+        {
+          "date": "2024-07-13",
+          "venueName": "Crystal Ballroom",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-11",
+          "venueName": "The Warfield",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-07",
+          "venueName": "Caesars Superdome",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 73208
+        },
+        {
+          "date": "2024-06-14",
+          "venueName": "Jimmy Kimmel Live",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-13",
+          "venueName": "The Fillmore Miami Beach at Jackie Gleason Theater",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-09",
+          "venueName": "The Beehive",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-19",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-05",
+          "venueName": "Samsung 837",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-04",
+          "venueName": "Adidas Headquarters",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-31",
+          "venueName": "Claremont Showground",
+          "city": "Perth",
+          "country": "Australia",
+          "venueCapacity": 40000
+        },
+        {
+          "date": "2024-03-29",
+          "venueName": "Caribbean Gardens",
+          "city": "Melbourne",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-28",
+          "venueName": "The Trusts Arena",
+          "city": "Auckland",
+          "country": "New Zealand",
+          "venueCapacity": 4901
+        },
+        {
+          "date": "2024-03-23",
+          "venueName": "Doug Jennings Park",
+          "city": "Gold Coast",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-22",
+          "venueName": "Parramatta Park",
+          "city": "Sydney",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-01-18",
+          "venueName": "Genius HQ",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-11-12",
+          "venueName": "Crown Festival Park",
+          "city": "Sugar Land",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-18",
+          "venueName": "Victoria Park",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-15",
+          "venueName": "Montreux Jazz Lab",
+          "city": "Montreux",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-06-04",
+          "venueName": "TD Pavilion at the Mann",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 13000
+        },
+        {
+          "date": "2023-05-28",
+          "venueName": "The Harbour Arena",
+          "city": "Oranjestad",
+          "country": "Aruba",
+          "venueCapacity": 15357
+        },
+        {
+          "date": "2023-05-13",
+          "venueName": "State Farm Arena",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": 20233
+        },
+        {
+          "date": "2023-05-07",
+          "venueName": "The Novo",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 2400
+        },
+        {
+          "date": "2023-03-18",
+          "venueName": "The Pavilion",
+          "city": "Irving",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-02-02",
+          "venueName": "Wiltern Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-01-12",
+          "venueName": "FIU Biscayne Bay Campus",
+          "city": "North Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-12-29",
+          "venueName": "Labadi Beach Hotel",
+          "city": "Accra",
+          "country": "Ghana",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-12-16",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-19",
+          "venueName": "Dale F. Halton Arena",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": 9105
+        },
+        {
+          "date": "2022-10-14",
+          "venueName": "Zilker Park",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-13",
+          "venueName": "Soho House",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-09",
+          "venueName": "O2 Academy Brixton",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 4921
+        },
+        {
+          "date": "2022-10-04",
+          "venueName": "O2 Ritz",
+          "city": "Manchester",
+          "country": "United Kingdom",
+          "venueCapacity": 1500
+        },
+        {
+          "date": "2022-10-02",
+          "venueName": "O2 Shepherd's Bush Empire",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 2000
+        },
+        {
+          "date": "2022-10-01",
+          "venueName": "Grote Zaal",
+          "city": "Amsterdam",
+          "country": "Netherlands",
+          "venueCapacity": 2000
+        },
+        {
+          "date": "2022-09-30",
+          "venueName": "Concorde 2",
+          "city": "Brighton",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-29",
+          "venueName": "O2 Institute",
+          "city": "Birmingham",
+          "country": "United Kingdom",
+          "venueCapacity": 1500
+        },
+        {
+          "date": "2022-09-27",
+          "venueName": "Élysée Montmartre",
+          "city": "Paris",
+          "country": "France",
+          "venueCapacity": 1380
+        },
+        {
+          "date": "2022-09-25",
+          "venueName": "Club",
+          "city": "Borgerhout",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-24",
+          "venueName": "Kantine",
+          "city": "Cologne",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-23",
+          "venueName": "Grote Zaal",
+          "city": "Amsterdam",
+          "country": "Netherlands",
+          "venueCapacity": 2000
+        },
+        {
+          "date": "2022-09-21",
+          "venueName": "ZOOM Frankfurt",
+          "city": "Frankfurt",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-20",
+          "venueName": "Festsaal Kreuzberg",
+          "city": "Berlin",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-18",
+          "venueName": "Studie 2",
+          "city": "Copenhagen",
+          "country": "Denmark",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-16",
+          "venueName": "Debaser Hornstull Strand",
+          "city": "Stockholm",
+          "country": "Sweden",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-11",
+          "venueName": "Commodore Barry Park",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-06",
+          "venueName": "Greek Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-03",
+          "venueName": "Seoul Land",
+          "city": "Gwacheon-si",
+          "country": "South Korea",
+          "venueCapacity": 15511
+        },
+        {
+          "date": "2022-08-16",
+          "venueName": "The Gathering Spot",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-08-04",
+          "venueName": "Wilkins Theatre",
+          "city": "Union",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-20",
+          "venueName": "Museum of Pop Culture",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-09",
+          "venueName": "Finsbury Park",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-02",
+          "venueName": "Caesars Superdome",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 73208
+        },
+        {
+          "date": "2022-06-19",
+          "venueName": "Hollywood Bowl",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 17500
+        },
+        {
+          "date": "2022-06-17",
+          "venueName": "Independence Ave",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-06-16",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-06-13",
+          "venueName": "Revolt TV Studio",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-06-12",
+          "venueName": "Midway Plaisance Park",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-05-28",
+          "venueName": "Cellairis Amphitheatre at Lakewood",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": 18920
+        },
+        {
+          "date": "2022-05-12",
+          "venueName": "AP House",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-05-09",
+          "venueName": "Honda Stage at the iHeartRadio Theater",
+          "city": "Burbank",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-05-08",
+          "venueName": "Colonial Life Arena",
+          "city": "Columbia",
+          "country": "United States",
+          "venueCapacity": 18000
+        },
+        {
+          "date": "2022-04-30",
+          "venueName": "Discovery Park",
+          "city": "Sacramento",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-27",
+          "venueName": "The Tonight Show Starring Jimmy Fallon",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-25",
+          "venueName": "Neighborhood Theatre",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-23",
+          "venueName": "Terminal 5",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-22",
+          "venueName": "The Theatre of Living Arts",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 800
+        },
+        {
+          "date": "2022-04-21",
+          "venueName": "Toad's Place",
+          "city": "New Haven",
+          "country": "United States",
+          "venueCapacity": 1000
+        },
+        {
+          "date": "2022-04-19",
+          "venueName": "Royale",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-17",
+          "venueName": "The NorVa",
+          "city": "Norfolk",
+          "country": "United States",
+          "venueCapacity": 1450
+        },
+        {
+          "date": "2022-04-16",
+          "venueName": "The Fillmore Silver Spring",
+          "city": "Silver Spring",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2022-04-15",
+          "venueName": "House of Blues",
+          "city": "Cleveland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-13",
+          "venueName": "REBEL",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-12",
+          "venueName": "Majestic Theatre",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": 1681
+        },
+        {
+          "date": "2022-04-10",
+          "venueName": "House of Blues",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-09",
+          "venueName": "Mercury Ballroom",
+          "city": "Louisville",
+          "country": "United States",
+          "venueCapacity": 900
+        },
+        {
+          "date": "2022-04-08",
+          "venueName": "Cannery Ballroom",
+          "city": "Nashville",
+          "country": "United States",
+          "venueCapacity": 1275
+        },
+        {
+          "date": "2022-04-05",
+          "venueName": "Lincoln Theatre",
+          "city": "Raleigh",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-04",
+          "venueName": "Center Stage",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-02",
+          "venueName": "Woldenberg Park",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-01",
+          "venueName": "Joy Theater",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2022-04-01",
+          "venueName": "BG’s Lounge",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 2852
+        },
+        {
+          "date": "2022-03-31",
+          "venueName": "House of Blues",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-30",
+          "venueName": "Emo's",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-29",
+          "venueName": "House of Blues",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-26",
+          "venueName": "The Van Buren",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-25",
+          "venueName": "The Novo",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 2400
+        },
+        {
+          "date": "2022-03-24",
+          "venueName": "House of Blues",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-22",
+          "venueName": "The Regency Ballroom",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": 1423
+        },
+        {
+          "date": "2022-03-20",
+          "venueName": "Showbox",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-19",
+          "venueName": "Vogue Theatre",
+          "city": "Vancouver",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-18",
+          "venueName": "Roseland Theater",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": 1400
+        },
+        {
+          "date": "2022-03-14",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-02-25",
+          "venueName": "Goldstein Auditorium",
+          "city": "Syracuse",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-02-15",
+          "venueName": "Avalon",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-12-22",
+          "venueName": "Strawberry Meadows of College Park",
+          "city": "Oxnard",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-12-09",
+          "venueName": "The Echo",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-11-20",
+          "venueName": "Apollo Theater",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 1500
+        },
+        {
+          "date": "2021-11-12",
+          "venueName": "Las Vegas Festival Grounds",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": 85000
+        },
+        {
+          "date": "2021-11-11",
+          "venueName": "Apollo Theater",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 1500
+        },
+        {
+          "date": "2021-10-23",
+          "venueName": "The Beverly Hilton",
+          "city": "Beverly Hills",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-21",
+          "venueName": "FG Clark Activity Center at Southern University",
+          "city": "Baton Rouge",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-20",
+          "venueName": "Dillard University",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-15",
+          "venueName": "Shrine Exposition Hall",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 6300
+        },
+        {
+          "date": "2021-10-14",
+          "venueName": "Grambling State University",
+          "city": "Grambling",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-09",
+          "venueName": "Centennial Olympic Park",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-09-27",
+          "venueName": "Genius HQ",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-09-23",
+          "venueName": "1 Hotel",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-09-22",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-09-19",
+          "venueName": "Concord Pavilion",
+          "city": "Concord",
+          "country": "United States",
+          "venueCapacity": 12500
+        },
+        {
+          "date": "2021-09-09",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-08-21",
+          "venueName": "Great Lawn in Central Park",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-08-06",
+          "venueName": "Beacon Park",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-07-26",
+          "venueName": "Teatro Principal",
+          "city": "Guanajuato",
+          "country": "Mexico",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-07-13",
+          "venueName": "Paramount Ameraycan Studios",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-07-10",
+          "venueName": "Buffalo Bayou Park",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-06-26",
+          "venueName": "University of New Orleans",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-06-26",
+          "venueName": "The Gathering Spot",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-06-22",
+          "venueName": "Good Morning America",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-06-19",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-06-16",
+          "venueName": "Tower Sunset",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-06-11",
+          "venueName": "Wiltern Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-05-10",
+          "venueName": "Jimmy Kimmel Live",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-05-10",
+          "venueName": "TSNMI Studios",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-04-28",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-04-24",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-04-17",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-03-27",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-12-10",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-11-29",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-11-13",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-10-17",
+          "venueName": "Troubadour",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-10-15",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-09-16",
+          "venueName": "Private Venue",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-03-31",
+          "venueName": "Genius HQ",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-02-26",
+          "venueName": "VEVO Studios",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-02-13",
+          "venueName": "The Foundry at The Fillmore",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2020-02-03",
+          "venueName": "Pacific Design Center",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-12-19",
+          "venueName": "COLORS",
+          "city": "Berlin",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-30",
+          "venueName": "Commonwealth Park",
+          "city": "Canberra",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-28",
+          "venueName": "Rod Laver Arena",
+          "city": "Melbourne",
+          "country": "Australia",
+          "venueCapacity": 14820
+        },
+        {
+          "date": "2019-11-26",
+          "venueName": "Brisbane Entertainment Centre",
+          "city": "Brisbane",
+          "country": "Australia",
+          "venueCapacity": 14500
+        },
+        {
+          "date": "2019-11-23",
+          "venueName": "Commonwealth Park",
+          "city": "Canberra",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-21",
+          "venueName": "Spark Arena",
+          "city": "Auckland",
+          "country": "New Zealand",
+          "venueCapacity": 13280
+        },
+        {
+          "date": "2019-11-20",
+          "venueName": "Spark Arena",
+          "city": "Auckland",
+          "country": "New Zealand",
+          "venueCapacity": 13280
+        },
+        {
+          "date": "2019-11-07",
+          "venueName": "BBC Radio 1 Studios",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-06",
+          "venueName": "XOYO",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 800
+        },
+        {
+          "date": "2019-11-01",
+          "venueName": "The Anthem",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-27",
+          "venueName": "Great American Music Hall",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": 700
+        },
+        {
+          "date": "2019-10-25",
+          "venueName": "Quartyard",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-24",
+          "venueName": "El Rey Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-23",
+          "venueName": "The Rebel Lounge",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-21",
+          "venueName": "Barclays Center",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 17732
+        },
+        {
+          "date": "2019-10-20",
+          "venueName": "The Parish",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-19",
+          "venueName": "The Bronze Peacock",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-17",
+          "venueName": "The Cambridge Room",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-15",
+          "venueName": "One Eyed Jacks",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-13",
+          "venueName": "787 Windsor",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-12",
+          "venueName": "Motorco Music Hall",
+          "city": "Durham",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-11",
+          "venueName": "Union Stage",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 450
+        },
+        {
+          "date": "2019-10-09",
+          "venueName": "The Sinclair",
+          "city": "Cambridge",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-08",
+          "venueName": "Bowery Ballroom",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 575
+        },
+        {
+          "date": "2019-10-07",
+          "venueName": "Bowery Ballroom",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 575
+        },
+        {
+          "date": "2019-10-05",
+          "venueName": "The Loving Touch",
+          "city": "Ferndale",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-04",
+          "venueName": "Adelaide Hall",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-03",
+          "venueName": "Grog Shop",
+          "city": "Cleveland Heights",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-02",
+          "venueName": "3 Points Urban Brewery",
+          "city": "Cincinnati",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-01",
+          "venueName": "1st Ward",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-29",
+          "venueName": "Fine Line Music Cafe",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-28",
+          "venueName": "recordBar",
+          "city": "Kansas City",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-27",
+          "venueName": "Other Side",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-25",
+          "venueName": "In the Venue",
+          "city": "Salt Lake City",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-22",
+          "venueName": "The Crocodile",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-21",
+          "venueName": "Venue",
+          "city": "Vancouver",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-20",
+          "venueName": "Hawthorne Theatre",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-14",
+          "venueName": "Concord Pavilion",
+          "city": "Concord",
+          "country": "United States",
+          "venueCapacity": 12500
+        },
+        {
+          "date": "2019-09-11",
+          "venueName": "House of Blues",
+          "city": "Lake Buena Vista",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-07-10",
+          "venueName": "Studio 10",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-07-07",
+          "venueName": "Mercedes-Benz Superdome",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 73208
+        },
+        {
+          "date": "2019-07-06",
+          "venueName": "Cynthia Woods Mitchell Pavilion",
+          "city": "The Woodlands",
+          "country": "United States",
+          "venueCapacity": 16500
+        },
+        {
+          "date": "2019-06-23",
+          "venueName": "Microsoft Theater",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 7100
+        },
+        {
+          "date": "2019-06-20",
+          "venueName": "Staples Center",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2019-06-06",
+          "venueName": "Hoxton Square Bar & Kitchen",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-31",
+          "venueName": "YouTube Space New York",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-24",
+          "venueName": "Soho House",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-16",
+          "venueName": "The Echo",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-15",
+          "venueName": "HMH Stage 17",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 3309
+        },
+        {
+          "date": "2019-05-11",
+          "venueName": "Barclays Center",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 17732
+        },
+        {
+          "date": "2019-04-26",
+          "venueName": "19th and Pacific",
+          "city": "Virginia Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-28",
+          "venueName": "The Aztec Theatre",
+          "city": "San Antonio",
+          "country": "United States",
+          "venueCapacity": 1477
+        },
+        {
+          "date": "2019-03-27",
+          "venueName": "Emo's",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-26",
+          "venueName": "House of Blues",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-25",
+          "venueName": "Tiny Desk Concerts",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-24",
+          "venueName": "House of Blues",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-21",
+          "venueName": "Revolution Live",
+          "city": "Fort Lauderdale",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-20",
+          "venueName": "The Plaza Theatre",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-19",
+          "venueName": "Tabernacle",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-18",
+          "venueName": "Tabernacle",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-16",
+          "venueName": "Baltimore Soundstage",
+          "city": "Baltimore",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-15",
+          "venueName": "The Fillmore Silver Spring",
+          "city": "Silver Spring",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2019-03-14",
+          "venueName": "Baby's All Right",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 330
+        },
+        {
+          "date": "2019-03-13",
+          "venueName": "The Theatre of Living Arts",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 800
+        },
+        {
+          "date": "2019-03-12",
+          "venueName": "Brooklyn Steel",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 1800
+        },
+        {
+          "date": "2019-03-11",
+          "venueName": "Brooklyn Steel",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 1800
+        },
+        {
+          "date": "2019-03-09",
+          "venueName": "Royale",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-07",
+          "venueName": "Club Soda",
+          "city": "Montreal",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-06",
+          "venueName": "Danforth Music Hall",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 1427
+        },
+        {
+          "date": "2019-03-05",
+          "venueName": "House of Blues",
+          "city": "Cleveland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-03",
+          "venueName": "Concord Music Hall",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-03-02",
+          "venueName": "Saint Andrew's Hall",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": 1000
+        },
+        {
+          "date": "2019-02-28",
+          "venueName": "Varsity Theater",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-27",
+          "venueName": "Granada Theater",
+          "city": "Lawrence",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-25",
+          "venueName": "Ogden Theatre",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": 1600
+        },
+        {
+          "date": "2019-02-23",
+          "venueName": "House of Blues",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-22",
+          "venueName": "Marquee Theatre",
+          "city": "Tempe",
+          "country": "United States",
+          "venueCapacity": 1500
+        },
+        {
+          "date": "2019-02-20",
+          "venueName": "The Catalyst",
+          "city": "Santa Cruz",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-19",
+          "venueName": "Fox Theater",
+          "city": "Oakland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-17",
+          "venueName": "Ace of Spades",
+          "city": "Sacramento",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-15",
+          "venueName": "Crystal Ballroom",
+          "city": "Portland",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-14",
+          "venueName": "The Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1150
+        },
+        {
+          "date": "2019-02-12",
+          "venueName": "Commodore Ballroom",
+          "city": "Vancouver",
+          "country": "Canada",
+          "venueCapacity": 990
+        },
+        {
+          "date": "2019-02-08",
+          "venueName": "NeueHouse Hollywood",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-08",
+          "venueName": "Elyx House",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-01-07",
+          "venueName": "VEVO Studios",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-11-24",
+          "venueName": "Champions Square",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 9000
+        }
+      ],
+      "countriesToured": 1,
+      "lastTourDate": "2025-11-04",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://luckydaye.com",
+      "socialLinks": {
+        "instagram": "https://instagram.com/iamluckydaye",
+        "twitter": "https://twitter.com/iamluckydaye",
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UCAo7GQQLYTEHpkkqiW2ukiw",
+        "facebook": null
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent releases are a mix of original and remix/alt-version work (1 of 2 fully original), already touring",
+        "15 shows in past 18 months across 1 country",
+        "Average venue size 23,723 cap",
+        "alternative r&b — a preferred genre",
+        "Major label (Keep CoolRCAWarner Records) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 25,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -17471,7 +19734,7 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 26,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -17555,7 +19818,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 27,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -19125,7 +21388,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 28,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -19202,7 +21465,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 29,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -19288,7 +21551,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 30,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -19372,7 +21635,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 31,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -20715,7 +22978,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 32,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -21193,7 +23456,7 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 33,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -21491,7 +23754,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 34,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -22821,7 +25084,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 35,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -22898,7 +25161,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 36,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -22976,7 +25239,7 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 37,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -23060,7 +25323,7 @@
       ]
     },
     {
-      "rank": 36,
+      "rank": 38,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -23142,7 +25405,7 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 39,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -26065,7 +28328,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 40,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -26198,7 +28461,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 41,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -26499,7 +28762,7 @@
       ]
     },
     {
-      "rank": 40,
+      "rank": 42,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -26651,7 +28914,7 @@
       ]
     },
     {
-      "rank": 41,
+      "rank": 43,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -27806,7 +30069,7 @@
       ]
     },
     {
-      "rank": 42,
+      "rank": 44,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -29718,7 +31981,7 @@
       ]
     },
     {
-      "rank": 43,
+      "rank": 45,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -30228,7 +32491,7 @@
       ]
     },
     {
-      "rank": 44,
+      "rank": 46,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -32984,7 +35247,7 @@
       ]
     },
     {
-      "rank": 45,
+      "rank": 47,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -33471,6 +35734,908 @@
         "24 shows in past 18 months across 8 countries",
         "Average venue size 11,352 cap",
         "Independent label — reachable via label"
+      ]
+    },
+    {
+      "rank": 48,
+      "artist": "Isoxo",
+      "firstSeen": "2026-08-10T10:53:35.277Z",
+      "spotifyId": null,
+      "deezerId": 10112010,
+      "mbid": "8f9a7d46-778a-48b6-8b4c-0c0938a95053",
+      "listeners": null,
+      "lastfmListeners": 154031,
+      "lastfmTags": [
+        "american",
+        "usa",
+        "drum and bass",
+        "dubstep",
+        "california"
+      ],
+      "lastfmBio": "ISOxo, real name Julian Isorena, is a San Diego based multigenre artist. ISOxo creates trap, house, dubstep and wave. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-06-12",
+      "releaseName": "FUCK THE SPEAKERZ UP (Remixes)",
+      "genre": "dubstep",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/4ae84b836d84e1ca4eee75187963b913/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "FUCK THE SPEAKERZ UP (Remixes)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/b504aa5a2a0ba99cf2dd47f3074400c8/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-12",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 0,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 1,
+      "releaseQualityScore": 0.15,
+      "finalScore": 60,
+      "priority": "qualified",
+      "baseScore": 60,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 15,
+        "listeners": 10,
+        "accessibility": 18,
+        "likelihood": 8,
+        "growth": 9,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 60,
+        "genreMultiplier": 1,
+        "finalScore": 60,
+        "comebackGapMonths": 19.80946123521682
+      },
+      "tourCount": 1,
+      "avgVenueSize": 26886,
+      "topVenues": [
+        {
+          "name": "Autódromo Hermanos Rodríguez",
+          "capacity": 110000,
+          "city": "Mexico City",
+          "country": "Mexico"
+        },
+        {
+          "name": "Snapdragon Stadium",
+          "capacity": 35000,
+          "city": "San Diego",
+          "country": "United States"
+        },
+        {
+          "name": "Historic Crew Stadium",
+          "capacity": 22555,
+          "city": "Columbus",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-08-09",
+          "venueName": "The Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1150
+        },
+        {
+          "date": "2026-08-08",
+          "venueName": "The Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1150
+        },
+        {
+          "date": "2026-08-07",
+          "venueName": "PNE Forum",
+          "city": "Vancouver",
+          "country": "Canada",
+          "venueCapacity": 5050
+        },
+        {
+          "date": "2026-07-03",
+          "venueName": "Badlands Tent",
+          "city": "Calgary",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-06-27",
+          "venueName": "Double JJ Ranch",
+          "city": "Rothbury",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-06-13",
+          "venueName": "SPKRBX Stage",
+          "city": "Bridgeview",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-05-30",
+          "venueName": "Kraftwerk Berlin",
+          "city": "Berlin",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-05-02",
+          "venueName": "Brooklyn Storehouse",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-05-01",
+          "venueName": "Brooklyn Storehouse",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-04-04",
+          "venueName": "Cow Palace",
+          "city": "Daly City",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2026-04-03",
+          "venueName": "Cow Palace",
+          "city": "Daly City",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2026-03-28",
+          "venueName": "Bayfront Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-02-22",
+          "venueName": "Autódromo Hermanos Rodríguez",
+          "city": "Mexico City",
+          "country": "Mexico",
+          "venueCapacity": 110000
+        },
+        {
+          "date": "2026-01-01",
+          "venueName": "Hangzhou Steelworks Park",
+          "city": "Hangzhou",
+          "country": "China",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-12-20",
+          "venueName": "Phonox",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 450
+        },
+        {
+          "date": "2025-10-12",
+          "venueName": "Snapdragon Stadium",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": 35000
+        },
+        {
+          "date": "2025-10-11",
+          "venueName": "Snapdragon Stadium",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": 35000
+        },
+        {
+          "date": "2025-09-20",
+          "venueName": "Under the K Bridge Park",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-16",
+          "venueName": "Belknap Park",
+          "city": "Grand Rapids",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-03",
+          "venueName": "Parc Jean-Drapeau",
+          "city": "Montreal",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-01",
+          "venueName": "Perry's Stage",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-01",
+          "venueName": "Radius",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-11",
+          "venueName": "Boiler Room",
+          "city": "Calgary",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-31",
+          "venueName": "Historic Crew Stadium",
+          "city": "Columbus",
+          "country": "United States",
+          "venueCapacity": 22555
+        },
+        {
+          "date": "2025-04-25",
+          "venueName": "The Ostrich",
+          "city": "Cape Town",
+          "country": "South Africa",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-19",
+          "venueName": "Parque de la Ciudad",
+          "city": "Buenos Aires",
+          "country": "Argentina",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-18",
+          "venueName": "Multiespacio Costa 21",
+          "city": "Lima",
+          "country": "Peru",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-08-09",
+          "venueName": "The Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1150
+        },
+        {
+          "date": "2026-08-08",
+          "venueName": "The Showbox SoDo",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 1150
+        },
+        {
+          "date": "2026-08-07",
+          "venueName": "PNE Forum",
+          "city": "Vancouver",
+          "country": "Canada",
+          "venueCapacity": 5050
+        },
+        {
+          "date": "2026-07-03",
+          "venueName": "Badlands Tent",
+          "city": "Calgary",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-06-27",
+          "venueName": "Double JJ Ranch",
+          "city": "Rothbury",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-06-13",
+          "venueName": "SPKRBX Stage",
+          "city": "Bridgeview",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-05-30",
+          "venueName": "Kraftwerk Berlin",
+          "city": "Berlin",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-05-02",
+          "venueName": "Brooklyn Storehouse",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-05-01",
+          "venueName": "Brooklyn Storehouse",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-04-04",
+          "venueName": "Cow Palace",
+          "city": "Daly City",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2026-04-03",
+          "venueName": "Cow Palace",
+          "city": "Daly City",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2026-03-28",
+          "venueName": "Bayfront Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-02-22",
+          "venueName": "Autódromo Hermanos Rodríguez",
+          "city": "Mexico City",
+          "country": "Mexico",
+          "venueCapacity": 110000
+        },
+        {
+          "date": "2026-01-01",
+          "venueName": "Hangzhou Steelworks Park",
+          "city": "Hangzhou",
+          "country": "China",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-12-20",
+          "venueName": "Phonox",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": 450
+        },
+        {
+          "date": "2025-10-12",
+          "venueName": "Snapdragon Stadium",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": 35000
+        },
+        {
+          "date": "2025-10-11",
+          "venueName": "Snapdragon Stadium",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": 35000
+        },
+        {
+          "date": "2025-09-20",
+          "venueName": "Under the K Bridge Park",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-16",
+          "venueName": "Belknap Park",
+          "city": "Grand Rapids",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-03",
+          "venueName": "Parc Jean-Drapeau",
+          "city": "Montreal",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-01",
+          "venueName": "Perry's Stage",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-01",
+          "venueName": "Radius",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-11",
+          "venueName": "Boiler Room",
+          "city": "Calgary",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-31",
+          "venueName": "Historic Crew Stadium",
+          "city": "Columbus",
+          "country": "United States",
+          "venueCapacity": 22555
+        },
+        {
+          "date": "2025-04-25",
+          "venueName": "The Ostrich",
+          "city": "Cape Town",
+          "country": "South Africa",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-19",
+          "venueName": "Parque de la Ciudad",
+          "city": "Buenos Aires",
+          "country": "Argentina",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-18",
+          "venueName": "Multiespacio Costa 21",
+          "city": "Lima",
+          "country": "Peru",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-01-17",
+          "venueName": "First Avenue",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-12-30",
+          "venueName": "Colorado Convention Center",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": 3472
+        },
+        {
+          "date": "2024-12-29",
+          "venueName": "Dallas Market Hall",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-12-28",
+          "venueName": "Pennsylvania Convention Center",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 5040
+        },
+        {
+          "date": "2024-12-26",
+          "venueName": "Big Night Live",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-09-07",
+          "venueName": "Zouk",
+          "city": "Singapore",
+          "country": "Singapore",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-09-01",
+          "venueName": "Seatgeek Stadium",
+          "city": "Bridgeview",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2024-08-04",
+          "venueName": "Downsview Park",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-03",
+          "venueName": "Max Bell Centre Festival Grounds",
+          "city": "Calgary",
+          "country": "Canada",
+          "venueCapacity": 2121
+        },
+        {
+          "date": "2024-07-05",
+          "venueName": "Holland Park",
+          "city": "Surrey",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-29",
+          "venueName": "Allianz Field",
+          "city": "St. Paul",
+          "country": "United States",
+          "venueCapacity": 19400
+        },
+        {
+          "date": "2024-06-28",
+          "venueName": "Miller Lite Oasis",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-21",
+          "venueName": "Lansdowne Park",
+          "city": "Ottawa",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-14",
+          "venueName": "Great Stage Park",
+          "city": "Manchester",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-07",
+          "venueName": "Egg",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-06-05",
+          "venueName": "Upstairs",
+          "city": "Amsterdam",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-31",
+          "venueName": "Bootshaus",
+          "city": "Cologne",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-05-24",
+          "venueName": "Buena Vista Aquatic Recreational Area",
+          "city": "Bakersfield",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-20",
+          "venueName": "Empire Polo Club",
+          "city": "Indio",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-13",
+          "venueName": "Empire Polo Club",
+          "city": "Indio",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-25",
+          "venueName": "Autódromo Hermanos Rodríguez",
+          "city": "Mexico City",
+          "country": "Mexico",
+          "venueCapacity": 110000
+        },
+        {
+          "date": "2024-02-17",
+          "venueName": "Ogden Theatre",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": 1600
+        },
+        {
+          "date": "2024-02-01",
+          "venueName": "The Axis Club",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 618
+        },
+        {
+          "date": "2024-01-05",
+          "venueName": "The Trusts Arena",
+          "city": "Auckland",
+          "country": "New Zealand",
+          "venueCapacity": 4901
+        },
+        {
+          "date": "2024-01-01",
+          "venueName": "The Domain",
+          "city": "Sydney",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-30",
+          "venueName": "Waiohika Estate",
+          "city": "Gisborne",
+          "country": "New Zealand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-10",
+          "venueName": "Bangkok International Trade and Exhibition Centre",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": 43300
+        },
+        {
+          "date": "2023-12-08",
+          "venueName": "GWK Cultural Park",
+          "city": "Bali",
+          "country": "Indonesia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-11-22",
+          "venueName": "Shrine Exposition Hall",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 6300
+        },
+        {
+          "date": "2023-11-21",
+          "venueName": "Shrine Exposition Hall",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 6300
+        },
+        {
+          "date": "2023-11-19",
+          "venueName": "Shrine Exposition Hall",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 6300
+        },
+        {
+          "date": "2023-11-18",
+          "venueName": "Shrine Exposition Hall",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 6300
+        },
+        {
+          "date": "2023-10-27",
+          "venueName": "Spirit of the Suwannee Music Park",
+          "city": "Live Oak",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-10-19",
+          "venueName": "The Presidio Batteries",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-13",
+          "venueName": "Lands End",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-05",
+          "venueName": "Los Angeles Memorial Coliseum",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 77500
+        },
+        {
+          "date": "2023-06-24",
+          "venueName": "Double JJ Ranch",
+          "city": "Rothbury",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-05-20",
+          "venueName": "Forest Hills Stadium",
+          "city": "Queens",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-04-22",
+          "venueName": "Empire Polo Club",
+          "city": "Indio",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-25",
+          "venueName": "Bayfront Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-01-28",
+          "venueName": "The Republik",
+          "city": "Honolulu",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-12-31",
+          "venueName": "Pechanga Arena",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": 16100
+        },
+        {
+          "date": "2022-11-26",
+          "venueName": "The Fonda Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2022-11-25",
+          "venueName": "The Fonda Theatre",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2022-11-11",
+          "venueName": "The Miramar Theatre",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-22",
+          "venueName": "Aisle 5",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-21",
+          "venueName": "Republic NOLA",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-01",
+          "venueName": "Chop Shop",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-30",
+          "venueName": "Neumos",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-30",
+          "venueName": "National Orange Show Events Center",
+          "city": "San Bernardino",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-30",
+          "venueName": "National Orange Show Events Center",
+          "city": "San Bernardino",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-05-27",
+          "venueName": "Meow Wolf | Convergence Station",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-02",
+          "venueName": "RBC",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-03-18",
+          "venueName": "Music Hall of Williamsburg",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": 650
+        },
+        {
+          "date": "2022-03-12",
+          "venueName": "Cornerstone",
+          "city": "Berkeley",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-11-25",
+          "venueName": "Los Angeles State Historic Park",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-16",
+          "venueName": "Teragram Ballroom",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-02",
+          "venueName": "The Georgia Railroad Freight Depot",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-02-07",
+          "venueName": "The Ritz Ybor",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": 1114
+        }
+      ],
+      "countriesToured": 9,
+      "lastTourDate": "2026-08-09",
+      "managementType": "indie-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://www.knock2music.com/",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent activity is mostly remixes/alt versions (0 of 1 fully original), already touring — weak signal, not a genuine new release",
+        "27 shows in past 18 months across 9 countries",
+        "Returning after a 20-month gap, but recent activity is mostly remixes of other artists' work (0 of 1 original) — comeback signal is weak, worth verifying before reaching out",
+        "Average venue size 26,886 cap",
+        "dubstep — a neutral-fit genre",
+        "Independent label (Sable ValleyNightmodeDim Mak88rising) — reachable via label"
       ]
     }
   ]

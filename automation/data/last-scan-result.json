@@ -1,37 +1,21 @@
 {
-  "timestamp": "2026-08-03T16:12:48.328Z",
-  "candidatesProcessed": 67,
+  "timestamp": "2026-08-10T10:53:35.312Z",
+  "candidatesProcessed": 62,
   "candidatesWithRelease": 10,
-  "candidatesScored": 11,
+  "candidatesScored": 9,
   "newLeadsAdded": [
     {
-      "artist": "Isaia Huron",
-      "score": 85
+      "artist": "Fresh IE",
+      "score": 73
     },
     {
-      "artist": "Drake",
-      "score": 83
+      "artist": "Lucky Daye",
+      "score": 70
     },
     {
-      "artist": "OhSxnta",
-      "score": 82
-    },
-    {
-      "artist": "Last Heroes",
-      "score": 75
-    },
-    {
-      "artist": "Ilan Bluestone",
-      "score": 75
-    },
-    {
-      "artist": "Foushee",
-      "score": 63
-    },
-    {
-      "artist": "Fousheé",
-      "score": 61
+      "artist": "Isoxo",
+      "score": 60
     }
   ],
-  "totalLeadsNow": 45
+  "totalLeadsNow": 48
 }

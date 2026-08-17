@@ -98,5 +98,34 @@
       }
     ],
     "totalLeadsNow": 48
+  },
+  {
+    "timestamp": "2026-08-17T07:11:00.031Z",
+    "candidatesProcessed": 62,
+    "candidatesWithRelease": 12,
+    "candidatesScored": 11,
+    "newLeadsAdded": [
+      {
+        "artist": "Toosii",
+        "score": 74
+      },
+      {
+        "artist": "Ms Nina",
+        "score": 71
+      },
+      {
+        "artist": "PARIS The Prince",
+        "score": 69
+      },
+      {
+        "artist": "Monxx",
+        "score": 62
+      },
+      {
+        "artist": "Tynan",
+        "score": 60
+      }
+    ],
+    "totalLeadsNow": 53
   }
 ]

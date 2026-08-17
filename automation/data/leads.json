@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T10:53:35.277Z",
+  "generatedAt": "2026-08-17T07:11:00.002Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,14 +44,14 @@
       ]
     }
   },
-  "totalLeads": 48,
+  "totalLeads": 53,
   "stats": {
-    "avgScore": 73,
-    "medianScore": 70,
+    "avgScore": 72,
+    "medianScore": 69,
     "priorityBreakdown": {
       "immediate": 7,
-      "high": 17,
-      "qualified": 24
+      "high": 19,
+      "qualified": 27
     }
   },
   "leads": [
@@ -16945,6 +16945,530 @@
     },
     {
       "rank": 21,
+      "artist": "Toosii",
+      "firstSeen": "2026-08-17T07:11:00.002Z",
+      "spotifyId": null,
+      "deezerId": 12558830,
+      "mbid": "87d59d19-2615-4ada-853f-d552bf3b56e5",
+      "listeners": null,
+      "lastfmListeners": 366924,
+      "lastfmTags": [
+        "rap",
+        "hip hop",
+        "hip-hop",
+        "trap",
+        "melodic rap"
+      ],
+      "lastfmBio": "Nau'Jour Lazier Grainger (born January 9, 2000), better known by his stage name Toosii, is an American rapper and singer. He is known for songs such as “Pull Up (feat. 21 Savage)”, “Favorite Song”, “Champs Élysées (feat. Gunna)”, “Truth Be Told”, and “Love Cycle (with Summer Walker)”, and his debut studio album, Poetic Pain, which peaked at number 17 on the Billboard 200. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-07-29",
+      "releaseName": "Yesterday (Alternate Versions)",
+      "genre": "hip hop",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/a823c1874775cf811abe8e83cae56e91/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Yesterday (Alternate Versions)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/a61e4871abdc1ada9990b0e8a54d8e12/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-29",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 74,
+      "priority": "high",
+      "baseScore": 74,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 10,
+        "accessibility": 8,
+        "likelihood": 25,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 74,
+        "genreMultiplier": 1,
+        "finalScore": 74,
+        "comebackGapMonths": 17.082785808147175
+      },
+      "tourCount": 4,
+      "avgVenueSize": 16949,
+      "topVenues": [
+        {
+          "name": "Kia Center",
+          "capacity": 18846,
+          "city": "Orlando",
+          "country": "United States"
+        },
+        {
+          "name": "Colonial Life Arena",
+          "capacity": 18000,
+          "city": "Columbia",
+          "country": "United States"
+        },
+        {
+          "name": "CFG Bank Arena",
+          "capacity": 14000,
+          "city": "Baltimore",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-07-24",
+          "venueName": "Big Night Live",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-11",
+          "venueName": "Kia Center",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 18846
+        },
+        {
+          "date": "2025-10-08",
+          "venueName": "Colonial Life Arena",
+          "city": "Columbia",
+          "country": "United States",
+          "venueCapacity": 18000
+        },
+        {
+          "date": "2025-10-04",
+          "venueName": "CFG Bank Arena",
+          "city": "Baltimore",
+          "country": "United States",
+          "venueCapacity": 14000
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-07-24",
+          "venueName": "Big Night Live",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-11",
+          "venueName": "Kia Center",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 18846
+        },
+        {
+          "date": "2025-10-08",
+          "venueName": "Colonial Life Arena",
+          "city": "Columbia",
+          "country": "United States",
+          "venueCapacity": 18000
+        },
+        {
+          "date": "2025-10-04",
+          "venueName": "CFG Bank Arena",
+          "city": "Baltimore",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2024-12-17",
+          "venueName": "Kia Center",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 18846
+        },
+        {
+          "date": "2024-11-18",
+          "venueName": "United Center",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": 20917
+        },
+        {
+          "date": "2024-10-19",
+          "venueName": "Desert Diamond Arena",
+          "city": "Glendale",
+          "country": "United States",
+          "venueCapacity": 19000
+        },
+        {
+          "date": "2024-06-21",
+          "venueName": "Miller Lite Oasis",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-18",
+          "venueName": "Vystar Veterans Memorial Arena",
+          "city": "Jacksonville",
+          "country": "United States",
+          "venueCapacity": 15000
+        },
+        {
+          "date": "2023-12-15",
+          "venueName": "Amway Center",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 18846
+        },
+        {
+          "date": "2023-12-13",
+          "venueName": "State Farm Arena",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": 20233
+        },
+        {
+          "date": "2023-12-12",
+          "venueName": "Smoothie King Center",
+          "city": "New Orleans",
+          "country": "United States",
+          "venueCapacity": 17971
+        },
+        {
+          "date": "2023-12-10",
+          "venueName": "Moody Center",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": 16223
+        },
+        {
+          "date": "2023-12-09",
+          "venueName": "Dickies Arena",
+          "city": "Fort Worth",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2023-12-05",
+          "venueName": "Desert Diamond Arena",
+          "city": "Glendale",
+          "country": "United States",
+          "venueCapacity": 19000
+        },
+        {
+          "date": "2023-11-30",
+          "venueName": "Oakland Arena",
+          "city": "Oakland",
+          "country": "United States",
+          "venueCapacity": 19596
+        },
+        {
+          "date": "2023-11-29",
+          "venueName": "Kia Forum",
+          "city": "Inglewood",
+          "country": "United States",
+          "venueCapacity": 17500
+        },
+        {
+          "date": "2023-11-24",
+          "venueName": "Paycom Center",
+          "city": "Oklahoma City",
+          "country": "United States",
+          "venueCapacity": 18203
+        },
+        {
+          "date": "2023-11-22",
+          "venueName": "United Center",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": 20917
+        },
+        {
+          "date": "2023-11-16",
+          "venueName": "Bridgestone Arena",
+          "city": "Nashville",
+          "country": "United States",
+          "venueCapacity": 18500
+        },
+        {
+          "date": "2023-11-15",
+          "venueName": "Spectrum Center",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": 19444
+        },
+        {
+          "date": "2023-11-14",
+          "venueName": "PNC Arena",
+          "city": "Raleigh",
+          "country": "United States",
+          "venueCapacity": 19772
+        },
+        {
+          "date": "2023-11-12",
+          "venueName": "Capital One Arena",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 20356
+        },
+        {
+          "date": "2023-11-09",
+          "venueName": "Wells Fargo Center",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-11-08",
+          "venueName": "TD Garden",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": 18624
+        },
+        {
+          "date": "2023-11-07",
+          "venueName": "MVP Arena",
+          "city": "Albany",
+          "country": "United States",
+          "venueCapacity": 15357
+        },
+        {
+          "date": "2023-11-04",
+          "venueName": "CFG Bank Arena",
+          "city": "Baltimore",
+          "country": "United States",
+          "venueCapacity": 14000
+        },
+        {
+          "date": "2023-11-02",
+          "venueName": "Scotiabank Arena",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 19800
+        },
+        {
+          "date": "2023-10-27",
+          "venueName": "Little Caesars Arena",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": 20332
+        },
+        {
+          "date": "2023-10-24",
+          "venueName": "Gainbridge Fieldhouse",
+          "city": "Indianapolis",
+          "country": "United States",
+          "venueCapacity": 17274
+        },
+        {
+          "date": "2023-10-21",
+          "venueName": "Fiserv Forum",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": 17385
+        },
+        {
+          "date": "2023-10-20",
+          "venueName": "Xcel Energy Center",
+          "city": "St. Paul",
+          "country": "United States",
+          "venueCapacity": 18064
+        },
+        {
+          "date": "2023-08-26",
+          "venueName": "Rocket Mortgage FieldHouse",
+          "city": "Cleveland",
+          "country": "United States",
+          "venueCapacity": 19432
+        },
+        {
+          "date": "2023-08-24",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-22",
+          "venueName": "The Fillmore Philadelphia",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2023-07-21",
+          "venueName": "Hard Rock Stadium",
+          "city": "Miami Gardens",
+          "country": "United States",
+          "venueCapacity": 64767
+        },
+        {
+          "date": "2023-06-19",
+          "venueName": "Good Morning America",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-04-01",
+          "venueName": "Dorothea Dix Park",
+          "city": "Raleigh",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-05",
+          "venueName": "SoFi Stadium",
+          "city": "Inglewood",
+          "country": "United States",
+          "venueCapacity": 70240
+        },
+        {
+          "date": "2022-12-21",
+          "venueName": "Climate Pledge Arena",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": 18300
+        },
+        {
+          "date": "2022-12-01",
+          "venueName": "State Farm Arena",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": 20233
+        },
+        {
+          "date": "2022-11-26",
+          "venueName": "FirstOntario Centre",
+          "city": "Hamilton",
+          "country": "Canada",
+          "venueCapacity": 16386
+        },
+        {
+          "date": "2022-11-19",
+          "venueName": "Fiserv Forum",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": 17385
+        },
+        {
+          "date": "2022-11-13",
+          "venueName": "BOK Center",
+          "city": "Tulsa",
+          "country": "United States",
+          "venueCapacity": 19199
+        },
+        {
+          "date": "2022-11-11",
+          "venueName": "Target Center",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": 18798
+        },
+        {
+          "date": "2022-08-19",
+          "venueName": "Vystar Veterans Memorial Arena",
+          "city": "Jacksonville",
+          "country": "United States",
+          "venueCapacity": 15000
+        },
+        {
+          "date": "2022-07-23",
+          "venueName": "Hard Rock Stadium",
+          "city": "Miami Gardens",
+          "country": "United States",
+          "venueCapacity": 64767
+        },
+        {
+          "date": "2021-12-11",
+          "venueName": "National Orange Show Events Center",
+          "city": "San Bernardino",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-11-13",
+          "venueName": "Las Vegas Festival Grounds",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": 85000
+        },
+        {
+          "date": "2021-10-21",
+          "venueName": "Jannus Live",
+          "city": "St. Petersburg",
+          "country": "United States",
+          "venueCapacity": 2000
+        },
+        {
+          "date": "2021-10-10",
+          "venueName": "Zilker Park",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-10-03",
+          "venueName": "Zilker Park",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-08-01",
+          "venueName": "Grant Park",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-07-23",
+          "venueName": "Hard Rock Stadium",
+          "city": "Miami Gardens",
+          "country": "United States",
+          "venueCapacity": 64767
+        },
+        {
+          "date": "2020-02-19",
+          "venueName": "Grossinger Motors Arena",
+          "city": "Bloomington",
+          "country": "United States",
+          "venueCapacity": 7000
+        }
+      ],
+      "countriesToured": 1,
+      "lastTourDate": "2026-07-24",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://toosii2x.com/",
+      "socialLinks": {
+        "instagram": "https://instagram.com/toosii",
+        "twitter": "https://twitter.com/toosii2x",
+        "tiktok": "https://tiktok.com/@toosii",
+        "youtube": "https://youtube.com/channel/UCUtmzHuW43bFbUP-Xl0TTKA",
+        "facebook": "https://facebook.com/Toosii2x"
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-07-29), already touring",
+        "4 shows in past 18 months across 1 country",
+        "Returning after a 17-month gap with strong new original material — comeback signal is solid",
+        "Average venue size 16,949 cap",
+        "hip hop — a neutral-fit genre",
+        "Major label (South Coast Music GroupCapitol) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 22,
       "artist": "Fresh IE",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -17026,7 +17550,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 23,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -17391,7 +17915,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -17469,7 +17993,414 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 25,
+      "artist": "Ms Nina",
+      "firstSeen": "2026-08-17T07:11:00.002Z",
+      "spotifyId": null,
+      "deezerId": 223925505,
+      "mbid": "259ae350-462f-4779-a45c-a6f3472878f5",
+      "listeners": null,
+      "lastfmListeners": 144721,
+      "lastfmTags": [
+        "neoperreo",
+        "argentina",
+        "reggaeton",
+        "latin",
+        "spanish"
+      ],
+      "lastfmBio": "Jorgelina Andrea Del Valle Torres, known artistically as Ms Nina, is an Argentine singer and exponent of reggaeton and trap.\n\nMusically active since 2015, thanks to her involvement with the internet, where she made collages of models and characters that marked her, with a baroque style with a lot of influence from the 90s combined with 'chonism', a little pink, 'glitter 'and glitter.\n\nMs Nina is one of the representatives of current trap music. In 2015 he released his first hit “Chupa Chupa” with the collaboration of Chico Sonido Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-06-26",
+      "releaseName": "Chupa (Feat. Ms Nina)",
+      "genre": "neoperreo",
+      "genreTier": 3,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Chupa (Feat. Ms Nina)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/b37eae739854e4ee3483d6b4e836e4ce/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 71,
+      "priority": "high",
+      "baseScore": 75,
+      "genreMultiplier": 0.95,
+      "scoring": {
+        "touring": 15,
+        "listeners": 15,
+        "accessibility": 14,
+        "likelihood": 25,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 75,
+        "genreMultiplier": 0.95,
+        "finalScore": 71,
+        "comebackGapMonths": 13.994743758212877
+      },
+      "tourCount": 2,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [
+        {
+          "date": "2025-10-12",
+          "venueName": "Parque O'Higgins",
+          "city": "Santiago",
+          "country": "Chile",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-19",
+          "venueName": "IFEMA",
+          "city": "Madrid",
+          "country": "Spain",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2025-10-12",
+          "venueName": "Parque O'Higgins",
+          "city": "Santiago",
+          "country": "Chile",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-19",
+          "venueName": "IFEMA",
+          "city": "Madrid",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-20",
+          "venueName": "Oasis La Calle",
+          "city": "San Pedro",
+          "country": "Costa Rica",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-06",
+          "venueName": "Presqu'île de Malsaucy",
+          "city": "Belfort",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-29",
+          "venueName": "Parque Fundidora",
+          "city": "Monterrey",
+          "country": "Mexico",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-20",
+          "venueName": "Badaboum",
+          "city": "Paris",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-18",
+          "venueName": "La Rotonde",
+          "city": "Sint-Joost-ten-Noode / Saint-Josse-ten-Noode",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-01-27",
+          "venueName": "Cineclube Cortina",
+          "city": "São Paulo",
+          "country": "Brazil",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-11",
+          "venueName": "Dolores'",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-14",
+          "venueName": "Avinguda de la Reina Maria Cristina",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-06-17",
+          "venueName": "Pabellón Sopladores",
+          "city": "Monterrey",
+          "country": "Mexico",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-04-22",
+          "venueName": "Complejo Embrujo",
+          "city": "Las Gabias",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-02-19",
+          "venueName": "Escenario Paraguay",
+          "city": "Santa Maria de Punilla",
+          "country": "Argentina",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-02-17",
+          "venueName": "Club Paraguay",
+          "city": "Córdoba",
+          "country": "Argentina",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-12-08",
+          "venueName": "Movistar Arena",
+          "city": "Santiago",
+          "country": "Chile",
+          "venueCapacity": 12000
+        },
+        {
+          "date": "2022-10-01",
+          "venueName": "Parc del Fòrum",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-22",
+          "venueName": "Playa de la Hierbabuena",
+          "city": "Barbate",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-07",
+          "venueName": "Plaza de los Fueros",
+          "city": "Pamplona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-01",
+          "venueName": "Plaza del Cardenal Cascajares",
+          "city": "Calahorra",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-06-16",
+          "venueName": "Fira Montjuïc",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-05-24",
+          "venueName": "La Rotonde",
+          "city": "Sint-Joost-ten-Noode / Saint-Josse-ten-Noode",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-30",
+          "venueName": "Las Vegas Festival Grounds",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": 85000
+        },
+        {
+          "date": "2022-04-07",
+          "venueName": "Songbyrd Music House",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-02-05",
+          "venueName": "MusicBox",
+          "city": "Lisbon",
+          "country": "Portugal",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-09-19",
+          "venueName": "Centre de Cultura Contemporània de Barcelona",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-15",
+          "venueName": "Boogaloop",
+          "city": "Bogota",
+          "country": "Colombia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-25",
+          "venueName": "Uebel & Gefährlich",
+          "city": "Hamburg",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-06",
+          "venueName": "Oude Zaal",
+          "city": "Amsterdam",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-04",
+          "venueName": "Praza do Corgo",
+          "city": "O Grove",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-13",
+          "venueName": "Hipódromo de San Sebastián",
+          "city": "San Sebastian",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-08-14",
+          "venueName": "Espacio 335",
+          "city": "Santiago",
+          "country": "Chile",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-08-03",
+          "venueName": "Playa El Arenal",
+          "city": "Burriana",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-07-26",
+          "venueName": "Puerto de Barbate",
+          "city": "Barbate",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-07-11",
+          "venueName": "Kobetamendi",
+          "city": "Bilbao",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-06-29",
+          "venueName": "La [2] de Apolo",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-25",
+          "venueName": "Institución Ferial Alicantina",
+          "city": "Elche",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-04-18",
+          "venueName": "Quality Espacio",
+          "city": "Córdoba",
+          "country": "Argentina",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-12-06",
+          "venueName": "MusicBox",
+          "city": "Lisbon",
+          "country": "Portugal",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-06-29",
+          "venueName": "Avinguda de la Reina Maria Cristina",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-05-04",
+          "venueName": "Recinto Ferial de la Fica",
+          "city": "Murcia",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-02-16",
+          "venueName": "Fabra i Coats",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-10-13",
+          "venueName": "Teatro Alameda",
+          "city": "Seville",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-10-08",
+          "venueName": "Parking Norte del Expo",
+          "city": "Zaragoza",
+          "country": "Spain",
+          "venueCapacity": 20000
+        }
+      ],
+      "countriesToured": 2,
+      "lastTourDate": "2025-10-12",
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-06-26), already touring",
+        "2 shows in past 18 months across 2 countries",
+        "Returning after a 14-month gap with strong new original material — comeback signal is solid",
+        "Venue size unknown (no capacity data)",
+        "neoperreo — a lower-preference genre",
+        "Management contact not found — accessibility unverified"
+      ]
+    },
+    {
+      "rank": 26,
       "artist": "Lucky Daye",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -19650,7 +20581,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 27,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -19734,7 +20665,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 28,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -19818,7 +20749,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 29,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -21388,7 +22319,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 30,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -21465,7 +22396,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 31,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -21551,7 +22482,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 32,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -21635,7 +22566,95 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 33,
+      "artist": "PARIS The Prince",
+      "firstSeen": "2026-08-17T07:11:00.002Z",
+      "spotifyId": null,
+      "deezerId": 94293372,
+      "mbid": "75d43ad8-406f-4c54-89eb-15ad85d96064",
+      "listeners": null,
+      "lastfmListeners": 64862,
+      "lastfmTags": [
+        "indie",
+        "hip-hop",
+        "rnb",
+        "indie pop",
+        "bedroom pop"
+      ],
+      "lastfmBio": "Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": false,
+      "releaseDate": "2026-08-12",
+      "releaseName": "Glowing In The Dark",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/064ecc1a5197e89dc8314ee813b73269/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Glowing In The Dark",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/54d1e7e36aace7a961b8fc87c3247cf2/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-12",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 69,
+      "priority": "qualified",
+      "baseScore": 69,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 13,
+        "listeners": 15,
+        "accessibility": 14,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 69,
+        "genreMultiplier": 1,
+        "finalScore": 69,
+        "comebackGapMonths": null
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": "https://www.instagram.com/parisjackson/",
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-08-12) with no announced tour",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "Management contact not found — accessibility unverified"
+      ]
+    },
+    {
+      "rank": 34,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -22978,7 +23997,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 35,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -23456,7 +24475,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 36,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -23754,7 +24773,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 37,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -25084,7 +26103,7 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 38,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -25161,7 +26180,7 @@
       ]
     },
     {
-      "rank": 36,
+      "rank": 39,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -25239,7 +26258,7 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 40,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -25323,7 +26342,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 41,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -25405,7 +26424,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 42,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -28328,7 +29347,7 @@
       ]
     },
     {
-      "rank": 40,
+      "rank": 43,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -28461,7 +29480,7 @@
       ]
     },
     {
-      "rank": 41,
+      "rank": 44,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -28762,7 +29781,7 @@
       ]
     },
     {
-      "rank": 42,
+      "rank": 45,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -28914,7 +29933,180 @@
       ]
     },
     {
-      "rank": 43,
+      "rank": 46,
+      "artist": "Monxx",
+      "firstSeen": "2026-08-17T07:11:00.002Z",
+      "spotifyId": null,
+      "deezerId": 2258161,
+      "mbid": "e42de0fc-d48b-4e39-9f07-c2e410a76bfb",
+      "listeners": null,
+      "lastfmListeners": 37144,
+      "lastfmTags": [
+        "dubstep",
+        "riddim",
+        "good",
+        "electronic",
+        "wonk"
+      ],
+      "lastfmBio": "MONXX, real name Josh Carling, is a Dubstep/Drum & Bass/ Hip Hop/ Grime/ Electro/ Bassline producer from the UK, based in California.\nHe use Fruity Loops and started off just Grime beats, but after a while started listening to different genres and decided to start making different stuff. He produces everything ranging from Dubstep, Drum & Bass, Hip Hop, Bassline & Electro. \n Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-07-31",
+      "releaseName": "GASLIGHT",
+      "genre": "dubstep",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/65ab224490612e47f790d1e046f43af4/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "GASLIGHT",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/a58b73038580ad07644409d077a134a5/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-31",
+          "releaseType": "single"
+        },
+        {
+          "name": "OLD BUT GOLD MINIMIX",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/0eb6b650520459c8a07585bda7f4760e/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-10",
+          "releaseType": "ep"
+        },
+        {
+          "name": "DUCK DUB",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/2292df931566f0ba37a922f6ff998517/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-19",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 3,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 62,
+      "priority": "qualified",
+      "baseScore": 62,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 2,
+        "listeners": 15,
+        "accessibility": 18,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 62,
+        "genreMultiplier": 1,
+        "finalScore": 62,
+        "comebackGapMonths": 14.060446780551905
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [
+        {
+          "date": "2022-11-26",
+          "venueName": "Club Vinyl",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-09-24",
+          "venueName": "Legend Valley Concert Venue and Campground",
+          "city": "Thornville",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2020-01-01",
+          "venueName": "Wellington Square",
+          "city": "Perth",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-07-05",
+          "venueName": "The Ritz Ybor",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": 1114
+        },
+        {
+          "date": "2019-01-19",
+          "venueName": "Club Soda",
+          "city": "Montreal",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-10-05",
+          "venueName": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "country": "United States",
+          "venueCapacity": 9525
+        },
+        {
+          "date": "2018-06-23",
+          "venueName": "The Bomb Factory",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": 1000
+        },
+        {
+          "date": "2018-03-10",
+          "venueName": "The Fillmore Philadelphia",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2018-02-15",
+          "venueName": "Egyptian Room at Old National Centre",
+          "city": "Indianapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-02-03",
+          "venueName": "1st Bank Center",
+          "city": "Broomfield",
+          "country": "United States",
+          "venueCapacity": 6500
+        }
+      ],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "indie-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://www.herobust.com/",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-07-31) with no announced tour",
+        "No tour history in the last 18 months",
+        "Returning after a 14-month gap with strong new original material — comeback signal is solid",
+        "Venue size unknown (no capacity data)",
+        "dubstep — a neutral-fit genre",
+        "Independent label (BustedMad DecentOWSLANever Say DieSATURATE!) — reachable via label"
+      ]
+    },
+    {
+      "rank": 47,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -30069,7 +31261,7 @@
       ]
     },
     {
-      "rank": 44,
+      "rank": 48,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -31981,7 +33173,7 @@
       ]
     },
     {
-      "rank": 45,
+      "rank": 49,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -32491,7 +33683,7 @@
       ]
     },
     {
-      "rank": 46,
+      "rank": 50,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -35247,7 +36439,7 @@
       ]
     },
     {
-      "rank": 47,
+      "rank": 51,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -35737,7 +36929,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 52,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -36636,6 +37828,297 @@
         "Average venue size 26,886 cap",
         "dubstep — a neutral-fit genre",
         "Independent label (Sable ValleyNightmodeDim Mak88rising) — reachable via label"
+      ]
+    },
+    {
+      "rank": 53,
+      "artist": "Tynan",
+      "firstSeen": "2026-08-17T07:11:00.002Z",
+      "spotifyId": null,
+      "deezerId": 5024588,
+      "mbid": "215ebb0d-b4e3-4487-af3f-81ffc38a2d33",
+      "listeners": null,
+      "lastfmListeners": 40915,
+      "lastfmTags": [
+        "dubstep",
+        "trap",
+        "usa",
+        "electronic",
+        "edm"
+      ],
+      "lastfmBio": "With electronic music continuing to grow and expand, standing out may seem like a difficult task for an artist. For TYNAN, standing out has always been a part of who he is. TYNAN has been producing the Dark Trap style sounds that have been blown up on the internet. Nothing is too weird or too unusual when it comes to his sound of music, generally that is just what he ends up with. He is a weird guy, who has found a way to express who he is while connecting with many others who can relate to him through his music. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": false,
+      "releaseDate": "2026-08-07",
+      "releaseName": "TYNAN TIME - THE REMIXES",
+      "genre": "trap edm",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/08d9632c9084c21a999d38d7ac79fbe4/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "TYNAN TIME - THE REMIXES",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/08d9632c9084c21a999d38d7ac79fbe4/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-07",
+          "releaseType": "album"
+        },
+        {
+          "name": "THE GIRLS ARE MAKING RIDDIM (feat. Tweenkboosiechase) [TYNAN Remix]",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/f5ddb8cb160340cd199ddc1a238b5d72/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-07-16",
+          "releaseType": "single"
+        },
+        {
+          "name": "NO BAD PARTS",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/64e67c0e9fbb7bee8ae84420506055bc/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-06-26",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 2,
+      "releaseQualityScore": 0.43333333333333335,
+      "finalScore": 60,
+      "priority": "qualified",
+      "baseScore": 60,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 15,
+        "listeners": 10,
+        "accessibility": 14,
+        "likelihood": 15,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 60,
+        "genreMultiplier": 1,
+        "finalScore": 60,
+        "comebackGapMonths": 13.107752956636006
+      },
+      "tourCount": 1,
+      "avgVenueSize": 10213,
+      "topVenues": [
+        {
+          "name": "Legend Valley Concert Venue and Campground",
+          "capacity": 20000,
+          "city": "Thornville",
+          "country": "United States"
+        },
+        {
+          "name": "Red Rocks Amphitheatre",
+          "capacity": 9525,
+          "city": "Morrison",
+          "country": "United States"
+        },
+        {
+          "name": "The Ritz Ybor",
+          "capacity": 1114,
+          "city": "Tampa",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-06-14",
+          "venueName": "Meow Wolf",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-06-06",
+          "venueName": "The Ritz Ybor",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": 1114
+        },
+        {
+          "date": "2026-05-08",
+          "venueName": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "country": "United States",
+          "venueCapacity": 9525
+        },
+        {
+          "date": "2025-11-22",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-20",
+          "venueName": "Legend Valley Concert Venue and Campground",
+          "city": "Thornville",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2025-04-18",
+          "venueName": "The Aquarium",
+          "city": "Fargo",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-06-14",
+          "venueName": "Meow Wolf",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-06-06",
+          "venueName": "The Ritz Ybor",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": 1114
+        },
+        {
+          "date": "2026-05-08",
+          "venueName": "Red Rocks Amphitheatre",
+          "city": "Morrison",
+          "country": "United States",
+          "venueCapacity": 9525
+        },
+        {
+          "date": "2025-11-22",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-09-20",
+          "venueName": "Legend Valley Concert Venue and Campground",
+          "city": "Thornville",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2025-04-18",
+          "venueName": "The Aquarium",
+          "city": "Fargo",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-15",
+          "venueName": "SideQuest on 44th",
+          "city": "Pittsburgh",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-01-28",
+          "venueName": "Club Vinyl",
+          "city": "Denver",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-22",
+          "venueName": "The Axis Club",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 618
+        },
+        {
+          "date": "2021-07-31",
+          "venueName": "National Orange Show Events Center",
+          "city": "San Bernardino",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-21",
+          "venueName": "Rex Theater",
+          "city": "Pittsburgh",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-10-05",
+          "venueName": "Mulberry Mountain",
+          "city": "Ozark",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-09-29",
+          "venueName": "Legend Valley Concert Venue and Campground",
+          "city": "Thornville",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2019-09-14",
+          "venueName": "Minecraft",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-06-22",
+          "venueName": "Temple of Bass",
+          "city": "Ottawa",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-25",
+          "venueName": "Travis County Expo Center",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": 6400
+        },
+        {
+          "date": "2019-04-26",
+          "venueName": "The Ritz Ybor",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": 1114
+        },
+        {
+          "date": "2019-02-17",
+          "venueName": "Sunset Cove Amphitheater",
+          "city": "Boca Raton",
+          "country": "United States",
+          "venueCapacity": 20000
+        }
+      ],
+      "countriesToured": 2,
+      "lastTourDate": "2026-06-14",
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent releases are a mix of original and remix/alt-version work (1 of 3 fully original), already touring",
+        "6 shows in past 18 months across 2 countries",
+        "Returning after a 13-month gap with a mix of original and remix/alt-version releases (1 of 3 fully original) — comeback signal is genuine but uncertain",
+        "Average venue size 10,213 cap",
+        "trap edm — a neutral-fit genre",
+        "Management contact not found — accessibility unverified"
       ]
     }
   ]

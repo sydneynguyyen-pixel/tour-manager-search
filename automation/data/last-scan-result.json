@@ -1,21 +1,29 @@
 {
-  "timestamp": "2026-08-10T10:53:35.312Z",
+  "timestamp": "2026-08-17T07:11:00.031Z",
   "candidatesProcessed": 62,
-  "candidatesWithRelease": 10,
-  "candidatesScored": 9,
+  "candidatesWithRelease": 12,
+  "candidatesScored": 11,
   "newLeadsAdded": [
     {
-      "artist": "Fresh IE",
-      "score": 73
+      "artist": "Toosii",
+      "score": 74
     },
     {
-      "artist": "Lucky Daye",
-      "score": 70
+      "artist": "Ms Nina",
+      "score": 71
     },
     {
-      "artist": "Isoxo",
+      "artist": "PARIS The Prince",
+      "score": 69
+    },
+    {
+      "artist": "Monxx",
+      "score": 62
+    },
+    {
+      "artist": "Tynan",
       "score": 60
     }
   ],
-  "totalLeadsNow": 48
+  "totalLeadsNow": 53
 }

@@ -127,5 +127,34 @@
       }
     ],
     "totalLeadsNow": 53
+  },
+  {
+    "timestamp": "2026-08-24T07:14:38.408Z",
+    "candidatesProcessed": 62,
+    "candidatesWithRelease": 12,
+    "candidatesScored": 12,
+    "newLeadsAdded": [
+      {
+        "artist": "Greek",
+        "score": 85
+      },
+      {
+        "artist": "Quix",
+        "score": 79
+      },
+      {
+        "artist": "Yung Kai",
+        "score": 75
+      },
+      {
+        "artist": "Griff.",
+        "score": 69
+      },
+      {
+        "artist": "GorillaT",
+        "score": 67
+      }
+    ],
+    "totalLeadsNow": 58
   }
 ]

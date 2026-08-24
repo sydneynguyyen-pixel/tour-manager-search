@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-08-17T07:11:00.031Z",
+  "timestamp": "2026-08-24T07:14:38.408Z",
   "candidatesProcessed": 62,
   "candidatesWithRelease": 12,
-  "candidatesScored": 11,
+  "candidatesScored": 12,
   "newLeadsAdded": [
     {
-      "artist": "Toosii",
-      "score": 74
+      "artist": "Greek",
+      "score": 85
     },
     {
-      "artist": "Ms Nina",
-      "score": 71
+      "artist": "Quix",
+      "score": 79
     },
     {
-      "artist": "PARIS The Prince",
+      "artist": "Yung Kai",
+      "score": 75
+    },
+    {
+      "artist": "Griff.",
       "score": 69
     },
     {
-      "artist": "Monxx",
-      "score": 62
-    },
-    {
-      "artist": "Tynan",
-      "score": 60
+      "artist": "GorillaT",
+      "score": 67
     }
   ],
-  "totalLeadsNow": 53
+  "totalLeadsNow": 58
 }

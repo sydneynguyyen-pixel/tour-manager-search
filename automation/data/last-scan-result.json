@@ -1,29 +1,25 @@
 {
-  "timestamp": "2026-08-24T07:14:38.408Z",
-  "candidatesProcessed": 62,
+  "timestamp": "2026-08-31T13:28:47.540Z",
+  "candidatesProcessed": 57,
   "candidatesWithRelease": 12,
-  "candidatesScored": 12,
+  "candidatesScored": 11,
   "newLeadsAdded": [
     {
-      "artist": "Greek",
-      "score": 85
+      "artist": "Roy Woods",
+      "score": 100
     },
     {
-      "artist": "Quix",
+      "artist": "SAINt JHN",
       "score": 79
     },
     {
-      "artist": "Yung Kai",
-      "score": 75
+      "artist": "Declan McKenna",
+      "score": 64
     },
     {
-      "artist": "Griff.",
-      "score": 69
-    },
-    {
-      "artist": "GorillaT",
-      "score": 67
+      "artist": "Griff",
+      "score": 61
     }
   ],
-  "totalLeadsNow": 58
+  "totalLeadsNow": 62
 }

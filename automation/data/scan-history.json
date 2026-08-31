@@ -156,5 +156,30 @@
       }
     ],
     "totalLeadsNow": 58
+  },
+  {
+    "timestamp": "2026-08-31T13:28:47.540Z",
+    "candidatesProcessed": 57,
+    "candidatesWithRelease": 12,
+    "candidatesScored": 11,
+    "newLeadsAdded": [
+      {
+        "artist": "Roy Woods",
+        "score": 100
+      },
+      {
+        "artist": "SAINt JHN",
+        "score": 79
+      },
+      {
+        "artist": "Declan McKenna",
+        "score": 64
+      },
+      {
+        "artist": "Griff",
+        "score": 61
+      }
+    ],
+    "totalLeadsNow": 62
   }
 ]

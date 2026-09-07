@@ -181,5 +181,26 @@
       }
     ],
     "totalLeadsNow": 62
+  },
+  {
+    "timestamp": "2026-09-07T12:17:55.530Z",
+    "candidatesProcessed": 52,
+    "candidatesWithRelease": 8,
+    "candidatesScored": 8,
+    "newLeadsAdded": [
+      {
+        "artist": "The Rose",
+        "score": 83
+      },
+      {
+        "artist": "Hippocampus",
+        "score": 69
+      },
+      {
+        "artist": "Destroy Lonely",
+        "score": 60
+      }
+    ],
+    "totalLeadsNow": 65
   }
 ]

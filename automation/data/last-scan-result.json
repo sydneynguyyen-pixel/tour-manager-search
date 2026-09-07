@@ -1,25 +1,21 @@
 {
-  "timestamp": "2026-08-31T13:28:47.540Z",
-  "candidatesProcessed": 57,
-  "candidatesWithRelease": 12,
-  "candidatesScored": 11,
+  "timestamp": "2026-09-07T12:17:55.530Z",
+  "candidatesProcessed": 52,
+  "candidatesWithRelease": 8,
+  "candidatesScored": 8,
   "newLeadsAdded": [
     {
-      "artist": "Roy Woods",
-      "score": 100
+      "artist": "The Rose",
+      "score": 83
     },
     {
-      "artist": "SAINt JHN",
-      "score": 79
+      "artist": "Hippocampus",
+      "score": 69
     },
     {
-      "artist": "Declan McKenna",
-      "score": 64
-    },
-    {
-      "artist": "Griff",
-      "score": 61
+      "artist": "Destroy Lonely",
+      "score": 60
     }
   ],
-  "totalLeadsNow": 62
+  "totalLeadsNow": 65
 }

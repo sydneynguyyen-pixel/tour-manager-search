@@ -1,21 +1,25 @@
 {
-  "timestamp": "2026-09-07T12:17:55.530Z",
-  "candidatesProcessed": 52,
-  "candidatesWithRelease": 8,
-  "candidatesScored": 8,
+  "timestamp": "2026-09-14T12:36:35.990Z",
+  "candidatesProcessed": 53,
+  "candidatesWithRelease": 12,
+  "candidatesScored": 10,
   "newLeadsAdded": [
     {
-      "artist": "The Rose",
-      "score": 83
+      "artist": "Baauer",
+      "score": 89
     },
     {
-      "artist": "Hippocampus",
-      "score": 69
+      "artist": "Just a Gent",
+      "score": 75
     },
     {
-      "artist": "Destroy Lonely",
-      "score": 60
+      "artist": "Ty Dolla $ign",
+      "score": 71
+    },
+    {
+      "artist": "Jensen McRae",
+      "score": 67
     }
   ],
-  "totalLeadsNow": 65
+  "totalLeadsNow": 69
 }

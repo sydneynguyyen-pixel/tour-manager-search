@@ -202,5 +202,30 @@
       }
     ],
     "totalLeadsNow": 65
+  },
+  {
+    "timestamp": "2026-09-14T12:36:35.990Z",
+    "candidatesProcessed": 53,
+    "candidatesWithRelease": 12,
+    "candidatesScored": 10,
+    "newLeadsAdded": [
+      {
+        "artist": "Baauer",
+        "score": 89
+      },
+      {
+        "artist": "Just a Gent",
+        "score": 75
+      },
+      {
+        "artist": "Ty Dolla $ign",
+        "score": 71
+      },
+      {
+        "artist": "Jensen McRae",
+        "score": 67
+      }
+    ],
+    "totalLeadsNow": 69
   }
 ]

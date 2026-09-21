@@ -1,25 +1,17 @@
 {
-  "timestamp": "2026-09-14T12:36:35.990Z",
-  "candidatesProcessed": 53,
-  "candidatesWithRelease": 12,
-  "candidatesScored": 10,
+  "timestamp": "2026-09-21T12:34:09.109Z",
+  "candidatesProcessed": 50,
+  "candidatesWithRelease": 6,
+  "candidatesScored": 5,
   "newLeadsAdded": [
     {
-      "artist": "Baauer",
-      "score": 89
+      "artist": "Fridayy",
+      "score": 60
     },
     {
-      "artist": "Just a Gent",
-      "score": 75
-    },
-    {
-      "artist": "Ty Dolla $ign",
-      "score": 71
-    },
-    {
-      "artist": "Jensen McRae",
-      "score": 67
+      "artist": "Ken Carson",
+      "score": 60
     }
   ],
-  "totalLeadsNow": 69
+  "totalLeadsNow": 71
 }

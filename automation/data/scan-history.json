@@ -227,5 +227,22 @@
       }
     ],
     "totalLeadsNow": 69
+  },
+  {
+    "timestamp": "2026-09-21T12:34:09.109Z",
+    "candidatesProcessed": 50,
+    "candidatesWithRelease": 6,
+    "candidatesScored": 5,
+    "newLeadsAdded": [
+      {
+        "artist": "Fridayy",
+        "score": 60
+      },
+      {
+        "artist": "Ken Carson",
+        "score": 60
+      }
+    ],
+    "totalLeadsNow": 71
   }
 ]

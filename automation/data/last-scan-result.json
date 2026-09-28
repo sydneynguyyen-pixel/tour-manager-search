@@ -1,17 +1,25 @@
 {
-  "timestamp": "2026-09-21T12:34:09.109Z",
+  "timestamp": "2026-09-28T13:32:38.448Z",
   "candidatesProcessed": 50,
-  "candidatesWithRelease": 6,
-  "candidatesScored": 5,
+  "candidatesWithRelease": 9,
+  "candidatesScored": 8,
   "newLeadsAdded": [
     {
-      "artist": "Fridayy",
-      "score": 60
+      "artist": "Quavo",
+      "score": 81
     },
     {
-      "artist": "Ken Carson",
-      "score": 60
+      "artist": "Meego",
+      "score": 69
+    },
+    {
+      "artist": "Mozzy",
+      "score": 69
+    },
+    {
+      "artist": "SiR",
+      "score": 63
     }
   ],
-  "totalLeadsNow": 71
+  "totalLeadsNow": 75
 }

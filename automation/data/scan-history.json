@@ -244,5 +244,30 @@
       }
     ],
     "totalLeadsNow": 71
+  },
+  {
+    "timestamp": "2026-09-28T13:32:38.448Z",
+    "candidatesProcessed": 50,
+    "candidatesWithRelease": 9,
+    "candidatesScored": 8,
+    "newLeadsAdded": [
+      {
+        "artist": "Quavo",
+        "score": 81
+      },
+      {
+        "artist": "Meego",
+        "score": 69
+      },
+      {
+        "artist": "Mozzy",
+        "score": 69
+      },
+      {
+        "artist": "SiR",
+        "score": 63
+      }
+    ],
+    "totalLeadsNow": 75
   }
 ]

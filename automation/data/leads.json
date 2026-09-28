@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T12:34:09.065Z",
+  "generatedAt": "2026-09-28T13:32:38.416Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,14 +44,14 @@
       ]
     }
   },
-  "totalLeads": 71,
+  "totalLeads": 75,
   "stats": {
-    "avgScore": 73,
+    "avgScore": 72,
     "medianScore": 69,
     "priorityBreakdown": {
       "immediate": 10,
-      "high": 25,
-      "qualified": 36
+      "high": 26,
+      "qualified": 39
     }
   },
   "leads": [
@@ -17551,6 +17551,630 @@
     },
     {
       "rank": 16,
+      "artist": "Quavo",
+      "firstSeen": "2026-09-28T13:32:38.416Z",
+      "spotifyId": null,
+      "deezerId": 5059044,
+      "mbid": "6143403a-df6c-429e-8ee6-ef869896b0da",
+      "listeners": null,
+      "lastfmListeners": 1328736,
+      "lastfmTags": [
+        "rap",
+        "hip-hop",
+        "trap",
+        "atlanta",
+        "migos"
+      ],
+      "lastfmBio": "Quavious Keyate Marshall (born April 2, 1991), known professionally as Quavo, is an American rapper and record producer, one third of Atlanta hip-hop group Migos alongside Takeoff and Offset.\n\nQuavo’s individual career was initiated by a series of guest features for acclaimed hip-hop artists like Travis Scott, Young Thug, A$AP Ferg, Post Malone and DJ Khaled. On December 21, 2017 he released a collaboration album with Travis Scott called Huncho Jack, Jack Huncho. He released his debut solo album QUAVO HUNCHO on October 11, 2018. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-09-11",
+      "releaseName": "Backwards",
+      "genre": "hip hop",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/dc5dc20993ecaaf6acf9fb56b6abf609/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Backwards",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/8ef1dc4b4463d157dcfbb1ec1eef383d/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-11",
+          "releaseType": "single"
+        },
+        {
+          "name": "Backwards",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/8ef1dc4b4463d157dcfbb1ec1eef383d/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-11",
+          "releaseType": "single"
+        },
+        {
+          "name": "Bando (Orchestral)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/5b1a13631d26a3e81a34f4abdd139a28/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-28",
+          "releaseType": "single"
+        },
+        {
+          "name": "Trance (Walk It Down)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/98955595092e81f8ba147b1dbc892a67/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-14",
+          "releaseType": "single"
+        },
+        {
+          "name": "Trance (Walk It Down)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/7ce7ab7ca1b23f5a97b71a69984be738/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-14",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 5,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 81,
+      "priority": "high",
+      "baseScore": 81,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 10,
+        "accessibility": 8,
+        "likelihood": 25,
+        "growth": 13,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 81,
+        "genreMultiplier": 1,
+        "finalScore": 81,
+        "comebackGapMonths": 27.33245729303548
+      },
+      "tourCount": 17,
+      "avgVenueSize": 15013,
+      "topVenues": [
+        {
+          "name": "Seatgeek Stadium",
+          "capacity": 20000,
+          "city": "Bridgeview",
+          "country": "United States"
+        },
+        {
+          "name": "Farmasi Arena",
+          "capacity": 15430,
+          "city": "Rio de Janeiro",
+          "country": "Brazil"
+        },
+        {
+          "name": "John Paul Jones Arena",
+          "capacity": 14623,
+          "city": "Charlottesville",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-08-27",
+          "venueName": "Addition Financial Arena",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 10000
+        },
+        {
+          "date": "2026-07-25",
+          "venueName": "The Surf Lodge",
+          "city": "Montauk",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-19",
+          "venueName": "La Plaine aux Pieds Des Eoliennes",
+          "city": "Dour",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-11",
+          "venueName": "Plaja Costinesti",
+          "city": "Costineşti",
+          "country": "Romania",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-10",
+          "venueName": "Lotnisko Bemowo",
+          "city": "Warsaw",
+          "country": "Poland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-03",
+          "venueName": "Ferropolis",
+          "city": "Gräfenhainichen",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-04-17",
+          "venueName": "University of Connecticut",
+          "city": "Storrs",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-04-11",
+          "venueName": "John Paul Jones Arena",
+          "city": "Charlottesville",
+          "country": "United States",
+          "venueCapacity": 14623
+        },
+        {
+          "date": "2026-04-04",
+          "venueName": "Farmasi Arena",
+          "city": "Rio de Janeiro",
+          "country": "Brazil",
+          "venueCapacity": 15430
+        },
+        {
+          "date": "2025-09-27",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-30",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-25",
+          "venueName": "ONYX Arena",
+          "city": "Jeddah",
+          "country": "Saudi Arabia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-04",
+          "venueName": "Scène du Fleuve Loto-Québec",
+          "city": "Trois-Rivières",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-06-22",
+          "venueName": "Seatgeek Stadium",
+          "city": "Bridgeview",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2025-04-25",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-20",
+          "venueName": "Drai's Beachclub & Nightclub",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-06",
+          "venueName": "LIV",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-08-27",
+          "venueName": "Addition Financial Arena",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": 10000
+        },
+        {
+          "date": "2026-07-25",
+          "venueName": "The Surf Lodge",
+          "city": "Montauk",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-19",
+          "venueName": "La Plaine aux Pieds Des Eoliennes",
+          "city": "Dour",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-11",
+          "venueName": "Plaja Costinesti",
+          "city": "Costineşti",
+          "country": "Romania",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-10",
+          "venueName": "Lotnisko Bemowo",
+          "city": "Warsaw",
+          "country": "Poland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-07-03",
+          "venueName": "Ferropolis",
+          "city": "Gräfenhainichen",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-04-17",
+          "venueName": "University of Connecticut",
+          "city": "Storrs",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-04-11",
+          "venueName": "John Paul Jones Arena",
+          "city": "Charlottesville",
+          "country": "United States",
+          "venueCapacity": 14623
+        },
+        {
+          "date": "2026-04-04",
+          "venueName": "Farmasi Arena",
+          "city": "Rio de Janeiro",
+          "country": "Brazil",
+          "venueCapacity": 15430
+        },
+        {
+          "date": "2025-09-27",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-30",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-25",
+          "venueName": "ONYX Arena",
+          "city": "Jeddah",
+          "country": "Saudi Arabia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-04",
+          "venueName": "Scène du Fleuve Loto-Québec",
+          "city": "Trois-Rivières",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-06-22",
+          "venueName": "Seatgeek Stadium",
+          "city": "Bridgeview",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2025-04-25",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-20",
+          "venueName": "Drai's Beachclub & Nightclub",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-04-06",
+          "venueName": "LIV",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-03-21",
+          "venueName": "Arena",
+          "city": "Islands District",
+          "country": "Hong Kong SAR China",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-01-18",
+          "venueName": "State Farm Arena",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": 20233
+        },
+        {
+          "date": "2024-12-29",
+          "venueName": "LIV",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-11-22",
+          "venueName": "Legend Siam",
+          "city": "Pattaya",
+          "country": "Thailand",
+          "venueCapacity": 75000
+        },
+        {
+          "date": "2024-09-13",
+          "venueName": "Halifax Citadel National Historic Site",
+          "city": "Halifax",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-31",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-29",
+          "venueName": "Agrokomplex",
+          "city": "Nitra",
+          "country": "Slovakia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-13",
+          "venueName": "NAÔ Pool Club",
+          "city": "Marbella",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-11",
+          "venueName": "Olivia Valere",
+          "city": "Marbella",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-08-09",
+          "venueName": "Letnia Scena Progresji",
+          "city": "Warsaw",
+          "country": "Poland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-07-11",
+          "venueName": "Badlands Tent",
+          "city": "Calgary",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-26",
+          "venueName": "Hartford HealthCare Amphitheater",
+          "city": "Bridgeport",
+          "country": "United States",
+          "venueCapacity": 5500
+        },
+        {
+          "date": "2024-04-20",
+          "venueName": "Charles E. Smith Center, George Washington University",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 5000
+        },
+        {
+          "date": "2024-03-01",
+          "venueName": "Drai's Beachclub & Nightclub",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-12",
+          "venueName": "",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-01-05",
+          "venueName": "Queenstown Events Centre",
+          "city": "Queenstown",
+          "country": "New Zealand",
+          "venueCapacity": 19000
+        },
+        {
+          "date": "2024-01-03",
+          "venueName": "Wharepai Domain",
+          "city": "Tauranga",
+          "country": "New Zealand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-14",
+          "venueName": "Papi Steak",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-04",
+          "venueName": "1 OAK Tokyo",
+          "city": "Tokyo",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-03",
+          "venueName": "1 OAK Tokyo",
+          "city": "Tokyo",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-12-01",
+          "venueName": "1 OAK Tokyo",
+          "city": "Tokyo",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-10-28",
+          "venueName": "Armature Works",
+          "city": "Tampa",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-10-28",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-16",
+          "venueName": "Drai's Beachclub & Nightclub",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-09-03",
+          "venueName": "LIV",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-20",
+          "venueName": "Erie Basin Marina",
+          "city": "Buffalo",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-08-17",
+          "venueName": "Hayden Planetarium Dome, American Museum of Natural History",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-20",
+          "venueName": "E11EVEN MIAMI",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-15",
+          "venueName": "Drai's Beachclub & Nightclub",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-02-05",
+          "venueName": "Crypto.com Arena",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": 20000
+        },
+        {
+          "date": "2022-10-09",
+          "venueName": "LIV",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-07",
+          "venueName": "Stegeman Coliseum",
+          "city": "Athens",
+          "country": "United States",
+          "venueCapacity": 10523
+        },
+        {
+          "date": "2022-05-28",
+          "venueName": "STORY Nightclub",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-02-16",
+          "venueName": "Saffron Rails",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-11-30",
+          "venueName": "Sambódromo do Anhembi",
+          "city": "São Paulo",
+          "country": "Brazil",
+          "venueCapacity": 103200
+        }
+      ],
+      "countriesToured": 8,
+      "lastTourDate": "2026-08-27",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "https://www.quavohuncho.net/",
+      "socialLinks": {
+        "instagram": "https://instagram.com/quavohuncho",
+        "twitter": "https://twitter.com/QuavoStuntin",
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UCU_xT0uVi5cku7cg9hDgkMA",
+        "facebook": null
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [
+        {
+          "title": "Quavo Announces QRÖMELIFE Tracklist With Tyler, The Creator, Justin Timberlake, Future, & More",
+          "url": "https://stereogum.com/2512722/quavo-announces-qromelife-tracklist-with-tyler-the-creator-justin-timberlake-future-more/news/",
+          "publishedDate": "2026-09-26T16:54:05.000Z"
+        }
+      ],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-09-11), already touring",
+        "17 shows in past 18 months across 8 countries",
+        "Returning after a 27-month gap with strong new original material — comeback signal is solid",
+        "Average venue size 15,013 cap",
+        "hip hop — a neutral-fit genre",
+        "Major label (Quality ControlMotownCapitol) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 17,
       "artist": "Nurko",
       "firstSeen": "2026-07-20T00:30:12.297Z",
       "spotifyId": null,
@@ -17806,7 +18430,7 @@
       "releaseQualityScore": 0.3625
     },
     {
-      "rank": 17,
+      "rank": 18,
       "artist": "Quix",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -18135,7 +18759,7 @@
       ]
     },
     {
-      "rank": 18,
+      "rank": 19,
       "artist": "SAINt JHN",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -18904,7 +19528,7 @@
       ]
     },
     {
-      "rank": 19,
+      "rank": 20,
       "artist": "Trippie Redd",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -20391,7 +21015,7 @@
       ]
     },
     {
-      "rank": 20,
+      "rank": 21,
       "artist": "Jeremy Passion",
       "firstSeen": "2026-07-20T04:40:27.910Z",
       "spotifyId": null,
@@ -20528,7 +21152,7 @@
       ]
     },
     {
-      "rank": 21,
+      "rank": 22,
       "artist": "Last Heroes",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -20676,7 +21300,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 23,
       "artist": "Ilan Bluestone",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -21272,7 +21896,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
       "artist": "Yung Kai",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -21745,7 +22369,7 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 25,
       "artist": "Just a Gent",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -21983,7 +22607,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 26,
       "artist": "Kalan.Frfr",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -22169,7 +22793,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 27,
       "artist": "ATLiens",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -23074,7 +23698,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 28,
       "artist": "Ray Volpe",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -23838,7 +24462,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 29,
       "artist": "Au5",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -24035,7 +24659,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 30,
       "artist": "Toosii",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -24559,7 +25183,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 31,
       "artist": "Fresh IE",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -24641,7 +25265,7 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 32,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -25006,7 +25630,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 33,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -25084,7 +25708,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 34,
       "artist": "Ms Nina",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -25491,7 +26115,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 35,
       "artist": "Ty Dolla $ign",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -27827,7 +28451,7 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 36,
       "artist": "Lucky Daye",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -30008,7 +30632,7 @@
       ]
     },
     {
-      "rank": 36,
+      "rank": 37,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -30092,7 +30716,7 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 38,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -30176,7 +30800,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 39,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -31746,7 +32370,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 40,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -31823,7 +32447,7 @@
       ]
     },
     {
-      "rank": 40,
+      "rank": 41,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -31909,7 +32533,7 @@
       ]
     },
     {
-      "rank": 41,
+      "rank": 42,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -31993,7 +32617,7 @@
       ]
     },
     {
-      "rank": 42,
+      "rank": 43,
       "artist": "PARIS The Prince",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -32081,7 +32705,7 @@
       ]
     },
     {
-      "rank": 43,
+      "rank": 44,
       "artist": "Griff.",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -32163,7 +32787,7 @@
       ]
     },
     {
-      "rank": 44,
+      "rank": 45,
       "artist": "Hippocampus",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -32257,7 +32881,272 @@
       ]
     },
     {
-      "rank": 45,
+      "rank": 46,
+      "artist": "Meego",
+      "firstSeen": "2026-09-28T13:32:38.416Z",
+      "spotifyId": null,
+      "deezerId": 5433622,
+      "mbid": "57e66172-bb5c-49df-b85b-6f7282e61d04",
+      "listeners": null,
+      "lastfmListeners": 150043,
+      "lastfmTags": [
+        "indie",
+        "korean",
+        "k-indie"
+      ],
+      "lastfmBio": "Meego is a South Korean singer who independently debuted in 2016. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-08-25",
+      "releaseName": "My Bias, My Boss, Pt. 5 (Original Soundtrack)",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/41be3b76ac192ffb53bd665958a71037/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "My Bias, My Boss, Pt. 5 (Original Soundtrack)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/4dca626ff7bc3cb7ffb14d0bdd9a563b/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-25",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 69,
+      "priority": "qualified",
+      "baseScore": 69,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 13,
+        "listeners": 15,
+        "accessibility": 14,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 69,
+        "genreMultiplier": 1,
+        "finalScore": 69,
+        "comebackGapMonths": null
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-08-25) with no announced tour",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "Management contact not found — accessibility unverified"
+      ]
+    },
+    {
+      "rank": 47,
+      "artist": "Mozzy",
+      "firstSeen": "2026-09-28T13:32:38.416Z",
+      "spotifyId": null,
+      "deezerId": 1179752,
+      "mbid": "1fe697e9-f432-4953-94e3-555f2decc171",
+      "listeners": null,
+      "lastfmListeners": 295572,
+      "lastfmTags": [
+        "rap",
+        "hip hop",
+        "hip-hop",
+        "trap",
+        "california"
+      ],
+      "lastfmBio": "Mozzy is an American rapper. Representing Sacramento to the fullest, Mozzy's music is a direct piece in the West Coast gangsta hip hop movement, with bouncy beats coupled with violent lyrics and catchy hooks. After releasing several albums independently, he first gained nationwide traction with his 2015 release \"Bladadah\". He eventually signed to Empire Records in 2016, with his album \"Mandatory Check\" being his first label release. Earning cosigns from Kendrick Lamar Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-09-25",
+      "releaseName": "Still Tapped In",
+      "genre": "gangsta rap",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/6b1fe88e39d3f9042246a4663995a56f/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Still Tapped In",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/e2cfa36d78f4250d7261e4a9a8516a3f/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-25",
+          "releaseType": "album"
+        },
+        {
+          "name": "Still Tapped In",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/9958b0309241d5f60ea852da6fe15a06/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-24",
+          "releaseType": "album"
+        },
+        {
+          "name": "If It's Smoke",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/d21a0abb7220a0ab07dabed89b83934b/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-18",
+          "releaseType": "single"
+        },
+        {
+          "name": "If It's Smoke",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/378509daa176c3fe17d79e225199967a/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-17",
+          "releaseType": "single"
+        },
+        {
+          "name": "Changing Your Mind (feat. Mozzy)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/01c27ecabeceb5b7a80f45a049a276bc/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-09-16",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 5,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 69,
+      "priority": "qualified",
+      "baseScore": 69,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 15,
+        "listeners": 15,
+        "accessibility": 8,
+        "likelihood": 25,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 69,
+        "genreMultiplier": 1,
+        "finalScore": 69,
+        "comebackGapMonths": 30.321944809461236
+      },
+      "tourCount": 1,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [
+        {
+          "date": "2026-09-26",
+          "venueName": "House of Blues",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-09-26",
+          "venueName": "House of Blues",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-17",
+          "venueName": "SoFi Stadium",
+          "city": "Inglewood",
+          "country": "United States",
+          "venueCapacity": 70240
+        },
+        {
+          "date": "2023-12-03",
+          "venueName": "Spectrum Center",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": 19444
+        },
+        {
+          "date": "2022-07-24",
+          "venueName": "Hard Rock Stadium",
+          "city": "Miami Gardens",
+          "country": "United States",
+          "venueCapacity": 64767
+        },
+        {
+          "date": "2021-12-10",
+          "venueName": "National Orange Show Events Center",
+          "city": "San Bernardino",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2021-09-05",
+          "venueName": "Benjamin Franklin Parkway",
+          "city": "Philadelphia",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-01-19",
+          "venueName": "The Black Swan",
+          "city": "Bristol",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2016-12-02",
+          "venueName": "Social Hall SF",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 1,
+      "lastTourDate": "2026-09-26",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://www.mozzyfoundation.com/",
+      "socialLinks": {
+        "instagram": "https://instagram.com/mozzymemba",
+        "twitter": "https://twitter.com/MozzyThaMotive",
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UCgZFoKYiDRA_peWLxN3FNnA",
+        "facebook": "https://facebook.com/OfficialMozzy"
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent album (2026-09-25), already touring",
+        "1 shows in past 18 months across 1 country",
+        "Returning after a 30-month gap with strong new original material — comeback signal is solid",
+        "Venue size unknown (no capacity data)",
+        "gangsta rap — a neutral-fit genre",
+        "Major label (LivewireVirginCollectiveInterscopeEMPIREReal TalkBlack Market) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 48,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -33600,7 +34489,7 @@
       ]
     },
     {
-      "rank": 46,
+      "rank": 49,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -34078,7 +34967,7 @@
       ]
     },
     {
-      "rank": 47,
+      "rank": 50,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -34376,7 +35265,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 51,
       "artist": "GorillaT",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -34679,7 +35568,7 @@
       ]
     },
     {
-      "rank": 49,
+      "rank": 52,
       "artist": "Jensen McRae",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -36209,7 +37098,7 @@
       ]
     },
     {
-      "rank": 50,
+      "rank": 53,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -37539,7 +38428,7 @@
       ]
     },
     {
-      "rank": 51,
+      "rank": 54,
       "artist": "Declan McKenna",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -40023,7 +40912,7 @@
       ]
     },
     {
-      "rank": 52,
+      "rank": 55,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -40100,7 +40989,7 @@
       ]
     },
     {
-      "rank": 53,
+      "rank": 56,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -40178,7 +41067,7 @@
       ]
     },
     {
-      "rank": 54,
+      "rank": 57,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -40262,7 +41151,7 @@
       ]
     },
     {
-      "rank": 55,
+      "rank": 58,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -40344,7 +41233,95 @@
       ]
     },
     {
-      "rank": 56,
+      "rank": 59,
+      "artist": "SiR",
+      "firstSeen": "2026-09-28T13:32:38.416Z",
+      "spotifyId": null,
+      "deezerId": 153148,
+      "mbid": null,
+      "listeners": null,
+      "lastfmListeners": 835813,
+      "lastfmTags": [
+        "rnb",
+        "soul",
+        "neo-soul",
+        "contemporary rnb",
+        "los angeles"
+      ],
+      "lastfmBio": "SiR (born Sir Darryl Farris on November 5th, 1986) is an American singer, songwriter and record producer from Inglewood, California. He is currently signed to Top Dawg Entertainment and has released four studio albums; \"Seven Sundays\" (2015), \"November\" (2018), \"Chasing Summer\" (2019) and \"HEAVY\" (2024). Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": false,
+      "releaseDate": "2026-08-11",
+      "releaseName": "Back To Friends",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d660c236454699f831ea9cfce66290b9/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Back To Friends",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/975b2e0d85fe705459ad4b1a8afe69b0/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-08-11",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 63,
+      "priority": "qualified",
+      "baseScore": 63,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 13,
+        "listeners": 15,
+        "accessibility": 8,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 63,
+        "genreMultiplier": 1,
+        "finalScore": 63,
+        "comebackGapMonths": null
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-08-11) with no announced tour",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "Major label (Fresh SelectsTop DawgRCA) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 60,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -43267,7 +44244,7 @@
       ]
     },
     {
-      "rank": 57,
+      "rank": 61,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -43400,7 +44377,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 62,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -43701,7 +44678,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 63,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -43853,7 +44830,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 64,
       "artist": "Monxx",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -44026,7 +45003,7 @@
       ]
     },
     {
-      "rank": 61,
+      "rank": 65,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -45181,7 +46158,7 @@
       ]
     },
     {
-      "rank": 62,
+      "rank": 66,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -47093,7 +48070,7 @@
       ]
     },
     {
-      "rank": 63,
+      "rank": 67,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -47603,7 +48580,7 @@
       ]
     },
     {
-      "rank": 64,
+      "rank": 68,
       "artist": "Griff",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -49224,7 +50201,7 @@
       ]
     },
     {
-      "rank": 65,
+      "rank": 69,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -51980,7 +52957,7 @@
       ]
     },
     {
-      "rank": 66,
+      "rank": 70,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -52470,7 +53447,7 @@
       ]
     },
     {
-      "rank": 67,
+      "rank": 71,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -53372,7 +54349,7 @@
       ]
     },
     {
-      "rank": 68,
+      "rank": 72,
       "artist": "Tynan",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -53663,7 +54640,7 @@
       ]
     },
     {
-      "rank": 69,
+      "rank": 73,
       "artist": "Destroy Lonely",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -56019,7 +56996,7 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 74,
       "artist": "Fridayy",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
@@ -56520,7 +57497,7 @@
       ]
     },
     {
-      "rank": 71,
+      "rank": 75,
       "artist": "Ken Carson",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,

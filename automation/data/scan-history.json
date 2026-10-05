@@ -269,5 +269,22 @@
       }
     ],
     "totalLeadsNow": 75
+  },
+  {
+    "timestamp": "2026-10-05T14:19:24.723Z",
+    "candidatesProcessed": 48,
+    "candidatesWithRelease": 7,
+    "candidatesScored": 6,
+    "newLeadsAdded": [
+      {
+        "artist": "Tritonal",
+        "score": 64
+      },
+      {
+        "artist": "KIM WOOJIN",
+        "score": 62
+      }
+    ],
+    "totalLeadsNow": 77
   }
 ]

@@ -1,25 +1,17 @@
 {
-  "timestamp": "2026-09-28T13:32:38.448Z",
-  "candidatesProcessed": 50,
-  "candidatesWithRelease": 9,
-  "candidatesScored": 8,
+  "timestamp": "2026-10-05T14:19:24.723Z",
+  "candidatesProcessed": 48,
+  "candidatesWithRelease": 7,
+  "candidatesScored": 6,
   "newLeadsAdded": [
     {
-      "artist": "Quavo",
-      "score": 81
+      "artist": "Tritonal",
+      "score": 64
     },
     {
-      "artist": "Meego",
-      "score": 69
-    },
-    {
-      "artist": "Mozzy",
-      "score": 69
-    },
-    {
-      "artist": "SiR",
-      "score": 63
+      "artist": "KIM WOOJIN",
+      "score": 62
     }
   ],
-  "totalLeadsNow": 75
+  "totalLeadsNow": 77
 }

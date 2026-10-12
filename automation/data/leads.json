@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T14:19:24.690Z",
+  "generatedAt": "2026-10-12T15:03:29.898Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,14 +44,14 @@
       ]
     }
   },
-  "totalLeads": 77,
+  "totalLeads": 78,
   "stats": {
     "avgScore": 72,
     "medianScore": 69,
     "priorityBreakdown": {
       "immediate": 10,
       "high": 26,
-      "qualified": 41
+      "qualified": 42
     }
   },
   "leads": [
@@ -46262,6 +46262,123 @@
     },
     {
       "rank": 67,
+      "artist": "Bass Santana",
+      "firstSeen": "2026-10-12T15:03:29.898Z",
+      "spotifyId": null,
+      "deezerId": 12392884,
+      "mbid": "52e52edb-5c7a-4d3d-882c-794a6e24060e",
+      "listeners": null,
+      "lastfmListeners": 324446,
+      "lastfmTags": [
+        "members only",
+        "hip-hop",
+        "rap",
+        "united states",
+        "trap"
+      ],
+      "lastfmBio": "Bass Santana (born July 18, 1997) is a musician based in the South Florida collective Members Only. From 2016, he was on hiatus until 2019, when Members Only, Vol. 4 was released on January 23rd, 2019. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-10-09",
+      "releaseName": "i broke it",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/75c80421ab6a9728e4ffceb7befd2d97/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "i broke it",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/8adf71d8a94c2d84e47af2d631d44651/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-09",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 62,
+      "priority": "qualified",
+      "baseScore": 62,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 2,
+        "listeners": 15,
+        "accessibility": 18,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 62,
+        "genreMultiplier": 1,
+        "finalScore": 62,
+        "comebackGapMonths": null
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [
+        {
+          "date": "2019-06-07",
+          "venueName": "Celine",
+          "city": "Orlando",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-04-15",
+          "venueName": "The Mod Club",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 618
+        },
+        {
+          "date": "2019-03-06",
+          "venueName": "Hell",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-02-28",
+          "venueName": "Scratchouse",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "indie-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": "https://instagram.com/bassxsantana",
+        "twitter": "https://twitter.com/bassxsantana",
+        "tiktok": null,
+        "youtube": "https://youtube.com/channel/UCaG2Rqmzc95sSVsMhtVIpig",
+        "facebook": "https://facebook.com/bassxsantana"
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-10-09) with no announced tour",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "Independent label (Arista) — reachable via label"
+      ]
+    },
+    {
+      "rank": 68,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -47416,7 +47533,7 @@
       ]
     },
     {
-      "rank": 68,
+      "rank": 69,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -49328,7 +49445,7 @@
       ]
     },
     {
-      "rank": 69,
+      "rank": 70,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -49838,7 +49955,7 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 71,
       "artist": "Griff",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -51459,7 +51576,7 @@
       ]
     },
     {
-      "rank": 71,
+      "rank": 72,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -54215,7 +54332,7 @@
       ]
     },
     {
-      "rank": 72,
+      "rank": 73,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -54705,7 +54822,7 @@
       ]
     },
     {
-      "rank": 73,
+      "rank": 74,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -55607,7 +55724,7 @@
       ]
     },
     {
-      "rank": 74,
+      "rank": 75,
       "artist": "Tynan",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -55898,7 +56015,7 @@
       ]
     },
     {
-      "rank": 75,
+      "rank": 76,
       "artist": "Destroy Lonely",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -58254,7 +58371,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 77,
       "artist": "Fridayy",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
@@ -58755,7 +58872,7 @@
       ]
     },
     {
-      "rank": 77,
+      "rank": 78,
       "artist": "Ken Carson",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,

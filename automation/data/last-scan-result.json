@@ -1,17 +1,13 @@
 {
-  "timestamp": "2026-10-05T14:19:24.723Z",
-  "candidatesProcessed": 48,
-  "candidatesWithRelease": 7,
-  "candidatesScored": 6,
+  "timestamp": "2026-10-12T15:03:29.933Z",
+  "candidatesProcessed": 46,
+  "candidatesWithRelease": 4,
+  "candidatesScored": 4,
   "newLeadsAdded": [
     {
-      "artist": "Tritonal",
-      "score": 64
-    },
-    {
-      "artist": "KIM WOOJIN",
+      "artist": "Bass Santana",
       "score": 62
     }
   ],
-  "totalLeadsNow": 77
+  "totalLeadsNow": 78
 }

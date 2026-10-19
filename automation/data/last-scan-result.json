@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-10-12T15:03:29.933Z",
-  "candidatesProcessed": 46,
+  "timestamp": "2026-10-19T12:49:02.466Z",
+  "candidatesProcessed": 45,
   "candidatesWithRelease": 4,
   "candidatesScored": 4,
   "newLeadsAdded": [
     {
-      "artist": "Bass Santana",
-      "score": 62
+      "artist": "Wink",
+      "score": 85
     }
   ],
-  "totalLeadsNow": 78
+  "totalLeadsNow": 79
 }

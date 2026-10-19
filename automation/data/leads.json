@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T15:03:29.898Z",
+  "generatedAt": "2026-10-19T12:49:02.431Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,12 +44,12 @@
       ]
     }
   },
-  "totalLeads": 78,
+  "totalLeads": 79,
   "stats": {
     "avgScore": 72,
     "medianScore": 69,
     "priorityBreakdown": {
-      "immediate": 10,
+      "immediate": 11,
       "high": 26,
       "qualified": 42
     }
@@ -9771,6 +9771,945 @@
     },
     {
       "rank": 11,
+      "artist": "Wink",
+      "firstSeen": "2026-10-19T12:49:02.431Z",
+      "spotifyId": null,
+      "deezerId": 246418062,
+      "mbid": "996a7ed9-d3ae-4a09-819d-c864e7056b47",
+      "listeners": null,
+      "lastfmListeners": 281890,
+      "lastfmTags": [
+        "techno",
+        "electronic",
+        "acid",
+        "house",
+        "japanese"
+      ],
+      "lastfmBio": "There are at least 4 artists with this name:\n\n1.  Wink (ウィンク) were a popular Japanese pop female duo in the late 1980s and early-to-mid 1990s. The two members were Sachiko Suzuki (鈴木早智子 Suzuki Sachiko, born February 22, 1969) and Shōko Aida (相田翔子 Aida Shōko, born February 23, 1970). They released their first single on April 27, 1988, and their final release was on 31 March 1996. Many of their singles topped the Oricon charts in Japan Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": false,
+      "releaseDate": "2026-10-01",
+      "releaseName": "RESCUE U",
+      "genre": "techno",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/2291a9a335864749a54928c4b9a55e39/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "RESCUE U",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/5c2320e289cc59a4eb3509a38debefbd/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-01",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 85,
+      "priority": "immediate",
+      "baseScore": 85,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 15,
+        "accessibility": 14,
+        "likelihood": 25,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 85,
+        "genreMultiplier": 1,
+        "finalScore": 85,
+        "comebackGapMonths": 18.42969776609724
+      },
+      "tourCount": 3,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [
+        {
+          "date": "2026-04-25",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-02-27",
+          "venueName": "SOMA",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-04",
+          "venueName": "Avondale Music Hall",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-04-25",
+          "venueName": "History",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2026-02-27",
+          "venueName": "SOMA",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-04",
+          "venueName": "Avondale Music Hall",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-03-22",
+          "venueName": "The Factory in Deep Ellum",
+          "city": "Dallas",
+          "country": "United States",
+          "venueCapacity": 1000
+        },
+        {
+          "date": "2024-02-10",
+          "venueName": "Stage AE",
+          "city": "Pittsburgh",
+          "country": "United States",
+          "venueCapacity": 5500
+        },
+        {
+          "date": "2023-05-20",
+          "venueName": "The Concourse Project",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-24",
+          "venueName": "Strawberry Moon",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-06-12",
+          "venueName": "Zilvermeer",
+          "city": "Mol",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-11",
+          "venueName": "Makuhari Kaihin Kouen",
+          "city": "Chiba",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-11-16",
+          "venueName": "Concrete Paris",
+          "city": "Paris",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-09-28",
+          "venueName": "The Brooklyn Mirage",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-08-25",
+          "venueName": "Square Bayard",
+          "city": "Charleville-Mézières",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-08-10",
+          "venueName": "Rote Fabrik",
+          "city": "Zurich",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-06-10",
+          "venueName": "Addams/Medill Park",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-06-04",
+          "venueName": "Commerzbank-Arena",
+          "city": "Frankfurt",
+          "country": "Germany",
+          "venueCapacity": 59500
+        },
+        {
+          "date": "2017-06-03",
+          "venueName": "Kelchterhoef",
+          "city": "Houthalen",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-05-20",
+          "venueName": "Centro de Eventos Multiparque",
+          "city": "Bogota",
+          "country": "Colombia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-05-18",
+          "venueName": "Tower Theatre",
+          "city": "Upper Darby",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-04-08",
+          "venueName": "Margaret T. Hance Park",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-03-04",
+          "venueName": "Waterfront Park",
+          "city": "San Diego",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2017-01-27",
+          "venueName": "Mint Warehouse",
+          "city": "Leeds",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2016-09-04",
+          "venueName": "Ascarate Park",
+          "city": "El Paso",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2016-07-17",
+          "venueName": "Ferropolis",
+          "city": "Gräfenhainichen",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2016-07-14",
+          "venueName": "The Pavilion at Montage Mountain",
+          "city": "Scranton",
+          "country": "United States",
+          "venueCapacity": 16000
+        },
+        {
+          "date": "2016-05-28",
+          "venueName": "Lake San Antonio Recreational Area",
+          "city": "Bradley",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2015-07-25",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2015-07-12",
+          "venueName": "Antigua Estación del Grao Valencia",
+          "city": "Valencia",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2015-05-24",
+          "venueName": "Hart Plaza",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2014-08-23",
+          "venueName": "Clapham Common",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2014-08-09",
+          "venueName": "Playa de Villaricos",
+          "city": "Cuevas del Almanzora",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2014-07-27",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-08-10",
+          "venueName": "Playa de Villaricos",
+          "city": "Cuevas del Almanzora",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-08-04",
+          "venueName": "Parc du Château de Grammont",
+          "city": "Montpellier",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-08-03",
+          "venueName": "Knebworth House",
+          "city": "Knebworth",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-07-28",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-07-13",
+          "venueName": "Amsterdamse Bos",
+          "city": "Amstelveen",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-06-09",
+          "venueName": "Clune Farm",
+          "city": "Dores",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2013-06-01",
+          "venueName": "Footwork",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2012-07-29",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2012-07-22",
+          "venueName": "Parc de la Peyrière",
+          "city": "Saint-Jean-de-Védas",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2012-06-09",
+          "venueName": "Las Vegas Motor Speedway",
+          "city": "Las Vegas",
+          "country": "United States",
+          "venueCapacity": 80000
+        },
+        {
+          "date": "2011-11-20",
+          "venueName": "Bert's Warehouse Theatre",
+          "city": "Detroit",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2011-08-27",
+          "venueName": "Clapham Common",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2011-08-06",
+          "venueName": "Recreatiegebied Spaarnwoude",
+          "city": "Spaarnwoude",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2011-07-24",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2011-07-23",
+          "venueName": "Desierto de los Monegros",
+          "city": "Fraga",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-10-23",
+          "venueName": "Café d'Anvers",
+          "city": "Antwerp",
+          "country": "Belgium",
+          "venueCapacity": 800
+        },
+        {
+          "date": "2010-09-26",
+          "venueName": "Parc Jean-Drapeau",
+          "city": "Montreal",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-09-25",
+          "venueName": "Footwork",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-08-28",
+          "venueName": "Clapham Common",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-08-14",
+          "venueName": "Maag Halle",
+          "city": "Zurich",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-07-25",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-07-17",
+          "venueName": "Aquabest",
+          "city": "Best",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-06-26",
+          "venueName": "Festivalplassen",
+          "city": "Kalvøya",
+          "country": "Norway",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-01-01",
+          "venueName": "Rymill Park",
+          "city": "Adelaide",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2010-01-01",
+          "venueName": "Sidney Myer Music Bowl",
+          "city": "Melbourne",
+          "country": "Australia",
+          "venueCapacity": 10000
+        },
+        {
+          "date": "2009-07-26",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2009-07-18",
+          "venueName": "Aquabest",
+          "city": "Best",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2009-07-18",
+          "venueName": "Desierto de los Monegros",
+          "city": "Fraga",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2009-02-12",
+          "venueName": "City Hall",
+          "city": "Barcelona",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2008-12-31",
+          "venueName": "Oval Olympic Arena",
+          "city": "Turin",
+          "country": "Italy",
+          "venueCapacity": 2000
+        },
+        {
+          "date": "2008-09-26",
+          "venueName": "The Arches",
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2008-07-19",
+          "venueName": "Aquabest",
+          "city": "Best",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2008-03-28",
+          "venueName": "Bicentennial Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-09-01",
+          "venueName": "Stradbally Hall",
+          "city": "Stradbally",
+          "country": "Ireland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-08-11",
+          "venueName": "Playa de Villaricos",
+          "city": "Cuevas del Almanzora",
+          "country": "Spain",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-07-08",
+          "venueName": "Balado",
+          "city": "Kinross",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-07-06",
+          "venueName": "Montreux Jazz Café",
+          "city": "Montreux",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-05-25",
+          "venueName": "The Arches",
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-03-24",
+          "venueName": "Bicentennial Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2007-03-17",
+          "venueName": "Royal Randwick Racecourse",
+          "city": "Sydney",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2006-07-15",
+          "venueName": "Aquabest",
+          "city": "Best",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2006-06-25",
+          "venueName": "Bourbon Street Station",
+          "city": "Jacksonville",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2006-03-25",
+          "venueName": "Bicentennial Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2005-11-18",
+          "venueName": "Vanguard",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2005-08-14",
+          "venueName": "De Schorre",
+          "city": "Boom",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2005-07-16",
+          "venueName": "Aquabest",
+          "city": "Best",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2005-07-01",
+          "venueName": "",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2005-04-30",
+          "venueName": "Empire Polo Club",
+          "city": "Indio",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2004-08-28",
+          "venueName": "Old Liverpool Airfield",
+          "city": "Liverpool",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2004-06-11",
+          "venueName": "Store VEGA",
+          "city": "Copenhagen",
+          "country": "Denmark",
+          "venueCapacity": null
+        },
+        {
+          "date": "2004-04-25",
+          "venueName": "Arena Skol Anhembi",
+          "city": "São Paulo",
+          "country": "Brazil",
+          "venueCapacity": null
+        },
+        {
+          "date": "2003-11-08",
+          "venueName": "Dique I. Puerto Madero",
+          "city": "Buenos Aires",
+          "country": "Argentina",
+          "venueCapacity": null
+        },
+        {
+          "date": "2003-09-26",
+          "venueName": "Tonic",
+          "city": "Charlotte",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2003-06-15",
+          "venueName": "Great Stage Park",
+          "city": "Manchester",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2003-06-14",
+          "venueName": "Great Stage Park",
+          "city": "Manchester",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2003-05-24",
+          "venueName": "Robert F. Kennedy Memorial Stadium",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 43500
+        },
+        {
+          "date": "2003-03-22",
+          "venueName": "Bayfront Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2002-08-31",
+          "venueName": "Saitama Super Arena",
+          "city": "Saitama",
+          "country": "Japan",
+          "venueCapacity": 36500
+        },
+        {
+          "date": "2001-07-20",
+          "venueName": "Vooruit",
+          "city": "Ghent",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2001-07-08",
+          "venueName": "Balado",
+          "city": "Kinross",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2000-10-06",
+          "venueName": "Ark's Ranch",
+          "city": "Austin",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2000-08-11",
+          "venueName": "Rote Fabrik",
+          "city": "Zurich",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2000-03-25",
+          "venueName": "Oceanfront Pavilion at Collins Park",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2000-02-25",
+          "venueName": "ARO.space",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1999-08-07",
+          "venueName": "Kongresshaus",
+          "city": "Zurich",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "1999-05-29",
+          "venueName": "PSINet Stadium",
+          "city": "Baltimore",
+          "country": "United States",
+          "venueCapacity": 70745
+        },
+        {
+          "date": "1999-03-13",
+          "venueName": "Oceanfront Pavilion at Collins Park",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-11-24",
+          "venueName": "The Palace",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-11-19",
+          "venueName": "Numbers",
+          "city": "Houston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-11-16",
+          "venueName": "Florida Theatre",
+          "city": "Gainesville",
+          "country": "United States",
+          "venueCapacity": 1900
+        },
+        {
+          "date": "1998-11-15",
+          "venueName": "Salvation",
+          "city": "Miami Beach",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-11-06",
+          "venueName": "Axis",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-11-04",
+          "venueName": "Industry Club",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-10-31",
+          "venueName": "House of Blues",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-10-29",
+          "venueName": "The Rave",
+          "city": "Milwaukee",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-10-28",
+          "venueName": "First Avenue",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-09-05",
+          "venueName": "Zen Fest",
+          "city": "Zephyrhills",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-07-09",
+          "venueName": "La Plaine de La Machine à Feu",
+          "city": "Dour",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-06-27",
+          "venueName": "AT&T Amphitheater at Bayfront Park",
+          "city": "Miami",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1998-05-16",
+          "venueName": "Trancemissions Tent",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1997-12-06",
+          "venueName": "Maritime Hall",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1995-12-02",
+          "venueName": "Parc Expo Rennes Aéroport",
+          "city": "Bruz",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "1995-08-12",
+          "venueName": "Palais X-Tra",
+          "city": "Zurich",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "1995-04-29",
+          "venueName": "Sulzerhalle",
+          "city": "Winterthur",
+          "country": "Switzerland",
+          "venueCapacity": null
+        },
+        {
+          "date": "1993-04-17",
+          "venueName": "Roseland Ballroom",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 3200
+        },
+        {
+          "date": "1991-07-17",
+          "venueName": "The Limelight",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "1981-04-12",
+          "venueName": "The Starwood",
+          "city": "West Hollywood",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 2,
+      "lastTourDate": "2026-04-25",
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-10-01), already touring",
+        "3 shows in past 18 months across 2 countries",
+        "Returning after a 18-month gap with strong new original material — comeback signal is solid",
+        "Venue size unknown (no capacity data)",
+        "techno — a neutral-fit genre",
+        "Management contact not found — accessibility unverified"
+      ]
+    },
+    {
+      "rank": 12,
       "artist": "Yellow Claw",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -12041,7 +12980,7 @@
       ]
     },
     {
-      "rank": 12,
+      "rank": 13,
       "artist": "Dabin",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -12818,7 +13757,7 @@
       ]
     },
     {
-      "rank": 13,
+      "rank": 14,
       "artist": "Drake",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -15378,7 +16317,7 @@
       ]
     },
     {
-      "rank": 14,
+      "rank": 15,
       "artist": "The Rose",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -17245,7 +18184,7 @@
       ]
     },
     {
-      "rank": 15,
+      "rank": 16,
       "artist": "OhSxnta",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -17550,7 +18489,7 @@
       ]
     },
     {
-      "rank": 16,
+      "rank": 17,
       "artist": "Quavo",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -18174,7 +19113,7 @@
       ]
     },
     {
-      "rank": 17,
+      "rank": 18,
       "artist": "Nurko",
       "firstSeen": "2026-07-20T00:30:12.297Z",
       "spotifyId": null,
@@ -18430,7 +19369,7 @@
       "releaseQualityScore": 0.3625
     },
     {
-      "rank": 18,
+      "rank": 19,
       "artist": "Quix",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -18759,7 +19698,7 @@
       ]
     },
     {
-      "rank": 19,
+      "rank": 20,
       "artist": "SAINt JHN",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -19528,7 +20467,7 @@
       ]
     },
     {
-      "rank": 20,
+      "rank": 21,
       "artist": "Trippie Redd",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -21015,7 +21954,7 @@
       ]
     },
     {
-      "rank": 21,
+      "rank": 22,
       "artist": "Jeremy Passion",
       "firstSeen": "2026-07-20T04:40:27.910Z",
       "spotifyId": null,
@@ -21152,7 +22091,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 23,
       "artist": "Last Heroes",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -21300,7 +22239,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
       "artist": "Ilan Bluestone",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -21896,7 +22835,7 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 25,
       "artist": "Yung Kai",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -22369,7 +23308,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 26,
       "artist": "Just a Gent",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -22607,7 +23546,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 27,
       "artist": "Kalan.Frfr",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -22793,7 +23732,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 28,
       "artist": "ATLiens",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -23698,7 +24637,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 29,
       "artist": "Ray Volpe",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -24462,7 +25401,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 30,
       "artist": "Au5",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -24659,7 +25598,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 31,
       "artist": "Toosii",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -25183,7 +26122,7 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 32,
       "artist": "Fresh IE",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -25265,7 +26204,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 33,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -25630,7 +26569,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 34,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -25708,7 +26647,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 35,
       "artist": "Ms Nina",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -26115,7 +27054,7 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 36,
       "artist": "Ty Dolla $ign",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -28451,7 +29390,7 @@
       ]
     },
     {
-      "rank": 36,
+      "rank": 37,
       "artist": "Lucky Daye",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -30632,7 +31571,7 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 38,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -30716,7 +31655,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 39,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -30800,7 +31739,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 40,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -32370,7 +33309,7 @@
       ]
     },
     {
-      "rank": 40,
+      "rank": 41,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -32447,7 +33386,7 @@
       ]
     },
     {
-      "rank": 41,
+      "rank": 42,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -32533,7 +33472,7 @@
       ]
     },
     {
-      "rank": 42,
+      "rank": 43,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -32617,7 +33556,7 @@
       ]
     },
     {
-      "rank": 43,
+      "rank": 44,
       "artist": "PARIS The Prince",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -32705,7 +33644,7 @@
       ]
     },
     {
-      "rank": 44,
+      "rank": 45,
       "artist": "Griff.",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -32787,7 +33726,7 @@
       ]
     },
     {
-      "rank": 45,
+      "rank": 46,
       "artist": "Hippocampus",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -32881,7 +33820,7 @@
       ]
     },
     {
-      "rank": 46,
+      "rank": 47,
       "artist": "Meego",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -32967,7 +33906,7 @@
       ]
     },
     {
-      "rank": 47,
+      "rank": 48,
       "artist": "Mozzy",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -33146,7 +34085,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 49,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -34489,7 +35428,7 @@
       ]
     },
     {
-      "rank": 49,
+      "rank": 50,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -34967,7 +35906,7 @@
       ]
     },
     {
-      "rank": 50,
+      "rank": 51,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -35265,7 +36204,7 @@
       ]
     },
     {
-      "rank": 51,
+      "rank": 52,
       "artist": "GorillaT",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -35568,7 +36507,7 @@
       ]
     },
     {
-      "rank": 52,
+      "rank": 53,
       "artist": "Jensen McRae",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -37098,7 +38037,7 @@
       ]
     },
     {
-      "rank": 53,
+      "rank": 54,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -38428,7 +39367,7 @@
       ]
     },
     {
-      "rank": 54,
+      "rank": 55,
       "artist": "Declan McKenna",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -40912,7 +41851,7 @@
       ]
     },
     {
-      "rank": 55,
+      "rank": 56,
       "artist": "Tritonal",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -41633,7 +42572,7 @@
       ]
     },
     {
-      "rank": 56,
+      "rank": 57,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -41710,7 +42649,7 @@
       ]
     },
     {
-      "rank": 57,
+      "rank": 58,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -41788,7 +42727,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 59,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -41872,7 +42811,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 60,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -41954,7 +42893,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 61,
       "artist": "SiR",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -42042,7 +42981,7 @@
       ]
     },
     {
-      "rank": 61,
+      "rank": 62,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -44965,7 +45904,7 @@
       ]
     },
     {
-      "rank": 62,
+      "rank": 63,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -45098,7 +46037,7 @@
       ]
     },
     {
-      "rank": 63,
+      "rank": 64,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -45399,7 +46338,7 @@
       ]
     },
     {
-      "rank": 64,
+      "rank": 65,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -45551,7 +46490,7 @@
       ]
     },
     {
-      "rank": 65,
+      "rank": 66,
       "artist": "Monxx",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -45724,7 +46663,7 @@
       ]
     },
     {
-      "rank": 66,
+      "rank": 67,
       "artist": "KIM WOOJIN",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -46261,7 +47200,7 @@
       ]
     },
     {
-      "rank": 67,
+      "rank": 68,
       "artist": "Bass Santana",
       "firstSeen": "2026-10-12T15:03:29.898Z",
       "spotifyId": null,
@@ -46378,7 +47317,7 @@
       ]
     },
     {
-      "rank": 68,
+      "rank": 69,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -47533,7 +48472,7 @@
       ]
     },
     {
-      "rank": 69,
+      "rank": 70,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -49445,7 +50384,7 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 71,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -49955,7 +50894,7 @@
       ]
     },
     {
-      "rank": 71,
+      "rank": 72,
       "artist": "Griff",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -51576,7 +52515,7 @@
       ]
     },
     {
-      "rank": 72,
+      "rank": 73,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -54332,7 +55271,7 @@
       ]
     },
     {
-      "rank": 73,
+      "rank": 74,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -54822,7 +55761,7 @@
       ]
     },
     {
-      "rank": 74,
+      "rank": 75,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -55724,7 +56663,7 @@
       ]
     },
     {
-      "rank": 75,
+      "rank": 76,
       "artist": "Tynan",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -56015,7 +56954,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 77,
       "artist": "Destroy Lonely",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -58371,7 +59310,7 @@
       ]
     },
     {
-      "rank": 77,
+      "rank": 78,
       "artist": "Fridayy",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
@@ -58872,7 +59811,7 @@
       ]
     },
     {
-      "rank": 78,
+      "rank": 79,
       "artist": "Ken Carson",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,

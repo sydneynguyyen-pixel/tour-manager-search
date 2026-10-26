@@ -1,13 +1,17 @@
 {
-  "timestamp": "2026-10-19T12:49:02.466Z",
-  "candidatesProcessed": 45,
-  "candidatesWithRelease": 4,
-  "candidatesScored": 4,
+  "timestamp": "2026-10-26T12:46:11.465Z",
+  "candidatesProcessed": 48,
+  "candidatesWithRelease": 9,
+  "candidatesScored": 8,
   "newLeadsAdded": [
     {
-      "artist": "Wink",
-      "score": 85
+      "artist": "Holly Humberstone",
+      "score": 75
+    },
+    {
+      "artist": "Remi Wolf",
+      "score": 74
     }
   ],
-  "totalLeadsNow": 79
+  "totalLeadsNow": 81
 }

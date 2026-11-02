@@ -1,17 +1,13 @@
 {
-  "timestamp": "2026-10-26T12:46:11.465Z",
+  "timestamp": "2026-11-02T15:24:23.187Z",
   "candidatesProcessed": 48,
-  "candidatesWithRelease": 9,
-  "candidatesScored": 8,
+  "candidatesWithRelease": 7,
+  "candidatesScored": 7,
   "newLeadsAdded": [
     {
-      "artist": "Holly Humberstone",
-      "score": 75
-    },
-    {
-      "artist": "Remi Wolf",
-      "score": 74
+      "artist": "Jeff Satur",
+      "score": 79
     }
   ],
-  "totalLeadsNow": 81
+  "totalLeadsNow": 82
 }

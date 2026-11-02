@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T12:46:11.436Z",
+  "generatedAt": "2026-11-02T15:24:23.135Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,13 +44,13 @@
       ]
     }
   },
-  "totalLeads": 81,
+  "totalLeads": 82,
   "stats": {
     "avgScore": 72,
     "medianScore": 69,
     "priorityBreakdown": {
       "immediate": 11,
-      "high": 28,
+      "high": 29,
       "qualified": 42
     }
   },
@@ -20468,6 +20468,292 @@
     },
     {
       "rank": 21,
+      "artist": "Jeff Satur",
+      "firstSeen": "2026-11-02T15:24:23.135Z",
+      "spotifyId": null,
+      "deezerId": 102235992,
+      "mbid": "a8f983ed-78cf-4184-b908-484a794f029a",
+      "listeners": null,
+      "lastfmListeners": 136757,
+      "lastfmTags": [
+        "pop",
+        "indie",
+        "singer-songwriter",
+        "ballad",
+        "thai"
+      ],
+      "lastfmBio": "Jeff Satur (เจฟ ซาเตอร์) is a Thai-Chinese-English singer-songwriter, actor and graphic designer under Wayfer Records. He debuted on June 7, 2013 with the digital single \"โลกแตก\"\n\nPre-debut\nJeff joined Kamikaze in 2013 and trained for three months.\n\n2013: Debut with \"โลกแตก\"\nHe debuted on June 7, 2013 under the Demo Project with the digital single \"โลกแตก\". \n\n2018-2019: Departure and return to music Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-10-29",
+      "releaseName": "ที่ชอบที่ชอบ (Grief Eaters)",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/ee476f4e46c8570b14af66fd8fb8593d/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "ที่ชอบที่ชอบ (Grief Eaters)",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/f7d258f31ac8ec7b0c937aac38e935f2/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-29",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 79,
+      "priority": "high",
+      "baseScore": 79,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 8,
+        "likelihood": 8,
+        "growth": 13,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 79,
+        "genreMultiplier": 1,
+        "finalScore": 79,
+        "comebackGapMonths": null
+      },
+      "tourCount": 10,
+      "avgVenueSize": 2245,
+      "topVenues": [
+        {
+          "name": "Zepp New Taipei",
+          "capacity": 2245,
+          "city": "Taipei",
+          "country": "Taiwan"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-04-14",
+          "venueName": "One Bangkok",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-12-31",
+          "venueName": "ICONSIAM, Khlong San",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-24",
+          "venueName": "Zepp New Taipei",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "venueCapacity": 2245
+        },
+        {
+          "date": "2025-08-24",
+          "venueName": "Hall 1-2-3",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-17",
+          "venueName": "Hall 9",
+          "city": "Chiba",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-16",
+          "venueName": "Sakura no Nagare",
+          "city": "Suita",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-15",
+          "venueName": "Anfiteatro del Parque de la Exposición",
+          "city": "Lima",
+          "country": "Peru",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-06",
+          "venueName": "Terra SP",
+          "city": "São Paulo",
+          "country": "Brazil",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-04",
+          "venueName": "IMPACT Arena, Muang Thong Thani",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-03",
+          "venueName": "IMPACT Arena, Muang Thong Thani",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-04-14",
+          "venueName": "One Bangkok",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-12-31",
+          "venueName": "ICONSIAM, Khlong San",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-24",
+          "venueName": "Zepp New Taipei",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "venueCapacity": 2245
+        },
+        {
+          "date": "2025-08-24",
+          "venueName": "Hall 1-2-3",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-17",
+          "venueName": "Hall 9",
+          "city": "Chiba",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-08-16",
+          "venueName": "Sakura no Nagare",
+          "city": "Suita",
+          "country": "Japan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-15",
+          "venueName": "Anfiteatro del Parque de la Exposición",
+          "city": "Lima",
+          "country": "Peru",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-07-06",
+          "venueName": "Terra SP",
+          "city": "São Paulo",
+          "country": "Brazil",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-04",
+          "venueName": "IMPACT Arena, Muang Thong Thani",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-05-03",
+          "venueName": "IMPACT Arena, Muang Thong Thani",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-12-06",
+          "venueName": "TRUE ICON HALL",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-04-20",
+          "venueName": "UOB LIVE",
+          "city": "Bangkok",
+          "country": "Thailand",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-19",
+          "venueName": "MacPherson Stadium",
+          "city": "Yau Tsim Mong",
+          "country": "Hong Kong SAR China",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-17",
+          "venueName": "Legacy",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2024-02-16",
+          "venueName": "Legacy",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-10-22",
+          "venueName": "Thunderdome Stadium",
+          "city": "Nonthaburi",
+          "country": "Thailand",
+          "venueCapacity": 15000
+        },
+        {
+          "date": "2023-07-07",
+          "venueName": "Espaço Unimed",
+          "city": "São Paulo",
+          "country": "Brazil",
+          "venueCapacity": 8000
+        }
+      ],
+      "countriesToured": 5,
+      "lastTourDate": "2026-04-14",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": "https://instagram.com/jeffsatur",
+        "twitter": "https://twitter.com/jeffsatur",
+        "tiktok": "https://tiktok.com/@jeffsatur",
+        "youtube": null,
+        "facebook": "https://facebook.com/jeffsaturofficialth"
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-10-29), already touring",
+        "10 shows in past 18 months across 5 countries",
+        "Average venue size 2,245 cap (Matthew's touring scale)",
+        "Major label (Warner Music ThailandWayfer Records) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 22,
       "artist": "Trippie Redd",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -21954,7 +22240,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 23,
       "artist": "Jeremy Passion",
       "firstSeen": "2026-07-20T04:40:27.910Z",
       "spotifyId": null,
@@ -22091,7 +22377,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 24,
       "artist": "Last Heroes",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -22239,7 +22525,7 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 25,
       "artist": "Ilan Bluestone",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -22835,7 +23121,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 26,
       "artist": "Yung Kai",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -23308,7 +23594,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 27,
       "artist": "Just a Gent",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -23546,7 +23832,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 28,
       "artist": "Holly Humberstone",
       "firstSeen": "2026-10-26T12:46:11.436Z",
       "spotifyId": null,
@@ -26197,7 +26483,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 29,
       "artist": "Kalan.Frfr",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -26383,7 +26669,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 30,
       "artist": "ATLiens",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -27288,7 +27574,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 31,
       "artist": "Ray Volpe",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -28052,7 +28338,7 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 32,
       "artist": "Au5",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -28249,7 +28535,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 33,
       "artist": "Toosii",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -28773,7 +29059,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 34,
       "artist": "Remi Wolf",
       "firstSeen": "2026-10-26T12:46:11.436Z",
       "spotifyId": null,
@@ -31011,7 +31297,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 35,
       "artist": "Fresh IE",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -31093,7 +31379,7 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 36,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -31458,7 +31744,7 @@
       ]
     },
     {
-      "rank": 36,
+      "rank": 37,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -31536,7 +31822,7 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 38,
       "artist": "Ms Nina",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -31943,7 +32229,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 39,
       "artist": "Ty Dolla $ign",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -34279,7 +34565,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 40,
       "artist": "Lucky Daye",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -36460,7 +36746,7 @@
       ]
     },
     {
-      "rank": 40,
+      "rank": 41,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -36544,7 +36830,7 @@
       ]
     },
     {
-      "rank": 41,
+      "rank": 42,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -36628,7 +36914,7 @@
       ]
     },
     {
-      "rank": 42,
+      "rank": 43,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -38198,7 +38484,7 @@
       ]
     },
     {
-      "rank": 43,
+      "rank": 44,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -38275,7 +38561,7 @@
       ]
     },
     {
-      "rank": 44,
+      "rank": 45,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -38361,7 +38647,7 @@
       ]
     },
     {
-      "rank": 45,
+      "rank": 46,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -38445,7 +38731,7 @@
       ]
     },
     {
-      "rank": 46,
+      "rank": 47,
       "artist": "PARIS The Prince",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -38533,7 +38819,7 @@
       ]
     },
     {
-      "rank": 47,
+      "rank": 48,
       "artist": "Griff.",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -38615,7 +38901,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 49,
       "artist": "Hippocampus",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -38709,7 +38995,7 @@
       ]
     },
     {
-      "rank": 49,
+      "rank": 50,
       "artist": "Meego",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -38795,7 +39081,7 @@
       ]
     },
     {
-      "rank": 50,
+      "rank": 51,
       "artist": "Mozzy",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -38974,7 +39260,7 @@
       ]
     },
     {
-      "rank": 51,
+      "rank": 52,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -40317,7 +40603,7 @@
       ]
     },
     {
-      "rank": 52,
+      "rank": 53,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -40795,7 +41081,7 @@
       ]
     },
     {
-      "rank": 53,
+      "rank": 54,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -41093,7 +41379,7 @@
       ]
     },
     {
-      "rank": 54,
+      "rank": 55,
       "artist": "GorillaT",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -41396,7 +41682,7 @@
       ]
     },
     {
-      "rank": 55,
+      "rank": 56,
       "artist": "Jensen McRae",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -42926,7 +43212,7 @@
       ]
     },
     {
-      "rank": 56,
+      "rank": 57,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -44256,7 +44542,7 @@
       ]
     },
     {
-      "rank": 57,
+      "rank": 58,
       "artist": "Declan McKenna",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -46740,7 +47026,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 59,
       "artist": "Tritonal",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -47461,7 +47747,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 60,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -47538,7 +47824,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 61,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -47616,7 +47902,7 @@
       ]
     },
     {
-      "rank": 61,
+      "rank": 62,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -47700,7 +47986,7 @@
       ]
     },
     {
-      "rank": 62,
+      "rank": 63,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -47782,7 +48068,7 @@
       ]
     },
     {
-      "rank": 63,
+      "rank": 64,
       "artist": "SiR",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -47870,7 +48156,7 @@
       ]
     },
     {
-      "rank": 64,
+      "rank": 65,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -50793,7 +51079,7 @@
       ]
     },
     {
-      "rank": 65,
+      "rank": 66,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -50926,7 +51212,7 @@
       ]
     },
     {
-      "rank": 66,
+      "rank": 67,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -51227,7 +51513,7 @@
       ]
     },
     {
-      "rank": 67,
+      "rank": 68,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -51379,7 +51665,7 @@
       ]
     },
     {
-      "rank": 68,
+      "rank": 69,
       "artist": "Monxx",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -51552,7 +51838,7 @@
       ]
     },
     {
-      "rank": 69,
+      "rank": 70,
       "artist": "KIM WOOJIN",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -52089,7 +52375,7 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 71,
       "artist": "Bass Santana",
       "firstSeen": "2026-10-12T15:03:29.898Z",
       "spotifyId": null,
@@ -52206,7 +52492,7 @@
       ]
     },
     {
-      "rank": 71,
+      "rank": 72,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53361,7 +53647,7 @@
       ]
     },
     {
-      "rank": 72,
+      "rank": 73,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -55273,7 +55559,7 @@
       ]
     },
     {
-      "rank": 73,
+      "rank": 74,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -55783,7 +56069,7 @@
       ]
     },
     {
-      "rank": 74,
+      "rank": 75,
       "artist": "Griff",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -57404,7 +57690,7 @@
       ]
     },
     {
-      "rank": 75,
+      "rank": 76,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -60160,7 +60446,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 77,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -60650,7 +60936,7 @@
       ]
     },
     {
-      "rank": 77,
+      "rank": 78,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -61552,7 +61838,7 @@
       ]
     },
     {
-      "rank": 78,
+      "rank": 79,
       "artist": "Tynan",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -61843,7 +62129,7 @@
       ]
     },
     {
-      "rank": 79,
+      "rank": 80,
       "artist": "Destroy Lonely",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -64199,7 +64485,7 @@
       ]
     },
     {
-      "rank": 80,
+      "rank": 81,
       "artist": "Fridayy",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
@@ -64700,7 +64986,7 @@
       ]
     },
     {
-      "rank": 81,
+      "rank": 82,
       "artist": "Ken Carson",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,

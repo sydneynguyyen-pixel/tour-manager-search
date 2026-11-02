@@ -329,5 +329,18 @@
       }
     ],
     "totalLeadsNow": 81
+  },
+  {
+    "timestamp": "2026-11-02T15:24:23.187Z",
+    "candidatesProcessed": 48,
+    "candidatesWithRelease": 7,
+    "candidatesScored": 7,
+    "newLeadsAdded": [
+      {
+        "artist": "Jeff Satur",
+        "score": 79
+      }
+    ],
+    "totalLeadsNow": 82
   }
 ]

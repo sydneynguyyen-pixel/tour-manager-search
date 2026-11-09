@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-11-02T15:24:23.187Z",
-  "candidatesProcessed": 48,
-  "candidatesWithRelease": 7,
-  "candidatesScored": 7,
+  "timestamp": "2026-11-09T15:55:40.073Z",
+  "candidatesProcessed": 45,
+  "candidatesWithRelease": 6,
+  "candidatesScored": 6,
   "newLeadsAdded": [
     {
-      "artist": "Jeff Satur",
-      "score": 79
+      "artist": "Troye Sivan",
+      "score": 85
     }
   ],
-  "totalLeadsNow": 82
+  "totalLeadsNow": 83
 }

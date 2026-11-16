@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-11-09T15:55:40.073Z",
+  "timestamp": "2026-11-16T15:31:17.695Z",
   "candidatesProcessed": 45,
-  "candidatesWithRelease": 6,
-  "candidatesScored": 6,
+  "candidatesWithRelease": 8,
+  "candidatesScored": 7,
   "newLeadsAdded": [
     {
-      "artist": "Troye Sivan",
-      "score": 85
+      "artist": "Tristan K",
+      "score": 69
     }
   ],
-  "totalLeadsNow": 83
+  "totalLeadsNow": 84
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T15:55:40.033Z",
+  "generatedAt": "2026-11-16T15:31:17.652Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,14 +44,14 @@
       ]
     }
   },
-  "totalLeads": 83,
+  "totalLeads": 84,
   "stats": {
     "avgScore": 73,
     "medianScore": 69,
     "priorityBreakdown": {
       "immediate": 12,
       "high": 29,
-      "qualified": 42
+      "qualified": 43
     }
   },
   "leads": [
@@ -41487,6 +41487,88 @@
     },
     {
       "rank": 53,
+      "artist": "Tristan K",
+      "firstSeen": "2026-11-16T15:31:17.652Z",
+      "spotifyId": null,
+      "deezerId": 5384869,
+      "mbid": null,
+      "listeners": null,
+      "lastfmListeners": 275,
+      "lastfmTags": [],
+      "lastfmBio": "Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-10-30",
+      "releaseName": "Ich Leb Wieder",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/c5d75a7cf523237616b33b0bbb401d09/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Ich Leb Wieder",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/b7dab479c38bd2f22f878f02c3dd86a1/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-30",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 69,
+      "priority": "qualified",
+      "baseScore": 69,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 13,
+        "listeners": 15,
+        "accessibility": 14,
+        "likelihood": 25,
+        "growth": 2,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 69,
+        "genreMultiplier": 1,
+        "finalScore": 69,
+        "comebackGapMonths": null
+      },
+      "tourCount": 0,
+      "avgVenueSize": 0,
+      "topVenues": [],
+      "tourHistory": [],
+      "fullTourHistory": [],
+      "countriesToured": 0,
+      "lastTourDate": null,
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-10-30) with no announced tour",
+        "No tour history in the last 18 months",
+        "Venue size unknown (no capacity data)",
+        "Management contact not found — accessibility unverified"
+      ]
+    },
+    {
+      "rank": 54,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -42829,7 +42911,7 @@
       ]
     },
     {
-      "rank": 54,
+      "rank": 55,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -43307,7 +43389,7 @@
       ]
     },
     {
-      "rank": 55,
+      "rank": 56,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -43605,7 +43687,7 @@
       ]
     },
     {
-      "rank": 56,
+      "rank": 57,
       "artist": "GorillaT",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -43908,7 +43990,7 @@
       ]
     },
     {
-      "rank": 57,
+      "rank": 58,
       "artist": "Jensen McRae",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -45438,7 +45520,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 59,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -46768,7 +46850,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 60,
       "artist": "Declan McKenna",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -49252,7 +49334,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 61,
       "artist": "Tritonal",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -49973,7 +50055,7 @@
       ]
     },
     {
-      "rank": 61,
+      "rank": 62,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -50050,7 +50132,7 @@
       ]
     },
     {
-      "rank": 62,
+      "rank": 63,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -50128,7 +50210,7 @@
       ]
     },
     {
-      "rank": 63,
+      "rank": 64,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -50212,7 +50294,7 @@
       ]
     },
     {
-      "rank": 64,
+      "rank": 65,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -50294,7 +50376,7 @@
       ]
     },
     {
-      "rank": 65,
+      "rank": 66,
       "artist": "SiR",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -50382,7 +50464,7 @@
       ]
     },
     {
-      "rank": 66,
+      "rank": 67,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53305,7 +53387,7 @@
       ]
     },
     {
-      "rank": 67,
+      "rank": 68,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53438,7 +53520,7 @@
       ]
     },
     {
-      "rank": 68,
+      "rank": 69,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53739,7 +53821,7 @@
       ]
     },
     {
-      "rank": 69,
+      "rank": 70,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -53891,7 +53973,7 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 71,
       "artist": "Monxx",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -54064,7 +54146,7 @@
       ]
     },
     {
-      "rank": 71,
+      "rank": 72,
       "artist": "KIM WOOJIN",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -54601,7 +54683,7 @@
       ]
     },
     {
-      "rank": 72,
+      "rank": 73,
       "artist": "Bass Santana",
       "firstSeen": "2026-10-12T15:03:29.898Z",
       "spotifyId": null,
@@ -54718,7 +54800,7 @@
       ]
     },
     {
-      "rank": 73,
+      "rank": 74,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -55873,7 +55955,7 @@
       ]
     },
     {
-      "rank": 74,
+      "rank": 75,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -57785,7 +57867,7 @@
       ]
     },
     {
-      "rank": 75,
+      "rank": 76,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -58295,7 +58377,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 77,
       "artist": "Griff",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -59916,7 +59998,7 @@
       ]
     },
     {
-      "rank": 77,
+      "rank": 78,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -62672,7 +62754,7 @@
       ]
     },
     {
-      "rank": 78,
+      "rank": 79,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -63162,7 +63244,7 @@
       ]
     },
     {
-      "rank": 79,
+      "rank": 80,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -64064,7 +64146,7 @@
       ]
     },
     {
-      "rank": 80,
+      "rank": 81,
       "artist": "Tynan",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -64355,7 +64437,7 @@
       ]
     },
     {
-      "rank": 81,
+      "rank": 82,
       "artist": "Destroy Lonely",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -66711,7 +66793,7 @@
       ]
     },
     {
-      "rank": 82,
+      "rank": 83,
       "artist": "Fridayy",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
@@ -67212,7 +67294,7 @@
       ]
     },
     {
-      "rank": 83,
+      "rank": 84,
       "artist": "Ken Carson",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,

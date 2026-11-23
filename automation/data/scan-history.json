@@ -368,5 +368,26 @@
       }
     ],
     "totalLeadsNow": 84
+  },
+  {
+    "timestamp": "2026-11-23T17:52:38.801Z",
+    "candidatesProcessed": 46,
+    "candidatesWithRelease": 11,
+    "candidatesScored": 9,
+    "newLeadsAdded": [
+      {
+        "artist": "Leven Kali",
+        "score": 93
+      },
+      {
+        "artist": "Sharc",
+        "score": 85
+      },
+      {
+        "artist": "KayCyy",
+        "score": 64
+      }
+    ],
+    "totalLeadsNow": 87
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T15:31:17.652Z",
+  "generatedAt": "2026-11-23T17:52:38.751Z",
   "genreTiers": {
     "tier1": {
       "multiplier": 1.15,
@@ -44,14 +44,14 @@
       ]
     }
   },
-  "totalLeads": 84,
+  "totalLeads": 87,
   "stats": {
     "avgScore": 73,
     "medianScore": 69,
     "priorityBreakdown": {
-      "immediate": 12,
+      "immediate": 14,
       "high": 29,
-      "qualified": 43
+      "qualified": 44
     }
   },
   "leads": [
@@ -4708,6 +4708,266 @@
     },
     {
       "rank": 6,
+      "artist": "Leven Kali",
+      "firstSeen": "2026-11-23T17:52:38.751Z",
+      "spotifyId": null,
+      "deezerId": 10197934,
+      "mbid": "764b0653-1855-40a2-85dd-98dabecb5efb",
+      "listeners": null,
+      "lastfmListeners": 246644,
+      "lastfmTags": [
+        "rnb",
+        "soul",
+        "rap",
+        "funk",
+        "dutch"
+      ],
+      "lastfmBio": "Leven Kali is a singer/songwriter/producer from Santa Monica, California. Born in Holland, and raised in SoCal, his sound reflects the many different cultures and backgrounds that make up his personal identity. Funk, jazz, gospel, R&B, and Hip-Hop elements can be heard all throughout his music.\n\nAt only 20 years old, Leven has acted as the bridge between multiple generations and genres of music to create a sound that is both nostalgic and forward thinking. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-10-09",
+      "releaseName": "LK99+ DELUXE",
+      "genre": "electronic",
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/98eb3ee6e3a7f714abbc40a23281046e/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "LK99+ DELUXE",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/92fd2ba35e56fbf8fc219a88652284d6/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-09",
+          "releaseType": "album"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 93,
+      "priority": "immediate",
+      "baseScore": 93,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 25,
+        "listeners": 25,
+        "accessibility": 8,
+        "likelihood": 25,
+        "growth": 10,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 93,
+        "genreMultiplier": 1,
+        "finalScore": 93,
+        "comebackGapMonths": 31.011826544021027
+      },
+      "tourCount": 5,
+      "avgVenueSize": 1315,
+      "topVenues": [
+        {
+          "name": "Fillmore Minneapolis",
+          "capacity": 1315,
+          "city": "Minneapolis",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2025-11-02",
+          "venueName": "The Pink Room",
+          "city": "Manchester",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-31",
+          "venueName": "Oslo Hackney",
+          "city": "Hackney",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-25",
+          "venueName": "Ronda",
+          "city": "Utrecht",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-06-15",
+          "venueName": "Fillmore Minneapolis",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2025-06-04",
+          "venueName": "REBEL",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2025-11-02",
+          "venueName": "The Pink Room",
+          "city": "Manchester",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-31",
+          "venueName": "Oslo Hackney",
+          "city": "Hackney",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-10-25",
+          "venueName": "Ronda",
+          "city": "Utrecht",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2025-06-15",
+          "venueName": "Fillmore Minneapolis",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": 1315
+        },
+        {
+          "date": "2025-06-04",
+          "venueName": "REBEL",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-11-03",
+          "venueName": "Barboza",
+          "city": "Seattle",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-31",
+          "venueName": "Brick & Mortar Music Hall",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-10",
+          "venueName": "Delmar Hall",
+          "city": "St. Louis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-04-05",
+          "venueName": "Lee's Palace",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 450
+        },
+        {
+          "date": "2022-04-02",
+          "venueName": "Big Night Live",
+          "city": "Boston",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2020-07-03",
+          "venueName": "MelodyVR",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-08-16",
+          "venueName": "Kit Carson Park",
+          "city": "Taos",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-08-11",
+          "venueName": "Golden Gate Park",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-07-05",
+          "venueName": "Prospect Park Bandshell",
+          "city": "Brooklyn",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-06-03",
+          "venueName": "Toybox",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2019-05-05",
+          "venueName": "Woodward Park",
+          "city": "Fresno",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-09-01",
+          "venueName": "W Hollywood Hotel",
+          "city": "Los Angeles",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2018-06-07",
+          "venueName": "Great Stage Park",
+          "city": "Manchester",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 4,
+      "lastTourDate": "2025-11-02",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://levenkali.com",
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent album (2026-10-09), already touring",
+        "5 shows in past 18 months across 4 countries",
+        "Returning after a 31-month gap with strong new original material — comeback signal is solid",
+        "Average venue size 1,315 cap (Matthew's touring scale)",
+        "electronic — a neutral-fit genre",
+        "Major label (Def Jam) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 7,
       "artist": "Smino",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -6164,7 +6424,7 @@
       ]
     },
     {
-      "rank": 7,
+      "rank": 8,
       "artist": "Destin Conrad",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -7300,7 +7560,7 @@
       ]
     },
     {
-      "rank": 8,
+      "rank": 9,
       "artist": "Baauer",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -9338,7 +9598,7 @@
       ]
     },
     {
-      "rank": 9,
+      "rank": 10,
       "artist": "Isaia Huron",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -9478,7 +9738,7 @@
       ]
     },
     {
-      "rank": 10,
+      "rank": 11,
       "artist": "Greek",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -9770,7 +10030,7 @@
       ]
     },
     {
-      "rank": 11,
+      "rank": 12,
       "artist": "Wink",
       "firstSeen": "2026-10-19T12:49:02.431Z",
       "spotifyId": null,
@@ -10709,7 +10969,7 @@
       ]
     },
     {
-      "rank": 12,
+      "rank": 13,
       "artist": "Troye Sivan",
       "firstSeen": "2026-11-09T15:55:40.033Z",
       "spotifyId": null,
@@ -12935,7 +13195,185 @@
       ]
     },
     {
-      "rank": 13,
+      "rank": 14,
+      "artist": "Sharc",
+      "firstSeen": "2026-11-23T17:52:38.751Z",
+      "spotifyId": null,
+      "deezerId": 65101882,
+      "mbid": "8d53cc92-7425-4b80-aa1f-c534e1536a70",
+      "listeners": null,
+      "lastfmListeners": 29749,
+      "lastfmTags": [
+        "rap",
+        "hip hop",
+        "pierre bourne",
+        "sosshouse"
+      ],
+      "lastfmBio": "Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-11-20",
+      "releaseName": "Circulate",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/9bc34274aca51c1800a9c1570a60f603/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "Circulate",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/e2fb68c2b8a53f6da8679b93f526d041/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-11-20",
+          "releaseType": "single"
+        },
+        {
+          "name": "Dare Devil",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/2c2bbb5daedef6b7d24083d57288d4e6/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-11-13",
+          "releaseType": "single"
+        },
+        {
+          "name": "Tokyo Still",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/013490ea8e5e988c57aeeb35f8747089/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-16",
+          "releaseType": "single"
+        },
+        {
+          "name": "Waikiki",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/2bbe0df3d24b771439975238d5acb611/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-10-09",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 4,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 85,
+      "priority": "immediate",
+      "baseScore": 85,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 15,
+        "listeners": 25,
+        "accessibility": 14,
+        "likelihood": 25,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 85,
+        "genreMultiplier": 1,
+        "finalScore": 85,
+        "comebackGapMonths": 48.12746386333772
+      },
+      "tourCount": 1,
+      "avgVenueSize": 700,
+      "topVenues": [
+        {
+          "name": "The Howard Theatre",
+          "capacity": 700,
+          "city": "Washington",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-11-15",
+          "venueName": "The Howard Theatre",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 700
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-11-15",
+          "venueName": "The Howard Theatre",
+          "city": "Washington",
+          "country": "United States",
+          "venueCapacity": 700
+        },
+        {
+          "date": "2022-11-11",
+          "venueName": "The Box",
+          "city": "Warsaw",
+          "country": "Poland",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-11-04",
+          "venueName": "Club",
+          "city": "Borgerhout",
+          "country": "Belgium",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-11-03",
+          "venueName": "Oude Zaal",
+          "city": "Amsterdam",
+          "country": "Netherlands",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-10-05",
+          "venueName": "Irving Plaza",
+          "city": "New York",
+          "country": "United States",
+          "venueCapacity": 1200
+        },
+        {
+          "date": "2022-09-21",
+          "venueName": "Tabernacle",
+          "city": "Atlanta",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-17",
+          "venueName": "The Phoenix Concert Theatre",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": 1350
+        },
+        {
+          "date": "2022-09-16",
+          "venueName": "House of Blues",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 1,
+      "lastTourDate": "2026-11-15",
+      "managementType": "unknown",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "none",
+      "websiteUrl": null,
+      "socialLinks": {
+        "instagram": null,
+        "twitter": null,
+        "tiktok": null,
+        "youtube": null,
+        "facebook": null
+      },
+      "contactConfidence": "low",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-11-20), already touring",
+        "1 shows in past 18 months across 1 country",
+        "Returning after a 48-month gap with strong new original material — comeback signal is solid",
+        "Average venue size 700 cap (Matthew's touring scale)",
+        "Management contact not found — accessibility unverified"
+      ]
+    },
+    {
+      "rank": 15,
       "artist": "Yellow Claw",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -15206,7 +15644,7 @@
       ]
     },
     {
-      "rank": 14,
+      "rank": 16,
       "artist": "Dabin",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -15983,7 +16421,7 @@
       ]
     },
     {
-      "rank": 15,
+      "rank": 17,
       "artist": "Drake",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -18543,7 +18981,7 @@
       ]
     },
     {
-      "rank": 16,
+      "rank": 18,
       "artist": "The Rose",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -20410,7 +20848,7 @@
       ]
     },
     {
-      "rank": 17,
+      "rank": 19,
       "artist": "OhSxnta",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -20715,7 +21153,7 @@
       ]
     },
     {
-      "rank": 18,
+      "rank": 20,
       "artist": "Quavo",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -21339,7 +21777,7 @@
       ]
     },
     {
-      "rank": 19,
+      "rank": 21,
       "artist": "Nurko",
       "firstSeen": "2026-07-20T00:30:12.297Z",
       "spotifyId": null,
@@ -21595,7 +22033,7 @@
       "releaseQualityScore": 0.3625
     },
     {
-      "rank": 20,
+      "rank": 22,
       "artist": "Quix",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -21924,7 +22362,7 @@
       ]
     },
     {
-      "rank": 21,
+      "rank": 23,
       "artist": "SAINt JHN",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -22693,7 +23131,7 @@
       ]
     },
     {
-      "rank": 22,
+      "rank": 24,
       "artist": "Jeff Satur",
       "firstSeen": "2026-11-02T15:24:23.135Z",
       "spotifyId": null,
@@ -22979,7 +23417,7 @@
       ]
     },
     {
-      "rank": 23,
+      "rank": 25,
       "artist": "Trippie Redd",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -24466,7 +24904,7 @@
       ]
     },
     {
-      "rank": 24,
+      "rank": 26,
       "artist": "Jeremy Passion",
       "firstSeen": "2026-07-20T04:40:27.910Z",
       "spotifyId": null,
@@ -24603,7 +25041,7 @@
       ]
     },
     {
-      "rank": 25,
+      "rank": 27,
       "artist": "Last Heroes",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -24751,7 +25189,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 28,
       "artist": "Ilan Bluestone",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -25347,7 +25785,7 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 29,
       "artist": "Yung Kai",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -25820,7 +26258,7 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 30,
       "artist": "Just a Gent",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -26058,7 +26496,7 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 31,
       "artist": "Holly Humberstone",
       "firstSeen": "2026-10-26T12:46:11.436Z",
       "spotifyId": null,
@@ -28709,7 +29147,7 @@
       ]
     },
     {
-      "rank": 30,
+      "rank": 32,
       "artist": "Kalan.Frfr",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -28895,7 +29333,7 @@
       ]
     },
     {
-      "rank": 31,
+      "rank": 33,
       "artist": "ATLiens",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -29800,7 +30238,7 @@
       ]
     },
     {
-      "rank": 32,
+      "rank": 34,
       "artist": "Ray Volpe",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -30564,7 +31002,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 35,
       "artist": "Au5",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -30761,7 +31199,7 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 36,
       "artist": "Toosii",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -31285,7 +31723,7 @@
       ]
     },
     {
-      "rank": 35,
+      "rank": 37,
       "artist": "Remi Wolf",
       "firstSeen": "2026-10-26T12:46:11.436Z",
       "spotifyId": null,
@@ -33523,7 +33961,7 @@
       ]
     },
     {
-      "rank": 36,
+      "rank": 38,
       "artist": "Fresh IE",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -33605,7 +34043,7 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 39,
       "artist": "Bryant Barnes",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -33970,7 +34408,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 40,
       "artist": "Che Ecru",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -34048,7 +34486,7 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 41,
       "artist": "Ms Nina",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -34455,7 +34893,7 @@
       ]
     },
     {
-      "rank": 40,
+      "rank": 42,
       "artist": "Ty Dolla $ign",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -36791,7 +37229,7 @@
       ]
     },
     {
-      "rank": 41,
+      "rank": 43,
       "artist": "Lucky Daye",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -38972,7 +39410,7 @@
       ]
     },
     {
-      "rank": 42,
+      "rank": 44,
       "artist": "Ana Criado",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -39056,7 +39494,7 @@
       ]
     },
     {
-      "rank": 43,
+      "rank": 45,
       "artist": "Susana",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -39140,7 +39578,7 @@
       ]
     },
     {
-      "rank": 44,
+      "rank": 46,
       "artist": "Six Sex",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -40710,7 +41148,7 @@
       ]
     },
     {
-      "rank": 45,
+      "rank": 47,
       "artist": "DnD Music",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -40787,7 +41225,7 @@
       ]
     },
     {
-      "rank": 46,
+      "rank": 48,
       "artist": "Ailow",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -40873,7 +41311,7 @@
       ]
     },
     {
-      "rank": 47,
+      "rank": 49,
       "artist": "Strobez",
       "firstSeen": "2026-07-20T04:52:42.558Z",
       "spotifyId": null,
@@ -40957,7 +41395,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 50,
       "artist": "PARIS The Prince",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -41045,7 +41483,7 @@
       ]
     },
     {
-      "rank": 49,
+      "rank": 51,
       "artist": "Griff.",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -41127,7 +41565,7 @@
       ]
     },
     {
-      "rank": 50,
+      "rank": 52,
       "artist": "Hippocampus",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -41221,7 +41659,7 @@
       ]
     },
     {
-      "rank": 51,
+      "rank": 53,
       "artist": "Meego",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -41307,7 +41745,7 @@
       ]
     },
     {
-      "rank": 52,
+      "rank": 54,
       "artist": "Mozzy",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -41486,7 +41924,7 @@
       ]
     },
     {
-      "rank": 53,
+      "rank": 55,
       "artist": "Tristan K",
       "firstSeen": "2026-11-16T15:31:17.652Z",
       "spotifyId": null,
@@ -41568,7 +42006,7 @@
       ]
     },
     {
-      "rank": 54,
+      "rank": 56,
       "artist": "Audien",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -42911,7 +43349,7 @@
       ]
     },
     {
-      "rank": 55,
+      "rank": 57,
       "artist": "Kompany",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -43389,7 +43827,7 @@
       ]
     },
     {
-      "rank": 56,
+      "rank": 58,
       "artist": "Sabai",
       "firstSeen": "2026-07-27T16:00:04.774Z",
       "spotifyId": null,
@@ -43687,7 +44125,7 @@
       ]
     },
     {
-      "rank": 57,
+      "rank": 59,
       "artist": "GorillaT",
       "firstSeen": "2026-08-24T07:14:38.371Z",
       "spotifyId": null,
@@ -43990,7 +44428,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 60,
       "artist": "Jensen McRae",
       "firstSeen": "2026-09-14T12:36:35.945Z",
       "spotifyId": null,
@@ -45520,7 +45958,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 61,
       "artist": "Nettspend",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -46850,7 +47288,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 62,
       "artist": "Declan McKenna",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -49334,7 +49772,7 @@
       ]
     },
     {
-      "rank": 61,
+      "rank": 63,
       "artist": "Tritonal",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -50055,7 +50493,258 @@
       ]
     },
     {
-      "rank": 62,
+      "rank": 64,
+      "artist": "KayCyy",
+      "firstSeen": "2026-11-23T17:52:38.751Z",
+      "spotifyId": null,
+      "deezerId": 11514239,
+      "mbid": "6b0ddbe6-0067-4377-897d-95a5d73dec5e",
+      "listeners": null,
+      "lastfmListeners": 216432,
+      "lastfmTags": [
+        "kenyan",
+        "hip-hop",
+        "pop rap",
+        "rnb",
+        "minimal synth"
+      ],
+      "lastfmBio": "Mark Makora Mbogo (born September 23, 1997), known professionally as KayCyy or KayCyy Pluto, is an Kenyan-American rapper and singer.\n\nBorn in Kenya, Mbogo moved with his family to St. paul, Minnesota at an early age. Throughout his career, he has released five mixtapes, and several singles with his debut studio album Who Is KayCyy? set to release within 2026. KayCyy has worked as a writer and credited vocalist alongside several major artists, including Kanye West, Lil Baby, Lil Wayne, and Travis Scott amongst others. Read more on Last.fm",
+      "audiodbBio": null,
+      "discogsVerified": true,
+      "releaseDate": "2026-11-20",
+      "releaseName": "DELUSIONAL",
+      "genre": null,
+      "genreTier": 2,
+      "imageUrl": "https://cdn-images.dzcdn.net/images/artist/d0bf5a7365c0be2835188e4b8b5e5de5/1000x1000-000000-80-0-0.jpg",
+      "recentReleases": [
+        {
+          "name": "DELUSIONAL",
+          "imageUrl": "https://cdn-images.dzcdn.net/images/cover/aefbf52b1b9410e20e53b2cfbfe6bab8/1000x1000-000000-80-0-0.jpg",
+          "releaseDate": "2026-11-20",
+          "releaseType": "single"
+        }
+      ],
+      "fullOriginalReleaseCount": 1,
+      "selfRemixReleaseCount": 0,
+      "otherRemixReleaseCount": 0,
+      "releaseQualityScore": 1,
+      "finalScore": 64,
+      "priority": "qualified",
+      "baseScore": 64,
+      "genreMultiplier": 1,
+      "scoring": {
+        "touring": 15,
+        "listeners": 10,
+        "accessibility": 8,
+        "likelihood": 25,
+        "growth": 6,
+        "ticketmasterBonus": 0,
+        "jambaseBonus": 0,
+        "baseScore": 64,
+        "genreMultiplier": 1,
+        "finalScore": 64,
+        "comebackGapMonths": 17.83837056504599
+      },
+      "tourCount": 2,
+      "avgVenueSize": 17568,
+      "topVenues": [
+        {
+          "name": "Chase Center",
+          "capacity": 18064,
+          "city": "San Francisco",
+          "country": "United States"
+        },
+        {
+          "name": "Mortgage Matchup Center",
+          "capacity": 17071,
+          "city": "Phoenix",
+          "country": "United States"
+        }
+      ],
+      "tourHistory": [
+        {
+          "date": "2026-06-25",
+          "venueName": "Chase Center",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": 18064
+        },
+        {
+          "date": "2026-06-23",
+          "venueName": "Mortgage Matchup Center",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": 17071
+        }
+      ],
+      "fullTourHistory": [
+        {
+          "date": "2026-06-25",
+          "venueName": "Chase Center",
+          "city": "San Francisco",
+          "country": "United States",
+          "venueCapacity": 18064
+        },
+        {
+          "date": "2026-06-23",
+          "venueName": "Mortgage Matchup Center",
+          "city": "Phoenix",
+          "country": "United States",
+          "venueCapacity": 17071
+        },
+        {
+          "date": "2024-12-27",
+          "venueName": "7th Street Entry",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": 1550
+        },
+        {
+          "date": "2023-09-07",
+          "venueName": "The Drake Hotel",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-22",
+          "venueName": "North Byron Parklands",
+          "city": "Byron Bay",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-21",
+          "venueName": "Lansdowne Hotel",
+          "city": "Sydney",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-15",
+          "venueName": "The Night Cat",
+          "city": "Melbourne",
+          "country": "Australia",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-09",
+          "venueName": "Sonderfreifläche Messe",
+          "city": "Munich",
+          "country": "Germany",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-02",
+          "venueName": "Omeara",
+          "city": "London",
+          "country": "United Kingdom",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-07-01",
+          "venueName": "Les Étoiles",
+          "city": "Paris",
+          "country": "France",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-06-29",
+          "venueName": "Gärdet",
+          "city": "Stockholm",
+          "country": "Sweden",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-06-09",
+          "venueName": "Flushing Meadows Corona Park",
+          "city": "Queens",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2023-03-04",
+          "venueName": "SoFi Stadium",
+          "city": "Inglewood",
+          "country": "United States",
+          "venueCapacity": 70240
+        },
+        {
+          "date": "2022-09-30",
+          "venueName": "University of Minnesota",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-09-10",
+          "venueName": "East Island",
+          "city": "Toronto",
+          "country": "Canada",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-29",
+          "venueName": "Grant Park",
+          "city": "Chicago",
+          "country": "United States",
+          "venueCapacity": null
+        },
+        {
+          "date": "2022-07-22",
+          "venueName": "Hard Rock Stadium",
+          "city": "Miami Gardens",
+          "country": "United States",
+          "venueCapacity": 64767
+        },
+        {
+          "date": "2022-03-25",
+          "venueName": "Target Center",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": 18798
+        },
+        {
+          "date": "2021-09-28",
+          "venueName": "First Avenue",
+          "city": "Minneapolis",
+          "country": "United States",
+          "venueCapacity": null
+        }
+      ],
+      "countriesToured": 1,
+      "lastTourDate": "2026-06-25",
+      "managementType": "major-label",
+      "contactName": null,
+      "contactEmail": null,
+      "contactSource": "wikipedia",
+      "websiteUrl": "http://whoiskaycyy.com/",
+      "socialLinks": {
+        "instagram": "https://instagram.com/kaycyy_pluto",
+        "twitter": "https://twitter.com/kaycyy______",
+        "tiktok": "https://tiktok.com/@plumankaycyy",
+        "youtube": "https://youtube.com/channel/UCciMS04WqzPntekpEQfLxBQ",
+        "facebook": null
+      },
+      "contactConfidence": "medium",
+      "newsArticles": [],
+      "hasUpcomingEvents": false,
+      "ticketmasterEvents": [],
+      "ticketmasterEventCount": 0,
+      "hasJamBaseEvents": false,
+      "jambaseEvents": [],
+      "jambaseEventCount": 0,
+      "isCurrentlyTouring": false,
+      "fitReasoning": [
+        "Recent single (2026-11-20), already touring",
+        "2 shows in past 18 months across 1 country",
+        "Returning after a 18-month gap with strong new original material — comeback signal is solid",
+        "Average venue size 17,568 cap",
+        "Major label (BuVisionColumbiaAliveAWGEYZY SND[3][4]) — likely represented, harder to reach"
+      ]
+    },
+    {
+      "rank": 65,
       "artist": "GlokkNine",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -50132,7 +50821,7 @@
       ]
     },
     {
-      "rank": 63,
+      "rank": 66,
       "artist": "GRiFF!",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -50210,7 +50899,7 @@
       ]
     },
     {
-      "rank": 64,
+      "rank": 67,
       "artist": "Yung Bleu",
       "firstSeen": "2026-07-20T04:48:55.248Z",
       "spotifyId": null,
@@ -50294,7 +50983,7 @@
       ]
     },
     {
-      "rank": 65,
+      "rank": 68,
       "artist": "Foushee",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -50376,7 +51065,7 @@
       ]
     },
     {
-      "rank": 66,
+      "rank": 69,
       "artist": "SiR",
       "firstSeen": "2026-09-28T13:32:38.416Z",
       "spotifyId": null,
@@ -50464,7 +51153,7 @@
       ]
     },
     {
-      "rank": 67,
+      "rank": 70,
       "artist": "Illenium",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53387,7 +54076,7 @@
       ]
     },
     {
-      "rank": 68,
+      "rank": 71,
       "artist": "Bino Rideaux",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53520,7 +54209,7 @@
       ]
     },
     {
-      "rank": 69,
+      "rank": 72,
       "artist": "1oneam",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -53821,7 +54510,7 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 73,
       "artist": "Jeff Bernat",
       "firstSeen": "2026-07-20T23:01:55.301Z",
       "spotifyId": null,
@@ -53973,7 +54662,7 @@
       ]
     },
     {
-      "rank": 71,
+      "rank": 74,
       "artist": "Monxx",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -54146,7 +54835,7 @@
       ]
     },
     {
-      "rank": 72,
+      "rank": 75,
       "artist": "KIM WOOJIN",
       "firstSeen": "2026-10-05T14:19:24.690Z",
       "spotifyId": null,
@@ -54683,7 +55372,7 @@
       ]
     },
     {
-      "rank": 73,
+      "rank": 76,
       "artist": "Bass Santana",
       "firstSeen": "2026-10-12T15:03:29.898Z",
       "spotifyId": null,
@@ -54800,7 +55489,7 @@
       ]
     },
     {
-      "rank": 74,
+      "rank": 77,
       "artist": "Said The Sky",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -55955,7 +56644,7 @@
       ]
     },
     {
-      "rank": 75,
+      "rank": 78,
       "artist": "Nghtmre",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -57867,7 +58556,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 79,
       "artist": "Fousheé",
       "firstSeen": "2026-08-03T16:12:48.297Z",
       "spotifyId": null,
@@ -58377,7 +59066,7 @@
       ]
     },
     {
-      "rank": 77,
+      "rank": 80,
       "artist": "Griff",
       "firstSeen": "2026-08-31T13:28:47.499Z",
       "spotifyId": null,
@@ -59998,7 +60687,7 @@
       ]
     },
     {
-      "rank": 78,
+      "rank": 81,
       "artist": "Subtronics",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -62754,7 +63443,7 @@
       ]
     },
     {
-      "rank": 79,
+      "rank": 82,
       "artist": "Odeal",
       "firstSeen": "2026-07-20T03:22:54.195Z",
       "spotifyId": null,
@@ -63244,7 +63933,7 @@
       ]
     },
     {
-      "rank": 80,
+      "rank": 83,
       "artist": "Isoxo",
       "firstSeen": "2026-08-10T10:53:35.277Z",
       "spotifyId": null,
@@ -64146,7 +64835,7 @@
       ]
     },
     {
-      "rank": 81,
+      "rank": 84,
       "artist": "Tynan",
       "firstSeen": "2026-08-17T07:11:00.002Z",
       "spotifyId": null,
@@ -64437,7 +65126,7 @@
       ]
     },
     {
-      "rank": 82,
+      "rank": 85,
       "artist": "Destroy Lonely",
       "firstSeen": "2026-09-07T12:17:55.493Z",
       "spotifyId": null,
@@ -66793,7 +67482,7 @@
       ]
     },
     {
-      "rank": 83,
+      "rank": 86,
       "artist": "Fridayy",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
@@ -67294,7 +67983,7 @@
       ]
     },
     {
-      "rank": 84,
+      "rank": 87,
       "artist": "Ken Carson",
       "firstSeen": "2026-09-21T12:34:09.065Z",
       "spotifyId": null,
